@@ -1,0 +1,39 @@
+{
+  "name": "amp",
+  "version": "1.0.0",
+  "description": "amp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EconomistDigitalSolutions/amp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EconomistDigitalSolutions/amp/issues"
+  },
+  "homepage": "https://github.com/EconomistDigitalSolutions/amp#readme",
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.1.12",
+    "apollo-client": "^2.2.8",
+    "apollo-link": "^1.2.2",
+    "apollo-link-error": "^1.0.9",
+    "apollo-link-http": "^1.5.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.1",
+    "hapi": "^17.4.0",
+    "node-fetch": "^2.1.2",
+    "react": "^16.3.2",
+    "react-apollo": "^2.1.3",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {}
+}
