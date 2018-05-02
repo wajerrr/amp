@@ -34,7 +34,7 @@ const client = new ApolloClient({
     new HttpLink({
       uri: 'http://www.economist.com/graphql?version=v1',
       credentials: 'same-origin',
-      fetch: fetch,
+      fetch,
     }),
   ]),
   cache: new InMemoryCache(),
@@ -47,7 +47,7 @@ const generateRefUrl = (pathname) =>
 server.route({
   method: 'GET',
   path: '/{pathname*}',
-  handler: async function(request, h) {
+  async handler(request) {
     try {
       const ref = generateRefUrl(request.params.pathname);
       const query = gql`
@@ -98,6 +98,8 @@ server.route({
            <div>${JSON.stringify(res.data)}</div>`;
     } catch (e) {
       console.log('whyyyy', e);
+
+      return e.toString();
     }
   },
 });
