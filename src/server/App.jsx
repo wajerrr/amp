@@ -1,4 +1,5 @@
 import React from 'react';
+
 const App = ({ title, url }) => (
   <div>
     <h1>{title}</h1>
