@@ -7,11 +7,8 @@ import { HttpLink } from 'apollo-link-http';
 import { onError } from 'apollo-link-error';
 import { ApolloLink } from 'apollo-link';
 import gql from 'graphql-tag';
-
 import Hapi from 'hapi';
 import fetch from 'node-fetch';
-
-import App from './App';
 
 const config = {
   host: 'localhost',
@@ -89,6 +86,15 @@ server.route({
       const res = await client.query({
         query,
       });
+
+      if (process.env.NODE_ENV === 'development') {
+        Object.keys(require.cache).forEach((id) => {
+          if (id.includes('/src/server/')) delete require.cache[id];
+        });
+      }
+
+      const App = require('./App').default;
+
       return `${renderToString(
         <App
           url={res.data.canonical.url.canonical}
@@ -97,7 +103,7 @@ server.route({
       )}
            <div>${JSON.stringify(res.data)}</div>`;
     } catch (e) {
-      console.log('whyyyy', e);
+      console.log('Error: ', e);
 
       return e.toString();
     }
@@ -111,7 +117,11 @@ async function start() {
     console.log('error', err);
     process.exit(1);
   }
-  console.log('Server running at:', server.info.uri);
+  console.log(
+    `Server running at:', ${
+      server.info.uri
+    } in ${process.env.NODE_ENV.toUpperCase()} mode`
+  );
 }
 
 export default start();
