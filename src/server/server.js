@@ -1,6 +1,6 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { renderStylesToString } from 'emotion-server';
+import { extractCritical } from 'emotion-server';
 
 import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -95,17 +95,24 @@ server.route({
       }
 
       const App = require('./App').default;
-      const reactHTMLString = renderStylesToString(
-        renderToString(
-          <App
-            url={res.data.canonical.url.canonical}
-            title={res.data.canonical.headline}
-          />
-        )
+
+      const reactHTMLString = renderToString(
+        <App
+          url={res.data.canonical.url.canonical}
+          title={res.data.canonical.headline}
+        />
       );
 
-      return `${reactHTMLString}
-           <div>${JSON.stringify(res.data)}</div>`;
+      const { css } = extractCritical(reactHTMLString);
+
+      return `
+      <head>
+      <style>${css}</style>
+      </head>
+      <body>
+        ${reactHTMLString}
+        <div>${JSON.stringify(res.data)}</div>
+      </body>`;
     } catch (e) {
       console.log('Error: ', e);
 
