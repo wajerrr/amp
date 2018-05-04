@@ -90,13 +90,6 @@ server.route({
         query,
       });
 
-      if (process.env.NODE_ENV === 'development') {
-        Object.keys(require.cache).forEach((id) => {
-          if (id.includes('/src/server/')) delete require.cache[id];
-          if (id.includes('/src/app/')) delete require.cache[id];
-        });
-      }
-
       /* eslint-disable global-require */
       const App = require('../app/app').default;
 
@@ -132,6 +125,7 @@ async function start() {
       server.info.uri
     } in ${process.env.NODE_ENV.toUpperCase()} mode`
   );
+  return server;
 }
 
 export default start();
