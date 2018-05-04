@@ -11,6 +11,8 @@ import gql from 'graphql-tag';
 import Hapi from 'hapi';
 import fetch from 'node-fetch';
 
+import template from './template';
+
 const config = {
   host: 'localhost',
   port: 8000,
@@ -91,28 +93,25 @@ server.route({
       if (process.env.NODE_ENV === 'development') {
         Object.keys(require.cache).forEach((id) => {
           if (id.includes('/src/server/')) delete require.cache[id];
+          if (id.includes('/src/app/')) delete require.cache[id];
         });
       }
 
-      const App = require('./App').default;
+      /* eslint-disable global-require */
+      const App = require('../app/app').default;
 
       const reactHTMLString = renderToString(
-        <App
-          url={res.data.canonical.url.canonical}
-          title={res.data.canonical.headline}
-        />
+        <App url={request.path} data={res.data} />
       );
 
       const { css } = extractCritical(reactHTMLString);
 
-      return `
-      <head>
-      <style>${css}</style>
-      </head>
-      <body>
-        ${reactHTMLString}
-        <div>${JSON.stringify(res.data)}</div>
-      </body>`;
+      return template({
+        canonicalUrl: res.data.canonical.url.canonical,
+        title: res.data.canonical.headline,
+        css,
+        body: reactHTMLString,
+      });
     } catch (e) {
       console.log('Error: ', e);
 
