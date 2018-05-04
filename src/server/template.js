@@ -23,4 +23,4 @@ ${body}
 </body>
 </html>`;
 
-module.exports = getTemplate();
+export default getTemplate();

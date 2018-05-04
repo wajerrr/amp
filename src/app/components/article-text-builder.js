@@ -1,7 +1,7 @@
 import React from 'react';
 
-function buildComponents(childrenData = [], path = '') {
-  function getComponent({ type, name = '', data, children, attribs }, key) {
+const buildComponents = (childrenData = [], path = '') => {
+  const getComponent = ({ type, name = '', data, children, attribs }, key) => {
     switch (type) {
       case 'tag':
         switch (name) {
@@ -31,11 +31,11 @@ function buildComponents(childrenData = [], path = '') {
       default:
         return '';
     }
-  }
+  };
 
   return childrenData.map((itemData, i) =>
     getComponent(itemData, `${path}-${i}`)
   );
-}
+};
 
 export default buildComponents;
