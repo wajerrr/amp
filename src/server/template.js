@@ -1,3 +1,16 @@
+const hotReloadingScript = `<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+  socket.on('reload-server-change', function(msg){
+    console.log('server change, relaoding')
+    setTimeout(function(){ window.location.reload(); }, 400);
+  });
+  socket.on('reload-client-change', function(msg){
+    console.log('client change relaoding')
+   window.location.reload();
+  });      
+</script>`;
+
 const template = ({ title, body, css, canonicalUrl }) => `
 <!doctype html>
 <html amp>
@@ -9,7 +22,7 @@ const template = ({ title, body, css, canonicalUrl }) => `
   <link rel="canonical" href="${canonicalUrl}">
   
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  
+  ${process.env.NODE_ENV === 'development' ? hotReloadingScript : ''}
   <!-- todo: add custom styles or remove this -->
   <style amp-custom>
   ${css}
