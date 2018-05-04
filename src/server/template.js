@@ -1,4 +1,4 @@
-const getTemplate = () => ({ title, body, css, canonicalUrl }) => `
+const template = ({ title, body, css, canonicalUrl }) => `
 <!doctype html>
 <html amp>
 <head>
@@ -23,4 +23,4 @@ ${body}
 </body>
 </html>`;
 
-export default getTemplate();
+export default template;
