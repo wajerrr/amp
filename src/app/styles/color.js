@@ -1,0 +1,30 @@
+/* DO NOT MODIFY. Copied from auth0-api-gateway-hosted-pages/src/css/color.js */
+const color = {
+  economist: '#e3120b',
+  beijing: '#121212',
+  kiev: '#383e42',
+  moscow: '#7a7a7a',
+  london: '#b6b6b6',
+  cardiff: '#d7d7d7',
+  berlin: '#f2f2f2',
+  prague: '#fbfbfb',
+  thimphu: '#fff',
+  honolulu: '#16c9b3',
+  dakar: '#0d6380',
+  boston: '#c5cbe9',
+  milan: '#4c60eb',
+  chicago: '#3e51b5',
+  kosice: '#8594e6',
+  athens: '#20328e',
+  copenhagen: '#38a8e0',
+  budapest: '#fc150d',
+  timbuktu: '#bc2621',
+  york: '#fff600',
+  amsterdam: '#fed630',
+  bristol: '#08c5b2',
+  rome: '#f39200',
+  genoa: '#4e64b5',
+  manchester: '#3ca8df',
+};
+
+export default color;
