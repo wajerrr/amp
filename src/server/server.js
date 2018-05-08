@@ -104,6 +104,7 @@ server.route({
         title: res.data.canonical.headline,
         css,
         body: reactHTMLString,
+        isDev: process.env.NODE_ENV === 'development',
       });
     } catch (e) {
       console.log('Error: ', e);

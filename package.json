@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "amp",
   "main": "index.js",
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "start": "cross-env NODE_ENV=production node src/server/index.js",
     "start:dev": "cross-env NODE_ENV=development node src/server/index.js",
     "prettier": "prettier --config .prettierrc.json --write \"src/**/*.{js,jsx}\"",
@@ -52,6 +58,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
+    "husky": "^1.0.0-rc.2",
+    "jest": "^22.4.3",
     "prettier": "^1.12.1",
     "socket.io": "^2.1.0"
   }
