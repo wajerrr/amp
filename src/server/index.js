@@ -15,7 +15,8 @@ require('./server').default.then((serverObj) => {
     const serverWatcher = chokidar.watch('./src/server/');
     serverWatcher.on('ready', () => {
       serverWatcher.on('all', async () => {
-        console.log('Clearing cache and restarting server');
+        /* eslint-disable-next-line no-console */
+        console.info('Clearing cache and restarting server');
         io.emit('reload-server-change');
         await server.stop({ timeout: 3000 });
         Object.keys(require.cache).forEach((id) => {
@@ -31,7 +32,8 @@ require('./server').default.then((serverObj) => {
     const clientWatcher = chokidar.watch('./src/app/');
     clientWatcher.on('ready', () => {
       clientWatcher.on('all', async () => {
-        console.log('Clearing client cache and reloading');
+        /* eslint-disable-next-line no-console */
+        console.info('Clearing client cache and reloading');
         Object.keys(require.cache).forEach((id) => {
           if (id.includes('/src/app/')) delete require.cache[id];
         });

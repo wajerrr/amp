@@ -25,11 +25,16 @@ const client = new ApolloClient({
     onError(({ graphQLErrors, networkError }) => {
       if (graphQLErrors)
         graphQLErrors.map(({ message, locations, path }) =>
-          console.log(
+          /* eslint-disable-next-line no-console */
+          console.error(
             `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
           )
         );
-      if (networkError) console.log(`[Network error]: ${networkError}`);
+
+      if (networkError) {
+        /* eslint-disable-next-line no-console */
+        console.error(`[Network error]: ${networkError}`);
+      }
     }),
     new HttpLink({
       uri: 'http://www.economist.com/graphql?version=v1',
@@ -107,7 +112,8 @@ server.route({
         isDev: process.env.NODE_ENV === 'development',
       });
     } catch (e) {
-      console.log('Error: ', e);
+      /* eslint-disable-next-line no-console */
+      console.error('Error: ', e);
 
       return e.toString();
     }
@@ -118,10 +124,12 @@ async function start() {
   try {
     await server.start();
   } catch (err) {
-    console.log('error', err);
+    /* eslint-disable-next-line no-console */
+    console.error('error', err);
     process.exit(1);
   }
-  console.log(
+  /* eslint-disable-next-line no-console */
+  console.info(
     `Server running at: ${
       server.info.uri
     } in ${process.env.NODE_ENV.toUpperCase()} mode`
