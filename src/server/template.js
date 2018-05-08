@@ -1,4 +1,4 @@
-const hotReloadingScript = `<script src="/socket.io/socket.io.js"></script>
+export const hotReloadingScript = `<script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io();
   socket.on('reload-server-change', function(msg){
@@ -11,7 +11,7 @@ const hotReloadingScript = `<script src="/socket.io/socket.io.js"></script>
   });      
 </script>`;
 
-const template = ({ title, body, css, canonicalUrl }) => `
+const template = ({ title, body, css, canonicalUrl, isDev = false }) => `
 <!doctype html>
 <html amp>
 <head>
@@ -22,18 +22,13 @@ const template = ({ title, body, css, canonicalUrl }) => `
   <link rel="canonical" href="${canonicalUrl}">
   
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  ${process.env.NODE_ENV === 'development' ? hotReloadingScript : ''}
+  ${isDev ? hotReloadingScript : ''}
   <!-- todo: add custom styles or remove this -->
-  <style amp-custom>
-  ${css}
-  </style>
-
+  <style amp-custom>${css}</style>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   
 </head>
-<body>
-${body}
-</body>
+<body>${body}</body>
 </html>`;
 
 export default template;
