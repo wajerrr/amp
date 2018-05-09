@@ -1,10 +1,4 @@
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import { extractCritical } from 'emotion-server';
-
 import Hapi from 'hapi';
-
-import template from './template';
 import getGraphqlData from './get-graphql-data';
 
 const config = {
@@ -28,21 +22,8 @@ server.route({
       const res = await getGraphqlData(ref);
 
       /* eslint-disable global-require */
-      const App = require('../app/app').default;
-
-      const reactHTMLString = renderToString(
-        <App url={request.path} data={res.data} />
-      );
-
-      const { css } = extractCritical(reactHTMLString);
-
-      return template({
-        canonicalUrl: res.data.canonical.url.canonical,
-        title: res.data.canonical.headline,
-        css,
-        body: reactHTMLString,
-        isDev: process.env.NODE_ENV === 'development',
-      });
+      const renderHtml = require('./render-html').default;
+      return renderHtml(res.data, request.path);
     } catch (e) {
       /* eslint-disable-next-line no-console */
       console.error('Error: ', e);
