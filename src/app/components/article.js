@@ -10,7 +10,7 @@ import fontFamily from '../styles/font-family';
 import text from '../styles/typography';
 
 const articleClassName = css`
-  font-size: 18px;
+  font-size: ${text.baseSize};
   font-size: 1rem;
   font-size: 1em;
   line-height: 1.35;
