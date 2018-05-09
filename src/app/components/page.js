@@ -12,7 +12,7 @@ const mainClassName = css`
 const Page = ({ data }) => (
   <div>
     <main className={mainClassName}>
-      <Navigation />
+      <Navigation data={data.navigation} />
       <Article data={data} />
     </main>
     <Footer />

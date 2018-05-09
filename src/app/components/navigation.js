@@ -1,12 +1,17 @@
 import React from 'react';
 import Logo from './logo';
-import Menu from './menu';
+import List from './list';
 
-const Navigation = () => (
-  <nav>
-    <Logo />
-    <Menu />
-  </nav>
-);
+import * as mockData from '../../../mockNavData.json';
+
+const Navigation = (props) => {
+  props = mockData;
+  return (
+    <nav>
+      <Logo />
+      <List listItems={props.navigation.hasPart.parts} />
+    </nav>
+  );
+};
 
 export default Navigation;

@@ -13,6 +13,8 @@ import fetch from 'node-fetch';
 
 import template from './template';
 
+import { N } from './queries';
+
 const config = {
   host: 'localhost',
   port: 8000,
@@ -25,16 +27,11 @@ const client = new ApolloClient({
     onError(({ graphQLErrors, networkError }) => {
       if (graphQLErrors)
         graphQLErrors.map(({ message, locations, path }) =>
-          /* eslint-disable-next-line no-console */
-          console.error(
+          console.log(
             `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
           )
         );
-
-      if (networkError) {
-        /* eslint-disable-next-line no-console */
-        console.error(`[Network error]: ${networkError}`);
-      }
+      if (networkError) console.log(`[Network error]: ${networkError}`);
     }),
     new HttpLink({
       uri: 'http://www.economist.com/graphql?version=v1',
@@ -45,6 +42,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const prodNavigation = '/content/b9b22pmtme3mcv43b3neeeh4h5gjh3g8';
+// const stageNavigation = '/content/11i5sf2m5v0hmlknqrthfpvpi0or4peu';
 const generateRefUrl = (pathname) =>
   `https://www.economist.com/${pathname ||
     'news/world-week/21741222-politics-week'} `;
@@ -60,8 +59,11 @@ server.route({
           canonical(ref: "${ref}") {
             ...C
           }
+          navigation: canonical(ref: "${prodNavigation}") {
+            ...N
+          }
         }
-        
+
         fragment C on Content {
           id
           tegID
@@ -89,8 +91,27 @@ server.route({
               }
             }
           }
-        }          
-        `;
+        }
+        fragment N on Content {
+          headline
+          hasPart(sort: "isPartOf.context.position") {
+            parts {
+              headline
+              url {
+                canonical
+              }
+              hasPart(sort: "isPartOf.context.position") {
+                parts {
+                  headline
+                  url {
+                    canonical
+                  }
+                }
+              }
+            }
+          }
+        }
+      `;
       const res = await client.query({
         query,
       });
@@ -109,11 +130,9 @@ server.route({
         title: res.data.canonical.headline,
         css,
         body: reactHTMLString,
-        isDev: process.env.NODE_ENV === 'development',
       });
     } catch (e) {
-      /* eslint-disable-next-line no-console */
-      console.error('Error: ', e);
+      console.log('Error: ', e);
 
       return e.toString();
     }
@@ -124,12 +143,10 @@ async function start() {
   try {
     await server.start();
   } catch (err) {
-    /* eslint-disable-next-line no-console */
-    console.error('error', err);
+    console.log('error', err);
     process.exit(1);
   }
-  /* eslint-disable-next-line no-console */
-  console.info(
+  console.log(
     `Server running at: ${
       server.info.uri
     } in ${process.env.NODE_ENV.toUpperCase()} mode`

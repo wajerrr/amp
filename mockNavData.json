@@ -1,0 +1,104 @@
+{
+  "navigation": {
+    "headline": "test-menu-amp",
+    "hasPart": {
+      "parts": [
+        {
+          "headline": "Topics",
+          "hasPart": {
+            "parts": [
+              {
+                "headline": "Latest Updates",
+                "url": {
+                  "canonical": "https://www.economist.com/latest-updates"
+                }
+              },
+              {
+                "headline": "Leaders",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/leaders"
+                }
+              },
+              {
+                "headline": "Briefing",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/briefings"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "headline": "Blogs",
+          "hasPart": {
+            "parts": [
+              {
+                "headline": "Bagehot's notebook",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/bagehot"
+                }
+              },
+              {
+                "headline": "Buttonwood’s notebook",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/buttonwood"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "headline": "More",
+          "hasPart": {
+            "parts": [
+              {
+                "headline": "test-menu-more-apps",
+                "hasPart": {
+                  "parts": [
+                    {
+                      "headline": "The Economist Apps",
+                      "url": {
+                        "canonical": "https://www.economist.com/digital"
+                      }
+                    },
+                    {
+                      "headline": "Espresso",
+                      "url": {
+                        "canonical": "https://www.economist.com/digital"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "headline": "test-menu-more-from-economist",
+                "hasPart": {
+                  "parts": [
+                    {
+                      "headline": "Events",
+                      "url": {
+                        "canonical": "https://www.economist.com/events-conferences"
+                      }
+                    },
+                    {
+                      "headline": "Online GMAT prep",
+                      "url": {
+                        "canonical": "https://gmat.economist.com/?gsrc=economist_nav"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "headline": "Subscribe",
+          "url": {
+            "canonical": "https://econ.st/2bs1gXz"
+          }
+        }
+      ]
+    }
+  }
+}
