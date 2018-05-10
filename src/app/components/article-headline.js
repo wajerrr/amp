@@ -41,8 +41,12 @@ const ArticleHeadline = ({ subheadline, children }) => (
 );
 
 ArticleHeadline.propTypes = {
-  subheadline: PropTypes.string.isRequired,
+  subheadline: PropTypes.string,
   children: PropTypes.node.isRequired,
+};
+
+ArticleHeadline.defaultProps = {
+  subheadline: '',
 };
 
 export default ArticleHeadline;

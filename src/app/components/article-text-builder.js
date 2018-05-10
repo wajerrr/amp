@@ -1,45 +1,21 @@
 import React from 'react';
-import { css } from 'emotion';
-import color from '../styles/color';
+import StyledLink from './styled-link';
 
-const linkClassName = css`
-  &,
-  &:active {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid ${color.chicago};
-    text-decoration: none;
-    padding-bottom: 1px;
-    border-bottom: 2px solid ${color.kosice};
-  }
-  &:hover,
-  &.visited {
-    color: ${color.chicago};
-    border-bottom-color: ${color.chicago};
-  }
-`;
-
-const buildArticleBody = (childrenData = [], path = '') => {
+const buildComponents = (childrenData = [], path = '') => {
   const getHTMLTag = (name, children, key) => {
     const HTMLTag = name;
-    return <HTMLTag key={key}>{buildArticleBody(children, key)}</HTMLTag>;
+    return <HTMLTag key={key}>{buildComponents(children, key)}</HTMLTag>;
   };
   const getComponent = ({ type, name = '', data, children, attribs }, key) => {
     switch (type) {
       case 'tag':
         switch (name) {
-          case 'p':
-            return <p key={key}>{buildArticleBody(children, key)}</p>;
           case 'a':
             return (
-              <a key={key} href={attribs.href} className={linkClassName}>
-                {buildArticleBody(children, key)}
-              </a>
+              <StyledLink key={key} href={attribs.href}>
+                {buildComponents(children, key)}
+              </StyledLink>
             );
-          case 'br':
-            return <br key={key} />;
-          case 'figure':
-            return buildArticleBody(children);
           case 'img':
             return (
               <amp-img
@@ -50,12 +26,12 @@ const buildArticleBody = (childrenData = [], path = '') => {
                 layout="responsive"
               />
             );
-          case 'em':
-          case 'span':
-          case 'strong':
-            return getHTMLTag(name, children, key);
-          default:
+          case 'br':
+            return <br key={key} />;
+          case 'iframe':
             return '';
+          default:
+            return getHTMLTag(name, children, key);
         }
       case 'text':
         return data;
@@ -69,4 +45,4 @@ const buildArticleBody = (childrenData = [], path = '') => {
   );
 };
 
-export default buildArticleBody;
+export default buildComponents;

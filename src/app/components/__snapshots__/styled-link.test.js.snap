@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledLink should match snapshot 1`] = `
+<a
+  className="css-1ni4mmi"
+  href="economist.com"
+>
+  click me
+</a>
+`;

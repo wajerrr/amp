@@ -6,7 +6,7 @@ import ArticleHeadline from './article-headline';
 import ArticleDescription from './article-description';
 import ArticleMainImage from './article-main-image';
 import ArticlePublicationDetails from './article-publication-details';
-import buildArticleBody from './article-text-builder';
+import buildComponents from './article-text-builder';
 import spacings from '../styles/spacings';
 import fontFamily from '../styles/font-family';
 import typography from '../styles/typography';
@@ -17,6 +17,10 @@ const articleClassName = css`
   font-size: 1em;
   line-height: 1.35;
   padding: ${spacings.s} 0 0 0;
+
+  figure {
+    margin: 0;
+  }
 `;
 
 const textContClassName = css`
@@ -51,7 +55,7 @@ const Article = ({
         />
       )}
     <ArticlePublicationDetails datePublished={datePublished} byline={byline} />
-    <div className={textContClassName}>{buildArticleBody(text)}</div>
+    <div className={textContClassName}>{buildComponents(text)}</div>
     <ArticlePublicationDetails datePublished={datePublished} byline={byline} />
   </article>
 );
