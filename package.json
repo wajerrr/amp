@@ -5,7 +5,7 @@
   "main": "index.js",
   "husky": {
     "hooks": {
-      "pre-push": "npm test && npm run lint"
+      "pre-push": "npm test && npm run lint && npm run validate-amp"
     }
   },
   "scripts": {
@@ -14,7 +14,9 @@
     "start": "cross-env NODE_ENV=production node src/server/index.js",
     "start:dev": "cross-env NODE_ENV=development node src/server/index.js",
     "prettier": "prettier --config .prettierrc.json --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "generate-amp-test-data": "node src/scripts/amp-validation/index-generate.js",
+    "validate-amp": "node src/scripts/amp-validation/index-validate.js"
   },
   "repository": {
     "type": "git",
@@ -48,6 +50,7 @@
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
+    "amphtml-validator": "^1.0.23",
     "babel-eslint": "^8.2.3",
     "chokidar": "^2.0.3",
     "cross-env": "^5.1.4",
