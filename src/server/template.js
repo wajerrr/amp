@@ -19,7 +19,6 @@ const template = ({ title, body, css, canonicalUrl, isDev = false }) => `
   <title>${title}</title>
 
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-iframe"  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 
   <link rel="canonical" href="${canonicalUrl}">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">

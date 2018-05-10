@@ -19,39 +19,27 @@ const linkClassName = css`
   }
 `;
 
-const buildComponents = (childrenData = [], path = '') => {
+const buildArticleBody = (childrenData = [], path = '') => {
+  const getHTMLTag = (name, children, key) => {
+    const HTMLTag = name;
+    return <HTMLTag key={key}>{buildArticleBody(children, key)}</HTMLTag>;
+  };
   const getComponent = ({ type, name = '', data, children, attribs }, key) => {
     switch (type) {
       case 'tag':
         switch (name) {
           case 'p':
-            return <p key={key}>{buildComponents(children, key)}</p>;
+            return <p key={key}>{buildArticleBody(children, key)}</p>;
           case 'a':
             return (
               <a key={key} href={attribs.href} className={linkClassName}>
-                {buildComponents(children, key)}
+                {buildArticleBody(children, key)}
               </a>
             );
           case 'br':
             return <br key={key} />;
-          case 'em':
-            return <em key={key}>{buildComponents(children, key)}</em>;
-          case 'span':
-            return <span key={key}>{buildComponents(children, key)}</span>;
-          case 'strong':
-            return <strong key={key}>{buildComponents(children, key)}</strong>;
           case 'figure':
-            return buildComponents(children);
-          case 'iframe':
-            return (
-              <amp-iframe
-                width={attribs.width}
-                height={attribs.height}
-                sandbox="allow-scripts allow-same-origin"
-                layout="responsive"
-                src={`https://${attribs.src}`}
-              />
-            );
+            return buildArticleBody(children);
           case 'img':
             return (
               <amp-img
@@ -62,6 +50,10 @@ const buildComponents = (childrenData = [], path = '') => {
                 layout="responsive"
               />
             );
+          case 'em':
+          case 'span':
+          case 'strong':
+            return getHTMLTag(name, children, key);
           default:
             return '';
         }
@@ -77,4 +69,4 @@ const buildComponents = (childrenData = [], path = '') => {
   );
 };
 
-export default buildComponents;
+export default buildArticleBody;
