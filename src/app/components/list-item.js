@@ -1,7 +1,13 @@
 import React from 'react';
 
+import { css } from 'emotion';
+
+const listItemClassName = css`
+  display: block;
+`;
+
 const ListItem = (item) => (
-  <a style={{ display: 'block' }} href={item.url.canonical}>
+  <a className={listItemClassName} href={item.url.canonical}>
     {item.headline}
   </a>
 );

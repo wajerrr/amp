@@ -7,6 +7,7 @@ import Footer from './footer';
 import injectFontFace from '../styles/font-face';
 import fontFamily from '../styles/font-family';
 import text from '../styles/typography';
+import color from '../styles/color';
 
 injectFontFace();
 
@@ -16,10 +17,16 @@ const mainClassName = css`
   font-size: 18px;
 `;
 
+const headerClassName = css`
+  background-color: ${color.kiev};
+`;
+
 const Page = ({ data }) => (
   <div>
     <main className={mainClassName}>
-      <Navigation data={data.navigation} />
+      <header className={headerClassName}>
+        <Navigation data={data.navigation} />
+      </header>
       <Article data={data} />
     </main>
     <Footer />

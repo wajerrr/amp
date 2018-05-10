@@ -13,8 +13,6 @@ import fetch from 'node-fetch';
 
 import template from './template';
 
-import { N } from './queries';
-
 const config = {
   host: 'localhost',
   port: 8000,

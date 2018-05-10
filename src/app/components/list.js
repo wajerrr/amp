@@ -1,13 +1,14 @@
 import React from 'react';
 import ListItem from './list-item';
 
-const List = ({ listItems }) => {
-  console.log('0-0-listItems', listItems);
-  return listItems.map((item) => {
+const List = ({ listItems }) =>
+  listItems.map((item) => {
     const children = item.hasPart ? item.hasPart.parts : null;
     return children && children.length ? (
       <div>
-        <b>{item.headline}</b>
+        <div>
+          <b>{item.headline}</b>
+        </div>
         <List listItems={children} />
         <hr />
       </div>
@@ -15,6 +16,5 @@ const List = ({ listItems }) => {
       <ListItem {...item} />
     );
   });
-};
 
 export default List;
