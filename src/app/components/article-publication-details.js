@@ -17,8 +17,7 @@ const dateAuthorSectionClassName = css`
   border-color: ${color.cardiff};
   font-size: ${text.sizeStep['-3']};
   line-height: ${text.lineHeight.sansOnStep['-3']};
-  font-weight: normal;
-  letter-spacing: 0.015em;
+  letter-spacing: ${text.lineHeight.letterSpacing.sansOnStep['-3']};
 `;
 
 const ArticlePublicationDetails = ({ datePublished, byline = '' }) => (

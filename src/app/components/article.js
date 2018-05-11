@@ -15,7 +15,7 @@ const articleClassName = css`
   font-size: ${typography.baseSize};
   font-size: 1rem;
   font-size: 1em;
-  line-height: 1.35;
+  line-height: ${typography.lineHeight.sansOnStep['0']};
   padding: ${spacings.s} 0 0 0;
 
   figure {
