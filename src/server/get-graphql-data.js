@@ -31,11 +31,17 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const prodNavigation = '/content/b9b22pmtme3mcv43b3neeeh4h5gjh3g8';
+// const stageNavigation = '/content/11i5sf2m5v0hmlknqrthfpvpi0or4peu';
+
 const getGraphqlData = async (ref) => {
   const query = gql`
         {
           canonical(ref: "${ref}") {
             ...C
+          }
+          navigation: canonical(ref: "${prodNavigation}") {
+            ...N
           }
         }
         
@@ -66,8 +72,26 @@ const getGraphqlData = async (ref) => {
               }
             }
           }
-        }          
-        `;
+        }
+        fragment N on Content {
+          headline
+          hasPart(sort: "isPartOf.context.position") {
+            parts {
+              headline
+              url {
+                canonical
+              }
+              hasPart(sort: "isPartOf.context.position") {
+                parts {
+                  headline
+                  url {
+                    canonical
+                  }
+                }
+              }
+            }
+          }
+        }`;
   try {
     return await client.query({
       query,

@@ -10,9 +10,13 @@ const logoClassName = css`
   background-repeat: no-repeat;
 `;
 
+const spanClassName = css`
+  display: none;
+`;
+
 const Logo = () => (
   <a href="/" className={logoClassName} title="The Economist">
-    The Economist
+    <span className={spanClassName}>The Economist</span>
   </a>
 );
 

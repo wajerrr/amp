@@ -2,17 +2,20 @@ import React from 'react';
 import { css } from 'emotion';
 import color from '../styles/color';
 
-const buttonClassName = css`
+const buttonClassName = (customStyles) => css`
   background-color: ${color.chicago};
   border: none;
+  box-sizing: border-box;
   height: 30px;
-  margin-right: 18px;
-  margin-right: 1rem;
-  padding: 0 18px;
   padding: 0 1rem;
   text-align: center;
   border-radius: 4px;
   font-size: 0.70233em;
+  margin-left: 3em;
+  &:active {
+    background-color: ${color.athens};
+  }
+  ${customStyles};
 `;
 
 const linkClassName = css`
@@ -21,8 +24,8 @@ const linkClassName = css`
   text-decoration: none;
 `;
 
-const StyledLinkButton = ({ buttonProps }) => (
-  <button className={buttonClassName}>
+const StyledLinkButton = ({ buttonProps, customStyles }) => (
+  <button className={buttonClassName(customStyles)}>
     <a className={linkClassName} href={buttonProps.url}>
       {buttonProps.text}
     </a>

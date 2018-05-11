@@ -52,7 +52,7 @@
           "hasPart": {
             "parts": [
               {
-                "headline": "test-menu-more-apps",
+                "headline": "Apps & Digital Editions",
                 "hasPart": {
                   "parts": [
                     {
@@ -71,7 +71,7 @@
                 }
               },
               {
-                "headline": "test-menu-more-from-economist",
+                "headline": "From The Economist Group",
                 "hasPart": {
                   "parts": [
                     {
