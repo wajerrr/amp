@@ -9,13 +9,20 @@ import fontFamily from '../styles/font-family';
 import text from '../styles/typography';
 import color from '../styles/color';
 import NavigationMenu from './navigation-menu';
+import spacings from '../styles/spacings';
 
 injectFontFace();
 
 const mainClassName = css`
-  margin: 0 ${text.sizeStep['-4']};
   font-family: ${fontFamily.sans};
   font-size: 18px;
+  line-height: ${text.lineHeight.sansOnStep['0']};
+  -webkit-font-smoothing: antialiased;
+`;
+
+const mainContentClassName = css`
+  padding: ${spacings.s} ${spacings.s} ${spacings.s};
+  margin: 0 auto;
 `;
 const headerClassName = css`
   background-color: ${color.kiev};
@@ -37,6 +44,9 @@ const Page = ({ data }) => (
     <NavigationMenu data={data.navigation} />
     <main className={mainClassName}>
       <Article data={data} />
+      <div className={mainContentClassName}>
+        <Article data={data} />
+      </div>
     </main>
     <Footer />
   </div>
