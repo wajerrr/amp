@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledTime should match snapshot 1`] = `
+<time>
+  May 8th 2018, 19:24
+</time>
+`;

@@ -17,6 +17,8 @@ function produceSteps() {
   return steps;
 }
 const text = {
+  // Base text size on a page. To style page elements use relative sizes from below
+  baseSize: '18px',
   sizeStep: Object.assign(
     {
       '0': `${initialStep}em`,

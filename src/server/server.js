@@ -2,7 +2,7 @@ import Hapi from 'hapi';
 import getGraphqlData from './get-graphql-data';
 
 const config = {
-  host: 'localhost',
+  host: process.env.NODE_ENV === 'development' ? 'localhost' : '0.0.0.0',
   port: 8000,
 };
 
@@ -10,7 +10,7 @@ const server = Hapi.server(config);
 
 const generateRefUrl = (pathname) =>
   `https://www.economist.com/${pathname ||
-    'news/world-week/21741222-politics-week'} `;
+    'news/world-week/21741222-politics-week'}`;
 
 server.route({
   method: 'GET',

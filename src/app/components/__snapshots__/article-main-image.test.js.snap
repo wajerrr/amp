@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleMainImage should match snapshot 1`] = `
+<div
+  className="css-rh72n6"
+>
+  <amp-img
+    height={100}
+    layout="responsive"
+    src="img"
+    width={100}
+  />
+</div>
+`;
