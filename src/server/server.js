@@ -10,7 +10,7 @@ const server = Hapi.server(config);
 
 const generateRefUrl = (pathname) =>
   `https://www.economist.com/${pathname ||
-    'news/world-week/21741222-politics-week'} `;
+    'news/world-week/21741222-politics-week'}`;
 
 server.route({
   method: 'GET',
