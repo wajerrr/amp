@@ -9,18 +9,11 @@ const listItemLinkClassName = css`
   color: ${color.kiev};
   margin: 1em;
 `;
-const listItemClassName = css`
-  list-style-type: none;
-  font-size: 0.9rem;
-  text-indent: 1em;
-`;
 
 const ListItem = (item) => (
-  <li className={listItemClassName}>
-    <a className={listItemLinkClassName} href={item.url.canonical}>
-      {item.headline}
-    </a>
-  </li>
+  <a className={listItemLinkClassName} href={item.url.canonical}>
+    {item.headline}
+  </a>
 );
 
 export default ListItem;

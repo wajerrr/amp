@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import color from '../styles/color';
+import fontFamily from '../styles/font-family';
 
 const buttonClassName = (customStyles) => css`
   background-color: ${color.chicago};
@@ -11,25 +12,25 @@ const buttonClassName = (customStyles) => css`
   text-align: center;
   border-radius: 4px;
   font-size: 0.70233em;
+  font-family: ${fontFamily.sans};
   margin-left: 3em;
   &:active {
     background-color: ${color.athens};
   }
-  ${customStyles};
-`;
-
-const linkClassName = css`
   line-height: 30px;
   color: ${color.thimphu};
   text-decoration: none;
+  ${customStyles};
 `;
 
 const StyledLinkButton = ({ buttonProps, customStyles }) => (
-  <button className={buttonClassName(customStyles)}>
-    <a className={linkClassName} href={buttonProps.url}>
-      {buttonProps.text}
-    </a>
-  </button>
+  <a
+    className={buttonClassName(customStyles)}
+    href={buttonProps.url}
+    role="button"
+  >
+    {buttonProps.text}
+  </a>
 );
 
 export default StyledLinkButton;

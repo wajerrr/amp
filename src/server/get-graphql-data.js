@@ -75,14 +75,17 @@ const getGraphqlData = async (ref) => {
         }
         fragment N on Content {
           headline
+          id
           hasPart(sort: "isPartOf.context.position") {
             parts {
+              id
               headline
               url {
                 canonical
               }
               hasPart(sort: "isPartOf.context.position") {
                 parts {
+                  id
                   headline
                   url {
                     canonical

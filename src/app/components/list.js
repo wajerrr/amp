@@ -42,29 +42,30 @@ const getListItemComponent = (item) =>
       customStyles={{
         display: 'block',
         margin: '1em',
-        'font-size': '18px',
+        fontSize: '18px',
         width: 'calc(100% - 2em)',
         padding: '0.5em',
         height: 'fit-content',
-        'font-weight': '400',
+        fontWeight: '400',
       }}
+      key={item.id}
     />
   ) : (
-    <section className={innerSectionClassName}>
+    <li className={innerSectionClassName} key={item.id}>
       <h4 className={hiddenHeadingClassName}>Subscribe</h4>
       <ListItem {...item} />
-    </section>
+    </li>
   );
 
 const List = ({ listItems }) =>
   listItems.map((item) => {
     const children = item.hasPart ? item.hasPart.parts : null;
     return children && children.length ? (
-      <amp-accordion id="accordion">
+      <amp-accordion key={item.id}>
         <section className={wrapperSectionClassName}>
           <h4>{item.headline}</h4>
           <ul className={listClassName}>
-            <List listItems={children} />
+            <List listItems={children} className={listClassName} />
           </ul>
         </section>
       </amp-accordion>

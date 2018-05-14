@@ -23,6 +23,8 @@ const mainClassName = css`
 const mainContentClassName = css`
   padding: ${spacings.s} ${spacings.s} ${spacings.s};
   margin: 0 auto;
+  top: 55px;
+  position: relative;
 `;
 const headerClassName = css`
   background-color: ${color.kiev};
@@ -31,25 +33,20 @@ const headerClassName = css`
   width: 100%;
   z-index: 99999;
 `;
-const mainBodyClassName = css`
-  top: 55px;
-  position: relative;
-`;
 
 const Page = ({ data }) => (
-  <div className={mainBodyClassName}>
+  <React.Fragment>
     <header className={headerClassName}>
       <Navigation />
     </header>
     <NavigationMenu data={data.navigation} />
     <main className={mainClassName}>
-      <Article data={data} />
       <div className={mainContentClassName}>
         <Article data={data} />
       </div>
     </main>
     <Footer />
-  </div>
+  </React.Fragment>
 );
 
 Page.propTypes = {
