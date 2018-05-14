@@ -32,7 +32,6 @@ const Page = ({ data }) => (
       </div>
     </main>
     <Footer />
-    <pre>{JSON.stringify(data, null, ' ')}</pre>
   </div>
 );
 
