@@ -36,10 +36,10 @@ async function start() {
   try {
     await server.start();
   } catch (err) {
-    console.log('error', err);
+    console.error('error', err);
     process.exit(1);
   }
-  console.log(
+  console.info(
     `Server running at: ${
       server.info.uri
     } in ${process.env.NODE_ENV.toUpperCase()} mode`

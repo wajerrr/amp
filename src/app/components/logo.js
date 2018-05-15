@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from 'emotion';
-import color from '../styles/color';
 
 const logoClassName = css`
   display: block;

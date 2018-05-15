@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { css } from 'emotion';
 
 // This will be replaced by the correct Icon implementation when merged to master.
@@ -12,8 +13,8 @@ const icons = {
 const menuButtonClassName = (icon, customStyles) => css`
   background: url(${icons[icon]});
   background-repeat: no-repeat;
-  height: 40px;
-  width: 40px;
+  height: 31px;
+  width: 31px;
   border: none;
   ${customStyles};
 `;
@@ -25,5 +26,15 @@ const IconButton = ({ onProps, icon, customStyles }) => (
     tabIndex="0"
   />
 );
+
+IconButton.propTypes = {
+  onProps: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  customStyles: PropTypes.shape({}),
+};
+
+IconButton.defaultProps = {
+  customStyles: {},
+};
 
 export default IconButton;

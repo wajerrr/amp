@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should match snapshot 1`] = `
+<nav
+  className="css-t6plsr"
+>
+  <a
+    className="css-1l3b7az"
+    href="/"
+    title="The Economist"
+  >
+    <span
+      className="css-38lglc"
+    >
+      The Economist
+    </span>
+  </a>
+  <a
+    className="css-vwbibu"
+    href="https://econ.st/2bs1gXz"
+    role="button"
+  >
+    Subscribe
+  </a>
+  <button
+    className="css-1eqchrp"
+    on="tap:sidebar.toggle"
+    tabIndex="0"
+  />
+</nav>
+`;

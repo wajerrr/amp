@@ -1,23 +1,41 @@
+/* eslint-disable no-unused-expressions */
 import React from 'react';
-import List from './list';
+import PropTypes from 'prop-types';
+import { injectGlobal } from 'emotion';
+import AccordionListItem from './accordion-list';
 import IconButton from './icon-button';
+import typography from '../styles/typography';
+import color from '../styles/color';
 
-import * as mockData from '../../../mockNavData.json';
+injectGlobal`
+  #sidebar {
+    width: 100%;
+    background-color: ${color.berlin};
+    font-family: Tahoma;
+    font-size: ${typography.sizeStep['1']};
+  }
+`;
 
-const NavigationMenu = (navigationItems) => {
-  const { navigation } = mockData;
+const NavigationMenu = ({ data }) => {
+  const { navigation } = data;
   return (
     <amp-sidebar id="sidebar" layout="nodisplay" side="right">
       <IconButton
         onProps="tap:sidebar.close"
         icon="closeIconKiev"
         customStyles={{
-          margin: '0.5em',
+          margin: '1em',
         }}
       />
-      <List listItems={navigation.hasPart.parts} />
+      {navigation.hasPart.parts.map((itm) => (
+        <AccordionListItem item={itm} key={itm.id} />
+      ))}
     </amp-sidebar>
   );
+};
+
+NavigationMenu.propTypes = {
+  data: PropTypes.shape({}).isRequired,
 };
 
 export default NavigationMenu;

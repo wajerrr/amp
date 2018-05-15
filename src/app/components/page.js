@@ -10,6 +10,7 @@ import text from '../styles/typography';
 import color from '../styles/color';
 import NavigationMenu from './navigation-menu';
 import spacings from '../styles/spacings';
+import * as navigationData from '../../../mockNavData.json';
 
 injectFontFace();
 
@@ -39,7 +40,7 @@ const Page = ({ data }) => (
     <header className={headerClassName}>
       <Navigation />
     </header>
-    <NavigationMenu data={data.navigation} />
+    <NavigationMenu data={navigationData} />
     <main className={mainClassName}>
       <div className={mainContentClassName}>
         <Article data={data} />

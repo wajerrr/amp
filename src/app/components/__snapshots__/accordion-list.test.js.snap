@@ -1,0 +1,420 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccordionListItem should match snapshot 1`] = `
+<amp-accordion
+  id="accordion"
+>
+  <section
+    className="css-w82pwy"
+  >
+    <h4
+      className="css-19ey912"
+    >
+      test-menu-amp
+    </h4>
+    <div>
+      <amp-accordion
+        id="accordion"
+      >
+        <section
+          className="css-w82pwy"
+        >
+          <h4
+            className="css-19ey912"
+          >
+            Topics
+          </h4>
+          <div>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Latest updates
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Leaders
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Briefing
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              United States
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              The Americas
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Asia
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              China
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Middle East and Africa
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Europe
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Britain
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              International
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Business
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Finance and economics
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Science and technology
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Books and arts
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Obituary
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Special reports
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Technology Quarterly
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Debates
+            </a>
+          </div>
+        </section>
+      </amp-accordion>
+      <amp-accordion
+        id="accordion"
+      >
+        <section
+          className="css-w82pwy"
+        >
+          <h4
+            className="css-19ey912"
+          >
+            Blogs
+          </h4>
+          <div>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Bagehot’s notebook
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Buttonwood’s notebook
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Democracy in America
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Erasmus
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Free exchange
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Game theory
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Graphic detail
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Gulliver
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Kaffeeklatsch
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              Prospero
+            </a>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              The Economist explains
+            </a>
+          </div>
+        </section>
+      </amp-accordion>
+      <a
+        className="css-1xnkqks"
+        href="/"
+      >
+        Current edition
+      </a>
+      <a
+        className="css-1xnkqks"
+        href="/"
+      >
+        Audio edition
+      </a>
+      <a
+        className="css-1xnkqks"
+        href="/"
+      >
+        Economist Films
+      </a>
+      <a
+        className="css-1xnkqks"
+        href="/"
+      >
+        Economist Radio
+      </a>
+      <a
+        className="css-1xnkqks"
+        href="/"
+      >
+        The Economist apps
+      </a>
+      <amp-accordion
+        id="accordion"
+      >
+        <section
+          className="css-w82pwy"
+        >
+          <h4
+            className="css-19ey912"
+          >
+            More
+          </h4>
+          <div>
+            <amp-accordion
+              id="accordion"
+            >
+              <section
+                className="css-w82pwy"
+              >
+                <h4
+                  className="css-19ey912"
+                >
+                  Apps & Digital Editions
+                </h4>
+                <div>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    The Economist apps
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    Espresso
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    Global Business Review
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    World in Figures
+                  </a>
+                </div>
+              </section>
+            </amp-accordion>
+            <amp-accordion
+              id="accordion"
+            >
+              <section
+                className="css-w82pwy"
+              >
+                <h4
+                  className="css-19ey912"
+                >
+                  From The Economist Group
+                </h4>
+                <div>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    Events
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    Online GMAT prep
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    Online GRE prep
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    Executive Education Navigator
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    Which MBA
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    Jobs Board
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    Learning.ly
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    The Economist Store
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    The Economist Intelligence Unit
+                  </a>
+                  <a
+                    className="css-1xnkqks"
+                    href="/"
+                  >
+                    The Economist Corporate Network
+                  </a>
+                </div>
+              </section>
+            </amp-accordion>
+            <a
+              className="css-1xnkqks"
+              href="/"
+            >
+              About The Economist
+            </a>
+          </div>
+        </section>
+      </amp-accordion>
+      <a
+        className="css-1i6w9mr"
+        href="https://econ.st/2bs1gXz"
+        role="button"
+      >
+        Subscribe
+      </a>
+    </div>
+  </section>
+</amp-accordion>
+`;
+
+exports[`AccordionListItem should match snapshot with normal link 1`] = `
+<a
+  className="css-1xnkqks"
+  href="/"
+>
+  Link
+</a>
+`;
+
+exports[`AccordionListItem should match snapshot with subscribeButton 1`] = `
+<a
+  className="css-1i6w9mr"
+  href="https://econ.st/2bs1gXz"
+  role="button"
+>
+  Subscribe
+</a>
+`;
