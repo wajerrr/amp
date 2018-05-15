@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
 import Navigation from './navigation';
@@ -35,18 +35,18 @@ const headerClassName = css`
 `;
 
 const Page = ({ data }) => (
-  <React.Fragment>
+  <Fragment>
     <header className={headerClassName}>
-      <Navigation />
+      <Navigation menuContainerId="sidebar" />
     </header>
-    <NavigationMenu data={navigationData} />
+    <NavigationMenu data={navigationData} containerId="sidebar" />
     <main className={mainClassName}>
       <div className={mainContentClassName}>
         <Article data={data} />
       </div>
     </main>
     <Footer />
-  </React.Fragment>
+  </Fragment>
 );
 
 Page.propTypes = {

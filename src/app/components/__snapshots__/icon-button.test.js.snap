@@ -2,7 +2,7 @@
 
 exports[`IconButton should match snapshot 1`] = `
 <button
-  className="css-7g0he1"
+  className="css-lp4ip7"
   on="toggleMenu"
   tabIndex="0"
 />
