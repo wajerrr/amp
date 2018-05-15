@@ -2,17 +2,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { injectGlobal } from 'emotion';
-import AccordionListItem from './accordion-list';
-import IconButton from './icon-button';
 import typography from '../styles/typography';
 import color from '../styles/color';
+import IconButton from './icon-button';
+import StyledAccordionListItem from './styled-accordion-list';
+import spacings from '../styles/spacings';
+import fontFamily from '../styles/font-family';
 
 injectGlobal`
   #sidebar {
     width: 100%;
     background-color: ${color.berlin};
-    font-family: Tahoma;
-    font-size: ${typography.sizeStep['1']};
+    & > * {
+      font-family: ${fontFamily.sans};
+      font-size: ${typography.sizeStep['1']};
+    }
   }
 `;
 
@@ -24,11 +28,11 @@ const NavigationMenu = ({ data }) => {
         onProps="tap:sidebar.close"
         icon="closeIconKiev"
         customStyles={{
-          margin: '1em',
+          margin: spacings.l,
         }}
       />
       {navigation.hasPart.parts.map((itm) => (
-        <AccordionListItem item={itm} key={itm.id} />
+        <StyledAccordionListItem item={itm} key={itm.id} />
       ))}
     </amp-sidebar>
   );

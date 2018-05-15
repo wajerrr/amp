@@ -14,7 +14,7 @@ const spanClassName = css`
 `;
 
 const Logo = () => (
-  <a href="/" className={logoClassName} title="The Economist">
+  <a href="//www.economist.com" className={logoClassName} title="The Economist">
     <span className={spanClassName}>The Economist</span>
   </a>
 );

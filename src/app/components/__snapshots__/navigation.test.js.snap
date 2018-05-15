@@ -6,7 +6,7 @@ exports[`Navigation should match snapshot 1`] = `
 >
   <a
     className="css-1l3b7az"
-    href="/"
+    href="//www.economist.com"
     title="The Economist"
   >
     <span

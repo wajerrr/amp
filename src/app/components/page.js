@@ -20,7 +20,6 @@ const mainClassName = css`
   line-height: ${text.lineHeight.sansOnStep['0']};
   -webkit-font-smoothing: antialiased;
 `;
-
 const mainContentClassName = css`
   padding: ${spacings.s} ${spacings.s} ${spacings.s};
   margin: 0 auto;

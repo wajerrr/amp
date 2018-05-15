@@ -1,20 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyledLinkButton from './styled-link-button';
+import spacings from '../styles/spacings';
 
-const SubscribeButton = ({ customStyles }) => (
+const sizesLarge = {
+  display: 'block',
+  margin: spacings.l,
+  fontSize: '18px',
+  width: `calc(100% - ${spacings.xxxl})`,
+  padding: spacings.s,
+  height: 'fit-content',
+  lineHeight: '1.4',
+};
+
+const SubscribeButton = ({ largeSize }) => (
   <StyledLinkButton
     buttonProps={{ text: 'Subscribe', url: 'https://econ.st/2bs1gXz' }}
-    customStyles={customStyles}
+    customStyles={largeSize ? sizesLarge : {}}
   />
 );
 
 SubscribeButton.propTypes = {
-  customStyles: PropTypes.shape({}),
+  largeSize: PropTypes.bool,
 };
 
 SubscribeButton.defaultProps = {
-  customStyles: {},
+  largeSize: false,
 };
 
 export default SubscribeButton;
