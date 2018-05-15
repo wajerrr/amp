@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import spacings from '../styles/spacings';
+import iconSizes from '../styles/icon-sizes';
 import color from '../styles/color';
 import ShareBar from './share-bar';
 
@@ -16,10 +17,10 @@ const className = css`
   .comments-link {
     background-color: ${color.kiev};
     box-sizing: border-box;
-    width: 31px;
-    height: 31px;
+    width: ${iconSizes.normal}px;
+    height: ${iconSizes.normal}px;
     border-radius: 9999999px;
-    fill: #fff;
+    fill: ${color.thimphu};
     background-image: none;
     margin: 0 ${spacings.l} 0 0;
   }
