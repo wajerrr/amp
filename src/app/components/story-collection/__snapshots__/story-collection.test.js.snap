@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StoryCollection should match snapshot 1`] = `
+<ul
+  className="css-10hlgy7"
+>
+  <li
+    className=""
+  >
+    <a
+      href="https://www.economist.com/the-economist-explains/2018/05/15/who-has-the-right-to-judge-americans"
+    >
+      <amp-img
+        alt="About us"
+        height={720}
+        layout="responsive"
+        src="https://www.economist.com/sites/default/files/20180512_BLP509.jpg"
+        width={1280}
+      />
+      <div
+        className="css-7t2f1j"
+      >
+        <h3
+          className="css-1sct6h1 "
+        >
+          <span
+            className="headline css-1ybi9wi css-h5miqb"
+          >
+            Who has the right to judge Americans?
+          </span>
+        </h3>
+        <p
+          className="css-1ax9xgc"
+        >
+          A minor fraud case provokes a Supreme Court challenge to the expanding power of administrative agencies in government
+        </p>
+      </div>
+    </a>
+    <a
+      className="css-1uvd0mj css-144i3ol"
+      href="https://www.economist.com/help/about-us"
+    >
+      About us
+      <span
+        className={undefined}
+      >
+        <svg
+          version="1.1"
+          viewBox="0 0 48 48"
+          x="0px"
+          xmlSpace="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          y="0px"
+        >
+          <polygon
+            points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+          />
+        </svg>
+      </span>
+    </a>
+  </li>
+  <li
+    className="css-1a3eakn"
+  >
+    <a
+      className="css-ov1ktg"
+      href="https://www.economist.com/middle-east-and-africa/2018/05/14/protests-on-gazas-border-with-israel-turn-deadly"
+    >
+      <div
+        className="css-1hygdxi"
+      >
+        <amp-img
+          alt="About us"
+          height={720}
+          layout="responsive"
+          src="https://www.economist.com/sites/default/files/images/2018/05/articles/main/20180519_map501.jpg"
+          width={1280}
+        />
+      </div>
+      <div
+        className="css-1xjhn87"
+      >
+        <h3
+          className="css-1sct6h1 "
+        >
+          <span
+            className="headline css-1ybi9wi css-i5dc08"
+          >
+            Protests on Gaza’s border with Israel turn deadly
+          </span>
+        </h3>
+      </div>
+    </a>
+    <a
+      className="css-1uvd0mj css-1io3inc"
+      href="https://www.economist.com/help/about-us"
+    >
+      About us
+      <span
+        className={undefined}
+      >
+        <svg
+          version="1.1"
+          viewBox="0 0 48 48"
+          x="0px"
+          xmlSpace="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          y="0px"
+        >
+          <polygon
+            points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+          />
+        </svg>
+      </span>
+    </a>
+  </li>
+  <li
+    className="css-1a3eakn"
+  >
+    <a
+      className="css-ov1ktg"
+      href="https://www.economist.com/finance-and-economics/2018/05/12/lessons-to-a-columnists-previous-self"
+    >
+      <div
+        className="css-1hygdxi"
+      >
+        <amp-img
+          alt="About us"
+          height={720}
+          layout="responsive"
+          src="https://www.economist.com/sites/default/files/images/articles/20180512_FND001.jpg"
+          width={1280}
+        />
+      </div>
+      <div
+        className="css-1xjhn87"
+      >
+        <h3
+          className="css-1sct6h1 "
+        >
+          <span
+            className="headline css-1ybi9wi css-i5dc08"
+          >
+            Lessons to a columnist’s previous self
+          </span>
+        </h3>
+      </div>
+    </a>
+    <a
+      className="css-1uvd0mj css-1io3inc"
+      href="https://www.economist.com/help/about-us"
+    >
+      About us
+      <span
+        className={undefined}
+      >
+        <svg
+          version="1.1"
+          viewBox="0 0 48 48"
+          x="0px"
+          xmlSpace="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          y="0px"
+        >
+          <polygon
+            points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+          />
+        </svg>
+      </span>
+    </a>
+  </li>
+</ul>
+`;

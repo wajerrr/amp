@@ -42,6 +42,7 @@ const getGraphqlData = async (ref) => {
             id
             hasPart {
               parts {
+                id
                 channel {
                   headline
                   url {
@@ -57,6 +58,8 @@ const getGraphqlData = async (ref) => {
                 }
                 image{
                   main {
+                    width
+                    height
                     url {
                       canonical
                     }

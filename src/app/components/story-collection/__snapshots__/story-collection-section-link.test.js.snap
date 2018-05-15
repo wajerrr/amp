@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionLink should match snapshot with className 1`] = `
+<a
+  className="css-1uvd0mj class"
+  href="/"
+>
+  link
+  <span
+    className={undefined}
+  >
+    <svg
+      version="1.1"
+      viewBox="0 0 48 48"
+      x="0px"
+      xmlSpace="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      y="0px"
+    >
+      <polygon
+        points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+      />
+    </svg>
+  </span>
+</a>
+`;
+
+exports[`SectionLink should match snapshot without className 1`] = `
+<a
+  className="css-1uvd0mj "
+  href="/"
+>
+  link
+  <span
+    className={undefined}
+  >
+    <svg
+      version="1.1"
+      viewBox="0 0 48 48"
+      x="0px"
+      xmlSpace="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      y="0px"
+    >
+      <polygon
+        points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+      />
+    </svg>
+  </span>
+</a>
+`;
