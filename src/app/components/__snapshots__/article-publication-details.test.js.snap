@@ -2,22 +2,36 @@
 
 exports[`ArticlePublicationDetails should match snapshot with byline 1`] = `
 <div
-  className="css-kyrcig"
+  className=""
 >
-  <time>
-    May 8th 2018, 19:24
-  </time>
-   | by me
+  <h3>
+    
+  </h3>
+  <div
+    className="date-author"
+  >
+    <time>
+      May 8th 2018
+    </time>
+     | by me
+  </div>
 </div>
 `;
 
 exports[`ArticlePublicationDetails should match snapshot without byline 1`] = `
 <div
-  className="css-kyrcig"
+  className=""
 >
-  <time>
-    May 8th 2018, 19:24
-  </time>
-  
+  <h3>
+    
+  </h3>
+  <div
+    className="date-author"
+  >
+    <time>
+      May 8th 2018
+    </time>
+    
+  </div>
 </div>
 `;

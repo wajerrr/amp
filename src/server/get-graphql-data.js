@@ -36,13 +36,20 @@ const getGraphqlData = async (ref) => {
         {
           canonical(ref: "${ref}") {
             ...C
+            print {
+              section {
+                ...C
+              }
+            }
+            publication {
+              ...C
+            }
           }
         }
         
         fragment C on Content {
           id
           tegID
-          tegType
           type
           url {
             canonical
