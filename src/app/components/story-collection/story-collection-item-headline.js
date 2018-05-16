@@ -9,7 +9,6 @@ import spacings from '../../styles/spacings';
 const baseSubHeadline = css`
   overflow: hidden;
   display: block;
-  font-weight: normal;
   margin: ${spacings.none} ${spacings.none} ${spacings.xs};
   color: ${color.economist};
   font-family: ${fontFamily.sans};

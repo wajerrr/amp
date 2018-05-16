@@ -28,9 +28,29 @@ const StoryCollection = ({ data }) => (
     {data.hasPart.parts.map(
       (el, index) =>
         index === 0 ? (
-          <StoryCollectionHeroItem key={el.id} data={el} />
+          <StoryCollectionHeroItem
+            headline={el.headline}
+            url={el.url.canonical}
+            image={el.image.main}
+            subheadline={el.subheadline}
+            channelUrl={el.channel.url.canonical}
+            channelHeadline={el.channel.headline}
+            description={el.description}
+            key={el.id}
+            data={el}
+          />
         ) : (
-          <StoryCollectionItem className={item} key={el.id} data={el} />
+          <StoryCollectionItem
+            headline={el.headline}
+            url={el.url.canonical}
+            image={el.image.main}
+            subheadline={el.subheadline}
+            channelUrl={el.channel.url.canonical}
+            channelHeadline={el.channel.headline}
+            className={item}
+            key={el.id}
+            data={el}
+          />
         )
     )}
   </ul>

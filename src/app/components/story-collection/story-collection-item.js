@@ -12,7 +12,7 @@ const textContainer = css`
   width: 50%;
 `;
 
-const headline = css`
+const headlineStyle = css`
   font-size: ${text.sizeStep['0']};
   font-weight: 500;
   letter-spacing: ${text.lineHeight.letterSpacing.serifOnStep['0']};
@@ -43,30 +43,38 @@ const link = css`
   display: flex;
 `;
 
-const StoryCollectionItem = ({ data, className }) => (
+const StoryCollectionItem = ({
+  headline,
+  url,
+  image,
+  subheadline,
+  channelUrl,
+  channelHeadline,
+  className,
+}) => (
   <li className={className}>
-    <a className={link} href={data.url.canonical}>
+    <a className={link} href={url}>
       <div className={imgContainer}>
         <amp-img
-          alt={data.channel.headline}
-          width={data.image.main.width || '1280'}
-          height={data.image.main.height || '720'}
+          alt={channelHeadline}
+          width={image.width}
+          height={image.height}
           layout="responsive"
-          src={data.image.main.url.canonical}
+          src={image.url.canonical}
         />
       </div>
       <div className={textContainer}>
         <ItemHeadline
           subHeadlineClassName={subHeadline}
-          headlineClassName={headline}
-          subheadline={data.subheadline}
+          headlineClassName={headlineStyle}
+          subheadline={subheadline}
         >
-          {data.headline}
+          {headline}
         </ItemHeadline>
       </div>
     </a>
-    <SectionLink className={sectionLink} href={data.channel.url.canonical}>
-      {data.channel.headline}
+    <SectionLink className={sectionLink} href={channelUrl}>
+      {channelHeadline}
     </SectionLink>
   </li>
 );
@@ -75,7 +83,18 @@ StoryCollectionItem.defaultProps = { className: '' };
 
 StoryCollectionItem.propTypes = {
   className: PropTypes.string,
-  data: PropTypes.shape({}).isRequired,
+  headline: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    url: PropTypes.shape({
+      canonical: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
+  subheadline: PropTypes.string.isRequired,
+  channelUrl: PropTypes.string.isRequired,
+  channelHeadline: PropTypes.string.isRequired,
 };
 
 export default StoryCollectionItem;
