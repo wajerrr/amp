@@ -52,6 +52,7 @@ const getGraphqlData = async (ref) => {
           type
           url {
             canonical
+            comment
           }
           headline
           subheadline

@@ -2,7 +2,7 @@
 
 exports[`ArticleDescription should match snapshot 1`] = `
 <p
-  className="css-1llzso0"
+  className="css-16ihmkx"
 >
   description
 </p>

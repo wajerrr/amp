@@ -4,7 +4,7 @@ import { css } from 'emotion';
 import spacings from '../styles/spacings';
 
 const mainImageContClassName = css`
-  margin-bottom: ${spacings.l};
+  margin-bottom: ${spacings.xl};
 `;
 
 const mainImageNoSizeContClassName = css`
