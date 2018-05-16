@@ -10,22 +10,22 @@ const baseSubHeadline = css`
   overflow: hidden;
   display: block;
   font-weight: normal;
-  margin: 0 0 ${spacings.xs} 0;
+  margin: ${spacings.none} ${spacings.none} ${spacings.xs};
   color: ${color.economist};
   font-family: ${fontFamily.sans};
 `;
 
 const baseHeadline = css`
   display: block;
-  margin: 0 0 ${spacings.m} 0;
+  margin: ${spacings.none} ${spacings.none} ${spacings.m};
   color: ${color.beijing};
   font-family: ${fontFamily.serif};
-  margin-bottom: 0;
+  margin-bottom: ${spacings.none};
 `;
 
 const header = css`
-  margin: 0;
-  padding: 0;
+  margin: ${spacings.none};
+  padding: ${spacings.none};
 `;
 
 const ItemHeadline = ({

@@ -26,7 +26,7 @@ exports[`StoryCollectionItem should match snapshot with className 1`] = `
         className="css-1sct6h1 "
       >
         <span
-          className="headline css-1ybi9wi css-i5dc08"
+          className="headline css-odjosd css-i5dc08"
         >
           Who has the right to judge Americans?
         </span>
@@ -84,7 +84,7 @@ exports[`StoryCollectionItem should match snapshot without className 1`] = `
         className="css-1sct6h1 "
       >
         <span
-          className="headline css-1ybi9wi css-i5dc08"
+          className="headline css-odjosd css-i5dc08"
         >
           Who has the right to judge Americans?
         </span>

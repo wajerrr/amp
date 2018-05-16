@@ -10,8 +10,8 @@ import color from '../../styles/color';
 import fontFamily from '../../styles/font-family';
 
 const description = css`
-  margin: 0;
-  padding: 0;
+  margin: ${spacings.none};
+  padding: ${spacings.none};
   font-style: italic;
   font-weight: 300;
   padding-top: ${spacings.s};
@@ -23,7 +23,7 @@ const description = css`
 `;
 
 const sectionLink = css`
-  padding: 0 ${spacings.m} ${spacings.m};
+  padding: ${spacings.none} ${spacings.m} ${spacings.m};
 `;
 
 const heroItemTextContainer = css`

@@ -24,7 +24,7 @@ exports[`StoryCollection should match snapshot 1`] = `
           className="css-1sct6h1 "
         >
           <span
-            className="headline css-1ybi9wi css-h5miqb"
+            className="headline css-odjosd css-h5miqb"
           >
             Who has the right to judge Americans?
           </span>
@@ -84,7 +84,7 @@ exports[`StoryCollection should match snapshot 1`] = `
           className="css-1sct6h1 "
         >
           <span
-            className="headline css-1ybi9wi css-i5dc08"
+            className="headline css-odjosd css-i5dc08"
           >
             Protests on Gaza’s border with Israel turn deadly
           </span>
@@ -139,7 +139,7 @@ exports[`StoryCollection should match snapshot 1`] = `
           className="css-1sct6h1 "
         >
           <span
-            className="headline css-1ybi9wi css-i5dc08"
+            className="headline css-odjosd css-i5dc08"
           >
             Lessons to a columnist’s previous self
           </span>

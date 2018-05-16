@@ -7,8 +7,8 @@ import spacings from '../../styles/spacings';
 import color from '../../styles/color';
 
 const storyCollection = css`
-  margin: 0;
-  padding: 0;
+  margin: ${spacings.none};
+  padding: ${spacings.none};
   list-style-type: none;
   a {
     text-decoration: none;
