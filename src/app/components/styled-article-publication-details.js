@@ -41,8 +41,8 @@ const dateAuthorSectionClassName = css`
     content: '';
     display: inline-block;
     vertical-align: sub;
-    width: 1em;
-    height: 1em;
+    width: ${spacings.l};
+    height: ${spacings.l};
     background: url('data:image/svg+xml;data:text/plain;charset=utf-8,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0D%0A%09%20viewBox%3D%220%200%2048%2048%22%20style%3D%22enable-background%3Anew%200%200%2048%2048%3B%22%20xml%3Aspace%3D%22preserve%22%20fill%3D%22%23383E42%22%3E%0D%0A%20%20%20%3Cpolygon%20points%3D%2217.6%2C14.8%2020.4%2C12%2032.4%2C24%2020.4%2C36%2017.6%2C33.2%2026.7%2C24%20%09%22%2F%3E%0D%0A%3C%2Fsvg%3E');
     background-repeat: no-repeat;
     fill: ${color.london};

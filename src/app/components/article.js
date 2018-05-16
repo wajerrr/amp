@@ -58,15 +58,15 @@ const Article = ({
     <StyledArticlePublicationDetails
       datePublished={datePublished}
       byline={byline}
-      print={print}
-      publication={publication}
+      printSection={print && print.section}
+      publication={publication && publication[0]}
     />
     <div className={textContClassName}>{buildComponents(text)}</div>
     <StyledArticlePublicationDetails
       datePublished={datePublished}
       byline={byline}
-      print={print}
-      publication={publication}
+      printSection={print && print.section}
+      publication={publication && publication[0]}
     />
   </article>
 );

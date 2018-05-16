@@ -4,9 +4,6 @@ exports[`ArticlePublicationDetails should match snapshot with byline 1`] = `
 <div
   className=""
 >
-  <h3>
-    
-  </h3>
   <div
     className="date-author"
   >
@@ -22,9 +19,6 @@ exports[`ArticlePublicationDetails should match snapshot without byline 1`] = `
 <div
   className=""
 >
-  <h3>
-    
-  </h3>
   <div
     className="date-author"
   >

@@ -4,32 +4,41 @@ import IconPrintEdition from '@economist/component-icon/lib/inline-icons/print-e
 import formatDate from '../lib/date-time';
 import StyledTime from './styled-time';
 
-const Section = ({ print, publication }) => {
-  if (print && print.section) {
-    return (
-      <a href={print.section.url.canonical}>
-        <IconPrintEdition className="icon-print-edition" />
-        {`Print version | ${print.section.headline}`}
-      </a>
-    );
-  }
-  if (publication && publication[0]) {
-    return <a href={publication[0].url.canonical}>{publication[0].headline}</a>;
-  }
-  return '';
+const Section = ({ printSection, publication }) =>
+  printSection ? (
+    <a href={printSection.url.canonical}>
+      <IconPrintEdition className="icon-print-edition" />
+      {`Print version | ${printSection.headline}`}
+    </a>
+  ) : (
+    publication && (
+      <a href={publication.url.canonical}>{publication.headline}</a>
+    )
+  );
+
+Section.propTypes = {
+  printSection: PropTypes.shape({}),
+  publication: PropTypes.shape({}),
+};
+
+Section.defaultProps = {
+  printSection: null,
+  publication: null,
 };
 
 const ArticlePublicationDetails = ({
   datePublished,
   byline = '',
-  print,
+  printSection,
   publication,
   className,
 }) => (
   <div className={className}>
-    <h3>
-      <Section print={print} publication={publication} />
-    </h3>
+    {(printSection || publication) && (
+      <h3>
+        <Section printSection={printSection} publication={publication} />
+      </h3>
+    )}
     <div className="date-author">
       <StyledTime time={formatDate(new Date(datePublished))} />
       {byline && ` | by ${byline}`}
@@ -40,7 +49,7 @@ const ArticlePublicationDetails = ({
 ArticlePublicationDetails.propTypes = {
   datePublished: PropTypes.string.isRequired,
   byline: PropTypes.string,
-  print: PropTypes.shape({}),
+  printSection: PropTypes.shape({}),
   publication: PropTypes.shape({}),
   className: PropTypes.string,
 };
@@ -48,7 +57,7 @@ ArticlePublicationDetails.propTypes = {
 ArticlePublicationDetails.defaultProps = {
   byline: '',
   className: '',
-  print: null,
+  printSection: null,
   publication: null,
 };
 

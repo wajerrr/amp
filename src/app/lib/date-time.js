@@ -1,4 +1,6 @@
 export default function formatDate(date) {
+  if (date instanceof Date !== true || date.toString() === 'Invalid Date')
+    return '';
   function addPostFix(day) {
     const daystr = day.toString();
     const lastChar = daystr.charAt(daystr.length - 1);
