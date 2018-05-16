@@ -1,17 +1,17 @@
 import Hapi from 'hapi';
-import getGraphqlData from './get-graphql-data';
+import config from './config';
+import healthcheck from './handlers/healthcheck';
 
-const config = {
-  host: process.env.NODE_ENV === 'development' ? 'localhost' : '0.0.0.0',
-  port: 8000,
+const serverConfig = {
+  port: config.httpPort,
+  host: config.host,
 };
 
-const server = Hapi.server(config);
+const server = Hapi.server(serverConfig);
 
-const generateRefUrl = (pathname) =>
-  `https://www.economist.com/${pathname ||
-    'news/world-week/21741222-politics-week'}`;
+server.route(require('./handlers/amp-page-render').default);
 
+<<<<<<< HEAD
 server.route({
   method: 'GET',
   path: '/{pathname*}',
@@ -38,6 +38,9 @@ server.route({
     }
   },
 });
+=======
+server.route(healthcheck);
+>>>>>>> added healthcheck handler
 
 async function start() {
   try {
