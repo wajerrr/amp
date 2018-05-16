@@ -7,6 +7,7 @@ import ArticleDescription from './article-description';
 import ArticleMainImage from './article-main-image';
 import ArticlePublicationDetails from './article-publication-details';
 import buildComponents from './article-text-builder';
+import StyledShareBar from './styled-share-bar';
 import spacings from '../styles/spacings';
 import fontFamily from '../styles/font-family';
 import typography from '../styles/typography';
@@ -33,6 +34,7 @@ const textContClassName = css`
 const Article = ({
   data: {
     canonical: {
+      url,
       subheadline,
       headline,
       description,
@@ -55,6 +57,7 @@ const Article = ({
         />
       )}
     <ArticlePublicationDetails datePublished={datePublished} byline={byline} />
+    <StyledShareBar commentsUri={url.comment} />
     <div className={textContClassName}>{buildComponents(text)}</div>
     <ArticlePublicationDetails datePublished={datePublished} byline={byline} />
   </article>

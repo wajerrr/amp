@@ -2,7 +2,7 @@
 
 exports[`ArticleMainImage should match snapshot 1`] = `
 <div
-  className="css-rh72n6"
+  className="css-1b6r2g5"
 >
   <amp-img
     height={100}

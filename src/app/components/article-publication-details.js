@@ -10,8 +10,8 @@ import text from '../styles/typography';
 const dateAuthorSectionClassName = css`
   width: 100%;
   color: ${color.moscow};
-  padding: ${spacings.xs} 0;
-  margin: ${spacings.s} 0;
+  padding: ${spacings.s} 0;
+  margin: 0;
   border-width: 1px 0 1px 0;
   border-style: solid;
   border-color: ${color.cardiff};
