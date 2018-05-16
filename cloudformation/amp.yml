@@ -1,0 +1,271 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Cloudformation template for fe-blogs Docker container environment
+Mappings:
+  envMap:
+    '680545668187':
+      environment: stage
+      vpc: vpc-d375eab6
+      shortCode: s
+      elbSubnets: subnet-25a4630e,subnet-33da6144
+      ec2Subnets: subnet-35da6142,subnet-39a46312
+      instancesMin: '1'
+      instancesMax: '3'
+      keyName: suse1
+      graphQlEndpoint: http://mt-content.s.aws.economist.com
+    '496098006106':
+      environment: prod
+      vpc: vpc-0173ec64
+      shortCode: p
+      elbSubnets: subnet-e2a562c9,subnet-bf17d8e7,subnet-8adb60fd
+      ec2Subnets: subnet-be17d8e6,subnet-89db60fe,subnet-e7a562cc
+      instancesMin: '6'
+      instancesMax: '20'
+      keyName: puse1
+      graphQlEndpoint: https://www.economist.com/graphql
+
+  amiMap:
+    'us-east-1':
+      amiId: ami-fe5d56e9
+      solutionStack: 64bit Amazon Linux 2017.09 v2.8.2 running Multi-container Docker 17.06.2-ce (Generic)
+
+Parameters:
+  InstanceTypeParameter:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+    - t2.micro
+    - t2.small
+    - t2.medium
+    - c4.xlarge
+    - c5.large
+    Description: Enter t2.micro, t2.small, t2.medium. Default is t2.micro. ( c5.large - prod )
+  ApplicationName:
+    Description: e.g. fe-blogs.  Name will be prefixed with suse1-ecom
+    Type: String
+    Default: ''
+
+Resources:
+  AWSElasticBeanstalkServiceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: elasticbeanstalk.amazonaws.com
+          Action:
+          - sts:AssumeRole
+          Condition:
+            StringEquals:
+              sts:ExternalId: elasticbeanstalk
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkEnhancedHealth
+      - arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkService
+
+  AWSElasticBeanstalkInstanceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - ec2.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: /
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/AWSElasticBeanstalkWebTier
+      - arn:aws:iam::aws:policy/AWSElasticBeanstalkMulticontainerDocker
+      Policies:
+      - PolicyName: BeanstalkECRAccess
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - ecr:GetAuthorizationToken
+            - ecr:BatchCheckLayerAvailability
+            - ecr:GetDownloadUrlForLayer
+            - ecr:GetRepositoryPolicy
+            - ecr:DescribeRepositories
+            - ecr:ListImages
+            - ecr:BatchGetImage
+            Resource: '*'
+      - PolicyName: AllowS3Buckets
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action: s3:*
+            Resource:
+            - arn:aws:s3:::cfn-beanstalk-application-*
+            - arn:aws:s3:::cfn-beanstalk-application-*/*
+      - PolicyName: AllowCloudwatch
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action: 
+            - cloudwatch:PutMetricData
+            - ec2:DescribeTags
+            Resource: "*"
+
+  BeanstalkInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Path: /
+      Roles:
+      - Ref: AWSElasticBeanstalkInstanceRole
+
+  EBApplication:
+    Type: AWS::ElasticBeanstalk::Application
+    Properties:
+      Description:
+        Ref: ApplicationName
+      ApplicationName:
+        Fn::Join:
+        - ''
+        - - !FindInMap [ envMap, !Ref "AWS::AccountId", shortCode ]
+          - use1-ecom-
+          - Ref: ApplicationName
+      ApplicationVersions:
+      - VersionLabel: initial-app
+        Description: Sample Application
+        SourceBundle:           
+          S3Bucket: cfn-beanstalk-application-economist
+          S3Key: eb-econ-docker-multi-container-v2.zip
+
+  EBEnvironment:
+    Type: AWS::ElasticBeanstalk::Environment
+    Properties:
+      SolutionStackName: !FindInMap [ amiMap, !Ref "AWS::Region", solutionStack ]
+      ApplicationName: !Ref EBApplication
+      EnvironmentName:
+        Fn::Join:
+        - ''
+        - - !FindInMap [ envMap, !Ref "AWS::AccountId", shortCode ]
+          - use1-ecom-
+          - Ref: ApplicationName
+      VersionLabel: initial-app
+      OptionSettings:
+
+      - Namespace: aws:autoscaling:launchconfiguration
+        OptionName: EC2KeyName
+        Value: !FindInMap [ envMap, !Ref "AWS::AccountId", keyName ]
+      - Namespace: aws:autoscaling:launchconfiguration
+        OptionName: InstanceType
+        Value: !Ref InstanceTypeParameter
+      - Namespace: aws:autoscaling:launchconfiguration
+        OptionName: IamInstanceProfile
+        Value: !Ref BeanstalkInstanceProfile
+      - Namespace: aws:autoscaling:launchconfiguration
+        OptionName: ImageId
+        Value: !FindInMap [ amiMap, !Ref "AWS::Region", amiId ]
+      - Namespace: aws:elasticbeanstalk:environment
+        OptionName: ServiceRole
+        Value: !Ref AWSElasticBeanstalkServiceRole
+      - Namespace: aws:autoscaling:asg
+        OptionName: MinSize
+        Value: !FindInMap [ envMap, !Ref "AWS::AccountId", instancesMin ]
+      - Namespace: aws:autoscaling:asg
+        OptionName: MaxSize
+        Value: !FindInMap [ envMap, !Ref "AWS::AccountId", instancesMax ]
+      - Namespace: aws:autoscaling:asg
+        OptionName: Availability Zones
+        Value: 'Any'
+      - Namespace: aws:elasticbeanstalk:environment
+        OptionName: EnvironmentType
+        Value: LoadBalanced
+      - Namespace: aws:elasticbeanstalk:environment
+        OptionName: LoadBalancerType
+        Value: application
+      - Namespace: aws:elasticbeanstalk:environment:process:default
+        OptionName: Protocol
+        Value: HTTP
+      - Namespace: aws:ec2:vpc
+        OptionName: Subnets
+        Value: !FindInMap [ envMap, !Ref "AWS::AccountId", ec2Subnets ]
+      - Namespace: aws:ec2:vpc
+        OptionName: ELBSubnets
+        Value: !FindInMap [ envMap, !Ref "AWS::AccountId", elbSubnets ]
+      - Namespace: aws:ec2:vpc
+        OptionName: ELBScheme
+        Value: internet-facing
+      - Namespace: aws:autoscaling:launchconfiguration
+        OptionName: IamInstanceProfile
+        Value: !Ref BeanstalkInstanceProfile
+      - Namespace: aws:ec2:vpc
+        OptionName: VPCId
+        Value: !FindInMap [ envMap, !Ref "AWS::AccountId", vpc ]
+      - Namespace: aws:elasticbeanstalk:sns:topics
+        OptionName: Notification Endpoint
+        Value: infrateam@economist.com
+      - Namespace: aws:elasticbeanstalk:healthreporting:system
+        OptionName: SystemType
+        Value: Enhanced
+      - Namespace: aws:elasticbeanstalk:healthreporting:system
+        OptionName: HealthCheckSuccessThreshold
+        Value: Ok
+      - Namespace: aws:elasticbeanstalk:monitoring
+        OptionName: "Automatically Terminate Unhealthy Instances"
+        Value: true
+      - Namespace: aws:elasticbeanstalk:command
+        OptionName: BatchSize
+        Value: '30'
+      - Namespace: aws:elasticbeanstalk:command
+        OptionName: DeploymentPolicy
+        Value: RollingWithAdditionalBatch
+      - Namespace: aws:autoscaling:updatepolicy:rollingupdate
+        OptionName: RollingUpdateEnabled
+        Value: true
+      - Namespace: aws:autoscaling:updatepolicy:rollingupdate
+        OptionName: RollingUpdateType
+        Value: Health
+      - Namespace: aws:autoscaling:updatepolicy:rollingupdate
+        OptionName: PauseTime
+        Value: PT60S
+      - Namespace: aws:autoscaling:updatepolicy:rollingupdate
+        OptionName: Timeout
+        Value: PT30M
+      - Namespace: aws:autoscaling:updatepolicy:rollingupdate
+        OptionName: MinInstancesInService
+        Value: !FindInMap [ envMap, !Ref "AWS::AccountId", instancesMin ]
+      - Namespace: aws:autoscaling:trigger
+        OptionName: UpperThreshold
+        Value: 30
+      - Namespace: aws:autoscaling:trigger
+        OptionName: UpperBreachScaleIncrement
+        Value: 1
+      - Namespace: aws:autoscaling:trigger
+        OptionName: Unit
+        Value: Percent
+      - Namespace: aws:autoscaling:trigger
+        OptionName: Statistic
+        Value: Average
+      - Namespace: aws:autoscaling:trigger
+        OptionName: Period
+        Value: 5
+      - Namespace: aws:autoscaling:trigger
+        OptionName: MeasureName
+        Value: CPUUtilization
+      - Namespace: aws:autoscaling:trigger
+        OptionName: LowerThreshold
+        Value: 25
+      - Namespace: aws:autoscaling:trigger
+        OptionName: LowerBreachScaleIncrement
+        Value: -1
+      - Namespace: aws:autoscaling:trigger
+        OptionName: EvaluationPeriods
+        Value: 2
+      - Namespace: aws:autoscaling:trigger
+        OptionName: BreachDuration
+        Value: 10
+      - Namespace: aws:elasticbeanstalk:application:environment
+        OptionName: GRAPHWL_ENDPOINT 
+        Value: !FindInMap [ envMap, !Ref "AWS::AccountId", graphQlEndpoint ]
+      - Namespace: aws:elasticbeanstalk:application:environment
+        OptionName: NODE_ENV
+        Value: production
