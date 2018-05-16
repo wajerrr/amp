@@ -60,10 +60,7 @@ buildEbApplicationZip(){
 buildImage() {
   sed "s/BUILD_TAG/${BUILD_TAG}/g; s/ECR/${DOCKER_HUB_ACCOUNT}/g; s/SERVICE_NAME/${SERVICE_NAME}/g;" < Dockerrun.aws.json.template > Dockerrun.aws.json
   git log -1 --oneline > last_commit.txt || true
-  HOST_IP=$(ip route get 1 | awk '{print $NF;exit}')
-  NPM_REGISTRY="http://${HOST_IP}:4873"
-  curl --max-time 5 ${NPM_REGISTRY} 2>&1 > /dev/null && OPTIONAL_SINOPIA="--build-arg npm_registry=${NPM_REGISTRY}" || OPTIONAL_SINOPIA=""
-  docker build ${OPTIONAL_SINOPIA} --build-arg "BUILD_NUMBER=${BUILD_NUMBER}" --pull=true --tag ${DOCKER_HUB_ACCOUNT}/${SERVICE_NAME}:${BUILD_TAG} .
+  docker build --pull=true --tag ${DOCKER_HUB_ACCOUNT}/${SERVICE_NAME}:${BUILD_TAG} .
 }
 
 buildAcceptanceTestImage() {
