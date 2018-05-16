@@ -1,0 +1,82 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    { 
+       "name": "nginx",
+       "host": {
+        "sourcePath": "/var/app/current/nginx"
+       }
+    },
+    {
+      "name": "logs",
+      "host": {
+          "sourcePath": "/var/log/nginx"
+       }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "c1-amp",
+      "image": "ECR/SERVICE_NAME:BUILD_TAG",
+      "memory": 1024,
+      "portMappings": [
+         {
+            "hostPort": 81,
+            "containerPort": 8000
+         }
+      ]
+    },
+    {
+      "name": "c2-amp",
+      "image": "ECR/SERVICE_NAME:BUILD_TAG",
+      "memory": 1024,
+      "portMappings": [
+         {
+            "hostPort": 82,
+            "containerPort": 8000
+         }
+      ]
+    },
+    {
+      "name": "c3-amp",
+      "image": "ECR/SERVICE_NAME:BUILD_TAG",
+      "memory": 1024,
+      "portMappings": [
+         {
+            "hostPort": 83,
+            "containerPort": 8000
+         }
+      ]
+    },
+    {
+      "name": "nginx",
+      "image": "680545668187.dkr.ecr.us-east-1.amazonaws.com/sandwitch:latest",
+      "memoryReservation": 64,
+      "essential": "true",
+      "links": ["c1-amp", "c2-amp", "c3-amp"],
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "environment": [
+        {
+                "name": "SKIP_VARNISH_INITIALIZATION",
+                "value": true
+        }
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "nginx",
+          "containerPath": "/usr/local/openresty/nginx/templates",
+          "readOnly": true
+        },
+        {
+          "sourceVolume": "logs",
+          "containerPath": "/usr/local/openresty/nginx/logs"
+        }
+      ]
+    }
+  ]
+}
