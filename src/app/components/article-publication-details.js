@@ -1,39 +1,64 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'emotion';
+import IconPrintEdition from '@economist/component-icon/lib/inline-icons/print-edition';
 import formatDate from '../lib/date-time';
-import spacings from '../styles/spacings';
-import color from '../styles/color';
 import StyledTime from './styled-time';
-import text from '../styles/typography';
 
-const dateAuthorSectionClassName = css`
-  width: 100%;
-  color: ${color.moscow};
-  padding: ${spacings.s} 0;
-  margin: 0;
-  border-width: 1px 0 1px 0;
-  border-style: solid;
-  border-color: ${color.cardiff};
-  font-size: ${text.sizeStep['-3']};
-  line-height: ${text.lineHeight.sansOnStep['-3']};
-  letter-spacing: ${text.lineHeight.letterSpacing.sansOnStep['-3']};
-`;
+const Section = ({ printSection, publication }) =>
+  printSection ? (
+    <a href={printSection.url.canonical}>
+      <IconPrintEdition className="icon-print-edition" />
+      {`Print version | ${printSection.headline}`}
+    </a>
+  ) : (
+    publication && (
+      <a href={publication.url.canonical}>{publication.headline}</a>
+    )
+  );
 
-const ArticlePublicationDetails = ({ datePublished, byline = '' }) => (
-  <div className={dateAuthorSectionClassName}>
-    <StyledTime time={formatDate(new Date(datePublished))} />
-    {byline && ` | by ${byline}`}
+Section.propTypes = {
+  printSection: PropTypes.shape({}),
+  publication: PropTypes.shape({}),
+};
+
+Section.defaultProps = {
+  printSection: null,
+  publication: null,
+};
+
+const ArticlePublicationDetails = ({
+  datePublished,
+  byline = '',
+  printSection,
+  publication,
+  className,
+}) => (
+  <div className={className}>
+    {(printSection || publication) && (
+      <h3>
+        <Section printSection={printSection} publication={publication} />
+      </h3>
+    )}
+    <div className="date-author">
+      <StyledTime time={formatDate(new Date(datePublished))} />
+      {byline && ` | by ${byline}`}
+    </div>
   </div>
 );
 
 ArticlePublicationDetails.propTypes = {
   datePublished: PropTypes.string.isRequired,
   byline: PropTypes.string,
+  printSection: PropTypes.shape({}),
+  publication: PropTypes.shape({}),
+  className: PropTypes.string,
 };
 
 ArticlePublicationDetails.defaultProps = {
   byline: '',
+  className: '',
+  printSection: null,
+  publication: null,
 };
 
 export default ArticlePublicationDetails;
