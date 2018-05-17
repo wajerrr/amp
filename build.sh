@@ -46,11 +46,11 @@ buildEbApplicationZip(){
     cp -a Dockerrun.aws.json target/ 
     cp -a nginx target/
 
-    pushd target
+    cd target
 
     zip -r ../eb-${SERVICE_NAME}-${BUILD_TAG}.zip .
     
-    popd
+    cd ..
   else
     echo "Build not complete Dockerrun.aws.json missing"
   fi

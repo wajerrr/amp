@@ -118,6 +118,12 @@ Resources:
               - ecr:DescribeRepositories
               - ecr:ListImages
               - ecr:GetLogin
+              - ecr:BatchCheckLayerAvailability
+              - ecr:CompleteLayerUpload
+              - ecr:GetAuthorizationToken
+              - ecr:InitiateLayerUpload
+              - ecr:PutImage
+              - ecr:UploadLayerPart
             Resource: "*"
 
       - !If 
@@ -162,6 +168,10 @@ Resources:
         ComputeType: BUILD_GENERAL1_SMALL
         Type: LINUX_CONTAINER
         Image: "aws/codebuild/docker:1.12.1"
+        EnvironmentVariables:
+          - Name: SERVICE_NAME
+            Value: !Ref Repository
+            Type: PLAINTEXT
       ServiceRole: !Ref DeliveryBuildRole
       TimeoutInMinutes: 15
       Source:
