@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Footer from './footer';
-import * as footerContent from '../../../mockFooterData.json';
+import footerContent from '../../../mockFooterData.json';
 
 describe('Footer', () => {
   it('should match the snapshot', () => {
