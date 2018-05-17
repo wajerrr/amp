@@ -12,7 +12,7 @@ const rubricClassName = css`
   font-size: ${text.sizeStep['0']};
   margin: 0 0 ${spacings.m};
   font-style: italic;
-  line-height: ${text.lineHeight.serifMediumOnStep['0']};
+  line-height: 1.4;
 `;
 
 const ArticleDescription = ({ children }) => (

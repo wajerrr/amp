@@ -15,11 +15,18 @@ const generateRefUrl = (pathname) =>
 server.route({
   method: 'GET',
   path: '/{pathname*}',
-  async handler(request) {
+  async handler(request, h) {
     try {
       const ref = generateRefUrl(request.params.pathname);
 
       const res = await getGraphqlData(ref);
+
+      if (
+        process.env.NODE_ENV === 'production' &&
+        res.data.canonical.isAccessibleForFree === false
+      ) {
+        return h.redirect(res.data.canonical.url.canonical);
+      }
 
       /* eslint-disable global-require */
       const renderHtml = require('./render-html').default;

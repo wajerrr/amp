@@ -37,21 +37,64 @@ const prodNavigation = '/content/b9b22pmtme3mcv43b3neeeh4h5gjh3g8';
 const getGraphqlData = async (ref) => {
   const query = gql`
         {
-          canonical(ref: "${ref}") {
+          canonical :canonical(ref: "${ref}") {
             ...C
+            print {
+              section {
+                ...C
+              }
+            }
+            publication {
+              ...C
+            }
+          },
+          editorsPick: canonical(ref: "/content/9qe6f6cm77btf0phaepjui01ckh6rfpu") {
+            tegID
+            id
+            hasPart {
+              parts {
+                id
+                channel {
+                  headline
+                  url {
+                    canonical
+                  }
+                }
+                headline
+                subheadline
+                description
+                byline
+                url {
+                  canonical
+                }
+                image{
+                  main {
+                    width
+                    height
+                    url {
+                      canonical
+                    }
+                  }
+                }
+              }
+            }
           }
+<<<<<<< HEAD
           navigation: canonical(ref: "${prodNavigation}") {
             ...N
           }
+=======
+
+>>>>>>> master
         }
         
         fragment C on Content {
           id
           tegID
-          tegType
           type
           url {
             canonical
+            comment
           }
           headline
           subheadline
@@ -72,6 +115,7 @@ const getGraphqlData = async (ref) => {
               }
             }
           }
+<<<<<<< HEAD
         }
         fragment N on Content {
           headline
@@ -95,6 +139,10 @@ const getGraphqlData = async (ref) => {
             }
           }
         }`;
+=======
+        }    
+        `;
+>>>>>>> master
   try {
     return await client.query({
       query,

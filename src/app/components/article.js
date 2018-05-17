@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
-
 import ArticleHeadline from './article-headline';
 import ArticleDescription from './article-description';
 import ArticleMainImage from './article-main-image';
-import ArticlePublicationDetails from './article-publication-details';
+import StyledArticlePublicationDetails from './styled-article-publication-details';
 import buildComponents from './article-text-builder';
 import spacings from '../styles/spacings';
 import fontFamily from '../styles/font-family';
@@ -40,6 +39,8 @@ const Article = ({
       datePublished,
       byline,
       text,
+      print,
+      publication,
     },
   },
 }) => (
@@ -54,9 +55,19 @@ const Article = ({
           height={image.main.height}
         />
       )}
-    <ArticlePublicationDetails datePublished={datePublished} byline={byline} />
+    <StyledArticlePublicationDetails
+      datePublished={datePublished}
+      byline={byline}
+      printSection={print && print.section}
+      publication={publication && publication[0]}
+    />
     <div className={textContClassName}>{buildComponents(text)}</div>
-    <ArticlePublicationDetails datePublished={datePublished} byline={byline} />
+    <StyledArticlePublicationDetails
+      datePublished={datePublished}
+      byline={byline}
+      printSection={print && print.section}
+      publication={publication && publication[0]}
+    />
   </article>
 );
 

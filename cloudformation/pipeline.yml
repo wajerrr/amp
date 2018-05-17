@@ -1,0 +1,389 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Cloudformation template for delivery pipeline 
+
+Parameters:
+  RepositoryBranch:
+    Type: String
+    Description: git branch of the repository
+    Default: master
+
+  RepositoryOauth:
+    Type: String
+    Description: oauth token
+    NoEcho: True
+
+  Repository:
+    Type: String
+    Description: git branch of the repository
+    Default: amp
+
+
+  CrossAccountPipelineRole:
+    Type: String
+    Description: Cross account role for codepipeline ( prod deploymernt )
+    Default: arn:aws:iam::496098006106:role/CrossAccountPipeline
+
+  CrossAccountCloudformationRole:
+    Type: String
+    Description: Prod cloudformation role
+    Default: arn:aws:iam::496098006106:role/CloudFormationDeployEB
+
+  EBApplication:
+    Type: String
+    Description: Elastic Beanstalk application name
+
+  EBEnvironment:
+    Type: String
+    Description: ElasticBeanstalk environment name
+
+  NotificationTopicArn:
+    Type: String
+    Description: SNS Notification topic for prod deployment
+
+  CrossEBApplication:
+    Type: String
+    Description: Elastic Beanstalk application name
+
+  CrossEBEnvironment:
+    Type: String
+    Description: ElasticBeanstalk environment name
+
+  KmsEncryptionKey:
+    Type: String
+    Description: Kms key arn ( required by cross account deployments )
+    Default: arn:aws:kms:us-east-1:680545668187:key/91ab1d0d-d931-4b9e-96a0-106486cb8053
+
+Conditions:
+  AllowNotification:
+    !Not [ !Equals [ !Ref NotificationTopicArn , "" ]]
+
+  AllowProdDeployment:
+    !And
+     - !Not [ !Equals [ !Ref CrossAccountPipelineRole, "" ]]
+     - !Not [ !Equals [ !Ref CrossEBApplication, "" ]]
+     - !Not [ !Equals [ !Ref CrossEBEnvironment, "" ]]
+     - !Not [ !Equals [ !Ref KmsEncryptionKey, "" ]]
+ 
+Resources:
+  DeliveryBuildRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+              - codebuild.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: "/"
+      Policies:
+      - PolicyName: AllowLogs
+        PolicyDocument:
+          Statement:
+          - Effect: Allow
+            Action:
+            - logs:CreateLogStream
+            - logs:CreateLogGroup
+            - logs:PutLogEvents
+            Resource: "*"
+      - PolicyName: AllowS3
+        PolicyDocument:
+          Statement:
+          - Effect: Allow
+            Action: "s3:*"
+            Resource:
+            - Fn::Join:
+              - "-"
+              - - "arn:aws:s3:::codepipeline"
+                - !Ref AWS::Region 
+                - !Ref AWS::AccountId
+            - Fn::Join:
+              - ""
+              - - "arn:aws:s3:::codepipeline-"
+                - !Ref AWS::Region
+                - "-"
+                - !Ref AWS::AccountId
+                - "/*"
+      - PolicyName: AllowECR
+        PolicyDocument:
+          Statement:
+          - Effect: Allow
+            Action:
+              - ecr:GetDownloadUrlForLayer
+              - ecr:BatchGetImage
+              - ecr:BatchCheckLayerAvailability
+              - ecr:GetAuthorizationToken
+              - ecr:DescribeRepositories
+              - ecr:ListImages
+              - ecr:GetLogin
+              - ecr:BatchCheckLayerAvailability
+              - ecr:CompleteLayerUpload
+              - ecr:GetAuthorizationToken
+              - ecr:InitiateLayerUpload
+              - ecr:PutImage
+              - ecr:UploadLayerPart
+            Resource: "*"
+
+      - !If 
+        - AllowNotification
+        - PolicyName: AllowSNS
+          PolicyDocument:
+           Statement:
+           - Effect: Allow
+             Action:
+             - "sns:Publish"
+             Resource:
+             - !Ref NotificationTopicArn
+        - !Ref "AWS::NoValue"
+      - !If
+        - AllowProdDeployment
+        - PolicyName: AllowKMS
+          PolicyDocument:
+            Statement:
+            - Effect: Allow
+              Action:
+              - "kms:DescribeKey"
+              - "kms:GenerateDataKey*"
+              - "kms:Encrypt"
+              - "kms:ReEncrypt*"
+              - "kms:Decrypt"
+              Resource:
+              - !Ref KmsEncryptionKey
+        - !Ref "AWS::NoValue"
+  
+  DeliveryBuild:
+    Type: AWS::CodeBuild::Project
+    Properties:
+      Name: !Join [ "-", [ !Ref Repository, !Ref EBApplication , "Build" ]]
+      Artifacts:
+        Type: CODEPIPELINE
+      EncryptionKey:
+        !If 
+          - AllowProdDeployment
+          - !Ref KmsEncryptionKey
+          - !Ref "AWS::NoValue"
+      Environment:
+        ComputeType: BUILD_GENERAL1_SMALL
+        Type: LINUX_CONTAINER
+        Image: "aws/codebuild/docker:1.12.1"
+        EnvironmentVariables:
+          - Name: SERVICE_NAME
+            Value: !Ref Repository
+            Type: PLAINTEXT
+      ServiceRole: !Ref DeliveryBuildRole
+      TimeoutInMinutes: 15
+      Source:
+        Type: CODEPIPELINE
+
+  DeliveryPipelineRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+              - codepipeline.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: "/"
+      Policies:
+      - PolicyName: AllowS3
+        PolicyDocument:
+          Statement:
+          - Effect: Allow
+            Action:
+            - "s3:*"
+            Resource: 
+            - Fn::Join:
+              - "-"
+              - - "arn:aws:s3:::codepipeline"
+                - !Ref AWS::Region 
+                - !Ref AWS::AccountId
+            - Fn::Join:
+              - ""
+              - - "arn:aws:s3:::codepipeline-"
+                - !Ref AWS::Region
+                - "-"
+                - !Ref AWS::AccountId
+                - "/*"
+ 
+      - PolicyName: AllowCodebuild
+        PolicyDocument:
+          Statement:
+          - Effect: Allow
+            Action: "codebuild:*"
+            Resource: "*"
+      - PolicyName: AllowCodepipelineEBResources
+        PolicyDocument:
+          Statement:
+          - Action:
+            - s3:GetObject
+            - s3:GetObjectVersion
+            - s3:GetBucketVersioning
+            Resource: "*"
+            Effect: Allow
+          - Action:
+            - s3:PutObject
+            Resource:
+            - "arn:aws:s3:::codepipeline*"
+            - "arn:aws:s3:::elasticbeanstalk*"
+            Effect: Allow
+          - Action: 
+            - "elasticbeanstalk:*"
+            - "ec2:*"
+            - "elasticloadbalancing:*"
+            - "autoscaling:*"
+            - "cloudwatch:*"
+            - "s3:*"
+            - "sns:*"
+            - "cloudformation:*"
+            - "rds:*"
+            - "sqs:*"
+            - "ecs:*"
+            - "iam:PassRole"
+            Resource: "*"
+            Effect: "Allow"
+
+
+      - !If 
+         - AllowProdDeployment
+         - PolicyName: AllowProd
+           PolicyDocument:
+             Statement: 
+             - Effect: Allow
+               Action: "sts:AssumeRole"
+               Resource:
+               - !Ref CrossAccountPipelineRole
+         - !Ref "AWS::NoValue"
+      - !If 
+         - AllowProdDeployment
+         - PolicyName: AllowKMS
+           PolicyDocument:
+             Statement: 
+             - Effect: Allow
+               Action: 
+               - "kms:DescribeKey"
+               - "kms:GenerateDataKey*"
+               - "kms:Encrypt"
+               - "kms:ReEncrypt*"
+               - "kms:Decrypt"
+               Resource:
+               - !Ref KmsEncryptionKey
+         - !Ref "AWS::NoValue"
+      - !If 
+        - AllowNotification
+        - PolicyName: AllowSNS
+          PolicyDocument:
+           Statement:
+           - Effect: Allow
+             Action:
+             - "sns:Publish"
+             Resource:
+             - !Ref NotificationTopicArn 
+        - !Ref "AWS::NoValue"
+
+  DeliveryPipeline:
+    Type: AWS::CodePipeline::Pipeline
+    Properties:
+      Name: 
+        Fn::Join:
+        - '-'
+        - - !Ref Repository
+          - !Ref EBApplication 
+          - 'pipeline'
+      RoleArn: !GetAtt [ DeliveryPipelineRole, Arn ]
+      ArtifactStore:
+        EncryptionKey:
+          !If 
+          - AllowProdDeployment
+          - Id: !Ref KmsEncryptionKey
+            Type: KMS
+          - !Ref "AWS::NoValue"
+        Type: S3
+        Location: !Join ["-" , ["codepipeline", !Ref "AWS::Region", !Ref "AWS::AccountId" ] ]
+
+      Stages:
+        - Name: SourceStage
+          Actions:
+            - Name: SourcesFromGithub
+              RunOrder: '1'
+              ActionTypeId:
+                Category: Source
+                Owner: ThirdParty
+                Provider: GitHub
+                Version: 1
+              Configuration:
+                Repo: !Ref Repository
+                OAuthToken: !Ref RepositoryOauth
+                Branch: !Ref RepositoryBranch
+                Owner: EconomistDigitalSolutions
+              OutputArtifacts:
+              - Name: !Join [ '-', [ !Ref Repository, sources ]]
+
+        - Name: BuildStage
+          Actions:
+            - Name: Build
+              RunOrder: '1'
+              ActionTypeId:
+                Category: Build
+                Owner: AWS
+                Provider: CodeBuild
+                Version: 1
+              Configuration:
+                ProjectName: !Ref DeliveryBuild
+              InputArtifacts:
+              - Name: !Join [ '-', [ !Ref Repository,  sources ]]
+
+              OutputArtifacts:
+              - Name: !Join [ '-', [ !Ref Repository, build ]]
+
+        - Name: StagingStage
+          Actions:
+            - Name: DeployStageBeanstalk
+              RunOrder: '1'
+              ActionTypeId:
+                Category: Deploy
+                Owner: AWS
+                Provider: ElasticBeanstalk
+                Version: '1'
+              InputArtifacts:
+              - Name: !Join [ '-', [ !Ref Repository,  build ]]
+              Configuration:
+                ApplicationName: !Ref EBApplication
+                EnvironmentName: !Ref EBEnvironment
+
+        - !If 
+          - AllowProdDeployment
+          - Name: ProductionStage
+            Actions:
+              - Name: Approve
+                RunOrder: 1
+                ActionTypeId:
+                  Category: Approval
+                  Owner: AWS
+                  Provider: Manual
+                  Version: 1
+                Configuration:
+                  !If 
+                    - AllowNotification
+                    - NotificationArn: !Ref NotificationTopicArn
+                    - !Ref "AWS::NoValue"
+
+              - Name: DeployProdBeanstalk
+                RunOrder: 2
+                RoleArn: !Ref CrossAccountPipelineRole
+                ActionTypeId:
+                  Category: Deploy
+                  Owner: AWS
+                  Provider: ElasticBeanstalk
+                  Version: 1
+                InputArtifacts:
+                - Name: !Join [ '-', [ !Ref Repository,  build ]]
+                Configuration:
+                  ApplicationName: !Ref CrossEBApplication
+                  EnvironmentName: !Ref CrossEBEnvironment
+          - !Ref "AWS::NoValue"

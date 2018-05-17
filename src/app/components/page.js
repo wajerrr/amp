@@ -4,6 +4,7 @@ import { css } from 'emotion';
 import Navigation from './navigation';
 import Article from './article';
 import Footer from './footer';
+import StoryCollection from './story-collection/story-collection';
 import injectFontFace from '../styles/font-face';
 import fontFamily from '../styles/font-family';
 import text from '../styles/typography';
@@ -43,6 +44,7 @@ const Page = ({ data }) => (
     <main className={mainClassName}>
       <div className={mainContentClassName}>
         <Article data={data} />
+        <StoryCollection data={data.editorsPick} />
       </div>
     </main>
     <Footer />

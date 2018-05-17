@@ -1,1 +1,4 @@
 node_modules
+Dockerrun.aws.json
+target
+*.zip
