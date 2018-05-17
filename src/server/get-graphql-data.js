@@ -34,7 +34,7 @@ const client = new ApolloClient({
 const getGraphqlData = async (ref) => {
   const query = gql`
         {
-          canonical(ref: "${ref}") {
+          canonical :canonical(ref: "${ref}") {
             ...C
             print {
               section {
@@ -44,7 +44,39 @@ const getGraphqlData = async (ref) => {
             publication {
               ...C
             }
+          },
+          editorsPick: canonical(ref: "/content/9qe6f6cm77btf0phaepjui01ckh6rfpu") {
+            tegID
+            id
+            hasPart {
+              parts {
+                id
+                channel {
+                  headline
+                  url {
+                    canonical
+                  }
+                }
+                headline
+                subheadline
+                description
+                byline
+                url {
+                  canonical
+                }
+                image{
+                  main {
+                    width
+                    height
+                    url {
+                      canonical
+                    }
+                  }
+                }
+              }
+            }
           }
+
         }
         
         fragment C on Content {
@@ -74,7 +106,7 @@ const getGraphqlData = async (ref) => {
               }
             }
           }
-        }          
+        }    
         `;
   try {
     return await client.query({

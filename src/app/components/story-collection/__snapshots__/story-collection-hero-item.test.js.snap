@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StoryCollectionHeroItem should match snapshot with className 1`] = `
+<li
+  className="class"
+>
+  <a
+    href="https://www.economist.com/the-economist-explains/2018/05/15/who-has-the-right-to-judge-americans"
+  >
+    <amp-img
+      alt="About us"
+      height={720}
+      layout="responsive"
+      src="https://www.economist.com/sites/default/files/20180512_BLP509.jpg"
+      width={1280}
+    />
+    <div
+      className="css-7t2f1j"
+    >
+      <h3
+        className="css-1sct6h1 "
+      >
+        <span
+          className="headline css-odjosd css-h5miqb"
+        >
+          Who has the right to judge Americans?
+        </span>
+      </h3>
+      <p
+        className="css-1ax9xgc"
+      >
+        A minor fraud case provokes a Supreme Court challenge to the expanding power of administrative agencies in government
+      </p>
+    </div>
+  </a>
+  <a
+    className="css-1uvd0mj css-144i3ol"
+    href="https://www.economist.com/help/about-us"
+  >
+    About us
+    <span
+      className={undefined}
+    >
+      <svg
+        version="1.1"
+        viewBox="0 0 48 48"
+        x="0px"
+        xmlSpace="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        y="0px"
+      >
+        <polygon
+          points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+        />
+      </svg>
+    </span>
+  </a>
+</li>
+`;
+
+exports[`StoryCollectionHeroItem should match snapshot without className 1`] = `
+<li
+  className=""
+>
+  <a
+    href="https://www.economist.com/the-economist-explains/2018/05/15/who-has-the-right-to-judge-americans"
+  >
+    <amp-img
+      alt="About us"
+      height={720}
+      layout="responsive"
+      src="https://www.economist.com/sites/default/files/20180512_BLP509.jpg"
+      width={1280}
+    />
+    <div
+      className="css-7t2f1j"
+    >
+      <h3
+        className="css-1sct6h1 "
+      >
+        <span
+          className="headline css-odjosd css-h5miqb"
+        >
+          Who has the right to judge Americans?
+        </span>
+      </h3>
+      <p
+        className="css-1ax9xgc"
+      >
+        A minor fraud case provokes a Supreme Court challenge to the expanding power of administrative agencies in government
+      </p>
+    </div>
+  </a>
+  <a
+    className="css-1uvd0mj css-144i3ol"
+    href="https://www.economist.com/help/about-us"
+  >
+    About us
+    <span
+      className={undefined}
+    >
+      <svg
+        version="1.1"
+        viewBox="0 0 48 48"
+        x="0px"
+        xmlSpace="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        y="0px"
+      >
+        <polygon
+          points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+        />
+      </svg>
+    </span>
+  </a>
+</li>
+`;
