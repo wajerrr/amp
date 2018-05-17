@@ -36,6 +36,14 @@ const getGraphqlData = async (ref) => {
         {
           canonical :canonical(ref: "${ref}") {
             ...C
+            print {
+              section {
+                ...C
+              }
+            }
+            publication {
+              ...C
+            }
           },
           editorsPick: canonical(ref: "/content/9qe6f6cm77btf0phaepjui01ckh6rfpu") {
             tegID
@@ -74,7 +82,6 @@ const getGraphqlData = async (ref) => {
         fragment C on Content {
           id
           tegID
-          tegType
           type
           url {
             canonical
