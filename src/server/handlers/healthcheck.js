@@ -15,17 +15,18 @@ try {
 }
 
 let buildNumber = 'unknown';
-try {
-  buildNumber = fs
-    .readFileSync('build_number.txt')
-    .toString('utf-8')
-    .trim();
-} catch (err) {
-  /* eslint-disable-next-line no-console */
-  console.error('Could not read build_number.txt', err);
+if (process.env.NODE_ENV === 'production') {
+  try {
+    buildNumber = fs
+      .readFileSync('build_number.txt')
+      .toString('utf-8')
+      .trim();
+  } catch (err) {
+    /* eslint-disable-next-line no-console */
+    console.error('Could not read build_number.txt', err);
+  }
 }
 
-const gigabitInBytes = 1000 * 1000;
 const stats = {
   buildNumber,
   name: config.name,
@@ -40,14 +41,19 @@ const stats = {
     )
     .filter((i) => i),
 };
+
 const status = 200;
+
+const gigabitInBytes = 1000 * 1000;
+
+const getMemoryUsage = () => process.memoryUsage().rss / gigabitInBytes;
 
 const handler = (request, h) =>
   h
     .response(
       Object.assign(stats, {
         status,
-        memoryUsage: process.memoryUsage().rss / gigabitInBytes,
+        memoryUsage: getMemoryUsage(),
       })
     )
     .code(status)
