@@ -1,0 +1,203 @@
+{
+  "headline": "menus",
+  "hasPart": {
+    "parts": [
+      {
+        "id": "menu-unicorn-primary-user-action",
+        "type": "menu",
+        "hasPart": {
+          "parts": [
+            {
+              "headline": "Subscribe",
+              "url": {
+                "canonical": "https://www.economist.com/subscribe"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 0
+                }
+              }
+            },
+            {
+              "headline": "Contact us",
+              "url": {
+                "canonical": "https://www.economist.com/contact-info"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 1
+                }
+              }
+            },
+            {
+              "headline": "Help",
+              "url": {
+                "canonical": "https://www.economist.com/help/home"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 2
+                }
+              }
+            },
+            {
+              "headline": "Open Future",
+              "url": {
+                "canonical": "https://www.economist.com/openfuture"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 3
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "menu-unicorn-secondary-user",
+        "type": "menu",
+        "hasPart": {
+          "parts": [
+            {
+              "headline": "About The Economist",
+              "url": {
+                "canonical": "https://www.economist.com/about-the-economist/"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 0
+                }
+              }
+            },
+            {
+              "headline": "Advertise",
+              "url": {
+                "canonical": "http://marketingsolutions.economist.com/"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 1
+                }
+              }
+            },
+            {
+              "headline": "Reprints",
+              "url": {
+                "canonical": "https://www.economist.com/rights/reprints+and+permissions.html"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 2
+                }
+              }
+            },
+            {
+              "headline": "Careers",
+              "url": {
+                "canonical": "http://economistgroupcareers.com/"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 3
+                }
+              }
+            },
+            {
+              "headline": "Media Centre",
+              "url": {
+                "canonical": "http://press.economist.com/"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 4
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "menu-unicorn-legal",
+        "type": "menu",
+        "hasPart": {
+          "parts": [
+            {
+              "headline": "Terms of Use",
+              "url": {
+                "canonical": "https://www.economist.com/legal/terms-of-use"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 0
+                }
+              }
+            },
+            {
+              "headline": "Privacy",
+              "url": {
+                "canonical": "http://www.economistgroup.com/results_and_governance/governance/privacy/"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 1
+                }
+              }
+            },
+            {
+              "headline": "Cookies",
+              "url": {
+                "canonical": "https://www.economist.com/cookies-info"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 2
+                }
+              }
+            },
+            {
+              "headline": "Accessibility",
+              "url": {
+                "canonical": "https://www.economist.com/help/accessibilitypolicy"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 3
+                }
+              }
+            },
+            {
+              "headline": "Modern Slavery Statement",
+              "url": {
+                "canonical": "http://www.economistgroup.com/results_and_governance/governance/guiding_principles.html"
+              },
+              "meta": "",
+              "isPartOf": {
+                "context": {
+                  "position": 4
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "Copyright",
+        "headline": "Copyright © The Economist Newspaper Limited 2018. All rights reserved."
+      }
+    ]
+  }
+}

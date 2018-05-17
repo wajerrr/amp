@@ -8,6 +8,7 @@ import injectFontFace from '../styles/font-face';
 import fontFamily from '../styles/font-family';
 import text from '../styles/typography';
 import spacings from '../styles/spacings';
+import * as footerData from '../../../mockFooterData.json';
 
 injectFontFace();
 
@@ -31,7 +32,7 @@ const Page = ({ data }) => (
         <Article data={data} />
       </div>
     </main>
-    <Footer />
+    <Footer data={footerData} />
   </div>
 );
 

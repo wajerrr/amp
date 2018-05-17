@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should match the snapshot 1`] = `
+<footer
+  className="css-2dgvkd"
+>
+  <section
+    className="css-dsh429"
+  >
+    <a
+      className="css-1gppj2d css-7uy4do"
+      href="https://www.economist.com/subscribe"
+    >
+      Subscribe
+    </a>
+    <a
+      className="css-1gppj2d css-7uy4do"
+      href="https://www.economist.com/contact-info"
+    >
+      Contact us
+    </a>
+    <a
+      className="css-1gppj2d css-7uy4do"
+      href="https://www.economist.com/help/home"
+    >
+      Help
+    </a>
+    <a
+      className="css-1gppj2d css-7uy4do"
+      href="https://www.economist.com/openfuture"
+    >
+      Open Future
+    </a>
+  </section>
+  <section
+    className="css-dsh429"
+  >
+    <a
+      className="css-1gppj2d css-1cdc8m6"
+      href="https://www.economist.com/about-the-economist/"
+    >
+      About The Economist
+    </a>
+    <a
+      className="css-1gppj2d css-1cdc8m6"
+      href="http://marketingsolutions.economist.com/"
+    >
+      Advertise
+    </a>
+    <a
+      className="css-1gppj2d css-1cdc8m6"
+      href="https://www.economist.com/rights/reprints+and+permissions.html"
+    >
+      Reprints
+    </a>
+    <a
+      className="css-1gppj2d css-1cdc8m6"
+      href="http://economistgroupcareers.com/"
+    >
+      Careers
+    </a>
+    <a
+      className="css-1gppj2d css-1cdc8m6"
+      href="http://press.economist.com/"
+    >
+      Media Centre
+    </a>
+  </section>
+  <section
+    className="css-dsh429"
+  >
+    <a
+      className="css-1gppj2d css-1cdc8m6"
+      href="https://www.economist.com/legal/terms-of-use"
+    >
+      Terms of Use
+    </a>
+    <a
+      className="css-1gppj2d css-1cdc8m6"
+      href="http://www.economistgroup.com/results_and_governance/governance/privacy/"
+    >
+      Privacy
+    </a>
+    <a
+      className="css-1gppj2d css-1cdc8m6"
+      href="https://www.economist.com/cookies-info"
+    >
+      Cookies
+    </a>
+    <a
+      className="css-1gppj2d css-1cdc8m6"
+      href="https://www.economist.com/help/accessibilitypolicy"
+    >
+      Accessibility
+    </a>
+    <a
+      className="css-1gppj2d css-1cdc8m6"
+      href="http://www.economistgroup.com/results_and_governance/governance/guiding_principles.html"
+    >
+      Modern Slavery Statement
+    </a>
+  </section>
+  <section
+    className="css-dsh429"
+  >
+    <p
+      className="css-tj597u"
+    >
+      Copyright © The Economist Newspaper Limited 2018. All rights reserved.
+    </p>
+  </section>
+</footer>
+`;
