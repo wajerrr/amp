@@ -79,13 +79,9 @@ const getGraphqlData = async (ref) => {
               }
             }
           }
-<<<<<<< HEAD
           navigation: canonical(ref: "${prodNavigation}") {
             ...N
           }
-=======
-
->>>>>>> master
         }
         
         fragment C on Content {
@@ -115,7 +111,6 @@ const getGraphqlData = async (ref) => {
               }
             }
           }
-<<<<<<< HEAD
         }
         fragment N on Content {
           headline
@@ -139,10 +134,6 @@ const getGraphqlData = async (ref) => {
             }
           }
         }`;
-=======
-        }    
-        `;
->>>>>>> master
   try {
     return await client.query({
       query,
