@@ -10,12 +10,15 @@ export const hotReloadingScript = `<script src="/socket.io/socket.io.js"></scrip
    window.location.reload();
   });
 </script>`;
+const iconBase64 =
+  ' iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEXjEgv////4KLUSAAAAAWJLR0QB/wIt3gAAAAd0SU1FB+IFEAgALURtxQsAAAAMSURBVAjXY2AgDQAAADAAAceqhY4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDUtMTZUMDg6MDA6NDUtMDc6MDDueH9GAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA1LTE2VDA4OjAwOjQ1LTA3OjAwnyXH+gAAAABJRU5ErkJggg==';
 
 const template = ({ title, body, css, canonicalUrl, isDev = false }) => `
 <!doctype html>
 <html amp>
 <head>
   <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,${iconBase64}" /> 
   <title>${title}</title>
 
   <script async src="https://cdn.ampproject.org/v0.js"></script>

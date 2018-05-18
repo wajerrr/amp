@@ -1,11 +1,23 @@
 require('babel-register')({
   presets: ['es2015', 'react'],
 });
-require('./server');
 
-let server;
-require('./server').default.then((serverObj) => {
-  server = serverObj;
+let server = require('./server').default;
+
+const start = async () => {
+  try {
+    await server.start();
+  } catch (err) {
+    /* eslint-disable-next-line no-console */
+    console.error('error', err);
+    process.exit(1);
+  }
+  /* eslint-disable-next-line no-console */
+  console.info(
+    `Server running at: ${
+      server.info.uri
+    } in ${process.env.NODE_ENV.toUpperCase()} mode`
+  );
   if (process.env.NODE_ENV === 'development') {
     /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
     const chokidar = require('chokidar');
@@ -24,6 +36,7 @@ require('./server').default.then((serverObj) => {
         });
         /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
         server = await require('./server').default;
+        server.start();
         /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
         io = require('socket.io')(server.listener);
       });
@@ -41,4 +54,5 @@ require('./server').default.then((serverObj) => {
       });
     });
   }
-});
+};
+start();
