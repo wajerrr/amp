@@ -1,11 +1,11 @@
 import fs from 'fs';
 import { execSync } from 'child_process';
-import config from '../config';
+import config from '../config/base-config';
+import { isProd, isStage } from '../utils/environment-detection';
 
 let lastCommit = 'only in production';
 let buildNumber = 'only in production';
-
-if (process.env.NODE_ENV === 'production') {
+if (isProd || isStage) {
   try {
     lastCommit =
       execSync('cat /code/last_commit.txt', {
@@ -44,9 +44,8 @@ const stats = {
     .filter((i) => i),
 };
 
-const status = 200;
-
-const gigabitInBytes = 1000 * 1000;
+export const status = 200;
+export const gigabitInBytes = 1000 * 1000;
 
 const getMemoryUsage = () => process.memoryUsage().rss / gigabitInBytes;
 

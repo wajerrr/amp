@@ -2,6 +2,7 @@
 import getGraphqlData from '../get-graphql-data';
 import renderHtml from '../render-html';
 import server from '../server';
+import * as envVars from '../utils/environment-detection';
 
 const mockData = 'testData';
 
@@ -42,10 +43,11 @@ describe('ampPageRenderer handler', async () => {
     getGraphqlData.mockImplementation(() =>
       Promise.resolve({ data: mockData })
     );
+    envVars.isProd = false;
+    envVars.isStage = false;
     getGraphqlData.mockClear();
     renderHtml.mockClear();
     console.error.mockClear();
-    process.env.NODE_ENV = 'test';
   });
 
   it('should call getGraphqlData method with correct path', async (done) => {
@@ -82,11 +84,21 @@ describe('ampPageRenderer handler', async () => {
     done();
   });
 
-  it('should redirect to canonical article url when NODE_ENV = Production and article is not free', async (done) => {
+  it('should redirect to canonical article url when isProd is true and article is not free', async (done) => {
     getGraphqlData.mockImplementation(() =>
       Promise.resolve({ data: mockNotFreeData })
     );
-    process.env.NODE_ENV = 'production';
+    envVars.isProd = true;
+    const response = await server.inject({ method: 'GET', url });
+    expect(response.statusCode).toEqual(302);
+    expect(response.headers.location).toEqual(mockLocation);
+    done();
+  });
+  it('should redirect to canonical article url when  isStage is true and article is not free', async (done) => {
+    getGraphqlData.mockImplementation(() =>
+      Promise.resolve({ data: mockNotFreeData })
+    );
+    envVars.isStage = true;
     const response = await server.inject({ method: 'GET', url });
     expect(response.statusCode).toEqual(302);
     expect(response.headers.location).toEqual(mockLocation);

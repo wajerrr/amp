@@ -3,7 +3,9 @@ require('babel-register')({
 });
 
 let server = require('./server').default;
+const { isDev } = require('./utils/environment-detection');
 
+console.log('isDev', isDev);
 const start = async () => {
   try {
     await server.start();
@@ -14,11 +16,11 @@ const start = async () => {
   }
   /* eslint-disable-next-line no-console */
   console.info(
-    `Server running at: ${
-      server.info.uri
-    } in ${process.env.NODE_ENV.toUpperCase()} mode`
+    `Server running at: ${server.info.uri} in ${(
+      process.env.NODE_ENV || 'no NODE_ENV set!!!'
+    ).toUpperCase()} mode`
   );
-  if (process.env.NODE_ENV === 'development') {
+  if (isDev) {
     /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
     const chokidar = require('chokidar');
     /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
@@ -35,8 +37,8 @@ const start = async () => {
           if (id.includes('/src/server/')) delete require.cache[id];
         });
         /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
-        server = await require('./server').default;
-        server.start();
+        server = require('./server').default;
+        await server.start();
         /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
         io = require('socket.io')(server.listener);
       });

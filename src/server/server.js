@@ -1,5 +1,5 @@
 import Hapi from 'hapi';
-import config from './config';
+import config from './config/base-config';
 import healthcheck from './handlers/healthcheck';
 
 const serverConfig = {
