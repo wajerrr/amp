@@ -35,7 +35,8 @@ const start = async () => {
           if (id.includes('/src/server/')) delete require.cache[id];
         });
         /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
-        server = await require('./server').start();
+        server = await require('./server').default;
+        server.start();
         /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
         io = require('socket.io')(server.listener);
       });
