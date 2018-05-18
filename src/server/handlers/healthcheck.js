@@ -2,20 +2,22 @@ import fs from 'fs';
 import { execSync } from 'child_process';
 import config from '../config';
 
-let lastCommit = 'unknown';
-try {
-  // git will resolve outside a container, `/code/last_commit.txt` is pushed into a container
-  lastCommit =
-    execSync('git log -1 --oneline 2>/dev/null|| cat /code/last_commit.txt', {
-      encoding: 'utf-8',
-    }).trim('\n') || 'unknown';
-} catch (err) {
-  /* eslint-disable-next-line no-console */
-  console.error('Could Not read last commit from  /code/last_commit.txt', err);
-}
+let lastCommit = 'only in production';
+let buildNumber = 'only in production';
 
-let buildNumber = 'unknown';
 if (process.env.NODE_ENV === 'production') {
+  try {
+    lastCommit =
+      execSync('cat /code/last_commit.txt', {
+        encoding: 'utf-8',
+      }).trim('\n') || 'unknown';
+  } catch (err) {
+    /* eslint-disable-next-line no-console */
+    console.error(
+      'Could Not read last commit from  /code/last_commit.txt',
+      err
+    );
+  }
   try {
     buildNumber = fs
       .readFileSync('build_number.txt')
