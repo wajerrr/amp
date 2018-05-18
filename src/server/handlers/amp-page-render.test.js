@@ -5,12 +5,12 @@ import server from '../server';
 
 const mockData = 'testData';
 
-const location = 'https://stickyfloors.net';
+const mockLocation = 'https://iam.conaninical/url';
 const mockNotFreeData = {
   canonical: {
     isAccessibleForFree: false,
     url: {
-      canonical: location,
+      canonical: mockLocation,
     },
   },
 };
@@ -89,7 +89,7 @@ describe('ampPageRenderer handler', async () => {
     process.env.NODE_ENV = 'production';
     const response = await server.inject({ method: 'GET', url });
     expect(response.statusCode).toEqual(302);
-    expect(response.headers.location).toEqual(location);
+    expect(response.headers.location).toEqual(mockLocation);
     done();
   });
 });

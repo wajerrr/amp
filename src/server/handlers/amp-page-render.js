@@ -1,13 +1,26 @@
 import getGraphqlData from '../get-graphql-data';
 import renderHtml from '../render-html';
 
-export const generateRefUrl = (pathname) =>
-  `https://www.economist.com/${pathname ||
-    'news/world-week/21741222-politics-week'}`;
+// This to be refactored when more information is availiable.
+const getDomain = (host) => {
+  if (host.includes('amp.economist.com')) {
+    return 'https://www.economist.com';
+  }
+  if (host.includes('amp.s.aws.economist.com/')) {
+    return 'https://www.economist.com';
+  }
+  if (process.env.NODE_ENV === 'development') {
+    return 'https://www.economist.com';
+  }
+  return 'https://www.economist.com';
+};
+
+export const generateRefUrl = (pathname, host) =>
+  `${getDomain(host)}/${pathname}`;
 
 export const handler = async (request, h) => {
   try {
-    const ref = generateRefUrl(request.params.pathname);
+    const ref = generateRefUrl(request.params.pathname, request.headers.host);
     const res = await getGraphqlData(ref);
     if (
       process.env.NODE_ENV === 'production' &&
