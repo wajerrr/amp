@@ -5,6 +5,7 @@ exports[`StoryCollectionHeroItem should match snapshot with className 1`] = `
   className="class"
 >
   <a
+    className="css-xy0ws6-StyledLinkWrapper e1omscfa3"
     href="https://www.economist.com/the-economist-explains/2018/05/15/who-has-the-right-to-judge-americans"
   >
     <amp-img
@@ -15,26 +16,31 @@ exports[`StoryCollectionHeroItem should match snapshot with className 1`] = `
       width={1280}
     />
     <div
-      className="css-7t2f1j"
+      className="css-1aepw6l-StyledHeroItemTextContainer e1omscfa2"
     >
       <h3
-        className="css-1sct6h1 "
+        className="css-m4ovun-StyledHeader e10thz6k2"
       >
         <span
-          className="headline css-odjosd css-h5miqb"
+          className="css-jzz7eb-StyledSubHeadline-headlineStyles e10thz6k1"
+        >
+          The Economist explains
+        </span>
+        <span
+          className="css-1xpn6sh-StyledHeadline-subHeadlineStyles e10thz6k0"
         >
           Who has the right to judge Americans?
         </span>
       </h3>
       <p
-        className="css-1ax9xgc"
+        className="css-1jkfpje-StyledDescription e1omscfa0"
       >
         A minor fraud case provokes a Supreme Court challenge to the expanding power of administrative agencies in government
       </p>
     </div>
   </a>
   <a
-    className="css-1uvd0mj css-144i3ol"
+    className="e1omscfa1 css-4vty5-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
     href="https://www.economist.com/help/about-us"
   >
     About us
@@ -63,6 +69,7 @@ exports[`StoryCollectionHeroItem should match snapshot without className 1`] = `
   className=""
 >
   <a
+    className="css-xy0ws6-StyledLinkWrapper e1omscfa3"
     href="https://www.economist.com/the-economist-explains/2018/05/15/who-has-the-right-to-judge-americans"
   >
     <amp-img
@@ -73,26 +80,31 @@ exports[`StoryCollectionHeroItem should match snapshot without className 1`] = `
       width={1280}
     />
     <div
-      className="css-7t2f1j"
+      className="css-1aepw6l-StyledHeroItemTextContainer e1omscfa2"
     >
       <h3
-        className="css-1sct6h1 "
+        className="css-m4ovun-StyledHeader e10thz6k2"
       >
         <span
-          className="headline css-odjosd css-h5miqb"
+          className="css-jzz7eb-StyledSubHeadline-headlineStyles e10thz6k1"
+        >
+          The Economist explains
+        </span>
+        <span
+          className="css-1xpn6sh-StyledHeadline-subHeadlineStyles e10thz6k0"
         >
           Who has the right to judge Americans?
         </span>
       </h3>
       <p
-        className="css-1ax9xgc"
+        className="css-1jkfpje-StyledDescription e1omscfa0"
       >
         A minor fraud case provokes a Supreme Court challenge to the expanding power of administrative agencies in government
       </p>
     </div>
   </a>
   <a
-    className="css-1uvd0mj css-144i3ol"
+    className="e1omscfa1 css-4vty5-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
     href="https://www.economist.com/help/about-us"
   >
     About us

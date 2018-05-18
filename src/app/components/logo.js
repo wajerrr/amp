@@ -1,21 +1,23 @@
 import React from 'react';
-import { css } from 'emotion';
+import styled from 'react-emotion';
+
 import IconEconomist from '@economist/component-icon/lib/inline-icons/economist';
 
-const logoClassName = css`
+const StyledLogoLink = styled('a')`
   display: block;
   width: 124px;
   height: 62px;
 `;
-const spanClassName = css`
+
+const HiddenSpan = styled('span')`
   display: none;
 `;
 
 const Logo = () => (
-  <a href="//www.economist.com" className={logoClassName} title="The Economist">
-    <span className={spanClassName}>The Economist</span>
+  <StyledLogoLink href="//www.economist.com" title="The Economist">
+    <HiddenSpan>The Economist</HiddenSpan>
     <IconEconomist />
-  </a>
+  </StyledLogoLink>
 );
 
 export default Logo;

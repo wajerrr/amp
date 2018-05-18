@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'emotion';
+import styled from 'react-emotion';
 import color from '../styles/color';
 import fontFamily from '../styles/font-family';
 import typography from '../styles/typography';
 import spacings from '../styles/spacings';
 
-const buttonClassName = (customStyles) => css`
+const StyledLink = styled('a')`
   background-color: ${color.chicago};
   border: none;
   box-sizing: border-box;
@@ -18,35 +18,28 @@ const buttonClassName = (customStyles) => css`
   font-family: ${fontFamily.sans};
   margin-left: 3em;
   font-weight: 300;
-  &:active {
-    background-color: ${color.athens};
-  }
   line-height: 30px;
   color: ${color.thimphu};
   text-decoration: none;
-  ${customStyles};
+  &:active {
+    background-color: ${color.athens};
+  }
 `;
 
-const StyledLinkButton = ({ buttonProps, customStyles }) => (
-  <a
-    className={buttonClassName(customStyles)}
-    href={buttonProps.url}
-    role="button"
-  >
-    {buttonProps.text}
-  </a>
+const StyledLinkButton = ({ href, className, children }) => (
+  <StyledLink className={className} href={href} role="button">
+    {children}
+  </StyledLink>
 );
 
 StyledLinkButton.propTypes = {
-  buttonProps: PropTypes.shape({
-    text: PropTypes.string,
-    url: PropTypes.string,
-  }).isRequired,
-  customStyles: PropTypes.shape({}),
+  href: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
 StyledLinkButton.defaultProps = {
-  customStyles: {},
+  className: '',
 };
 
 export default StyledLinkButton;

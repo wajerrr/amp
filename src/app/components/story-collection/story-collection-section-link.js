@@ -1,12 +1,12 @@
 import React from 'react';
-import { css } from 'emotion';
-import { PropTypes } from 'prop-types';
+import styled from 'react-emotion';
+import PropTypes from 'prop-types';
 import IconRight from '@economist/component-icon/lib/inline-icons/right';
-
 import color from '../../styles/color';
 import text from '../../styles/typography';
+import StyledLink from '../styled-link';
 
-const sectionLink = css`
+const StyledSectionLink = styled(StyledLink)`
   color: ${color.moscow};
   font-size: ${text.sizeStep['-5']};
   letter-spacing: ${text.lineHeight.letterSpacing.sansOnStep['-2']};
@@ -14,8 +14,11 @@ const sectionLink = css`
   text-decoration: none;
   text-transform: uppercase;
   display: block;
+  border-bottom: none;
   &:hover,
+  &:active,
   &.visited {
+    border-bottom: none;
     color: ${color.chicago};
   }
   svg {
@@ -31,10 +34,10 @@ const sectionLink = css`
 `;
 
 const SectionLink = ({ className, href, children }) => (
-  <a className={`${sectionLink} ${className}`} href={href}>
+  <StyledSectionLink className={className} href={href}>
     {children}
     <IconRight />
-  </a>
+  </StyledSectionLink>
 );
 
 SectionLink.defaultProps = { className: '' };

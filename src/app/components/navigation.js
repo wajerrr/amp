@@ -1,32 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'emotion';
+import styled from 'react-emotion';
 import Logo from './logo';
-import SubscribeButton from './subscribe-button';
-import IconButton from './icon-button';
+import StyledSubscribeButton from './styled-subscribe-button';
+import StyledIconButton from './styled-icon-button';
 import typography from '../styles/typography';
 import spacings from '../styles/spacings';
+import color from '../styles/color';
 
-const navClassName = css`
+const StyledNav = styled('nav')`
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: ${typography.sizeStep['1']};
 `;
 
+const StyledHamburgerIcon = styled(StyledIconButton)`
+  margin-right: ${spacings.l};
+`;
+
 const Navigation = ({ menuContainerId }) => (
-  <nav className={navClassName}>
+  <StyledNav>
     <Logo />
-    <SubscribeButton />
-    <IconButton
+    <StyledSubscribeButton />
+    <StyledHamburgerIcon
       onProps={`tap:${menuContainerId}.toggle`}
-      icon="hamburgerIcon"
-      iconColor="thimphu"
-      customStyles={{
-        marginRight: spacings.l,
-      }}
+      icon="hamburger"
+      iconColor={color.thimphu}
     />
-  </nav>
+  </StyledNav>
 );
 
 Navigation.propTypes = {

@@ -1,13 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import StyledLinkButton from './styled-link-button';
+import StyledIconButton from './styled-icon-button';
 
-describe('StyledLinkButton', () => {
+describe('StyledIconButton', () => {
   it('should match snapshot', () => {
     const tree = renderer
-      .create(
-        <StyledLinkButton href="www.url.com">test button</StyledLinkButton>
-      )
+      .create(<StyledIconButton onProps="toggleMenu" icon="hambuger" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

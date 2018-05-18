@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleDescription should match snapshot 1`] = `
+<p
+  className="css-5eibl0-ArticleDescription e3radvg0"
+>
+  description
+</p>
+`;

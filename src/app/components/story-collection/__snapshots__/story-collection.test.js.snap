@@ -2,12 +2,13 @@
 
 exports[`StoryCollection should match snapshot 1`] = `
 <ul
-  className="css-10hlgy7"
+  className="css-1i00qd8-StyledStoryCollectionContainer e1ok0tn80"
 >
   <li
     className=""
   >
     <a
+      className="css-xy0ws6-StyledLinkWrapper e1omscfa3"
       href="https://www.economist.com/the-economist-explains/2018/05/15/who-has-the-right-to-judge-americans"
     >
       <amp-img
@@ -18,26 +19,31 @@ exports[`StoryCollection should match snapshot 1`] = `
         width={1280}
       />
       <div
-        className="css-7t2f1j"
+        className="css-1aepw6l-StyledHeroItemTextContainer e1omscfa2"
       >
         <h3
-          className="css-1sct6h1 "
+          className="css-m4ovun-StyledHeader e10thz6k2"
         >
           <span
-            className="headline css-odjosd css-h5miqb"
+            className="css-jzz7eb-StyledSubHeadline-headlineStyles e10thz6k1"
+          >
+            The Economist explains
+          </span>
+          <span
+            className="css-1xpn6sh-StyledHeadline-subHeadlineStyles e10thz6k0"
           >
             Who has the right to judge Americans?
           </span>
         </h3>
         <p
-          className="css-1ax9xgc"
+          className="css-1jkfpje-StyledDescription e1omscfa0"
         >
           A minor fraud case provokes a Supreme Court challenge to the expanding power of administrative agencies in government
         </p>
       </div>
     </a>
     <a
-      className="css-1uvd0mj css-144i3ol"
+      className="e1omscfa1 css-4vty5-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
       href="https://www.economist.com/help/about-us"
     >
       About us
@@ -60,14 +66,14 @@ exports[`StoryCollection should match snapshot 1`] = `
     </a>
   </li>
   <li
-    className="css-1a3eakn"
+    className="css-1gdlqmn-StyledStoryCollectionItem e1ok0tn81"
   >
     <a
-      className="css-ov1ktg"
+      className="css-rfvsuz-StyledLinkWrapper ercjopt1"
       href="https://www.economist.com/middle-east-and-africa/2018/05/14/protests-on-gazas-border-with-israel-turn-deadly"
     >
       <div
-        className="css-1hygdxi"
+        className="css-xpxzo4-StyledImgContainer ercjopt2"
       >
         <amp-img
           alt="About us"
@@ -78,13 +84,18 @@ exports[`StoryCollection should match snapshot 1`] = `
         />
       </div>
       <div
-        className="css-1xjhn87"
+        className="css-1bn1ahj-StyledTextContainer ercjopt0"
       >
         <h3
-          className="css-1sct6h1 "
+          className="css-m4ovun-StyledHeader e10thz6k2"
         >
           <span
-            className="headline css-odjosd css-i5dc08"
+            className="css-zdexlw-StyledSubHeadline-subHeadlineStyles e10thz6k1"
+          >
+            Anger in Gaza, joy in Jerusalem
+          </span>
+          <span
+            className="css-1wbs5nn-StyledHeadline-headlineStyles e10thz6k0"
           >
             Protests on Gaza’s border with Israel turn deadly
           </span>
@@ -92,7 +103,7 @@ exports[`StoryCollection should match snapshot 1`] = `
       </div>
     </a>
     <a
-      className="css-1uvd0mj css-1io3inc"
+      className="ercjopt3 css-1cesb30-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
       href="https://www.economist.com/help/about-us"
     >
       About us
@@ -115,14 +126,14 @@ exports[`StoryCollection should match snapshot 1`] = `
     </a>
   </li>
   <li
-    className="css-1a3eakn"
+    className="css-1gdlqmn-StyledStoryCollectionItem e1ok0tn81"
   >
     <a
-      className="css-ov1ktg"
+      className="css-rfvsuz-StyledLinkWrapper ercjopt1"
       href="https://www.economist.com/finance-and-economics/2018/05/12/lessons-to-a-columnists-previous-self"
     >
       <div
-        className="css-1hygdxi"
+        className="css-xpxzo4-StyledImgContainer ercjopt2"
       >
         <amp-img
           alt="About us"
@@ -133,13 +144,18 @@ exports[`StoryCollection should match snapshot 1`] = `
         />
       </div>
       <div
-        className="css-1xjhn87"
+        className="css-1bn1ahj-StyledTextContainer ercjopt0"
       >
         <h3
-          className="css-1sct6h1 "
+          className="css-m4ovun-StyledHeader e10thz6k2"
         >
           <span
-            className="headline css-odjosd css-i5dc08"
+            className="css-zdexlw-StyledSubHeadline-subHeadlineStyles e10thz6k1"
+          >
+            Buttonwood
+          </span>
+          <span
+            className="css-1wbs5nn-StyledHeadline-headlineStyles e10thz6k0"
           >
             Lessons to a columnist’s previous self
           </span>
@@ -147,7 +163,7 @@ exports[`StoryCollection should match snapshot 1`] = `
       </div>
     </a>
     <a
-      className="css-1uvd0mj css-1io3inc"
+      className="ercjopt3 css-1cesb30-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
       href="https://www.economist.com/help/about-us"
     >
       About us

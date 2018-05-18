@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StyledLinkButton should match snapshot 1`] = `
+exports[`StyledSubscribeButton should match snapshot 1`] = `
 <a
   className="css-856nem-StyledLink e1il8zx80"
-  href="www.url.com"
+  href="https://econ.st/2bs1gXz"
   role="button"
 >
-  test button
+  Subscribe
 </a>
 `;

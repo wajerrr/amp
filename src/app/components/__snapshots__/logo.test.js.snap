@@ -2,12 +2,12 @@
 
 exports[`Logo should match snapshot 1`] = `
 <a
-  className="css-yuyulj"
+  className="css-h4jlte-StyledLogoLink emna15h0"
   href="//www.economist.com"
   title="The Economist"
 >
   <span
-    className="css-38lglc"
+    className="css-1t5k44a-HiddenSpan emna15h1"
   >
     The Economist
   </span>

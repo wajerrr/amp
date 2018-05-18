@@ -1,7 +1,7 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 import { css } from 'emotion';
-
+import styled from 'react-emotion';
 import text from '../../styles/typography';
 import spacings from '../../styles/spacings';
 import SectionLink from './story-collection-section-link';
@@ -9,7 +9,7 @@ import ItemHeadline from './story-collection-item-headline';
 import color from '../../styles/color';
 import fontFamily from '../../styles/font-family';
 
-const descriptionStyle = css`
+const StyledDescription = styled('p')`
   margin: ${spacings.none};
   padding: ${spacings.none};
   font-style: italic;
@@ -22,25 +22,31 @@ const descriptionStyle = css`
   font-size: ${text.sizeStep['-2']};
 `;
 
-const sectionLink = css`
+const StyledSectionLink = styled(SectionLink)`
   padding: ${spacings.none} ${spacings.m} ${spacings.m};
 `;
 
-const heroItemTextContainer = css`
+const StyledHeroItemTextContainer = styled('div')`
   padding: ${spacings.s} ${spacings.s} ${spacings.xl};
 `;
 
-const subHeadline = css`
-  font-size: ${text.sizeStep['-3']};
-  letter-spacing: ${text.lineHeight.letterSpacing.sansOnStep['-2']};
-  line-height: ${text.lineHeight.sansOnStep['-2']};
+const StyledLinkWrapper = styled('a')`
+  font-family: ${fontFamily.serif};
+  text-decoration: none;
 `;
 
-const headlineStyle = css`
+const headlineStyles = css`
   font-size: ${text.sizeStep['1']};
   font-weight: 500;
   letter-spacing: ${text.lineHeight.letterSpacing.serifOnStep['1']};
   line-height: ${text.lineHeight.serifOnStep['1']};
+`;
+
+const subHeadlineStyles = css`
+  font-size: ${text.sizeStep['-3']};
+  font-weight: 400;
+  letter-spacing: ${text.lineHeight.letterSpacing.sansOnStep['-2']};
+  line-height: ${text.lineHeight.sansOnStep['-2']};
 `;
 
 const StoryCollectionHeroItem = ({
@@ -54,7 +60,7 @@ const StoryCollectionHeroItem = ({
   className,
 }) => (
   <li className={className}>
-    <a href={url}>
+    <StyledLinkWrapper href={url}>
       <amp-img
         alt={channelHeadline}
         layout="responsive"
@@ -62,20 +68,20 @@ const StoryCollectionHeroItem = ({
         height={image.height}
         src={image.url.canonical}
       />
-      <div className={heroItemTextContainer}>
+      <StyledHeroItemTextContainer>
         <ItemHeadline
-          subHeadlineClassName={subHeadline}
-          headlineClassName={headlineStyle}
-          subheadline={subheadline}
+          styles={{
+            StyledSubHeadline: headlineStyles,
+            StyledHeadline: subHeadlineStyles,
+          }}
+          subHeadline={subheadline}
         >
           {headline}
         </ItemHeadline>
-        <p className={descriptionStyle}>{description}</p>
-      </div>
-    </a>
-    <SectionLink className={sectionLink} href={channelUrl}>
-      {channelHeadline}
-    </SectionLink>
+        <StyledDescription>{description}</StyledDescription>
+      </StyledHeroItemTextContainer>
+    </StyledLinkWrapper>
+    <StyledSectionLink href={channelUrl}>{channelHeadline}</StyledSectionLink>
   </li>
 );
 

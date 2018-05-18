@@ -2,7 +2,7 @@
 
 exports[`StyledLink should match snapshot 1`] = `
 <a
-  className="css-o3cgpf"
+  className="css-1r5p1df-StyledLink e1wa77wm0"
   href="economist.com"
 >
   click me

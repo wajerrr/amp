@@ -5,11 +5,11 @@ exports[`StoryCollectionItem should match snapshot with className 1`] = `
   className="class"
 >
   <a
-    className="css-ov1ktg"
+    className="css-rfvsuz-StyledLinkWrapper ercjopt1"
     href="https://www.economist.com/the-economist-explains/2018/05/15/who-has-the-right-to-judge-americans"
   >
     <div
-      className="css-1hygdxi"
+      className="css-xpxzo4-StyledImgContainer ercjopt2"
     >
       <amp-img
         alt="About us"
@@ -20,13 +20,18 @@ exports[`StoryCollectionItem should match snapshot with className 1`] = `
       />
     </div>
     <div
-      className="css-1xjhn87"
+      className="css-1bn1ahj-StyledTextContainer ercjopt0"
     >
       <h3
-        className="css-1sct6h1 "
+        className="css-m4ovun-StyledHeader e10thz6k2"
       >
         <span
-          className="headline css-odjosd css-i5dc08"
+          className="css-zdexlw-StyledSubHeadline-subHeadlineStyles e10thz6k1"
+        >
+          The Economist explains
+        </span>
+        <span
+          className="css-1wbs5nn-StyledHeadline-headlineStyles e10thz6k0"
         >
           Who has the right to judge Americans?
         </span>
@@ -34,7 +39,7 @@ exports[`StoryCollectionItem should match snapshot with className 1`] = `
     </div>
   </a>
   <a
-    className="css-1uvd0mj css-1io3inc"
+    className="ercjopt3 css-1cesb30-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
     href="https://www.economist.com/help/about-us"
   >
     About us
@@ -63,11 +68,11 @@ exports[`StoryCollectionItem should match snapshot without className 1`] = `
   className=""
 >
   <a
-    className="css-ov1ktg"
+    className="css-rfvsuz-StyledLinkWrapper ercjopt1"
     href="https://www.economist.com/the-economist-explains/2018/05/15/who-has-the-right-to-judge-americans"
   >
     <div
-      className="css-1hygdxi"
+      className="css-xpxzo4-StyledImgContainer ercjopt2"
     >
       <amp-img
         alt="About us"
@@ -78,13 +83,18 @@ exports[`StoryCollectionItem should match snapshot without className 1`] = `
       />
     </div>
     <div
-      className="css-1xjhn87"
+      className="css-1bn1ahj-StyledTextContainer ercjopt0"
     >
       <h3
-        className="css-1sct6h1 "
+        className="css-m4ovun-StyledHeader e10thz6k2"
       >
         <span
-          className="headline css-odjosd css-i5dc08"
+          className="css-zdexlw-StyledSubHeadline-subHeadlineStyles e10thz6k1"
+        >
+          The Economist explains
+        </span>
+        <span
+          className="css-1wbs5nn-StyledHeadline-headlineStyles e10thz6k0"
         >
           Who has the right to judge Americans?
         </span>
@@ -92,7 +102,7 @@ exports[`StoryCollectionItem should match snapshot without className 1`] = `
     </div>
   </a>
   <a
-    className="css-1uvd0mj css-1io3inc"
+    className="ercjopt3 css-1cesb30-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
     href="https://www.economist.com/help/about-us"
   >
     About us

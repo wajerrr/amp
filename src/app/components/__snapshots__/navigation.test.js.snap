@@ -2,15 +2,15 @@
 
 exports[`Navigation should match snapshot 1`] = `
 <nav
-  className="css-t6plsr"
+  className="css-8m3fdd-StyledNav e15fl1v20"
 >
   <a
-    className="css-yuyulj"
+    className="css-h4jlte-StyledLogoLink emna15h0"
     href="//www.economist.com"
     title="The Economist"
   >
     <span
-      className="css-38lglc"
+      className="css-1t5k44a-HiddenSpan emna15h1"
     >
       The Economist
     </span>
@@ -88,14 +88,14 @@ exports[`Navigation should match snapshot 1`] = `
     </span>
   </a>
   <a
-    className="css-vwbibu"
+    className="css-856nem-StyledLink e1il8zx80"
     href="https://econ.st/2bs1gXz"
     role="button"
   >
     Subscribe
   </a>
   <button
-    className="css-12m62h"
+    className="e15fl1v21 css-1tdn9y4-StyledButton-StyledHamburgerIcon e1floapv0"
     on="tap:sidebar.toggle"
     tabIndex="0"
   >
