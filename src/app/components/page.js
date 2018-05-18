@@ -11,7 +11,8 @@ import text from '../styles/typography';
 import color from '../styles/color';
 import NavigationMenu from './navigation-menu';
 import spacings from '../styles/spacings';
-import * as navigationData from '../../../mockNavData.json';
+import footerData from '../../../mockFooterData.json';
+import navigationData from '../../../mockNavData.json';
 
 injectFontFace();
 
@@ -24,12 +25,11 @@ const mainClassName = css`
 const mainContentClassName = css`
   padding: ${spacings.s} ${spacings.s} ${spacings.s};
   margin: 0 auto;
-  top: 55px;
   position: relative;
 `;
 const headerClassName = css`
   background-color: ${color.kiev};
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 99999;
@@ -47,7 +47,7 @@ const Page = ({ data }) => (
         <StoryCollection data={data.editorsPick} />
       </div>
     </main>
-    <Footer />
+    <Footer data={footerData} />
   </Fragment>
 );
 
