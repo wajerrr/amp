@@ -1,0 +1,409 @@
+{
+  "navigation": {
+    "headline": "test-menu-amp",
+    "hasPart": {
+      "parts": [
+        {
+          "headline": "Topics",
+          "id": "21741809",
+          "hasPart": {
+            "parts": [
+              {
+                "headline": "Latest updates",
+                "id": "storyCollection_21741809_0",
+                "url": {
+                  "canonical": "https://www.economist.com/latest-updates"
+                }
+              },
+              {
+                "headline": "Leaders",
+                "id": "storyCollection_21741809_1",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/leaders"
+                }
+              },
+              {
+                "headline": "Briefing",
+                "id": "storyCollection_21741809_2",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/briefings"
+                }
+              },
+              {
+                "headline": "United States",
+                "id": "storyCollection_21741809_3",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/united-states"
+                }
+              },
+              {
+                "headline": "The Americas",
+                "id": "storyCollection_21741809_4",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/americas"
+                }
+              },
+              {
+                "headline": "Asia",
+                "id": "storyCollection_21741809_5",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/asia"
+                }
+              },
+              {
+                "headline": "China",
+                "id": "storyCollection_21741809_6",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/china"
+                }
+              },
+              {
+                "headline": "Middle East and Africa",
+                "id": "storyCollection_21741809_7",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/middle-east-africa"
+                }
+              },
+              {
+                "headline": "Europe",
+                "id": "storyCollection_21741809_8",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/europe"
+                }
+              },
+              {
+                "headline": "Britain",
+                "id": "storyCollection_21741809_9",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/britain"
+                }
+              },
+              {
+                "headline": "International",
+                "id": "storyCollection_21741809_10",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/international"
+                }
+              },
+              {
+                "headline": "Business",
+                "id": "storyCollection_21741809_11",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/business-finance"
+                }
+              },
+              {
+                "headline": "Finance and economics",
+                "id": "storyCollection_21741809_12",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/economics"
+                }
+              },
+              {
+                "headline": "Science and technology",
+                "id": "storyCollection_21741809_13",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/science-technology"
+                }
+              },
+              {
+                "headline": "Books and arts",
+                "id": "storyCollection_21741809_14",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/culture"
+                }
+              },
+              {
+                "headline": "Obituary",
+                "id": "storyCollection_21741809_15",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/obituary"
+                }
+              },
+              {
+                "headline": "Special reports",
+                "id": "storyCollection_21741809_16",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/special-reports"
+                }
+              },
+              {
+                "headline": "Technology Quarterly",
+                "id": "storyCollection_21741809_17",
+                "url": {
+                  "canonical": "https://www.economist.com/sections/technology-quarterly"
+                }
+              },
+              {
+                "headline": "Debates",
+                "id": "storyCollection_21741809_18",
+                "url": {
+                  "canonical": "http://debates.economist.com/"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "headline": "Blogs",
+          "id": "storyCollection_21741814_21741810",
+          "canonical": "/node/21741810",
+          "originalID": "21741810",
+          "hasPart": {
+            "parts": [
+              {
+                "headline": "Bagehot’s notebook",
+                "id": "storyCollection_21741810_0",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/bagehot"
+                }
+              },
+              {
+                "headline": "Buttonwood’s notebook",
+                "id": "storyCollection_21741810_1",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/buttonwood"
+                }
+              },
+              {
+                "headline": "Democracy in America",
+                "id": "storyCollection_21741810_2",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/democracyinamerica"
+                }
+              },
+              {
+                "headline": "Erasmus",
+                "id": "storyCollection_21741810_3",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/erasmus"
+                }
+              },
+              {
+                "headline": "Free exchange",
+                "id": "storyCollection_21741810_4",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/freeexchange"
+                }
+              },
+              {
+                "headline": "Game theory",
+                "id": "storyCollection_21741810_5",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/gametheory"
+                }
+              },
+              {
+                "headline": "Graphic detail",
+                "id": "storyCollection_21741810_6",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/graphicdetail"
+                }
+              },
+              {
+                "headline": "Gulliver",
+                "id": "storyCollection_21741810_7",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/gulliver"
+                }
+              },
+              {
+                "headline": "Kaffeeklatsch",
+                "id": "storyCollection_21741810_8",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/kaffeeklatsch"
+                }
+              },
+              {
+                "headline": "Prospero",
+                "id": "storyCollection_21741810_9",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/prospero"
+                }
+              },
+              {
+                "headline": "The Economist explains",
+                "id": "storyCollection_21741810_10",
+                "url": {
+                  "canonical": "https://www.economist.com/blogs/economist-explains"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "headline": "Current edition",
+          "id": "storyCollection_21741814_2",
+          "url": {
+            "canonical": "https://www.economist.com/printedition"
+          }
+        },
+        {
+          "headline": "Audio edition",
+          "id": "storyCollection_21741814_3",
+          "url": {
+            "canonical": "https://www.economist.com/audio-edition"
+          }
+        },
+        {
+          "headline": "Economist Films",
+          "id": "storyCollection_21741814_4",
+          "url": {
+            "canonical": "http://films.economist.com/"
+          }
+        },
+        {
+          "headline": "Economist Radio",
+          "id": "storyCollection_21741814_5",
+          "url": {
+            "canonical": "http://radio.economist.com/"
+          }
+        },
+        {
+          "headline": "The Economist apps",
+          "id": "storyCollection_21741814_6",
+          "url": {
+            "canonical": "https://www.economist.com/digital"
+          }
+        },
+        {
+          "headline": "More",
+          "id": "storyCollection_21741814_21741813",
+          "hasPart": {
+            "parts": [
+              {
+                "headline": "Apps & Digital Editions",
+                "id": "storyCollection_21741813_21741811",
+                "canonical": "/node/21741811",
+                "hasPart": {
+                  "parts": [
+                    {
+                      "headline": "The Economist apps",
+                      "id": "storyCollection_21741811_0",
+                      "url": {
+                        "canonical": "https://www.economist.com/digital"
+                      }
+                    },
+                    {
+                      "headline": "Espresso",
+                      "id": "storyCollection_21741811_1",
+                      "url": {
+                        "canonical": "https://www.economist.com/digital"
+                      }
+                    },
+                    {
+                      "headline": "Global Business Review",
+                      "id": "storyCollection_21741811_2",
+                      "url": {
+                        "canonical": "https://www.economist.com/digital"
+                      }
+                    },
+                    {
+                      "headline": "World in Figures",
+                      "id": "storyCollection_21741811_3",
+                      "url": {
+                        "canonical": "https://worldinfigures.com/"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "headline": "From The Economist Group",
+                "id": "storyCollection_21741813_21741812",
+                "hasPart": {
+                  "parts": [
+                    {
+                      "headline": "Events",
+                      "id": "storyCollection_21741812_0",
+                      "url": {
+                        "canonical": "https://www.economist.com/events-conferences"
+                      }
+                    },
+                    {
+                      "headline": "Online GMAT prep",
+                      "id": "storyCollection_21741812_1",
+                      "url": {
+                        "canonical": "https://gmat.economist.com/?gsrc=economist_nav"
+                      }
+                    },
+                    {
+                      "headline": "Online GRE prep",
+                      "id": "storyCollection_21741812_2",
+                      "url": {
+                        "canonical": "https://gre.economist.com/?gsrc=economist_nav"
+                      }
+                    },
+                    {
+                      "headline": "Executive Education Navigator",
+                      "id": "storyCollection_21741812_3",
+                      "url": {
+                        "canonical": "https://execed.economist.com/"
+                      }
+                    },
+                    {
+                      "headline": "Which MBA",
+                      "id": "storyCollection_21741812_4",
+                      "url": {
+                        "canonical": "https://www.economist.com/whichmba"
+                      }
+                    },
+                    {
+                      "headline": "Jobs Board",
+                      "id": "storyCollection_21741812_5",
+                      "url": {
+                        "canonical": "http://jobs.economist.com/"
+                      }
+                    },
+                    {
+                      "headline": "Learning.ly",
+                      "id": "storyCollection_21741812_6",
+                      "url": {
+                        "canonical": "https://learning.ly/"
+                      }
+                    },
+                    {
+                      "headline": "The Economist Store",
+                      "id": "storyCollection_21741812_7",
+                      "url": {
+                        "canonical": "https://shop.economist.com/"
+                      }
+                    },
+                    {
+                      "headline": "The Economist Intelligence Unit",
+                      "id": "storyCollection_21741812_8",
+                      "url": {
+                        "canonical": "https://www.eiu.com/"
+                      }
+                    },
+                    {
+                      "headline": "The Economist Corporate Network",
+                      "id": "storyCollection_21741812_9",
+                      "url": {
+                        "canonical": "https://www.corporatenetwork.com/"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "headline": "About The Economist",
+                "id": "storyCollection_21741813_2",
+                "url": {
+                  "canonical": "https://www.economist.com/about-the-economist"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "headline": "Subscribe",
+          "id": "storyCollection_21741814_8",
+          "url": {
+            "canonical": "https://econ.st/2bs1gXz"
+          }
+        }
+      ]
+    }
+  }
+}

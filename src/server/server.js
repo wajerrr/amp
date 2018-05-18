@@ -43,11 +43,9 @@ async function start() {
   try {
     await server.start();
   } catch (err) {
-    /* eslint-disable-next-line no-console */
     console.error('error', err);
     process.exit(1);
   }
-  /* eslint-disable-next-line no-console */
   console.info(
     `Server running at: ${
       server.info.uri
