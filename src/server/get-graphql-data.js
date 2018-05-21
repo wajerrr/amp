@@ -69,6 +69,7 @@ const getGraphqlData = async (ref) => {
                 }
                 image{
                   main {
+                    id
                     width
                     height
                     url {

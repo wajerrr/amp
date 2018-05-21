@@ -5,6 +5,7 @@ require('babel-register')({
 let server = require('./server').default;
 const { isDev } = require('./utils/environment-detection');
 
+/* eslint-disable-next-line no-console */
 console.log('isDev', isDev);
 const start = async () => {
   try {
@@ -14,11 +15,18 @@ const start = async () => {
     console.error('error', err);
     process.exit(1);
   }
+
+  if (process.env.NODE_ENV === undefined) {
+    /* eslint-disable-next-line no-console */
+    console.error('Please set NODE_ENV before take off!');
+    process.exit(1);
+  }
+
   /* eslint-disable-next-line no-console */
   console.info(
-    `Server running at: ${server.info.uri} in ${(
-      process.env.NODE_ENV || 'no NODE_ENV set!!!'
-    ).toUpperCase()} mode`
+    `Server running at: ${
+      server.info.uri
+    } in ${process.env.NODE_ENV.toUpperCase()} mode`
   );
   if (isDev) {
     /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
