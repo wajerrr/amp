@@ -5,6 +5,8 @@ import color from '../styles/color';
 import fontFamily from '../styles/font-family';
 import spacings from '../styles/spacings';
 import text from '../styles/typography';
+import FooterSocialMenu from './footer-social-menu';
+import StyledFooterLink from './footer-styled-link';
 
 const footerClassName = css`
   overflow: hidden;
@@ -21,22 +23,10 @@ const footerSectionClassName = css`
     border: none;
   }
 `;
-const footerLinkClassName = css`
-  text-decoration: none;
-  display: inline-block;
-  padding: ${spacings.l} 0;
-  width: 50%;
-  &:active {
-    opacity: 0.3;
-  }
-`;
 const textClassName = css`
   color: ${color.moscow};
   font-size: ${text.sizeStep['-2']};
-  margin-bottom: 0;
-`;
-const linkColors = (sectionLevel) => css`
-  color: ${sectionLevel === 0 ? color.thimphu : color.london};
+  margin-bottom: ${spacings.none};
 `;
 
 const Footer = ({
@@ -45,25 +35,32 @@ const Footer = ({
   },
 }) => (
   <footer className={footerClassName}>
-    {parts.map((parent, sectionLevel) => (
-      <section key={parent.id} className={footerSectionClassName}>
-        {parent.hasPart ? (
-          parent.hasPart.parts.map((child) => (
-            <a
-              key={child.headline}
-              className={`${footerLinkClassName} ${linkColors(sectionLevel)}`}
-              href={child.url.canonical}
-            >
-              {child.headline}
-            </a>
-          ))
+    {parts.map(
+      (parent, sectionLevel) =>
+        parent.id === 'menu-unicorn-keep-updated' ? (
+          <section key={parent.id} className={footerSectionClassName}>
+            <FooterSocialMenu menuItems={parent} />
+          </section>
         ) : (
-          <p key={parent.id} className={textClassName}>
-            {parent.headline}
-          </p>
-        )}
-      </section>
-    ))}
+          <section key={parent.id} className={footerSectionClassName}>
+            {parent.hasPart ? (
+              parent.hasPart.parts.map((child) => (
+                <StyledFooterLink
+                  key={child.isPartOf.context.position}
+                  link={child}
+                  sectionLevel={sectionLevel}
+                >
+                  {child.headline}
+                </StyledFooterLink>
+              ))
+            ) : (
+              <p key={parent.id} className={textClassName}>
+                {parent.headline}
+              </p>
+            )}
+          </section>
+        )
+    )}
   </footer>
 );
 
