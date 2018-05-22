@@ -40,7 +40,7 @@ exports[`StoryCollectionHeroItem should match snapshot with className 1`] = `
     </div>
   </a>
   <a
-    className="e1omscfa1 css-4vty5-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
+    className="e1omscfa1 css-1gtc8lk-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
     href="https://www.economist.com/help/about-us"
   >
     About us
@@ -104,7 +104,7 @@ exports[`StoryCollectionHeroItem should match snapshot without className 1`] = `
     </div>
   </a>
   <a
-    className="e1omscfa1 css-4vty5-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
+    className="e1omscfa1 css-1gtc8lk-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
     href="https://www.economist.com/help/about-us"
   >
     About us

@@ -12,9 +12,7 @@ const StyledText = styled('p')`
 `;
 
 const FooterTextSection = ({ menuItem }) => (
-  <StyledText key={menuItem.id}>
-    {menuItem.headline}
-  </StyledText>
+  <StyledText key={menuItem.id}>{menuItem.headline}</StyledText>
 );
 
 FooterTextSection.propTypes = {

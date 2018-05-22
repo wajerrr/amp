@@ -13,7 +13,7 @@ exports[`ArticlePublicationDetails should match snapshot with byline 1`] = `
      | by me
   </div>
   <div
-    className="css-16g3ycg-ShareBarContainer-StyledSocialShare e1s5s9go0"
+    className="css-16g3ycg-ShareBarContainer-StyledSocialShare eyrn4830"
   >
     <amp-social-share
       height={31}
@@ -122,7 +122,7 @@ exports[`ArticlePublicationDetails should match snapshot without byline 1`] = `
     
   </div>
   <div
-    className="css-16g3ycg-ShareBarContainer-StyledSocialShare e1s5s9go0"
+    className="css-16g3ycg-ShareBarContainer-StyledSocialShare eyrn4830"
   >
     <amp-social-share
       height={31}

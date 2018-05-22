@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import IconRight from '@economist/component-icon/lib/inline-icons/right';
 import color from '../../styles/color';
 import text from '../../styles/typography';
-import StyledLink from '../styled-link';
+import StyledLink from '../styled-link/styled-link';
 
 const StyledSectionLink = styled(StyledLink)`
   color: ${color.moscow};

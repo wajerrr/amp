@@ -1,18 +1,18 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import fontFamily from '../styles/font-family';
-import text from '../styles/typography';
-import color from '../styles/color';
-import spacings from '../styles/spacings';
-import footerData from '../../../mockFooterData.json';
-import navigationData from '../../../mockNavData.json';
-import injectFontFace from '../styles/font-face';
-import Navigation from './navigation';
-import Article from './article/article';
-import Footer from './footer/footer';
-import StoryCollection from './story-collection/story-collection';
-import NavigationMenu from './navigation-menu/navigation-menu';
+import fontFamily from '../../styles/font-family';
+import text from '../../styles/typography';
+import color from '../../styles/color';
+import spacings from '../../styles/spacings';
+import footerData from '../../../../mockFooterData.json';
+import navigationData from '../../../../mockNavData.json';
+import injectFontFace from '../../styles/font-face';
+import Navigation from '../navigation/navigation';
+import Article from '../article/article';
+import Footer from '../footer/footer';
+import StoryCollection from '../story-collection/story-collection';
+import NavigationMenu from '../navigation-menu/navigation-menu';
 
 injectFontFace();
 

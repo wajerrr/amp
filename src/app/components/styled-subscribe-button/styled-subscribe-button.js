@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import spacings from '../styles/spacings';
-import StyledLinkButton from './styled-link-button';
+import spacings from '../../styles/spacings';
+import StyledLinkButton from '../styled-link-button/styled-link-button';
 
 const StyledSubscribeButton = ({ className }) => (
   <StyledLinkButton className={className} href="https://econ.st/2bs1gXz">

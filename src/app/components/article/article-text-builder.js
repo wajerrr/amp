@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledLink from '../styled-link';
+import StyledLink from '../styled-link/styled-link';
 
 const buildComponents = (childrenData = [], path = '') => {
   const getHTMLTag = (name, children, key) => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import color from '../../styles/color';
-import { LargeSubscribeButton } from '../styled-subscribe-button';
-import StyledLink from '../styled-link';
-import StyledIconButton from '../styled-icon-button';
+import { LargeSubscribeButton } from '../styled-subscribe-button/styled-subscribe-button';
+import StyledLink from '../styled-link/styled-link';
+import StyledIconButton from '../styled-icon-button/styled-icon-button';
 
 const getListItemComponent = (item, styles) => {
   let link = item.url && (

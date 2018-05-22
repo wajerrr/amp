@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import Logo from './logo';
-import StyledSubscribeButton from './styled-subscribe-button';
-import StyledIconButton from './styled-icon-button';
-import typography from '../styles/typography';
-import spacings from '../styles/spacings';
-import color from '../styles/color';
+import Logo from '../logo/logo';
+import StyledSubscribeButton from '../styled-subscribe-button/styled-subscribe-button';
+import StyledIconButton from '../styled-icon-button/styled-icon-button';
+import typography from '../../styles/typography';
+import spacings from '../../styles/spacings';
+import color from '../../styles/color';
 
 const StyledNav = styled('nav')`
   display: flex;

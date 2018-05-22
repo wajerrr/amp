@@ -3,15 +3,15 @@
 exports[`FooterSocialMenu should match the snapshot 1`] = `
 Array [
   <h4
-    className="css-1rpsvqs"
+    className="css-zf4esx-StyledHeader ee6t2ru0"
   >
     Keep updated
   </h4>,
   <div
-    className="css-rr8mqx"
+    className="css-x2bodi-StyledIconWrapper ee6t2ru1"
   >
     <a
-      className="css-1njfl4a"
+      className="css-sw97op-StyledLink ee6t2ru2"
       href="https://www.facebook.com/TheEconomist"
     >
       <span
@@ -32,7 +32,7 @@ Array [
       </span>
     </a>
     <a
-      className="css-1njfl4a"
+      className="css-sw97op-StyledLink ee6t2ru2"
       href="https://twitter.com/TheEconomist"
     >
       <span
@@ -53,7 +53,7 @@ Array [
       </span>
     </a>
     <a
-      className="css-1njfl4a"
+      className="css-sw97op-StyledLink ee6t2ru2"
       href="https://plus.google.com/100470681032489535736/posts"
     >
       <span
@@ -74,7 +74,7 @@ Array [
       </span>
     </a>
     <a
-      className="css-1njfl4a"
+      className="css-sw97op-StyledLink ee6t2ru2"
       href="https://www.economist.com/newsletters"
     >
       <span

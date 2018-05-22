@@ -4,9 +4,9 @@ import styled from 'react-emotion';
 import IconPrintEdition from '@economist/component-icon/lib/inline-icons/print-edition';
 import { spacings, text, color, iconSizes } from '../../styles';
 import formatDate from '../../lib/date-time';
-import StyledTime from '../styled-time';
-import StyledLink from '../styled-link';
-import StyledShareBar from '../styled-share-bar';
+import StyledTime from '../styled-time/styled-time';
+import StyledLink from '../styled-link/styled-link';
+import StyledShareBar from '../styled-share-bar/styled-share-bar';
 
 const StyledIconPrintEdition = styled(IconPrintEdition)`
   svg {

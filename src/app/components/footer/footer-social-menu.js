@@ -16,12 +16,18 @@ import typography from '../../styles/typography';
 import spacings from '../../styles/spacings';
 
 const StyledHeader = styled('h4')`
+  color: ${color.moscow};
+  display: block;
+  font-size: ${typography.sizeStep['-1']};
+`;
+
+const StyledIconWrapper = styled('div')`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: ${spacings.m};
 `;
 
-const StyledIconWrapper = styled('div')`
+const StyledLink = styled('a')`
   display: block;
   height: ${iconSizes.large}px;
   & svg {
@@ -29,12 +35,6 @@ const StyledIconWrapper = styled('div')`
     height: ${iconSizes.large}px;
     width: ${iconSizes.large}px;
   }
-`;
-
-const StyledLink = styled('a')`
-  display: block;
-  color: ${color.moscow};
-  font-size: ${typography.sizeStep['-1']};
 `;
 
 const metaToIcon = {

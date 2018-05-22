@@ -39,7 +39,7 @@ exports[`StoryCollectionItem should match snapshot with className 1`] = `
     </div>
   </a>
   <a
-    className="ercjopt3 css-1cesb30-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
+    className="ercjopt3 css-13kn2e2-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
     href="https://www.economist.com/help/about-us"
   >
     About us
@@ -102,7 +102,7 @@ exports[`StoryCollectionItem should match snapshot without className 1`] = `
     </div>
   </a>
   <a
-    className="ercjopt3 css-1cesb30-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
+    className="ercjopt3 css-13kn2e2-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
     href="https://www.economist.com/help/about-us"
   >
     About us

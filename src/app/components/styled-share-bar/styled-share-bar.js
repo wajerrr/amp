@@ -7,9 +7,9 @@ import IconFacebook from '@economist/component-icon/lib/inline-icons/facebook';
 import IconLinkedin from '@economist/component-icon/lib/inline-icons/linkedin';
 import IconMail from '@economist/component-icon/lib/inline-icons/mail';
 import IconBalloon from '@economist/component-icon/lib/inline-icons/balloon';
-import iconSizes from '../styles/icon-sizes';
-import spacings from '../styles/spacings';
-import color from '../styles/color';
+import iconSizes from '../../styles/icon-sizes';
+import spacings from '../../styles/spacings';
+import color from '../../styles/color';
 
 const StyledSocialShare = css`
   background: ${color.kiev};

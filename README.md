@@ -19,7 +19,9 @@ Update test snapshots:
 
 Recommendations for styled components.
 
-#### Naming `styled-[component-name]`
+#### Naming and code organisation
+
+Each component should have folder for it with all dependant files and sub-components.
 
 For styled components (components able to receive styles from outside) use naming `styled-[component-name]`. 
 
@@ -66,8 +68,4 @@ render(<Fancy />);
 * Avoid using cascade in your styles. Cascade has performance downsides. Applying styles directly to tags and components helps to avoid style conflicts in child/grandchild components 
 * Avoid adding multiple classes on one node, use `cx(baseStyles, className)` or composition instead
 * if you need significantly change a look of a component, consider exporting it as a separate component (see StyledSubscribeButton/LargeSubscribeButton)
-
-#### Use folders for rich components
-
-If necessary, use folders for components which have a list of internal components.
 

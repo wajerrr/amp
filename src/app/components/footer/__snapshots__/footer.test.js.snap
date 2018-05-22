@@ -2,49 +2,49 @@
 
 exports[`Footer should match the snapshot 1`] = `
 <footer
-  className="css-18hx3fx-StyledFooterContainer e1v9q3fs0"
+  className="css-18hx3fx-StyledFooterContainer e7f5r0y0"
 >
   <section
-    className="css-1fx738i-StyledFooterSection e1v9q3fs1"
+    className="css-1fx738i-StyledFooterSection e7f5r0y1"
   >
     <a
-      className="css-2yobku-StyledFooterLink e1v9q3fs2"
+      className="css-2yobku-StyledFooterLink e1g1liug0"
       href="https://www.economist.com/subscribe"
     >
       Subscribe
     </a>
     <a
-      className="css-2yobku-StyledFooterLink e1v9q3fs2"
+      className="css-2yobku-StyledFooterLink e1g1liug0"
       href="https://www.economist.com/contact-info"
     >
       Contact us
     </a>
     <a
-      className="css-2yobku-StyledFooterLink e1v9q3fs2"
+      className="css-2yobku-StyledFooterLink e1g1liug0"
       href="https://www.economist.com/help/home"
     >
       Help
     </a>
     <a
-      className="css-2yobku-StyledFooterLink e1v9q3fs2"
+      className="css-2yobku-StyledFooterLink e1g1liug0"
       href="https://www.economist.com/openfuture"
     >
       Open Future
     </a>
   </section>
   <section
-    className="css-1fx738i-StyledFooterSection e1v9q3fs1"
+    className="css-1fx738i-StyledFooterSection e7f5r0y1"
   >
     <h4
-      className="css-1rpsvqs"
+      className="css-zf4esx-StyledHeader ee6t2ru0"
     >
       Keep updated
     </h4>
     <div
-      className="css-rr8mqx"
+      className="css-x2bodi-StyledIconWrapper ee6t2ru1"
     >
       <a
-        className="css-1njfl4a"
+        className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.facebook.com/TheEconomist"
       >
         <span
@@ -65,7 +65,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
-        className="css-1njfl4a"
+        className="css-sw97op-StyledLink ee6t2ru2"
         href="https://twitter.com/TheEconomist"
       >
         <span
@@ -86,7 +86,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
-        className="css-1njfl4a"
+        className="css-sw97op-StyledLink ee6t2ru2"
         href="https://plus.google.com/100470681032489535736/posts"
       >
         <span
@@ -107,7 +107,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
-        className="css-1njfl4a"
+        className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.economist.com/newsletters"
       >
         <span
@@ -128,7 +128,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
-        className="css-1njfl4a"
+        className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.linkedin.com/grp/home?gid=3056216"
       >
         <span
@@ -149,7 +149,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
-        className="css-1njfl4a"
+        className="css-sw97op-StyledLink ee6t2ru2"
         href="http://theeconomist.tumblr.com/"
       >
         <span
@@ -170,7 +170,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
-        className="css-1njfl4a"
+        className="css-sw97op-StyledLink ee6t2ru2"
         href="http://instagram.com/theeconomist/"
       >
         <span
@@ -199,7 +199,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
-        className="css-1njfl4a"
+        className="css-sw97op-StyledLink ee6t2ru2"
         href="http://www.youtube.com/user/economistmagazine"
       >
         <span
@@ -220,7 +220,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
-        className="css-1njfl4a"
+        className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.economist.com/rss"
       >
         <span
@@ -243,78 +243,78 @@ exports[`Footer should match the snapshot 1`] = `
     </div>
   </section>
   <section
-    className="css-dsh429"
+    className="css-1fx738i-StyledFooterSection e7f5r0y1"
   >
     <a
-      className="css-11i4prc-StyledFooterLink e1v9q3fs2"
+      className="css-11i4prc-StyledFooterLink e1g1liug0"
       href="https://www.economist.com/about-the-economist/"
     >
       About The Economist
     </a>
     <a
-      className="css-11i4prc-StyledFooterLink e1v9q3fs2"
+      className="css-11i4prc-StyledFooterLink e1g1liug0"
       href="http://marketingsolutions.economist.com/"
     >
       Advertise
     </a>
     <a
-      className="css-11i4prc-StyledFooterLink e1v9q3fs2"
+      className="css-11i4prc-StyledFooterLink e1g1liug0"
       href="https://www.economist.com/rights/reprints+and+permissions.html"
     >
       Reprints
     </a>
     <a
-      className="css-11i4prc-StyledFooterLink e1v9q3fs2"
+      className="css-11i4prc-StyledFooterLink e1g1liug0"
       href="http://economistgroupcareers.com/"
     >
       Careers
     </a>
     <a
-      className="css-11i4prc-StyledFooterLink e1v9q3fs2"
+      className="css-11i4prc-StyledFooterLink e1g1liug0"
       href="http://press.economist.com/"
     >
       Media Centre
     </a>
   </section>
   <section
-    className="css-1fx738i-StyledFooterSection e1v9q3fs1"
+    className="css-1fx738i-StyledFooterSection e7f5r0y1"
   >
     <a
-      className="css-11i4prc-StyledFooterLink e1v9q3fs2"
+      className="css-11i4prc-StyledFooterLink e1g1liug0"
       href="https://www.economist.com/legal/terms-of-use"
     >
       Terms of Use
     </a>
     <a
-      className="css-11i4prc-StyledFooterLink e1v9q3fs2"
+      className="css-11i4prc-StyledFooterLink e1g1liug0"
       href="http://www.economistgroup.com/results_and_governance/governance/privacy/"
     >
       Privacy
     </a>
     <a
-      className="css-11i4prc-StyledFooterLink e1v9q3fs2"
+      className="css-11i4prc-StyledFooterLink e1g1liug0"
       href="https://www.economist.com/cookies-info"
     >
       Cookies
     </a>
     <a
-      className="css-11i4prc-StyledFooterLink e1v9q3fs2"
+      className="css-11i4prc-StyledFooterLink e1g1liug0"
       href="https://www.economist.com/help/accessibilitypolicy"
     >
       Accessibility
     </a>
     <a
-      className="css-11i4prc-StyledFooterLink e1v9q3fs2"
+      className="css-11i4prc-StyledFooterLink e1g1liug0"
       href="http://www.economistgroup.com/results_and_governance/governance/guiding_principles.html"
     >
       Modern Slavery Statement
     </a>
   </section>
   <section
-    className="css-1fx738i-StyledFooterSection e1v9q3fs1"
+    className="css-1fx738i-StyledFooterSection e7f5r0y1"
   >
     <p
-      className="css-ptgl9f-StyledTextContainer e1v9q3fs3"
+      className="css-1ilwcap-StyledText e1pwfo7r0"
     >
       Copyright © The Economist Newspaper Limited 2018. All rights reserved.
     </p>

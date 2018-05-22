@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import color from '../styles/color';
-import fontFamily from '../styles/font-family';
-import typography from '../styles/typography';
-import spacings from '../styles/spacings';
+import color from '../../styles/color';
+import fontFamily from '../../styles/font-family';
+import typography from '../../styles/typography';
+import spacings from '../../styles/spacings';
 
 const StyledLink = styled('a')`
   background-color: ${color.chicago};

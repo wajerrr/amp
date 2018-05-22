@@ -2,7 +2,7 @@
 
 exports[`StyledShareBar should match snapshot 1`] = `
 <div
-  className="css-16g3ycg-ShareBarContainer-StyledSocialShare e1s5s9go0"
+  className="css-16g3ycg-ShareBarContainer-StyledSocialShare eyrn4830"
 >
   <amp-social-share
     height={31}
@@ -99,7 +99,7 @@ exports[`StyledShareBar should match snapshot 1`] = `
 
 exports[`StyledShareBar should match snapshot with comments 1`] = `
 <div
-  className="css-16g3ycg-ShareBarContainer-StyledSocialShare e1s5s9go0"
+  className="css-16g3ycg-ShareBarContainer-StyledSocialShare eyrn4830"
 >
   <amp-social-share
     height={31}
@@ -191,7 +191,7 @@ exports[`StyledShareBar should match snapshot with comments 1`] = `
     </span>
   </amp-social-share>
   <a
-    className="css-wkisya-CommentsLink-StyledSocialShare e1s5s9go1"
+    className="css-wkisya-CommentsLink-StyledSocialShare eyrn4831"
     href="/"
   >
     <span

@@ -1,5 +1,5 @@
 import styled from 'react-emotion';
-import color from '../styles/color';
+import color from '../../styles/color';
 
 const StyledLink = styled('a')`
   color: inherit;

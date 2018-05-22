@@ -2,7 +2,7 @@
 
 exports[`SectionLink should match snapshot with className 1`] = `
 <a
-  className="class css-h70xm4-StyledLink-StyledSectionLink e1pwg3wv0"
+  className="class css-1py2mka-StyledLink-StyledSectionLink e1pwg3wv0"
   href="/"
 >
   link
@@ -27,7 +27,7 @@ exports[`SectionLink should match snapshot with className 1`] = `
 
 exports[`SectionLink should match snapshot without className 1`] = `
 <a
-  className="css-h70xm4-StyledLink-StyledSectionLink e1pwg3wv0"
+  className="css-1py2mka-StyledLink-StyledSectionLink e1pwg3wv0"
   href="/"
 >
   link

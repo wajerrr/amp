@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { injectGlobal } from 'emotion';
 import styled from 'react-emotion';
 import color from '../../styles/color';
-import StyledIconButton from '../styled-icon-button';
+import StyledIconButton from '../styled-icon-button/styled-icon-button';
 import StyledAccordionListItem from './styled-accordion-list';
 import spacings from '../../styles/spacings';
 import fontFamily from '../../styles/font-family';

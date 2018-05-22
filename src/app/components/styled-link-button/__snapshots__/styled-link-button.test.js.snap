@@ -2,7 +2,7 @@
 
 exports[`StyledLinkButton should match snapshot 1`] = `
 <a
-  className="css-856nem-StyledLink e1il8zx80"
+  className="css-856nem-StyledLink e1ob2h4l0"
   href="www.url.com"
   role="button"
 >

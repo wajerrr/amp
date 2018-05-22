@@ -2,7 +2,7 @@
 
 exports[`FooterStyledLink should match the snapshot at any other index 1`] = `
 <a
-  className="css-1gppj2d css-1cdc8m6"
+  className="css-11i4prc-StyledFooterLink e1g1liug0"
   href="www.ampcanonical.com"
 >
   TestLink
@@ -11,7 +11,7 @@ exports[`FooterStyledLink should match the snapshot at any other index 1`] = `
 
 exports[`FooterStyledLink should match the snapshot at the first index 1`] = `
 <a
-  className="css-1gppj2d css-7uy4do"
+  className="css-2yobku-StyledFooterLink e1g1liug0"
   href="www.ampcanonical.com"
 >
   TestLink

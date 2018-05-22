@@ -43,7 +43,7 @@ exports[`StoryCollection should match snapshot 1`] = `
       </div>
     </a>
     <a
-      className="e1omscfa1 css-4vty5-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
+      className="e1omscfa1 css-1gtc8lk-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
       href="https://www.economist.com/help/about-us"
     >
       About us
@@ -103,7 +103,7 @@ exports[`StoryCollection should match snapshot 1`] = `
       </div>
     </a>
     <a
-      className="ercjopt3 css-1cesb30-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
+      className="ercjopt3 css-13kn2e2-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
       href="https://www.economist.com/help/about-us"
     >
       About us
@@ -163,7 +163,7 @@ exports[`StoryCollection should match snapshot 1`] = `
       </div>
     </a>
     <a
-      className="ercjopt3 css-1cesb30-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
+      className="ercjopt3 css-13kn2e2-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
       href="https://www.economist.com/help/about-us"
     >
       About us

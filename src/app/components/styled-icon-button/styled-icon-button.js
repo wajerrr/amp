@@ -4,7 +4,7 @@ import styled from 'react-emotion';
 import IconClose from '@economist/component-icon/lib/inline-icons/close';
 import IconHamburger from '@economist/component-icon/lib/inline-icons/hamburger';
 import IconDown from '@economist/component-icon/lib/inline-icons/down';
-import color from '../styles/color';
+import color from '../../styles/color';
 
 const icons = {
   hamburger: <IconHamburger />,

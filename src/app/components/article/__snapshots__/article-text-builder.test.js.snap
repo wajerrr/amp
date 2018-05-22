@@ -21,7 +21,7 @@ exports[`buildComponents should match snapshot for image 1`] = `
 
 exports[`buildComponents should match snapshot for tag a 1`] = `
 <a
-  className="css-1r5p1df-StyledLink e1wa77wm0"
+  className="css-1h5t0lq-StyledLink e2cf1b50"
   href="https://www.economist.com/"
 >
   Chain reaction
