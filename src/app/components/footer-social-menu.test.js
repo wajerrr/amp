@@ -63,7 +63,7 @@ const socialMenuData = {
 describe('FooterSocialMenu', () => {
   it('should match the snapshot', () => {
     const footer = renderer
-      .create(<FooterSocialMenu menuItems={socialMenuData} />)
+      .create(<FooterSocialMenu menuItem={socialMenuData} />)
       .toJSON();
     expect(footer).toMatchSnapshot();
   });

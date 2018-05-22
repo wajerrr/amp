@@ -47,25 +47,28 @@ const metaToIcon = {
   rss: <IconRss />,
 };
 
-const FooterSocialMenu = ({ menuItems }) => (
+const FooterSocialMenu = ({ menuItem }) => (
   <Fragment>
-    <h4 className={headerClassName}>{menuItems.headline}</h4>
+    <h4 className={headerClassName}>{menuItem.headline}</h4>
     <div className={iconWrapperClassName}>
-      {menuItems.hasPart.parts.map((item) => (
-        <a
-          key={item.isPartOf.context.position}
-          className={iconClassName}
-          href={item.url.canonical}
-        >
-          {metaToIcon[item.meta]}
-        </a>
-      ))}
+      {menuItem.hasPart.parts.map(
+        (item) =>
+          metaToIcon[item.meta] && (
+            <a
+              key={item.isPartOf.context.position}
+              className={iconClassName}
+              href={item.url.canonical}
+            >
+              {metaToIcon[item.meta]}
+            </a>
+          )
+      )}
     </div>
   </Fragment>
 );
 
 FooterSocialMenu.propTypes = {
-  menuItems: PropTypes.shape({
+  menuItem: PropTypes.shape({
     headline: PropTypes.string,
     hasPart: PropTypes.shape({}),
   }).isRequired,

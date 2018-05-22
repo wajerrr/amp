@@ -7,12 +7,8 @@ describe('FooterStyledLink', () => {
     const footer = renderer
       .create(
         <StyledFooterLink
-          link={{
-            headline: 'testHeadline',
-            url: {
-              canonical: 'www.ampcanonical.com',
-            },
-          }}
+          headline="testHeadline"
+          href="www.ampcanonical.com"
           sectionLevel={0}
         >
           TestLink
@@ -25,12 +21,8 @@ describe('FooterStyledLink', () => {
     const footer = renderer
       .create(
         <StyledFooterLink
-          link={{
-            headline: 'testHeadline',
-            url: {
-              canonical: 'www.ampcanonical.com',
-            },
-          }}
+          headline="testHeadline"
+          href="www.ampcanonical.com"
           sectionLevel={1}
         >
           TestLink

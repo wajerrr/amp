@@ -17,23 +17,19 @@ const linkColors = (sectionLevel) => css`
   color: ${sectionLevel === 0 ? color.thimphu : color.london};
 `;
 
-const StyledFooterLink = ({ link, sectionLevel, children }) => (
+const StyledFooterLink = ({ headline, sectionLevel, href, children }) => (
   <a
-    key={link.headline}
+    key={headline}
     className={`${footerLinkClassName} ${linkColors(sectionLevel)}`}
-    href={link.url.canonical}
+    href={href}
   >
     {children}
   </a>
 );
 
 StyledFooterLink.propTypes = {
-  link: PropTypes.shape({
-    headline: PropTypes.string,
-    url: PropTypes.shape({
-      canonical: PropTypes.string,
-    }),
-  }).isRequired,
+  headline: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
   sectionLevel: PropTypes.number.isRequired,
 };
