@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { extractCritical } from 'emotion-server';
 
 import template from './template';
+import { isDev } from './utils/environment-detection';
 
 const renderHtml = (data, path) => {
   /* eslint-disable global-require */
@@ -16,7 +17,7 @@ const renderHtml = (data, path) => {
     title: data.canonical.headline,
     css,
     body: reactHTMLString,
-    isDev: process.env.NODE_ENV === 'development',
+    isDev,
   });
 };
 

@@ -1,29 +1,32 @@
 import getGraphqlData from '../get-graphql-data';
 import renderHtml from '../render-html';
+import { isProd, isStage } from '../utils/environment-detection';
 
-// This to be refactored when more information is availiable.
+import economistConfig from '../config/economist';
+
+/* This method will be called now every time we hit this endpoint
+ Maybe we should have env variable to detect what product it is
+ as it won't change. */
+
 const getDomain = (host) => {
-  if (host.includes('amp.economist.com')) {
-    return 'https://www.economist.com';
+  let product;
+  switch (host) {
+    case economistConfig.ampDomain:
+      product = economistConfig;
+      break;
+    default:
+      product = economistConfig;
+      break;
   }
-  if (host.includes('amp.s.aws.economist.com/')) {
-    return 'https://www.economist.com';
-  }
-  if (process.env.NODE_ENV === 'development') {
-    return 'https://www.economist.com';
-  }
-  return 'https://www.economist.com';
+  return product.domain;
 };
-
-export const generateRefUrl = (pathname, host) =>
-  `${getDomain(host)}/${pathname}`;
 
 export const handler = async (request, h) => {
   try {
-    const ref = generateRefUrl(request.params.pathname, request.headers.host);
+    const ref = `${getDomain(request.headers.host)}/${request.params.pathname}`;
     const res = await getGraphqlData(ref);
     if (
-      process.env.NODE_ENV === 'production' &&
+      (isProd || isStage) &&
       res.data.canonical.isAccessibleForFree === false
     ) {
       return h.redirect(res.data.canonical.url.canonical);
