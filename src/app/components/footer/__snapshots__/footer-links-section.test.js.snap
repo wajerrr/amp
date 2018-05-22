@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterLinksSection should match the snapshot 1`] = `
+Array [
+  <a
+    className="css-11i4prc-StyledFooterLink e1g1liug0"
+    href="https://www.economist.com/subscribe"
+  >
+    Subscribe
+  </a>,
+  <a
+    className="css-11i4prc-StyledFooterLink e1g1liug0"
+    href="https://www.economist.com/contact-info"
+  >
+    Contact us
+  </a>,
+]
+`;

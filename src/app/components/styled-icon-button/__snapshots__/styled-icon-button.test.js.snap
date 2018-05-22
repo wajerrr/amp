@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledIconButton should match snapshot 1`] = `
+<button
+  className="css-1s236yn-StyledButton e139jkne0"
+  on="toggleMenu"
+  tabIndex="0"
+/>
+`;

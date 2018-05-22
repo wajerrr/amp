@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`buildComponents should match snapshot for br 1`] = `<br />`;
+
+exports[`buildComponents should match snapshot for iframe 1`] = `
+<figure>
+  
+</figure>
+`;
+
+exports[`buildComponents should match snapshot for image 1`] = `
+<figure>
+  <amp-img
+    height="720"
+    layout="responsive"
+    src="img.jpg"
+    width="1280"
+  />
+</figure>
+`;
+
+exports[`buildComponents should match snapshot for tag a 1`] = `
+<a
+  className="css-1h5t0lq-StyledLink e2cf1b50"
+  href="https://www.economist.com/"
+>
+  Chain reaction
+</a>
+`;

@@ -1,20 +1,12 @@
 import React from 'react';
-import { css } from 'emotion';
-import { PropTypes } from 'prop-types';
-
+import PropTypes from 'prop-types';
+import styled from 'react-emotion';
 import color from '../../styles/color';
-import fontFamily from '../../styles/font-family';
 import spacings from '../../styles/spacings';
+import typography from '../../styles/typography';
+import fontFamily from '../../styles/font-family';
 
-const baseSubHeadline = css`
-  overflow: hidden;
-  display: block;
-  margin: ${spacings.none} ${spacings.none} ${spacings.xs};
-  color: ${color.economist};
-  font-family: ${fontFamily.sans};
-`;
-
-const baseHeadline = css`
+const StyledHeadline = styled('span')`
   display: block;
   margin: ${spacings.none} ${spacings.none} ${spacings.m};
   color: ${color.beijing};
@@ -22,43 +14,47 @@ const baseHeadline = css`
   margin-bottom: ${spacings.none};
 `;
 
-const header = css`
-  margin: ${spacings.none};
-  padding: ${spacings.none};
+const StyledSubHeadline = styled('span')`
+  overflow: hidden;
+  display: block;
+  margin: ${spacings.none} ${spacings.none} ${spacings.xs};
+  color: ${color.economist};
+  font-family: ${fontFamily.sans};
 `;
 
-const ItemHeadline = ({
-  subHeadline,
-  subHeadlineClassName,
-  headlineClassName,
-  children,
-  className,
-}) => (
-  <h3 className={`${header} ${className}`}>
+const StyledHeader = styled('h3')`
+  margin: ${spacings.none};
+  padding: ${spacings.none};
+  font-size: ${typography.sizeStep[0]};
+`;
+
+const ItemHeadline = ({ subHeadline, children, className, styles }) => (
+  <StyledHeader className={className}>
     {subHeadline && (
-      <span className={`${baseSubHeadline} ${subHeadlineClassName}`}>
+      <StyledSubHeadline className={styles.StyledSubHeadline}>
         {subHeadline}
-      </span>
+      </StyledSubHeadline>
     )}
-    <span className={`headline ${baseHeadline} ${headlineClassName}`}>
+    <StyledHeadline className={styles.StyledHeadline}>
       {children}
-    </span>
-  </h3>
+    </StyledHeadline>
+  </StyledHeader>
 );
 
 ItemHeadline.defaultProps = {
   className: '',
   subHeadline: undefined,
-  subHeadlineClassName: '',
-  headlineClassName: '',
+  styles: {},
 };
 
 ItemHeadline.propTypes = {
   subHeadline: PropTypes.string,
   className: PropTypes.string,
-  subHeadlineClassName: PropTypes.string,
-  headlineClassName: PropTypes.string,
   children: PropTypes.node.isRequired,
+  styles: PropTypes.shape({
+    StyledSubHeadline: PropTypes.string,
+    StyledHeadline: PropTypes.string,
+  }),
 };
 
 export default ItemHeadline;

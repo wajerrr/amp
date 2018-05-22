@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledSubscribeButton should match snapshot 1`] = `
+<a
+  className="css-856nem-StyledLink e1ob2h4l0"
+  href="https://econ.st/2bs1gXz"
+  role="button"
+>
+  Subscribe
+</a>
+`;

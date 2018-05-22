@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`FooterLinksSection should match the snapshot 1`] = `
-<p
-  className="css-tj597u"
->
-  Copyright © The Economist Newspaper Limited 2018. All rights reserved.
-</p>
-`;

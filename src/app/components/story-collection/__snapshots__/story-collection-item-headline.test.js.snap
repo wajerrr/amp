@@ -2,10 +2,10 @@
 
 exports[`ItemHeadline should match snapshot with subheadline 1`] = `
 <h3
-  className="css-1sct6h1 "
+  className="css-m4ovun-StyledHeader e10thz6k2"
 >
   <span
-    className="headline css-odjosd "
+    className="css-1oipe6n-StyledHeadline e10thz6k0"
   >
     headline
   </span>
@@ -14,10 +14,10 @@ exports[`ItemHeadline should match snapshot with subheadline 1`] = `
 
 exports[`ItemHeadline should match snapshot with subheadline and classNames 1`] = `
 <h3
-  className="css-1sct6h1 class"
+  className="class css-m4ovun-StyledHeader e10thz6k2"
 >
   <span
-    className="headline css-odjosd class2"
+    className="css-1oipe6n-StyledHeadline e10thz6k0"
   >
     headline
   </span>
@@ -26,10 +26,10 @@ exports[`ItemHeadline should match snapshot with subheadline and classNames 1`] 
 
 exports[`ItemHeadline should match snapshot without subheadline 1`] = `
 <h3
-  className="css-1sct6h1 "
+  className="css-m4ovun-StyledHeader e10thz6k2"
 >
   <span
-    className="headline css-odjosd "
+    className="css-1oipe6n-StyledHeadline e10thz6k0"
   >
     headline
   </span>

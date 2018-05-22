@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterStyledLink should match the snapshot at any other index 1`] = `
+<a
+  className="css-11i4prc-StyledFooterLink e1g1liug0"
+  href="www.ampcanonical.com"
+>
+  TestLink
+</a>
+`;
+
+exports[`FooterStyledLink should match the snapshot at the first index 1`] = `
+<a
+  className="css-2yobku-StyledFooterLink e1g1liug0"
+  href="www.ampcanonical.com"
+>
+  TestLink
+</a>
+`;

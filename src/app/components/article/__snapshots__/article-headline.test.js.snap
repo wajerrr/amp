@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleHeadline should match snapshot with subheadline 1`] = `
+<h1
+  className="css-1dn7toz-StyledArticleHeadline e1bqhfjn0"
+>
+  <span
+    className="css-muy681-StyledSubHeadline e1bqhfjn1"
+  >
+    subheadline
+  </span>
+  <span
+    className="css-1k4e99h-StyledHeadline e1bqhfjn2"
+  >
+    headlione
+  </span>
+</h1>
+`;
+
+exports[`ArticleHeadline should match snapshot without subheadline 1`] = `
+<h1
+  className="css-1dn7toz-StyledArticleHeadline e1bqhfjn0"
+>
+  
+  <span
+    className="css-1k4e99h-StyledHeadline e1bqhfjn2"
+  >
+    description
+  </span>
+</h1>
+`;
