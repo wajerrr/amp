@@ -25,13 +25,13 @@ const footerSectionClassName = css`
 `;
 
 const getFooterSection = (parent) => {
+  let section = FooterTextSection;
   if (parent.id === 'menu-unicorn-keep-updated') {
-    return FooterSocialMenu;
+    section = FooterSocialMenu;
+  } else if (parent.hasPart) {
+    section = FooterLinksSection;
   }
-  if (parent.hasPart) {
-    return FooterLinksSection;
-  }
-  return FooterTextSection;
+  return section;
 };
 
 const Footer = ({
