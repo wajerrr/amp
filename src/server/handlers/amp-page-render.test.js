@@ -3,6 +3,7 @@ import getGraphqlData from '../get-graphql-data';
 import renderHtml from '../render-html';
 import server from '../server';
 import * as envVars from '../utils/environment-detection';
+import economistConfig from '../config/economist';
 
 const mockData = 'testData';
 
@@ -54,7 +55,7 @@ describe('ampPageRenderer handler', async () => {
     await server.inject({ method: 'GET', url });
     expect(getGraphqlData).toHaveBeenCalledTimes(1);
     expect(getGraphqlData).toHaveBeenCalledWith(
-      'https://www.economist.com/test/article'
+      `${economistConfig.domain}${url}`
     );
     done();
   });

@@ -11,7 +11,7 @@ import economistConfig from '../config/economist';
 const getDomain = (host) => {
   let product;
   switch (host) {
-    case economistConfig.ampHost:
+    case economistConfig.ampDomain:
       product = economistConfig;
       break;
     default:
