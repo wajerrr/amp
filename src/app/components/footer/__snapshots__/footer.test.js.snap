@@ -46,6 +46,7 @@ exports[`Footer should match the snapshot 1`] = `
       <a
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.facebook.com/TheEconomist"
+        target="_blank"
       >
         <span
           className={undefined}
@@ -67,6 +68,7 @@ exports[`Footer should match the snapshot 1`] = `
       <a
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://twitter.com/TheEconomist"
+        target="_blank"
       >
         <span
           className={undefined}
@@ -88,6 +90,7 @@ exports[`Footer should match the snapshot 1`] = `
       <a
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://plus.google.com/100470681032489535736/posts"
+        target="_blank"
       >
         <span
           className={undefined}
@@ -109,6 +112,7 @@ exports[`Footer should match the snapshot 1`] = `
       <a
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.economist.com/newsletters"
+        target="_blank"
       >
         <span
           className={undefined}
@@ -130,6 +134,7 @@ exports[`Footer should match the snapshot 1`] = `
       <a
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.linkedin.com/grp/home?gid=3056216"
+        target="_blank"
       >
         <span
           className={undefined}
@@ -151,6 +156,7 @@ exports[`Footer should match the snapshot 1`] = `
       <a
         className="css-sw97op-StyledLink ee6t2ru2"
         href="http://theeconomist.tumblr.com/"
+        target="_blank"
       >
         <span
           className={undefined}
@@ -172,6 +178,7 @@ exports[`Footer should match the snapshot 1`] = `
       <a
         className="css-sw97op-StyledLink ee6t2ru2"
         href="http://instagram.com/theeconomist/"
+        target="_blank"
       >
         <span
           className={undefined}
@@ -201,6 +208,7 @@ exports[`Footer should match the snapshot 1`] = `
       <a
         className="css-sw97op-StyledLink ee6t2ru2"
         href="http://www.youtube.com/user/economistmagazine"
+        target="_blank"
       >
         <span
           className={undefined}
@@ -222,6 +230,7 @@ exports[`Footer should match the snapshot 1`] = `
       <a
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.economist.com/rss"
+        target="_blank"
       >
         <span
           className={undefined}

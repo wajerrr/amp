@@ -13,6 +13,7 @@ Array [
     <a
       className="css-sw97op-StyledLink ee6t2ru2"
       href="https://www.facebook.com/TheEconomist"
+      target="_blank"
     >
       <span
         className={undefined}
@@ -34,6 +35,7 @@ Array [
     <a
       className="css-sw97op-StyledLink ee6t2ru2"
       href="https://twitter.com/TheEconomist"
+      target="_blank"
     >
       <span
         className={undefined}
@@ -55,6 +57,7 @@ Array [
     <a
       className="css-sw97op-StyledLink ee6t2ru2"
       href="https://plus.google.com/100470681032489535736/posts"
+      target="_blank"
     >
       <span
         className={undefined}
@@ -76,6 +79,7 @@ Array [
     <a
       className="css-sw97op-StyledLink ee6t2ru2"
       href="https://www.economist.com/newsletters"
+      target="_blank"
     >
       <span
         className={undefined}
