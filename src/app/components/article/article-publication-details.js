@@ -2,19 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import IconPrintEdition from '@economist/component-icon/lib/inline-icons/print-edition';
+import { spacings, text, color, iconSizes } from '../../styles';
 import formatDate from '../../lib/date-time';
-import spacings from '../../styles/spacings';
-import color from '../../styles/color';
-import text from '../../styles/typography';
 import StyledTime from '../styled-time';
 import StyledLink from '../styled-link';
 import StyledShareBar from '../styled-share-bar';
+
+const StyledIconPrintEdition = styled(IconPrintEdition)`
+  svg {
+    width: ${iconSizes.small}px;
+    height: ${iconSizes.small}px;
+    vertical-align: middle;
+    margin-left: -4px;
+    padding-bottom: 3px;
+    fill: ${color.moscow};
+  }
+`;
+
+const StyledSectionLink = styled(StyledLink)`
+  &,
+  &:active,
+  &:visited {
+    color: ${color.beijing};
+    text-decoration: none;
+    border-bottom: none;
+  }
+`;
 
 const Section = ({ printSection, publication }) =>
   printSection ? (
     <StyledSectionLink href={printSection.url.canonical}>
       <StyledIconPrintEdition />
-      {`Print version | ${printSection.headline}`}
+      {'Print version'}
+      {printSection.headline && ` | ${printSection.headline}`}
     </StyledSectionLink>
   ) : (
     publication && (
@@ -34,39 +54,18 @@ Section.defaultProps = {
   publication: null,
 };
 
-const StyledIconPrintEdition = styled(IconPrintEdition)`
-  svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-    margin-left: -4px;
-    padding-bottom: 3px;
-    fill: ${color.moscow};
-  }
-`;
-
-const StyledSectionLink = styled(StyledLink)`
-  &,
-  &:active,
-  &:visited {
-    color: ${color.beijing};
-    text-decoration: none;
-    border-bottom: none;
-  }
-`;
-
 const StyledPublicationsContainer = styled('div')`
   width: 100%;
   color: ${color.moscow};
-  padding: ${spacings.s} 0;
-  margin: ${spacings.s} 0;
+  padding: ${spacings.s} ${spacings.none};
+  margin: ${spacings.s} ${spacings.none};
   border-width: 1px 0 1px 0;
   border-style: solid;
   border-color: ${color.cardiff};
 `;
 
 const StyledPublicationHead = styled('h3')`
-  margin: 0;
+  margin: ${spacings.none};
   color: ${color.beijing};
   font-size: ${text.sizeStep['-2']};
   font-weight: 500;

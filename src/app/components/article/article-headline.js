@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import spacings from '../../styles/spacings';
-import fontFamily from '../../styles/font-family';
-import text from '../../styles/typography';
-import color from '../../styles/color';
+import { spacings, fontFamily, text, color } from '../../styles';
 
 const StyledArticleHeadline = styled('h1')`
-  margin: 0;
+  margin: ${spacings.none};
   font-size: 1em;
 `;
 

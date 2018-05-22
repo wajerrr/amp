@@ -30,7 +30,7 @@ const headStyles = css`
 `;
 
 const iconStyles = css`
-  bottom: 0;
+  bottom: ${spacings.none};
   right: ${spacings.l};
   position: absolute;
 `;

@@ -5,9 +5,9 @@ exports[`StyledShareBar should match snapshot 1`] = `
   className="css-16g3ycg-ShareBarContainer-StyledSocialShare e1s5s9go0"
 >
   <amp-social-share
-    height="31"
+    height={31}
     type="twitter"
-    width="31"
+    width={31}
   >
     <span
       className={undefined}
@@ -28,9 +28,9 @@ exports[`StyledShareBar should match snapshot 1`] = `
   </amp-social-share>
   <amp-social-share
     data-param-app_id="966242223397117"
-    height="31"
+    height={31}
     type="facebook"
-    width="31"
+    width={31}
   >
     <span
       className={undefined}
@@ -50,9 +50,9 @@ exports[`StyledShareBar should match snapshot 1`] = `
     </span>
   </amp-social-share>
   <amp-social-share
-    height="31"
+    height={31}
     type="linkedin"
-    width="31"
+    width={31}
   >
     <span
       className={undefined}
@@ -72,9 +72,9 @@ exports[`StyledShareBar should match snapshot 1`] = `
     </span>
   </amp-social-share>
   <amp-social-share
-    height="31"
+    height={31}
     type="email"
-    width="31"
+    width={31}
   >
     <span
       className={undefined}
@@ -102,9 +102,9 @@ exports[`StyledShareBar should match snapshot with comments 1`] = `
   className="css-16g3ycg-ShareBarContainer-StyledSocialShare e1s5s9go0"
 >
   <amp-social-share
-    height="31"
+    height={31}
     type="twitter"
-    width="31"
+    width={31}
   >
     <span
       className={undefined}
@@ -125,9 +125,9 @@ exports[`StyledShareBar should match snapshot with comments 1`] = `
   </amp-social-share>
   <amp-social-share
     data-param-app_id="966242223397117"
-    height="31"
+    height={31}
     type="facebook"
-    width="31"
+    width={31}
   >
     <span
       className={undefined}
@@ -147,9 +147,9 @@ exports[`StyledShareBar should match snapshot with comments 1`] = `
     </span>
   </amp-social-share>
   <amp-social-share
-    height="31"
+    height={31}
     type="linkedin"
-    width="31"
+    width={31}
   >
     <span
       className={undefined}
@@ -169,9 +169,9 @@ exports[`StyledShareBar should match snapshot with comments 1`] = `
     </span>
   </amp-social-share>
   <amp-social-share
-    height="31"
+    height={31}
     type="email"
-    width="31"
+    width={31}
   >
     <span
       className={undefined}

@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import spacings from '../../styles/spacings';
-import fontFamily from '../../styles/font-family';
-import text from '../../styles/typography';
-import color from '../../styles/color';
+import { spacings, fontFamily, text, color } from '../../styles';
 
 const ArticleDescription = styled('p')`
   color: ${color.beijing};

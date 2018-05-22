@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import StyledAccordionListItem from './styled-accordion-list';
-import * as navigationData from '../../../../mockNavData.json';
+import navigationData from '../../../../mockNavData.json';
 
 describe('StyledAccordionListItem', () => {
   navigationData.navigation.url = {

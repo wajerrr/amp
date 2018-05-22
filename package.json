@@ -11,7 +11,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:updateSnapshots": "jest --updateSnapshot",
+    "test:unit:update": "jest --updateSnapshot",
     "start": "node src/server/index.js",
     "start:dev": "cross-env NODE_ENV=development node src/server/index.js",
     "prettier": "prettier --config .prettierrc.json --write \"src/**/*.{js,jsx}\"",

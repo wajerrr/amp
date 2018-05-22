@@ -13,7 +13,7 @@ Run tests:
 
 Update test snapshots:
 
-`npm run test:updateSnapshots`
+`npm run test:unit:update`
 
 ### Styled components
 
