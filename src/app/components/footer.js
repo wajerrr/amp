@@ -4,7 +4,9 @@ import { css } from 'emotion';
 import color from '../styles/color';
 import fontFamily from '../styles/font-family';
 import spacings from '../styles/spacings';
-import text from '../styles/typography';
+import FooterSocialMenu from './footer-social-menu';
+import FooterLinksSection from './footer-links-section';
+import FooterTextSection from './footer-text-section';
 
 const footerClassName = css`
   overflow: hidden;
@@ -21,23 +23,16 @@ const footerSectionClassName = css`
     border: none;
   }
 `;
-const footerLinkClassName = css`
-  text-decoration: none;
-  display: inline-block;
-  padding: ${spacings.l} 0;
-  width: 50%;
-  &:active {
-    opacity: 0.3;
+
+const getFooterSection = (parent) => {
+  let section = FooterTextSection;
+  if (parent.id === 'menu-unicorn-keep-updated') {
+    section = FooterSocialMenu;
+  } else if (parent.hasPart) {
+    section = FooterLinksSection;
   }
-`;
-const textClassName = css`
-  color: ${color.moscow};
-  font-size: ${text.sizeStep['-2']};
-  margin-bottom: 0;
-`;
-const linkColors = (sectionLevel) => css`
-  color: ${sectionLevel === 0 ? color.thimphu : color.london};
-`;
+  return section;
+};
 
 const Footer = ({
   data: {
@@ -45,25 +40,14 @@ const Footer = ({
   },
 }) => (
   <footer className={footerClassName}>
-    {parts.map((parent, sectionLevel) => (
-      <section key={parent.id} className={footerSectionClassName}>
-        {parent.hasPart ? (
-          parent.hasPart.parts.map((child) => (
-            <a
-              key={child.headline}
-              className={`${footerLinkClassName} ${linkColors(sectionLevel)}`}
-              href={child.url.canonical}
-            >
-              {child.headline}
-            </a>
-          ))
-        ) : (
-          <p key={parent.id} className={textClassName}>
-            {parent.headline}
-          </p>
-        )}
-      </section>
-    ))}
+    {parts.map((parent, sectionLevel) => {
+      const Section = getFooterSection(parent);
+      return (
+        <section key={parent.id} className={footerSectionClassName}>
+          <Section menuItem={parent} sectionLevel={sectionLevel} />
+        </section>
+      );
+    })}
   </footer>
 );
 
