@@ -45,13 +45,13 @@ const validate = async () => {
       const res = JSON.parse(fs.readFileSync(testFiles[i], 'utf8'));
       const ampHtmlString = renderHtml(
         res.data,
-        res.data.canonical.url.canonical
+        res.data.article.url.canonical
       );
       const validationResult = validator.validateString(ampHtmlString);
       displayValidationResult(
         validationResult,
         ampHtmlString,
-        res.data.canonical.url.canonical
+        res.data.article.url.canonical
       );
       errors += validationResult.errors.length;
     }
