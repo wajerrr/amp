@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Page from './components/page/page';
 
 const App = ({ url, data }) => (
-  <Page url={url} title={data.canonical.headline} data={data} />
+  <Page url={url} title={data.article.headline} data={data} />
 );
 
 App.propTypes = {

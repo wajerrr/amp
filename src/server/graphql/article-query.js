@@ -1,22 +1,22 @@
 import gql from 'graphql-tag';
-import { fragmentC } from './fragments';
+import { articleFragment } from './fragments';
 
 const getArticeQuery = (ref) => gql`
 {
-  canonical :canonical(ref: "${ref}") 
+  data: canonical(ref: "${ref}") 
   {
-    ...C
+    ...Article
     print {
       section {
-        ...C
+        ...Article
       }
     }
     publication {
-      ...C
+      ...Article
     }
   }
 }
-${fragmentC}
+${articleFragment}
 `;
 
 export default getArticeQuery;

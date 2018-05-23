@@ -7,60 +7,61 @@ import HttpError from '../utils/http-error';
 // TODO this is a bit shaky but only way I found to get graphQL error code
 // it to parse message string from error they are providing
 // mesaage has this structure "GraphQL error: 404: An error has occurred"
-const getErrorCode = (message) => parseInt(message.split(': ')[1], 10) || 500;
+export const getErrorCode = (message = '') =>
+  parseInt(message.split(': ')[1], 10) || 500;
 
-const GRAPH_QL_500_MSG = '500: Something went wrong with fetching GraphQL data';
+export const GRAPH_QL_500_MSG =
+  '500: Something went wrong with fetching GraphQL data';
+export const GRAPH_QL_ARTICLE_404_MSG = '404: Article Does Not exist';
 
 export const getContent = (query) =>
-  new Promise((resolve, reject) => {
+  new Promise((resolve) => {
     client
       .query({
         query,
       })
       .then(({ data }) => resolve(data))
-      .catch(() => reject(new HttpError(GRAPH_QL_500_MSG)));
+      .catch(({ message }) =>
+        resolve(new HttpError(GRAPH_QL_500_MSG, getErrorCode(message)))
+      );
   });
 
-export const getArticleContent = (query) =>
-  new Promise((resolve, reject) => {
-    client
-      .query({
-        query,
-      })
-      .then(({ data }) => resolve(data))
-      .catch((error) => {
-        const errorStatus = getErrorCode(error.message);
-        return errorStatus === 404
-          ? resolve(new HttpError('404 ARTICLE DOES NOT EXIST', 404))
-          : reject(new HttpError(GRAPH_QL_500_MSG));
-      });
-  });
-
-const processDataFromQueries = async (objectWithPromises) => {
+export const processDataFromQueries = async (objectWithPromises) => {
   const promisesToResolve = [];
-  const dataToReturn = { data: {} };
+  const dataToReturn = {};
 
   Object.entries(objectWithPromises).forEach(([key, promise]) => {
-    promisesToResolve.push(promise);
-    promise.then((result) => {
-      dataToReturn.data[key] = result[key] || result;
-      return Promise.resolve();
-    });
+    promisesToResolve.push(
+      promise.then((result) => {
+        dataToReturn[key] = result.data || result;
+        return Promise.resolve();
+      })
+    );
   });
   await Promise.all(promisesToResolve);
-
-  if (dataToReturn.data.canonical instanceof Error) {
-    throw dataToReturn.data.canonical;
-  }
-
   return dataToReturn;
 };
 
-const getData = (ref) =>
-  processDataFromQueries({
-    canonical: getArticleContent(getArticeQuery(ref)),
+export const checkDataForErrors = (data) => {
+  if (data.navigation instanceof Error || data.editorsPick instanceof Error) {
+    throw new HttpError(GRAPH_QL_500_MSG);
+  }
+  if (data.article instanceof Error) {
+    throw data.article.status === 404
+      ? new HttpError(GRAPH_QL_ARTICLE_404_MSG, 404, { data })
+      : new HttpError(GRAPH_QL_500_MSG);
+  }
+  return true;
+};
+
+const getData = async (ref) => {
+  const data = await processDataFromQueries({
+    article: getContent(getArticeQuery(ref)),
     navigation: getContent(navigationQuery),
     editorsPick: getContent(editorsPickQuery),
   });
+  checkDataForErrors(data);
+  return { data };
+};
 
 export default getData;

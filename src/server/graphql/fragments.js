@@ -1,4 +1,4 @@
-export const fragmentC = `fragment C on Content {
+export const articleFragment = `fragment Article on Content {
     id
     tegID
     type
@@ -27,7 +27,7 @@ export const fragmentC = `fragment C on Content {
     }
   }`;
 
-export const fragmentN = `fragment N on Content {
+export const navigationFragment = `fragment Navigation on Content {
     headline
     id
     hasPart(sort: "isPartOf.context.position") {
@@ -51,7 +51,7 @@ export const fragmentN = `fragment N on Content {
   }`;
 
 export const EditorsPickFragment = `fragment EditorsPick on Content {
-      tegID
+  tegID
   id
   hasPart {
     parts {

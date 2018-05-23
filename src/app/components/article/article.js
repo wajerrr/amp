@@ -36,7 +36,7 @@ const StyledBottomPanel = styled('div')`
 
 const Article = ({
   data: {
-    canonical: {
+    article: {
       url,
       subheadline,
       headline,

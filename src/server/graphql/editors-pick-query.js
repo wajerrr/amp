@@ -5,7 +5,7 @@ const editorsPickRef = '/content/9qe6f6cm77btf0phaepjui01ckh6rfpu';
 
 const editorsPickQuery = gql`
   {
-    editorsPick: canonical(ref: "${editorsPickRef}") 
+     data: canonical(ref: "${editorsPickRef}") 
     {
       ... EditorsPick
     }
