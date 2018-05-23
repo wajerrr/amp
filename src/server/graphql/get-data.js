@@ -34,7 +34,6 @@ export const processDataFromQueries = async (objectWithPromises) => {
     promisesToResolve.push(
       promise.then((result) => {
         dataToReturn[key] = result.data || result;
-        return Promise.resolve();
       })
     );
   });

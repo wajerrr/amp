@@ -69,7 +69,7 @@ export const EditorsPickFragment = `fragment EditorsPick on Content {
       url {
         canonical
       }
-      image{
+      image {
         main {
           width
           height
