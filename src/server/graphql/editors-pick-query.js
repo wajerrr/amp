@@ -1,7 +1,38 @@
 import gql from 'graphql-tag';
-import { EditorsPickFragment } from './fragments';
 
 const editorsPickRef = '/content/9qe6f6cm77btf0phaepjui01ckh6rfpu';
+
+const EditorsPickFragment = `fragment EditorsPick on Content {
+  tegID
+  id
+  hasPart {
+    parts {
+      id
+      channel {
+        headline
+        url {
+          canonical
+        }
+      }
+      headline
+      subheadline
+      description
+      byline
+      url {
+        canonical
+      }
+      image {
+        main {
+          width
+          height
+          url {
+            canonical
+          }
+        }
+      }
+    }
+  }
+}`;
 
 const editorsPickQuery = gql`
   {
