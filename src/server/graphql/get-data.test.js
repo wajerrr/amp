@@ -4,7 +4,7 @@ import {
   getErrorCode,
   getContent,
   processDataFromQueries,
-  checkDataForErrors,
+  throwIfDataErrors,
   GRAPH_QL_500_MSG,
   GRAPH_QL_ARTICLE_404_MSG,
 } from './get-data';
@@ -19,7 +19,7 @@ describe('get-data', () => {
   describe('checkDataForErrors', () => {
     it('should return true if there is no errors in the data', () => {
       const data = { navigation: {}, editorsPick: {}, article: {} };
-      const actual = checkDataForErrors(data);
+      const actual = throwIfDataErrors(data);
       expect(actual).toEqual(true);
     });
 
@@ -30,7 +30,7 @@ describe('get-data', () => {
         article: {},
       };
       try {
-        checkDataForErrors(data);
+        throwIfDataErrors(data);
         throw new Error('checkDataForErrors should throw exception');
       } catch (e) {
         expect(e.message).toEqual(GRAPH_QL_500_MSG);
@@ -45,7 +45,7 @@ describe('get-data', () => {
         article: {},
       };
       try {
-        checkDataForErrors(data);
+        throwIfDataErrors(data);
         throw new Error('checkDataForErrors should throw exception');
       } catch (e) {
         expect(e.message).toEqual(GRAPH_QL_500_MSG);
@@ -60,7 +60,7 @@ describe('get-data', () => {
         article: new HttpError('error', 404),
       };
       try {
-        checkDataForErrors(data);
+        throwIfDataErrors(data);
         throw new Error('checkDataForErrors should throw exception');
       } catch (e) {
         expect(e.message).toEqual(GRAPH_QL_ARTICLE_404_MSG);
@@ -75,7 +75,7 @@ describe('get-data', () => {
         article: new HttpError('error'),
       };
       try {
-        checkDataForErrors(data);
+        throwIfDataErrors(data);
         throw new Error('checkDataForErrors should throw exception');
       } catch (e) {
         expect(e.message).toEqual(GRAPH_QL_500_MSG);

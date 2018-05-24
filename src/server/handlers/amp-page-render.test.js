@@ -13,7 +13,7 @@ const mockData = 'testData';
 
 const mockLocation = 'https://iam.conaninical/url';
 const mockNotFreeData = {
-  canonical: {
+  article: {
     isAccessibleForFree: false,
     url: {
       canonical: mockLocation,

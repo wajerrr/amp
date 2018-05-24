@@ -8,10 +8,12 @@ const EditorsPickFragment = `fragment EditorsPick on Content {
   hasPart {
     parts {
       id
-      channel {
-        headline
-        url {
-          canonical
+      articleSection {
+        internal {
+          url {
+            canonical
+          }
+          headline
         }
       }
       headline

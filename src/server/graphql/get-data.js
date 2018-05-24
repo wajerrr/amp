@@ -41,7 +41,7 @@ export const processDataFromQueries = async (objectWithPromises) => {
   return dataToReturn;
 };
 
-export const checkDataForErrors = (data) => {
+export const throwIfDataErrors = (data) => {
   if (data.navigation instanceof Error || data.editorsPick instanceof Error) {
     throw new HttpError(GRAPH_QL_500_MSG);
   }
@@ -59,7 +59,7 @@ const getData = async (ref) => {
     navigation: getContent(navigationQuery),
     editorsPick: getContent(editorsPickQuery),
   });
-  checkDataForErrors(data);
+  throwIfDataErrors(data);
   return { data };
 };
 

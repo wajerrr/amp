@@ -25,11 +25,8 @@ export const handler = async (request, h) => {
   try {
     const ref = `${getDomain(request.headers.host)}/${request.params.pathname}`;
     const res = await getData(ref);
-    if (
-      (isProd || isStage) &&
-      res.data.canonical.isAccessibleForFree === false
-    ) {
-      return h.redirect(res.data.canonical.url.canonical);
+    if ((isProd || isStage) && res.data.article.isAccessibleForFree === false) {
+      return h.redirect(res.data.article.url.canonical);
     }
     return h.response(renderHtml(res.data, request.path));
   } catch (e) {
