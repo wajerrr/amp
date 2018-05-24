@@ -6,6 +6,7 @@ import ArticleDescription from './article-description';
 import ArticleMainImage from './article-main-image';
 import StyledArticlePublicationDetails from './article-publication-details';
 import buildComponents from './article-text-builder';
+import ArticleAboutEconomistLink from './article-about-economist-link';
 import spacings from '../../styles/spacings';
 import fontFamily from '../../styles/font-family';
 import typography from '../../styles/typography';
@@ -77,6 +78,7 @@ const Article = ({
         commentsUri={url.comment}
       />
     </StyledBottomPanel>
+    <ArticleAboutEconomistLink />
   </StyledArticleContainer>
 );
 
