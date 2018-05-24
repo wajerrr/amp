@@ -60,6 +60,14 @@ const getGraphqlData = async (ref) => {
                     canonical
                   }
                 }
+                articleSection {
+                  internal {
+                    url {
+                      canonical
+                    }
+                    headline
+                  }
+                }
                 headline
                 subheadline
                 description

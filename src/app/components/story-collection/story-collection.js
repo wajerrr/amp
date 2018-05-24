@@ -15,6 +15,22 @@ const StyledStoryCollectionItem = styled(StoryCollectionItem)`
   margin-top: ${spacings.s};
 `;
 
+const getSectionInfo = (part) => {
+  const sectionInfo = {};
+  if (
+    part.articleSection &&
+    part.articleSection.internal &&
+    part.articleSection.internal[0]
+  ) {
+    const section = part.articleSection.internal[0];
+    if (section.url) {
+      sectionInfo.url = section.url.canonical;
+    }
+    sectionInfo.headline = section.headline;
+  }
+  return sectionInfo;
+};
+
 const StoryCollection = ({ data }) => (
   <StyledStoryCollectionContainer>
     {data.hasPart.parts.map(
@@ -25,8 +41,8 @@ const StoryCollection = ({ data }) => (
             url={el.url.canonical}
             image={el.image.main}
             subheadline={el.subheadline}
-            channelUrl={el.channel.url.canonical}
-            channelHeadline={el.channel.headline}
+            sectionUrl={getSectionInfo(el).url}
+            sectionHeadline={getSectionInfo(el).headline}
             description={el.description}
             key={el.id}
             data={el}
@@ -37,8 +53,8 @@ const StoryCollection = ({ data }) => (
             url={el.url.canonical}
             image={el.image.main}
             subheadline={el.subheadline}
-            channelUrl={el.channel.url.canonical}
-            channelHeadline={el.channel.headline}
+            sectionUrl={getSectionInfo(el).url}
+            sectionHeadline={getSectionInfo(el).headline}
             key={el.id}
             data={el}
           />
