@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/EconomistDigitalSolutions/amp#readme",
   "dependencies": {
+    "@economist/component-404": "^4.1.0",
     "@economist/component-icon": "^5.18.0",
     "apollo-cache-inmemory": "^1.1.12",
     "apollo-client": "^2.2.8",

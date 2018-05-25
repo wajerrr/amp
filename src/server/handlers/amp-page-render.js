@@ -3,6 +3,7 @@ import renderHtml from '../render-html';
 import { isProd, isStage } from '../utils/environment-detection';
 
 import economistConfig from '../config/economist';
+import renderHtmlError from '../render-html-error';
 
 /* This method will be called now every time we hit this endpoint
  Maybe we should have env variable to detect what product it is
@@ -29,15 +30,12 @@ export const handler = async (request, h) => {
       return h.redirect(res.data.article.url.canonical);
     }
     return h.response(renderHtml(res.data, request.path));
-  } catch (e) {
-    if (e.status === 404) {
-      return h
-        .response(`<h1>404 ERROR  COMPONENT TO GO HERE</h1>`)
-        .code(e.status);
-    }
+  } catch (error) {
     /* eslint-disable-next-line no-console */
-    console.error('Error: ', e);
-    return h.response(e.toString()).code(e.status || 500);
+    console.error(`Error: ${error.toString()}`);
+    return h
+      .response(renderHtmlError(error, request.path))
+      .code(error.status || 500);
   }
 };
 const route = {

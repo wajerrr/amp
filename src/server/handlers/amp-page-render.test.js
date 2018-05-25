@@ -4,6 +4,7 @@ import getData, {
   GRAPH_QL_500_MSG,
 } from '../graphql/get-data';
 import renderHtml from '../render-html';
+import renderHtmlError from '../render-html-error';
 import server from '../server';
 import * as envVars from '../utils/environment-detection';
 import economistConfig from '../config/economist';
@@ -28,6 +29,11 @@ jest.mock('../graphql/get-data', () =>
 const mockHtml = '<h1>I am Little mock</h1>';
 jest.mock('../render-html', () => jest.fn().mockImplementation(() => mockHtml));
 
+const mockErrorResponse = '<h1>Error</h1>';
+jest.mock('../render-html-error', () =>
+  jest.fn().mockImplementation(() => mockErrorResponse)
+);
+
 console.error = jest.fn();
 
 const url = '/test/article';
@@ -51,6 +57,7 @@ describe('ampPageRenderer handler', async () => {
     envVars.isStage = false;
     getData.mockClear();
     renderHtml.mockClear();
+    renderHtmlError.mockClear();
     console.error.mockClear();
   });
 
@@ -75,21 +82,33 @@ describe('ampPageRenderer handler', async () => {
     done();
   });
 
-  it('should return error and call console.error when getData return 500 error', async (done) => {
+  it('should call renderHtmlErrors method getData returns error', async (done) => {
     getData.mockImplementation(() => Promise.reject(error));
-    const response = await server.inject({ method: 'GET', url });
-    expect(response.result).toEqual(error.toString());
-    expect(response.statusCode).toEqual(500);
-    expect(console.error).toHaveBeenCalledTimes(1);
-    expect(console.error).toHaveBeenCalledWith('Error: ', error);
+    await server.inject({ method: 'GET', url });
+    expect(renderHtmlError).toHaveBeenCalledTimes(1);
+    expect(renderHtmlError).toHaveBeenCalledWith(error, url);
     done();
   });
 
-  it('should return 404 page when getData returns 404', async (done) => {
+  it('should call console.error with error when getData returns error', async (done) => {
+    getData.mockImplementation(() => Promise.reject(error));
+    await server.inject({ method: 'GET', url });
+    expect(console.error).toHaveBeenCalledTimes(1);
+    expect(console.error).toHaveBeenCalledWith(`Error: ${error.toString()}`);
+    done();
+  });
+
+  it('should return response with correct error code from provided error', async (done) => {
     getData.mockImplementation(() => Promise.reject(error404));
     const response = await server.inject({ method: 'GET', url });
-    expect(response.result).toEqual('<h1>404 ERROR  COMPONENT TO GO HERE</h1>');
     expect(response.statusCode).toEqual(404);
+    done();
+  });
+
+  it('should return response with error code 500 when error status is not provided', async (done) => {
+    getData.mockImplementation(() => Promise.reject(new Error('Error')));
+    const response = await server.inject({ method: 'GET', url });
+    expect(response.statusCode).toEqual(500);
     done();
   });
 
@@ -104,7 +123,7 @@ describe('ampPageRenderer handler', async () => {
     done();
   });
 
-  it('should redirect to canonical article url when  isStage is true and article is not free', async (done) => {
+  it('should redirect to canonical article url when isStage is true and article is not free', async (done) => {
     getData.mockImplementation(() =>
       Promise.resolve({ data: mockNotFreeData })
     );

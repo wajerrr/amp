@@ -1,4 +1,4 @@
-import template, { hotReloadingScript } from './template';
+import template, { hotReloadingScript, getCanonicalLink } from './template';
 
 const templateParams = {
   title: 'dummy title',
@@ -48,5 +48,21 @@ describe('template', () => {
     expect(
       template({ ...templateParams, isDev: true }).includes(hotReloadingScript)
     ).toEqual(true);
+  });
+
+  test('does contain canonical link when canonicalUrl prop is provided ', () => {
+    expect(
+      template({ ...templateParams }).includes(
+        getCanonicalLink(templateParams.canonicalUrl)
+      )
+    ).toEqual(true);
+  });
+
+  test('does not contain canonical link when canonicalUrl is not provided ', () => {
+    expect(
+      template({ ...templateParams, canonicalUrl: undefined }).includes(
+        getCanonicalLink(templateParams.canonicalUrl)
+      )
+    ).toEqual(false);
   });
 });
