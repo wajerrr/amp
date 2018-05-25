@@ -5,8 +5,6 @@ require('babel-register')({
 let server = require('./server').default;
 const { isDev } = require('./utils/environment-detection');
 
-/* eslint-disable-next-line no-console */
-console.log('isDev', isDev);
 const start = async () => {
   try {
     await server.start();

@@ -2,7 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import getGraphqlData from '../../server/get-graphql-data';
+import getGraphqlData from '../../server/graphql/get-data';
 
 import config from './config';
 
