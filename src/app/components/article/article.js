@@ -36,18 +36,16 @@ const StyledBottomPanel = styled('div')`
 
 const Article = ({
   data: {
-    article: {
-      url,
-      subheadline,
-      headline,
-      description,
-      image,
-      datePublished,
-      byline,
-      text,
-      print,
-      publication,
-    },
+    url,
+    subheadline,
+    headline,
+    description,
+    image,
+    datePublished,
+    byline,
+    text,
+    print,
+    publication,
   },
 }) => (
   <StyledArticleContainer>

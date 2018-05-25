@@ -47,7 +47,7 @@ export const throwIfDataErrors = (data) => {
   }
   if (data.article instanceof Error) {
     throw data.article.status === 404
-      ? new HttpError(GRAPH_QL_ARTICLE_404_MSG, 404, { data })
+      ? new HttpError(GRAPH_QL_ARTICLE_404_MSG, 404, data)
       : new HttpError(GRAPH_QL_500_MSG);
   }
   return true;

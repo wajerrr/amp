@@ -13,6 +13,7 @@ export const hotReloadingScript = `<script src="/socket.io/socket.io.js"></scrip
 const iconBase64 =
   ' iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEXjEgv////4KLUSAAAAAWJLR0QB/wIt3gAAAAd0SU1FB+IFEAgALURtxQsAAAAMSURBVAjXY2AgDQAAADAAAceqhY4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDUtMTZUMDg6MDA6NDUtMDc6MDDueH9GAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA1LTE2VDA4OjAwOjQ1LTA3OjAwnyXH+gAAAABJRU5ErkJggg==';
 
+export const getCanonicalLink = (url) => `<link rel="canonical" href="${url}">`;
 const template = ({ title, body, css, canonicalUrl, isDev = false }) => `
 <!doctype html>
 <html lang="en" amp>
@@ -24,7 +25,7 @@ const template = ({ title, body, css, canonicalUrl, isDev = false }) => `
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 
-  <link rel="canonical" href="${canonicalUrl}">
+  ${getCanonicalLink(canonicalUrl)}
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   ${isDev ? hotReloadingScript : ''}

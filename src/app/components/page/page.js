@@ -9,7 +9,6 @@ import footerData from '../../../../mockFooterData.json';
 import navigationData from '../../../../mockNavData.json';
 import injectFontFace from '../../styles/font-face';
 import Navigation from '../navigation/navigation';
-import Article from '../article/article';
 import Footer from '../footer/footer';
 import StoryCollection from '../story-collection/story-collection';
 import NavigationMenu from '../navigation-menu/navigation-menu';
@@ -37,7 +36,7 @@ const StyledHeader = styled('header')`
   z-index: 99999;
 `;
 
-const Page = ({ data }) => (
+const Page = ({ data, children }) => (
   <Fragment>
     <StyledHeader>
       <Navigation menuContainerId="sidebar" />
@@ -45,7 +44,7 @@ const Page = ({ data }) => (
     <NavigationMenu data={navigationData} containerId="sidebar" />
     <StyledMain>
       <StyledMainContent>
-        <Article data={data} />
+        {children}
         <StoryCollection data={data.editorsPick} />
       </StyledMainContent>
     </StyledMain>
@@ -55,6 +54,7 @@ const Page = ({ data }) => (
 
 Page.propTypes = {
   data: PropTypes.shape({}).isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Page;
