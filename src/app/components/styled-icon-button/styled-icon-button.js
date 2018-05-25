@@ -14,7 +14,9 @@ const icons = {
 
 const StyledButton = styled('button', {
   shouldForwardProp: (prop) =>
-    ['className', 'on', 'tabIndex', 'key', 'children'].includes(prop),
+    ['className', 'on', 'tabIndex', 'key', 'children', 'aria-label'].includes(
+      prop
+    ),
 })`
   border: none;
   background: none;
@@ -26,12 +28,19 @@ const StyledButton = styled('button', {
   }
 `;
 
-const StyledIconButton = ({ onProps, icon, iconColor, className }) => (
+const StyledIconButton = ({
+  onProps,
+  icon,
+  iconColor,
+  className,
+  ariaLabel,
+}) => (
   <StyledButton
     on={onProps}
     className={className}
     tabIndex="0"
     iconColor={iconColor}
+    aria-label={ariaLabel}
   >
     {icons[icon]}
   </StyledButton>
@@ -42,11 +51,13 @@ StyledIconButton.propTypes = {
   icon: PropTypes.string.isRequired,
   iconColor: PropTypes.string,
   className: PropTypes.string,
+  ariaLabel: PropTypes.string,
 };
 
 StyledIconButton.defaultProps = {
   iconColor: '',
   className: '',
+  ariaLabel: '',
 };
 
 export default StyledIconButton;

@@ -15,7 +15,7 @@ const iconBase64 =
 
 const template = ({ title, body, css, canonicalUrl, isDev = false }) => `
 <!doctype html>
-<html amp>
+<html lang="en" amp>
 <head>
   <meta charset="utf-8">
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,${iconBase64}" /> 

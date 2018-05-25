@@ -27,6 +27,7 @@ const Navigation = ({ menuContainerId }) => (
       onProps={`tap:${menuContainerId}.toggle`}
       icon="hamburger"
       iconColor={color.thimphu}
+      ariaLabel="Navigation"
     />
   </StyledNav>
 );

@@ -7,6 +7,7 @@ exports[`NavigationMenu should match snapshot 1`] = `
   side="right"
 >
   <button
+    aria-label=""
     className="e4qy7qr0 css-g3hw06-StyledButton-StyledCloseButton e139jkne0"
     on="tap:sidebar.close"
     tabIndex="0"
@@ -41,6 +42,7 @@ exports[`NavigationMenu should match snapshot 1`] = `
           Topics
         </span>
         <button
+          aria-label=""
           className="css-14emvss-StyledButton-iconStyles e139jkne0"
           on=""
           tabIndex="0"
@@ -194,6 +196,7 @@ exports[`NavigationMenu should match snapshot 1`] = `
           Blogs
         </span>
         <button
+          aria-label=""
           className="css-14emvss-StyledButton-iconStyles e139jkne0"
           on=""
           tabIndex="0"
@@ -329,6 +332,7 @@ exports[`NavigationMenu should match snapshot 1`] = `
           More
         </span>
         <button
+          aria-label=""
           className="css-14emvss-StyledButton-iconStyles e139jkne0"
           on=""
           tabIndex="0"
@@ -365,6 +369,7 @@ exports[`NavigationMenu should match snapshot 1`] = `
                 Apps & Digital Editions
               </span>
               <button
+                aria-label=""
                 className="css-14emvss-StyledButton-iconStyles e139jkne0"
                 on=""
                 tabIndex="0"
@@ -428,6 +433,7 @@ exports[`NavigationMenu should match snapshot 1`] = `
                 From The Economist Group
               </span>
               <button
+                aria-label=""
                 className="css-14emvss-StyledButton-iconStyles e139jkne0"
                 on=""
                 tabIndex="0"

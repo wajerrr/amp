@@ -60,6 +60,7 @@ const FooterSocialMenu = ({ menuItem }) => (
               key={item.isPartOf.context.position}
               href={item.url.canonical}
               target="_blank"
+              aria-label={item.meta}
             >
               {metaToIcon[item.meta]}
             </StyledLink>

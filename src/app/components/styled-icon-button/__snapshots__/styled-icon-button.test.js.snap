@@ -2,6 +2,7 @@
 
 exports[`StyledIconButton should match snapshot 1`] = `
 <button
+  aria-label=""
   className="css-1s236yn-StyledButton e139jkne0"
   on="toggleMenu"
   tabIndex="0"

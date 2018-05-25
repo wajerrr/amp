@@ -45,6 +45,7 @@ const StyledShareBar = ({ commentsUri, className }) => (
       type="twitter"
       width={iconSizes.normal}
       height={iconSizes.normal}
+      aria-label="Share on Twitter"
     >
       <IconTwitter />
     </amp-social-share>
@@ -53,6 +54,7 @@ const StyledShareBar = ({ commentsUri, className }) => (
       width={iconSizes.normal}
       height={iconSizes.normal}
       data-param-app_id="966242223397117"
+      aria-label="Share on Facebook"
     >
       <IconFacebook />
     </amp-social-share>
@@ -60,6 +62,7 @@ const StyledShareBar = ({ commentsUri, className }) => (
       type="linkedin"
       width={iconSizes.normal}
       height={iconSizes.normal}
+      aria-label="Share on LinkedIn"
     >
       <IconLinkedin />
     </amp-social-share>
@@ -67,11 +70,12 @@ const StyledShareBar = ({ commentsUri, className }) => (
       type="email"
       width={iconSizes.normal}
       height={iconSizes.normal}
+      aria-label="Send an email"
     >
       <IconMail />
     </amp-social-share>
     {commentsUri && (
-      <CommentsLink href={commentsUri}>
+      <CommentsLink href={commentsUri} role="button" aria-label="Read comments">
         <IconBalloon />
       </CommentsLink>
     )}

@@ -95,6 +95,7 @@ exports[`Navigation should match snapshot 1`] = `
     Subscribe
   </a>
   <button
+    aria-label="Navigation"
     className="e1838w241 css-1tdn9y4-StyledButton-StyledHamburgerIcon e139jkne0"
     on="tap:sidebar.toggle"
     tabIndex="0"

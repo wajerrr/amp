@@ -5,6 +5,7 @@ exports[`StyledShareBar should match snapshot 1`] = `
   className="css-16g3ycg-ShareBarContainer-StyledSocialShare eyrn4830"
 >
   <amp-social-share
+    aria-label="Share on Twitter"
     height={31}
     type="twitter"
     width={31}
@@ -27,6 +28,7 @@ exports[`StyledShareBar should match snapshot 1`] = `
     </span>
   </amp-social-share>
   <amp-social-share
+    aria-label="Share on Facebook"
     data-param-app_id="966242223397117"
     height={31}
     type="facebook"
@@ -50,6 +52,7 @@ exports[`StyledShareBar should match snapshot 1`] = `
     </span>
   </amp-social-share>
   <amp-social-share
+    aria-label="Share on LinkedIn"
     height={31}
     type="linkedin"
     width={31}
@@ -72,6 +75,7 @@ exports[`StyledShareBar should match snapshot 1`] = `
     </span>
   </amp-social-share>
   <amp-social-share
+    aria-label="Send an email"
     height={31}
     type="email"
     width={31}
@@ -102,6 +106,7 @@ exports[`StyledShareBar should match snapshot with comments 1`] = `
   className="css-16g3ycg-ShareBarContainer-StyledSocialShare eyrn4830"
 >
   <amp-social-share
+    aria-label="Share on Twitter"
     height={31}
     type="twitter"
     width={31}
@@ -124,6 +129,7 @@ exports[`StyledShareBar should match snapshot with comments 1`] = `
     </span>
   </amp-social-share>
   <amp-social-share
+    aria-label="Share on Facebook"
     data-param-app_id="966242223397117"
     height={31}
     type="facebook"
@@ -147,6 +153,7 @@ exports[`StyledShareBar should match snapshot with comments 1`] = `
     </span>
   </amp-social-share>
   <amp-social-share
+    aria-label="Share on LinkedIn"
     height={31}
     type="linkedin"
     width={31}
@@ -169,6 +176,7 @@ exports[`StyledShareBar should match snapshot with comments 1`] = `
     </span>
   </amp-social-share>
   <amp-social-share
+    aria-label="Send an email"
     height={31}
     type="email"
     width={31}
@@ -191,8 +199,10 @@ exports[`StyledShareBar should match snapshot with comments 1`] = `
     </span>
   </amp-social-share>
   <a
+    aria-label="Read comments"
     className="css-wkisya-CommentsLink-StyledSocialShare eyrn4831"
     href="/"
+    role="button"
   >
     <span
       className={undefined}
