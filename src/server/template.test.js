@@ -57,12 +57,4 @@ describe('template', () => {
       )
     ).toEqual(true);
   });
-
-  test('does not contain canonical link when canonicalUrl is not provided ', () => {
-    expect(
-      template({ ...templateParams, canonicalUrl: undefined }).includes(
-        getCanonicalLink(templateParams.canonicalUrl)
-      )
-    ).toEqual(false);
-  });
 });

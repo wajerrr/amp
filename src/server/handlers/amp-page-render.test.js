@@ -8,6 +8,7 @@ import renderHtmlError from '../render-html-error';
 import server from '../server';
 import * as envVars from '../utils/environment-detection';
 import economistConfig from '../config/economist';
+import baseConfig from '../config/base-config';
 import HttpError from '../utils/http-error';
 
 const mockData = 'testData';
@@ -71,7 +72,7 @@ describe('ampPageRenderer handler', async () => {
   it('should call renderHtml method with correct path', async (done) => {
     await server.inject({ method: 'GET', url });
     expect(renderHtml).toHaveBeenCalledTimes(1);
-    expect(renderHtml).toHaveBeenCalledWith('testData', url);
+    expect(renderHtml).toHaveBeenCalledWith('testData');
     done();
   });
 
@@ -86,7 +87,10 @@ describe('ampPageRenderer handler', async () => {
     getData.mockImplementation(() => Promise.reject(error));
     await server.inject({ method: 'GET', url });
     expect(renderHtmlError).toHaveBeenCalledTimes(1);
-    expect(renderHtmlError).toHaveBeenCalledWith(error, url);
+    expect(renderHtmlError).toHaveBeenCalledWith(
+      error,
+      `https://${baseConfig.host}:${baseConfig.httpPort}${url}`
+    );
     done();
   });
 

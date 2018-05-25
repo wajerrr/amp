@@ -29,12 +29,14 @@ export const handler = async (request, h) => {
     if ((isProd || isStage) && res.data.article.isAccessibleForFree === false) {
       return h.redirect(res.data.article.url.canonical);
     }
-    return h.response(renderHtml(res.data, request.path));
+    return h.response(renderHtml(res.data));
   } catch (error) {
     /* eslint-disable-next-line no-console */
     console.error(`Error: ${error.toString()}`);
     return h
-      .response(renderHtmlError(error, request.path))
+      .response(
+        renderHtmlError(error, `https://${request.headers.host}${request.path}`)
+      )
       .code(error.status || 500);
   }
 };

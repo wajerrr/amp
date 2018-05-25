@@ -5,10 +5,10 @@ import { extractCritical } from 'emotion-server';
 import template from './template';
 import { isDev } from './utils/environment-detection';
 
-const renderHtml = (data, path) => {
+const renderHtml = (data) => {
   /* eslint-disable global-require */
   const App = require('../app/app').default;
-  const reactHTMLString = renderToStaticMarkup(<App url={path} data={data} />);
+  const reactHTMLString = renderToStaticMarkup(<App data={data} />);
 
   const { css } = extractCritical(reactHTMLString);
 

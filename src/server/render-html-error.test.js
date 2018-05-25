@@ -8,7 +8,7 @@ jest.mock('../app/app', () => ({
   default: jest.fn().mockImplementation(() => <p>error</p>),
 }));
 const errorData = { data: 'errordata' };
-const path = '/path';
+const url = 'http://www.theeco/com/to/sowhere/';
 
 describe('renderHtmlError', () => {
   beforeEach(() => {
@@ -18,19 +18,19 @@ describe('renderHtmlError', () => {
     const expected = template({
       title: 'Page not found | The Economist',
       css: '',
+      canonicalUrl: url,
       body: '<p>error</p>',
     });
-    expect(renderHtmlError(new HttpError('error', 404))).toEqual(expected);
+    expect(renderHtmlError(new HttpError('error', 404), url)).toEqual(expected);
   });
 
   it('should call App component with correct props for 404 error', () => {
-    renderHtmlError(new HttpError('error', 404, errorData), path);
+    renderHtmlError(new HttpError('error', 404, errorData));
 
     expect(App.default).toHaveBeenCalledTimes(1);
     expect(App.default).toHaveBeenCalledWith(
       {
         data: errorData,
-        url: path,
         is404: true,
       },
       expect.anything(),

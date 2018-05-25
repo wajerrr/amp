@@ -25,7 +25,7 @@ const template = ({ title, body, css, canonicalUrl, isDev = false }) => `
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 
-  ${canonicalUrl ? getCanonicalLink(canonicalUrl) : ''}
+  ${getCanonicalLink(canonicalUrl)}
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   ${isDev ? hotReloadingScript : ''}
