@@ -18,8 +18,8 @@ describe('StoryCollectionItem', () => {
             },
           }}
           subheadline="The Economist explains"
-          channelUrl="https://www.economist.com/help/about-us"
-          channelHeadline="About us"
+          sectionUrl="https://www.economist.com/help/about-us"
+          sectionHeadline="About us"
         />
       )
       .toJSON();
@@ -42,8 +42,8 @@ describe('StoryCollectionItem', () => {
             },
           }}
           subheadline="The Economist explains"
-          channelUrl="https://www.economist.com/help/about-us"
-          channelHeadline="About us"
+          sectionUrl="https://www.economist.com/help/about-us"
+          sectionHeadline="About us"
         />
       )
       .toJSON();

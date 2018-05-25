@@ -51,15 +51,15 @@ const StoryCollectionItem = ({
   url,
   image,
   subheadline,
-  channelUrl,
-  channelHeadline,
+  sectionUrl,
+  sectionHeadline,
   className,
 }) => (
   <li className={className}>
     <StyledLinkWrapper href={url}>
       <StyledImgContainer>
         <amp-img
-          alt={channelHeadline}
+          alt={sectionHeadline}
           width={image.width}
           height={image.height}
           layout="responsive"
@@ -78,7 +78,7 @@ const StoryCollectionItem = ({
         </ItemHeadline>
       </StyledTextContainer>
     </StyledLinkWrapper>
-    <StyledSectionLink href={channelUrl}>{channelHeadline}</StyledSectionLink>
+    <StyledSectionLink href={sectionUrl}>{sectionHeadline}</StyledSectionLink>
   </li>
 );
 
@@ -96,8 +96,8 @@ StoryCollectionItem.propTypes = {
     }),
   }).isRequired,
   subheadline: PropTypes.string.isRequired,
-  channelUrl: PropTypes.string.isRequired,
-  channelHeadline: PropTypes.string.isRequired,
+  sectionUrl: PropTypes.string.isRequired,
+  sectionHeadline: PropTypes.string.isRequired,
 };
 
 export default StoryCollectionItem;
