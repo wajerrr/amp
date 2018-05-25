@@ -18,8 +18,8 @@ describe('StoryCollectionHeroItem', () => {
             },
           }}
           subheadline="The Economist explains"
-          channelUrl="https://www.economist.com/help/about-us"
-          channelHeadline="About us"
+          sectionUrl="https://www.economist.com/help/about-us"
+          sectionHeadline="About us"
           description="A minor fraud case provokes a Supreme Court challenge to the expanding power of administrative agencies in government"
         />
       )
@@ -43,8 +43,8 @@ describe('StoryCollectionHeroItem', () => {
             },
           }}
           subheadline="The Economist explains"
-          channelUrl="https://www.economist.com/help/about-us"
-          channelHeadline="About us"
+          sectionUrl="https://www.economist.com/help/about-us"
+          sectionHeadline="About us"
           description="A minor fraud case provokes a Supreme Court challenge to the expanding power of administrative agencies in government"
         />
       )

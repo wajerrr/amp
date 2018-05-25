@@ -13,8 +13,8 @@ const renderHtml = (data, path) => {
   const { css } = extractCritical(reactHTMLString);
 
   return template({
-    canonicalUrl: data.canonical.url.canonical,
-    title: data.canonical.headline,
+    canonicalUrl: data.article.url.canonical,
+    title: data.article.headline,
     css,
     body: reactHTMLString,
     isDev,

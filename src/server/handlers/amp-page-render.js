@@ -1,4 +1,4 @@
-import getGraphqlData from '../get-graphql-data';
+import getData from '../graphql/get-data';
 import renderHtml from '../render-html';
 import { isProd, isStage } from '../utils/environment-detection';
 
@@ -24,18 +24,20 @@ const getDomain = (host) => {
 export const handler = async (request, h) => {
   try {
     const ref = `${getDomain(request.headers.host)}/${request.params.pathname}`;
-    const res = await getGraphqlData(ref);
-    if (
-      (isProd || isStage) &&
-      res.data.canonical.isAccessibleForFree === false
-    ) {
-      return h.redirect(res.data.canonical.url.canonical);
+    const res = await getData(ref);
+    if ((isProd || isStage) && res.data.article.isAccessibleForFree === false) {
+      return h.redirect(res.data.article.url.canonical);
     }
     return h.response(renderHtml(res.data, request.path));
   } catch (e) {
+    if (e.status === 404) {
+      return h
+        .response(`<h1>404 ERROR  COMPONENT TO GO HERE</h1>`)
+        .code(e.status);
+    }
     /* eslint-disable-next-line no-console */
     console.error('Error: ', e);
-    return h.response(e.toString()).code(501);
+    return h.response(e.toString()).code(e.status || 500);
   }
 };
 const route = {

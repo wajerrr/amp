@@ -6,6 +6,7 @@ import ArticleDescription from './article-description';
 import ArticleMainImage from './article-main-image';
 import StyledArticlePublicationDetails from './article-publication-details';
 import buildArticleText from './article-text-builder';
+import ArticleAboutEconomistLink from './article-about-economist-link';
 import spacings from '../../styles/spacings';
 import fontFamily from '../../styles/font-family';
 import typography from '../../styles/typography';
@@ -35,7 +36,7 @@ const StyledBottomPanel = styled('div')`
 
 const Article = ({
   data: {
-    canonical: {
+    article: {
       url,
       subheadline,
       headline,
@@ -77,6 +78,7 @@ const Article = ({
         commentsUri={url.comment}
       />
     </StyledBottomPanel>
+    <ArticleAboutEconomistLink />
   </StyledArticleContainer>
 );
 

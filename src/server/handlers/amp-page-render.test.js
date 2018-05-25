@@ -1,15 +1,19 @@
 /* eslint-disable no-console */
-import getGraphqlData from '../get-graphql-data';
+import getData, {
+  GRAPH_QL_ARTICLE_404_MSG,
+  GRAPH_QL_500_MSG,
+} from '../graphql/get-data';
 import renderHtml from '../render-html';
 import server from '../server';
 import * as envVars from '../utils/environment-detection';
 import economistConfig from '../config/economist';
+import HttpError from '../utils/http-error';
 
 const mockData = 'testData';
 
 const mockLocation = 'https://iam.conaninical/url';
 const mockNotFreeData = {
-  canonical: {
+  article: {
     isAccessibleForFree: false,
     url: {
       canonical: mockLocation,
@@ -17,7 +21,7 @@ const mockNotFreeData = {
   },
 };
 
-jest.mock('../get-graphql-data', () =>
+jest.mock('../graphql/get-data', () =>
   jest.fn().mockImplementation(() => Promise.resolve({ data: mockData }))
 );
 
@@ -27,7 +31,8 @@ jest.mock('../render-html', () => jest.fn().mockImplementation(() => mockHtml));
 console.error = jest.fn();
 
 const url = '/test/article';
-const error = new Error('ERROR');
+const error = new HttpError(GRAPH_QL_500_MSG, 500);
+const error404 = new HttpError(GRAPH_QL_ARTICLE_404_MSG, 404);
 
 describe('ampPageRenderer handler', async () => {
   beforeAll(async (done) => {
@@ -41,22 +46,18 @@ describe('ampPageRenderer handler', async () => {
   });
 
   beforeEach(() => {
-    getGraphqlData.mockImplementation(() =>
-      Promise.resolve({ data: mockData })
-    );
+    getData.mockImplementation(() => Promise.resolve({ data: mockData }));
     envVars.isProd = false;
     envVars.isStage = false;
-    getGraphqlData.mockClear();
+    getData.mockClear();
     renderHtml.mockClear();
     console.error.mockClear();
   });
 
-  it('should call getGraphqlData method with correct path', async (done) => {
+  it('should call getData method with correct path', async (done) => {
     await server.inject({ method: 'GET', url });
-    expect(getGraphqlData).toHaveBeenCalledTimes(1);
-    expect(getGraphqlData).toHaveBeenCalledWith(
-      `${economistConfig.domain}${url}`
-    );
+    expect(getData).toHaveBeenCalledTimes(1);
+    expect(getData).toHaveBeenCalledWith(`${economistConfig.domain}${url}`);
     done();
   });
 
@@ -74,19 +75,26 @@ describe('ampPageRenderer handler', async () => {
     done();
   });
 
-  it('should return error and call console.error when getGraphqlData return error', async (done) => {
-    getGraphqlData.mockImplementation(() => Promise.reject(error));
+  it('should return error and call console.error when getData return 500 error', async (done) => {
+    getData.mockImplementation(() => Promise.reject(error));
     const response = await server.inject({ method: 'GET', url });
     expect(response.result).toEqual(error.toString());
-    expect(response.statusCode).toEqual(501);
+    expect(response.statusCode).toEqual(500);
     expect(console.error).toHaveBeenCalledTimes(1);
     expect(console.error).toHaveBeenCalledWith('Error: ', error);
-    getGraphqlData.mockImplementation(() => mockHtml);
+    done();
+  });
+
+  it('should return 404 page when getData returns 404', async (done) => {
+    getData.mockImplementation(() => Promise.reject(error404));
+    const response = await server.inject({ method: 'GET', url });
+    expect(response.result).toEqual('<h1>404 ERROR  COMPONENT TO GO HERE</h1>');
+    expect(response.statusCode).toEqual(404);
     done();
   });
 
   it('should redirect to canonical article url when isProd is true and article is not free', async (done) => {
-    getGraphqlData.mockImplementation(() =>
+    getData.mockImplementation(() =>
       Promise.resolve({ data: mockNotFreeData })
     );
     envVars.isProd = true;
@@ -95,8 +103,9 @@ describe('ampPageRenderer handler', async () => {
     expect(response.headers.location).toEqual(mockLocation);
     done();
   });
+
   it('should redirect to canonical article url when  isStage is true and article is not free', async (done) => {
-    getGraphqlData.mockImplementation(() =>
+    getData.mockImplementation(() =>
       Promise.resolve({ data: mockNotFreeData })
     );
     envVars.isStage = true;

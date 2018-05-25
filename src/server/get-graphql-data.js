@@ -54,10 +54,12 @@ const getGraphqlData = async (ref) => {
             hasPart {
               parts {
                 id
-                channel {
-                  headline
-                  url {
-                    canonical
+                articleSection {
+                  internal {
+                    url {
+                      canonical
+                    }
+                    headline
                   }
                 }
                 headline
