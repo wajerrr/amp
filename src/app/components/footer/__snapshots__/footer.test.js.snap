@@ -44,6 +44,7 @@ exports[`Footer should match the snapshot 1`] = `
       className="css-x2bodi-StyledIconWrapper ee6t2ru1"
     >
       <a
+        aria-label="facebook"
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.facebook.com/TheEconomist"
         target="_blank"
@@ -66,6 +67,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
+        aria-label="twitter"
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://twitter.com/TheEconomist"
         target="_blank"
@@ -88,6 +90,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
+        aria-label="googleplus"
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://plus.google.com/100470681032489535736/posts"
         target="_blank"
@@ -110,6 +113,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
+        aria-label="mail"
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.economist.com/newsletters"
         target="_blank"
@@ -132,6 +136,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
+        aria-label="linkedin"
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.linkedin.com/grp/home?gid=3056216"
         target="_blank"
@@ -154,6 +159,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
+        aria-label="tumblr"
         className="css-sw97op-StyledLink ee6t2ru2"
         href="http://theeconomist.tumblr.com/"
         target="_blank"
@@ -176,6 +182,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
+        aria-label="instagram"
         className="css-sw97op-StyledLink ee6t2ru2"
         href="http://instagram.com/theeconomist/"
         target="_blank"
@@ -206,6 +213,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
+        aria-label="youtube"
         className="css-sw97op-StyledLink ee6t2ru2"
         href="http://www.youtube.com/user/economistmagazine"
         target="_blank"
@@ -228,6 +236,7 @@ exports[`Footer should match the snapshot 1`] = `
         </span>
       </a>
       <a
+        aria-label="rss"
         className="css-sw97op-StyledLink ee6t2ru2"
         href="https://www.economist.com/rss"
         target="_blank"
