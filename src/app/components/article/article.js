@@ -5,7 +5,7 @@ import ArticleHeadline from './article-headline';
 import ArticleDescription from './article-description';
 import ArticleMainImage from './article-main-image';
 import StyledArticlePublicationDetails from './article-publication-details';
-import buildComponents from './article-text-builder';
+import buildArticleText from './article-text-builder';
 import ArticleAboutEconomistLink from './article-about-economist-link';
 import spacings from '../../styles/spacings';
 import fontFamily from '../../styles/font-family';
@@ -68,7 +68,7 @@ const Article = ({
       publication={publication && publication[0]}
       commentsUri={url.comment}
     />
-    <StyledTextContainer>{buildComponents(text)}</StyledTextContainer>
+    <StyledTextContainer>{buildArticleText(text)}</StyledTextContainer>
     <StyledBottomPanel>
       <StyledArticlePublicationDetails
         datePublished={datePublished}

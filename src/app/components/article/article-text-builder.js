@@ -1,10 +1,11 @@
 import React from 'react';
 import StyledLink from '../styled-link/styled-link';
+import StyledBlockquote from '../styled-block-quote/styled-block-quote';
 
-const buildComponents = (childrenData = [], path = '') => {
+const buildArticleText = (childrenData = [], path = '') => {
   const getHTMLTag = (name, children, key) => {
     const HTMLTag = name;
-    return <HTMLTag key={key}>{buildComponents(children, key)}</HTMLTag>;
+    return <HTMLTag key={key}>{buildArticleText(children, key)}</HTMLTag>;
   };
   const getComponent = ({ type, name = '', data, children, attribs }, key) => {
     switch (type) {
@@ -13,7 +14,7 @@ const buildComponents = (childrenData = [], path = '') => {
           case 'a':
             return (
               <StyledLink key={key} href={attribs.href}>
-                {buildComponents(children, key)}
+                {buildArticleText(children, key)}
               </StyledLink>
             );
           case 'img':
@@ -28,6 +29,12 @@ const buildComponents = (childrenData = [], path = '') => {
             );
           case 'br':
             return <br key={key} />;
+          case 'blockquote':
+            return (
+              <StyledBlockquote key={key}>
+                {buildArticleText(children, key)}
+              </StyledBlockquote>
+            );
           case 'iframe':
             return '';
           default:
@@ -45,4 +52,4 @@ const buildComponents = (childrenData = [], path = '') => {
   );
 };
 
-export default buildComponents;
+export default buildArticleText;

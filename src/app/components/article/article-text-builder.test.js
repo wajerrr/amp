@@ -1,11 +1,11 @@
 import renderer from 'react-test-renderer';
-import buildComponents from './article-text-builder';
+import buildArticleText from './article-text-builder';
 
 describe('buildComponents', () => {
   it('should match snapshot for tag a', () => {
     const tree = renderer
       .create(
-        buildComponents([
+        buildArticleText([
           {
             type: 'tag',
             name: 'a',
@@ -27,7 +27,7 @@ describe('buildComponents', () => {
   it('should match snapshot for image', () => {
     const tree = renderer
       .create(
-        buildComponents([
+        buildArticleText([
           {
             type: 'tag',
             name: 'figure',
@@ -56,7 +56,7 @@ describe('buildComponents', () => {
   it('should match snapshot for iframe', () => {
     const tree = renderer
       .create(
-        buildComponents([
+        buildArticleText([
           {
             type: 'tag',
             name: 'figure',
@@ -85,7 +85,7 @@ describe('buildComponents', () => {
   it('should match snapshot for br', () => {
     const tree = renderer
       .create(
-        buildComponents([
+        buildArticleText([
           {
             type: 'tag',
             name: 'br',
