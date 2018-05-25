@@ -1,7 +1,6 @@
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { extractCritical } from 'emotion-server';
-
 import template from './template';
 import { isDev } from './utils/environment-detection';
 
@@ -26,8 +25,6 @@ const renderHtmlError = (error, path) => {
   switch (error.status) {
     case 404:
       return render404(error, path);
-    case 500:
-      return `<p>${error.toString()}</p>`;
     default:
       return `<p>${error.toString()}</p>`;
   }
