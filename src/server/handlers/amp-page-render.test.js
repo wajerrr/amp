@@ -13,16 +13,6 @@ import HttpError from '../utils/http-error';
 
 const mockData = 'testData';
 
-const mockLocation = 'https://iam.conaninical/url';
-const mockNotFreeData = {
-  article: {
-    isAccessibleForFree: false,
-    url: {
-      canonical: mockLocation,
-    },
-  },
-};
-
 jest.mock('../graphql/get-data', () =>
   jest.fn().mockImplementation(() => Promise.resolve({ data: mockData }))
 );
@@ -116,10 +106,7 @@ describe('ampPageRenderer handler', async () => {
     done();
   });
 
-  it('should redirect to canonical article url when isProd is true and article is not free', async (done) => {
-    getData.mockImplementation(() =>
-      Promise.resolve({ data: mockNotFreeData })
-    );
+  it('should redirect to staging server when isProd is true and article is not in the list', async (done) => {
     envVars.isProd = true;
     const response = await server.inject({ method: 'GET', url });
     expect(response.statusCode).toEqual(302);
@@ -129,10 +116,7 @@ describe('ampPageRenderer handler', async () => {
     done();
   });
 
-  it('should redirect to canonical article url when isStage is true and article is not free', async (done) => {
-    getData.mockImplementation(() =>
-      Promise.resolve({ data: mockNotFreeData })
-    );
+  it('should redirect to staging server when isStage is true and article is not in the list', async (done) => {
     envVars.isStage = true;
     const response = await server.inject({ method: 'GET', url });
     expect(response.statusCode).toEqual(302);
