@@ -10,14 +10,8 @@ main() {
   setTags
 
   buildImage
-
-#  buildAcceptanceTestImage
-
-#  contractTest
-#  unitTest
-#  integrationTest
-
-  # visualTest
+  buildTestImage
+  runTest
 
   if [ "${DOCKER_HUB_ACCOUNT}" != "local" ] && [ "${PULL_REQUEST}" != "true" ]; then
     uploadToDockerHub
@@ -63,42 +57,16 @@ buildImage() {
   docker build --pull=true --tag ${DOCKER_HUB_ACCOUNT}/${SERVICE_NAME}:${BUILD_TAG} .
 }
 
-buildAcceptanceTestImage() {
+buildTestImage() {
   rm -rf .cidfile 2>/dev/null
-  docker run --cidfile=.cidfile ${DOCKER_HUB_ACCOUNT}/${SERVICE_NAME}:${BUILD_TAG} scripts/setupTestImage.sh
+  docker run -e NODE_ENV=dev --cidfile=.cidfile ${DOCKER_HUB_ACCOUNT}/${SERVICE_NAME}:${BUILD_TAG} /bin/sh -c "apk --update add git && npm install"
   docker commit $(cat .cidfile) ${DOCKER_HUB_ACCOUNT}/${SERVICE_NAME}:${TEST_LATEST_TAG}
 }
 
-contractTest() {
-  hostname
-  docker run --rm -i \
-    -e API_GATEWAY_ENDPOINT=${API_GATEWAY_ENDPOINT} \
-    -e ECON_API_THIRDPARTY_ID=${ECON_API_THIRDPARTY_ID} \
+runTest() {
+  docker run -e NODE_ENV=test --rm -i \
     ${DOCKER_HUB_ACCOUNT}/${SERVICE_NAME}:${TEST_LATEST_TAG} \
-    npm run test:contract
-}
-
-visualTest() {
-  DOCKER_HUB_ACCOUNT=$DOCKER_HUB_ACCOUNT \
-    SERVICE_NAME=$SERVICE_NAME \
-    START_SERVICE=1 \
-    BUILD_TAG=${BUILD_TAG} \
-    npm run test:visual
-}
-
-unitTest() {
-  docker run --rm -i \
-    -e API_GATEWAY_ENDPOINT=${API_GATEWAY_ENDPOINT} \
-    -e ECON_API_THIRDPARTY_ID=${ECON_API_THIRDPARTY_ID} \
-    ${DOCKER_HUB_ACCOUNT}/${SERVICE_NAME}:${TEST_LATEST_TAG} \
-    npm run test:unit
-}
-
-integrationTest() {
-  docker run --rm -i \
-    -e API_GATEWAY_ENDPOINT=${API_GATEWAY_ENDPOINT} \
-    ${DOCKER_HUB_ACCOUNT}/${SERVICE_NAME}:${TEST_LATEST_TAG} \
-    npm run test:integration
+    npm run test
 }
 
 setTags() {

@@ -1,7 +1,7 @@
 FROM node:8-alpine
 
-WORKDIR /
-ADD . /
+WORKDIR /code
+ADD . /code
 ENV NODE_ENV production
 RUN npm install
 EXPOSE 8000
