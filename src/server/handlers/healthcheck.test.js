@@ -1,5 +1,5 @@
 import config from '../config/base-config';
-import { gigabitInBytes, status } from './healthcheck';
+import { gigabitInBytes, status, listEnvVariables } from './healthcheck';
 import server from '../server';
 
 const mockMeemoryUsage = 1000;
@@ -35,7 +35,7 @@ describe('healthcheck handler', async () => {
     const expectedResult = {
       buildNumber: 'only in production',
       last_commit: 'only in production',
-      messages: ['NODE_ENV: test'],
+      messages: listEnvVariables(process.env),
       name: config.name,
       status,
       version: config.version,

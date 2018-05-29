@@ -29,19 +29,22 @@ if (isProd || isStage) {
   }
 }
 
-const stats = {
-  buildNumber,
-  name: config.name,
-  version: config.version,
-  last_commit: lastCommit,
-  messages: Object.keys(process.env)
+export const listEnvVariables = (env) =>
+  Object.keys(env)
     .map(
       (i) =>
         i.match(/^(NODE_ENV|API_|ENV$)/)
           ? [i, ': ', process.env[i]].join('')
           : false
     )
-    .filter((i) => i),
+    .filter((i) => i);
+
+const stats = {
+  buildNumber,
+  name: config.name,
+  version: config.version,
+  last_commit: lastCommit,
+  messages: listEnvVariables(process.env),
 };
 
 export const status = 200;
