@@ -123,7 +123,9 @@ describe('ampPageRenderer handler', async () => {
     envVars.isProd = true;
     const response = await server.inject({ method: 'GET', url });
     expect(response.statusCode).toEqual(302);
-    expect(response.headers.location).toEqual(mockLocation);
+    expect(response.headers.location).toEqual(
+      `https://${economistConfig.domain}${url}`
+    );
     done();
   });
 
@@ -134,7 +136,9 @@ describe('ampPageRenderer handler', async () => {
     envVars.isStage = true;
     const response = await server.inject({ method: 'GET', url });
     expect(response.statusCode).toEqual(302);
-    expect(response.headers.location).toEqual(mockLocation);
+    expect(response.headers.location).toEqual(
+      `https://${economistConfig.domain}${url}`
+    );
     done();
   });
 });
