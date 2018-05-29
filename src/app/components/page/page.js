@@ -14,12 +14,14 @@ import StoryCollection from '../story-collection/story-collection';
 import NavigationMenu from '../navigation-menu/navigation-menu';
 
 injectFontFace();
-
+const maxWidth = '640px';
 const StyledMain = styled('main')`
   font-family: ${fontFamily.sans};
   font-size: 18px;
   line-height: ${text.lineHeight.sansOnStep['0']};
   -webkit-font-smoothing: antialiased;
+  max-width: ${maxWidth};
+  margin: 0 auto;
 `;
 
 const StyledMainContent = styled('div')`
@@ -34,6 +36,8 @@ const StyledHeader = styled('header')`
   top: 0;
   width: 100%;
   z-index: 99999;
+  max-width: ${maxWidth};
+  margin: 0 auto;
 `;
 
 const Page = ({ data, children }) => (

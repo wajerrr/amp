@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import spacings from '../../styles/spacings';
+import getSrcset, { fullWidthSize } from '../../../config/images';
 
 const StyledImageContainer = styled('div')`
   margin-bottom: ${spacings.xl};
@@ -28,6 +29,8 @@ const ArticleMainImage = ({ src, width, height }) => {
         src={src}
         width={width}
         height={height}
+        srcset={getSrcset(src)}
+        sizes={fullWidthSize}
         layout={hasSize ? 'responsive' : 'fill'}
       />
     </ImageContainer>

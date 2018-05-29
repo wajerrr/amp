@@ -9,6 +9,8 @@ import ItemHeadline from './story-collection-item-headline';
 import color from '../../styles/color';
 import fontFamily from '../../styles/font-family';
 
+import getSrcset, { fullWidthSize } from '../../../config/images';
+
 const StyledDescription = styled('p')`
   margin: ${spacings.none};
   padding: ${spacings.none};
@@ -68,8 +70,11 @@ const StoryCollectionHeroItem = ({
           width={image.width}
           height={image.height}
           src={image.url.canonical}
+          srcset={getSrcset(image.url.canonical)}
+          sizes={fullWidthSize}
         />
       )}
+
       <StyledHeroItemTextContainer>
         <ItemHeadline
           styles={{
