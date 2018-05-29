@@ -5,19 +5,20 @@
   "main": "index.js",
   "husky": {
     "hooks": {
-      "pre-push": "npm test && npm run lint && npm run validate-amp"
+      "pre-push": "npm test"
     }
   },
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "npm run test:unit && npm run lint && npm run test:amp:validate",
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watch",
     "test:unit:update": "jest --updateSnapshot",
+    "test:amp:validate": "node src/scripts/amp-validation/index-validate.js",
+    "test:amp:generate-data": "node src/scripts/amp-validation/index-generate.js",
+    "lint": "eslint .",
     "start": "node src/server/index.js",
     "start:dev": "cross-env NODE_ENV=development node src/server/index.js",
-    "prettier": "prettier --config .prettierrc.json --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint .",
-    "generate-amp-test-data": "node src/scripts/amp-validation/index-generate.js",
-    "validate-amp": "node src/scripts/amp-validation/index-validate.js"
+    "prettier": "prettier --config .prettierrc.json --write \"src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
