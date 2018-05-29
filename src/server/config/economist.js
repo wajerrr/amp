@@ -1,4 +1,4 @@
-import isStage from '../utils/environment-detection';
+import { isStage } from '../utils/environment-detection';
 
 const config = {
   prod: {
