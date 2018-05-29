@@ -58,13 +58,15 @@ const StoryCollectionItem = ({
   <li className={className}>
     <StyledLinkWrapper href={url}>
       <StyledImgContainer>
-        <amp-img
-          alt={sectionHeadline}
-          width={image.width}
-          height={image.height}
-          layout="responsive"
-          src={image.url.canonical}
-        />
+        {image && (
+          <amp-img
+            alt={sectionHeadline}
+            width={image.width}
+            height={image.height}
+            layout="responsive"
+            src={image.url.canonical}
+          />
+        )}
       </StyledImgContainer>
       <StyledTextContainer>
         <ItemHeadline

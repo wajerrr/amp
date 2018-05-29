@@ -61,13 +61,15 @@ const StoryCollectionHeroItem = ({
 }) => (
   <li className={className}>
     <StyledLinkWrapper href={url}>
-      <amp-img
-        alt={sectionHeadline}
-        layout="responsive"
-        width={image.width}
-        height={image.height}
-        src={image.url.canonical}
-      />
+      {image && (
+        <amp-img
+          alt={sectionHeadline}
+          layout="responsive"
+          width={image.width}
+          height={image.height}
+          src={image.url.canonical}
+        />
+      )}
       <StyledHeroItemTextContainer>
         <ItemHeadline
           styles={{

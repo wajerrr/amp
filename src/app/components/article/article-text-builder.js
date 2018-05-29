@@ -7,7 +7,10 @@ const buildArticleText = (childrenData = [], path = '') => {
     const HTMLTag = name;
     return <HTMLTag key={key}>{buildArticleText(children, key)}</HTMLTag>;
   };
-  const getComponent = ({ type, name = '', data, children, attribs }, key) => {
+  const getComponent = (
+    { type, name = '', data, children, attribs = {} },
+    key
+  ) => {
     switch (type) {
       case 'tag':
         switch (name) {
