@@ -39,7 +39,8 @@ describe('buildComponents', () => {
                 type: 'tag',
                 name: 'img',
                 attribs: {
-                  src: 'img.jpg',
+                  src:
+                    'src="https://www.economist.com/sites/default/files/20180602_blp904.jpg"',
                   width: 1280,
                   height: 720,
                   alt: '',
