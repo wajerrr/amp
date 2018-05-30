@@ -13,7 +13,8 @@ const getSrcset = (
   servicePath = defaultServicePath
 ) => {
   const imgId = imgURL.split(baseUrl)[1];
-  return `https://${baseUrl}${servicePath}200-width${imgId} 200w,
+  return imgId
+    ? `https://${baseUrl}${servicePath}200-width${imgId} 200w,
 https://${baseUrl}${servicePath}300-width${imgId} 300w,
 https://${baseUrl}${servicePath}400-width${imgId} 400w,
 https://${baseUrl}${servicePath}640-width${imgId} 640w,
@@ -21,7 +22,8 @@ https://${baseUrl}${servicePath}800-width${imgId} 800w,
 https://${baseUrl}${servicePath}1000-width${imgId} 1000w,
 https://${baseUrl}${servicePath}1200-width${imgId} 1200w,
 https://${baseUrl}${servicePath}1280-width${imgId} 1280w,
-https://${baseUrl}${servicePath}1600-width${imgId} 1600w`;
+https://${baseUrl}${servicePath}1600-width${imgId} 1600w`
+    : undefined;
 };
 
 const padding = `2 * ${spacings.s}`;
@@ -34,17 +36,20 @@ export const halfWidthSizes = `(min-width: ${pageSizes.maxPageSize}) calc(${
   pageSizes.maxPageSize
 } / 2 - ${padding}), calc(50vw - ${padding})`;
 
-const Image = ({ alt, layout, width, height, src, sizes }) => (
-  <amp-img
-    alt={alt}
-    layout={layout}
-    width={width || 1600}
-    height={height || 900}
-    src={src}
-    srcset={getSrcset(src)}
-    sizes={sizes}
-  />
-);
+const Image = ({ alt, layout, width, height, src, sizes }) => {
+  const srcset = getSrcset(src);
+  return (
+    <amp-img
+      alt={alt}
+      layout={layout}
+      width={width || 1600}
+      height={height || 900}
+      src={src}
+      srcset={srcset}
+      sizes={srcset && sizes}
+    />
+  );
+};
 
 Image.defaultProps = {
   layout: 'responsive',

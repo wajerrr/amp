@@ -19,3 +19,15 @@ https://www.economist.com/sites/default/files/imagecache/1600-width/sites/defaul
   width={100}
 />
 `;
+
+exports[`Image should match snapshot with image src outside www.economist.com domain 1`] = `
+<amp-img
+  alt=""
+  height={100}
+  layout="responsive"
+  sizes={undefined}
+  src="https://www.theguardian.com/sites/default/files/20180602_blp904.jpg"
+  srcset={undefined}
+  width={100}
+/>
+`;
