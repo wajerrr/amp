@@ -38,8 +38,8 @@ const Image = ({ alt, layout, width, height, src, sizes }) => (
   <amp-img
     alt={alt}
     layout={layout}
-    width={width}
-    height={height}
+    width={width || 1600}
+    height={height || 900}
     src={src}
     srcset={getSrcset(src)}
     sizes={sizes}
@@ -50,12 +50,14 @@ Image.defaultProps = {
   layout: 'responsive',
   alt: '',
   sizes: fullWidthSizes,
+  height: 900,
+  width: 1600,
 };
 
 Image.propTypes = {
   src: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
+  width: PropTypes.number,
+  height: PropTypes.number,
   alt: PropTypes.string,
   sizes: PropTypes.string,
   layout: PropTypes.oneOf(['responsive', 'fill']),
