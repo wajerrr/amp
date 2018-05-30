@@ -11,10 +11,21 @@ exports[`buildComponents should match snapshot for iframe 1`] = `
 exports[`buildComponents should match snapshot for image 1`] = `
 <figure>
   <amp-img
-    height="720"
+    alt=""
+    height={720}
     layout="responsive"
+    sizes="(min-width: 640px) calc(640px -  2 * 0.5em), calc(100vw - 2 * 0.5em)"
     src="img.jpg"
-    width="1280"
+    srcset="https://www.economist.com/sites/default/files/imagecache/200-widthundefined 200w,
+https://www.economist.com/sites/default/files/imagecache/300-widthundefined 300w,
+https://www.economist.com/sites/default/files/imagecache/400-widthundefined 400w,
+https://www.economist.com/sites/default/files/imagecache/640-widthundefined 640w,
+https://www.economist.com/sites/default/files/imagecache/800-widthundefined 800w,
+https://www.economist.com/sites/default/files/imagecache/1000-widthundefined 1000w,
+https://www.economist.com/sites/default/files/imagecache/1200-widthundefined 1200w,
+https://www.economist.com/sites/default/files/imagecache/1280-widthundefined 1280w,
+https://www.economist.com/sites/default/files/imagecache/1600-widthundefined 1600w"
+    width={1280}
   />
 </figure>
 `;

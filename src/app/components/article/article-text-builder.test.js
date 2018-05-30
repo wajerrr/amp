@@ -40,8 +40,8 @@ describe('buildComponents', () => {
                 name: 'img',
                 attribs: {
                   src: 'img.jpg',
-                  width: '1280',
-                  height: '720',
+                  width: 1280,
+                  height: 720,
                   alt: '',
                 },
                 children: [],

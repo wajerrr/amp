@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import spacings from '../../styles/spacings';
-import getSrcset, { fullWidthSize } from '../../../config/images';
+import Image from '../image/image';
 
 const StyledImageContainer = styled('div')`
   margin-bottom: ${spacings.xl};
@@ -25,13 +25,11 @@ const ArticleMainImage = ({ src, width, height }) => {
 
   return (
     <ImageContainer>
-      <amp-img
-        src={src}
+      <Image
+        layout={hasSize ? 'responsive' : 'fill'}
         width={width}
         height={height}
-        srcset={getSrcset(src)}
-        sizes={fullWidthSize}
-        layout={hasSize ? 'responsive' : 'fill'}
+        src={src}
       />
     </ImageContainer>
   );

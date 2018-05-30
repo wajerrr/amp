@@ -15,7 +15,17 @@ exports[`StoryCollectionItem should match snapshot with className 1`] = `
         alt="About us"
         height={720}
         layout="responsive"
+        sizes="(min-width: 640px) calc(640px / 2 - 2 * 0.5em), calc(50vw - 2 * 0.5em)"
         src="https://www.economist.com/sites/default/files/20180512_BLP509.jpg"
+        srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/20180512_BLP509.jpg 200w,
+https://www.economist.com/sites/default/files/imagecache/300-width/sites/default/files/20180512_BLP509.jpg 300w,
+https://www.economist.com/sites/default/files/imagecache/400-width/sites/default/files/20180512_BLP509.jpg 400w,
+https://www.economist.com/sites/default/files/imagecache/640-width/sites/default/files/20180512_BLP509.jpg 640w,
+https://www.economist.com/sites/default/files/imagecache/800-width/sites/default/files/20180512_BLP509.jpg 800w,
+https://www.economist.com/sites/default/files/imagecache/1000-width/sites/default/files/20180512_BLP509.jpg 1000w,
+https://www.economist.com/sites/default/files/imagecache/1200-width/sites/default/files/20180512_BLP509.jpg 1200w,
+https://www.economist.com/sites/default/files/imagecache/1280-width/sites/default/files/20180512_BLP509.jpg 1280w,
+https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/20180512_BLP509.jpg 1600w"
         width={1280}
       />
     </div>
@@ -78,7 +88,17 @@ exports[`StoryCollectionItem should match snapshot without className 1`] = `
         alt="About us"
         height={720}
         layout="responsive"
+        sizes="(min-width: 640px) calc(640px / 2 - 2 * 0.5em), calc(50vw - 2 * 0.5em)"
         src="https://www.economist.com/sites/default/files/20180512_BLP509.jpg"
+        srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/20180512_BLP509.jpg 200w,
+https://www.economist.com/sites/default/files/imagecache/300-width/sites/default/files/20180512_BLP509.jpg 300w,
+https://www.economist.com/sites/default/files/imagecache/400-width/sites/default/files/20180512_BLP509.jpg 400w,
+https://www.economist.com/sites/default/files/imagecache/640-width/sites/default/files/20180512_BLP509.jpg 640w,
+https://www.economist.com/sites/default/files/imagecache/800-width/sites/default/files/20180512_BLP509.jpg 800w,
+https://www.economist.com/sites/default/files/imagecache/1000-width/sites/default/files/20180512_BLP509.jpg 1000w,
+https://www.economist.com/sites/default/files/imagecache/1200-width/sites/default/files/20180512_BLP509.jpg 1200w,
+https://www.economist.com/sites/default/files/imagecache/1280-width/sites/default/files/20180512_BLP509.jpg 1280w,
+https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/20180512_BLP509.jpg 1600w"
         width={1280}
       />
     </div>
