@@ -6,6 +6,7 @@ import text from '../../styles/typography';
 import spacings from '../../styles/spacings';
 import SectionLink from './story-collection-section-link';
 import ItemHeadline from './story-collection-item-headline';
+import Image, { halfWidthSizes } from '../image/image';
 
 const StyledTextContainer = styled('div')`
   padding: ${spacings.s};
@@ -59,12 +60,12 @@ const StoryCollectionItem = ({
     <StyledLinkWrapper href={url}>
       <StyledImgContainer>
         {image && (
-          <amp-img
+          <Image
             alt={sectionHeadline}
             width={image.width}
             height={image.height}
-            layout="responsive"
             src={image.url.canonical}
+            sizes={halfWidthSizes}
           />
         )}
       </StyledImgContainer>

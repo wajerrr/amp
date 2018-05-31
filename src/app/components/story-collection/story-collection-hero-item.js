@@ -8,6 +8,7 @@ import SectionLink from './story-collection-section-link';
 import ItemHeadline from './story-collection-item-headline';
 import color from '../../styles/color';
 import fontFamily from '../../styles/font-family';
+import Image from '../image/image';
 
 const StyledDescription = styled('p')`
   margin: ${spacings.none};
@@ -62,14 +63,14 @@ const StoryCollectionHeroItem = ({
   <li className={className}>
     <StyledLinkWrapper href={url}>
       {image && (
-        <amp-img
+        <Image
           alt={sectionHeadline}
-          layout="responsive"
           width={image.width}
           height={image.height}
           src={image.url.canonical}
         />
       )}
+
       <StyledHeroItemTextContainer>
         <ItemHeadline
           styles={{

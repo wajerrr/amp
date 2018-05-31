@@ -12,14 +12,16 @@ import Navigation from '../navigation/navigation';
 import Footer from '../footer/footer';
 import StoryCollection from '../story-collection/story-collection';
 import NavigationMenu from '../navigation-menu/navigation-menu';
+import pageSizes from '../../styles/page-sizes';
 
 injectFontFace();
-
 const StyledMain = styled('main')`
   font-family: ${fontFamily.sans};
   font-size: 18px;
   line-height: ${text.lineHeight.sansOnStep['0']};
   -webkit-font-smoothing: antialiased;
+  max-width: ${pageSizes.maxPageSize};
+  margin: 0 auto;
 `;
 
 const StyledMainContent = styled('div')`
@@ -34,6 +36,8 @@ const StyledHeader = styled('header')`
   top: 0;
   width: 100%;
   z-index: 99999;
+  max-width: ${pageSizes.maxPageSize};
+  margin: 0 auto;
 `;
 
 const Page = ({ data, children }) => (

@@ -1,6 +1,7 @@
 import React from 'react';
 import StyledLink from '../styled-link/styled-link';
 import StyledBlockquote from '../styled-block-quote/styled-block-quote';
+import Image from '../image/image';
 
 const buildArticleText = (childrenData = [], path = '') => {
   const getHTMLTag = (name, children, key) => {
@@ -22,7 +23,7 @@ const buildArticleText = (childrenData = [], path = '') => {
             );
           case 'img':
             return (
-              <amp-img
+              <Image
                 key={key}
                 width={attribs.width}
                 height={attribs.height}
