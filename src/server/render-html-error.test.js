@@ -1,5 +1,5 @@
 import React from 'react';
-import renderHtmlError from './render-html-error';
+import renderHtmlError, { errorMetadata } from './render-html-error';
 import HttpError from './utils/http-error';
 import template from './template';
 import App from '../app/app';
@@ -16,9 +16,8 @@ describe('renderHtmlError', () => {
   });
   it('should return correct html string for 404 error', () => {
     const expected = template({
-      title: 'Page not found | The Economist',
       css: '',
-      canonicalUrl: url,
+      metadata: errorMetadata(url),
       body: '<p>error</p>',
     });
     expect(renderHtmlError(new HttpError('error', 404), url)).toEqual(expected);

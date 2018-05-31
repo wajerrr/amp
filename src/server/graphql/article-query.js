@@ -26,6 +26,15 @@ const articleFragment = `fragment Article on Content {
         canonical
       }
     }
+    promo {
+      id
+      width
+      height
+      headline
+      url {
+        canonical
+      }
+    }
   }
 }`;
 
