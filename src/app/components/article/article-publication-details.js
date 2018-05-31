@@ -23,7 +23,7 @@ const StyledSectionLink = styled(StyledLink)`
   &,
   &:active,
   &:visited {
-    color: ${color.beijing};
+    color: ${color.moscow};
     text-decoration: none;
     border-bottom: none;
   }
