@@ -1,16 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ArticleMainImage should match snapshot 1`] = `
-<div
-  className="css-okm3o5-StyledImageContainer e168sr8z0"
->
-  <amp-img
-    alt=""
-    height={100}
-    layout="responsive"
-    sizes="(min-width: 640px) calc(640px -  2 * 0.5em), calc(100vw - 2 * 0.5em)"
-    src="https://www.economist.com/sites/default/files/20180602_blp904.jpg"
-    srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/20180602_blp904.jpg 200w,
+exports[`Image should match snapshot 1`] = `
+<amp-img
+  alt=""
+  height={100}
+  layout="responsive"
+  sizes="(min-width: 640px) calc(640px -  2 * 0.5em), calc(100vw - 2 * 0.5em)"
+  src="https://www.economist.com/sites/default/files/20180602_blp904.jpg"
+  srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/20180602_blp904.jpg 200w,
 https://www.economist.com/sites/default/files/imagecache/300-width/sites/default/files/20180602_blp904.jpg 300w,
 https://www.economist.com/sites/default/files/imagecache/400-width/sites/default/files/20180602_blp904.jpg 400w,
 https://www.economist.com/sites/default/files/imagecache/640-width/sites/default/files/20180602_blp904.jpg 640w,
@@ -19,7 +16,18 @@ https://www.economist.com/sites/default/files/imagecache/1000-width/sites/defaul
 https://www.economist.com/sites/default/files/imagecache/1200-width/sites/default/files/20180602_blp904.jpg 1200w,
 https://www.economist.com/sites/default/files/imagecache/1280-width/sites/default/files/20180602_blp904.jpg 1280w,
 https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/20180602_blp904.jpg 1600w"
-    width={100}
-  />
-</div>
+  width={100}
+/>
+`;
+
+exports[`Image should match snapshot with image src outside www.economist.com domain 1`] = `
+<amp-img
+  alt=""
+  height={100}
+  layout="responsive"
+  sizes={undefined}
+  src="https://www.theguardian.com/sites/default/files/20180602_blp904.jpg"
+  srcset={undefined}
+  width={100}
+/>
 `;
