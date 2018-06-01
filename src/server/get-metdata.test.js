@@ -1,4 +1,4 @@
-import getMetdatda, {
+import getMetdata, {
   getCanonicalLinkTag,
   getImgMetaTags,
 } from './get-metadata';
@@ -56,23 +56,23 @@ const expected = `<title>headline - subheadline</title>
 
 describe('getMetdatda', () => {
   it('should render correct metadata', () => {
-    const actual = getMetdatda(articleData);
+    const actual = getMetdata(articleData);
     expect(actual).toEqual(expected);
   });
   it('should render title withous subheadline', () => {
-    const actual = getMetdatda({ ...articleData, subheadline: undefined });
+    const actual = getMetdata({ ...articleData, subheadline: undefined });
     expect(actual.includes('<title>headline</title>')).toEqual(true);
   });
 
   it('shoul render correct canonical link tag', () => {
-    const actual = getMetdatda(articleData);
+    const actual = getMetdata(articleData);
     expect(
       actual.includes(getCanonicalLinkTag(articleData.url.canonical))
     ).toEqual(true);
   });
 
   it('should render correct article:content_tier meta tag', () => {
-    const actual = getMetdatda({ ...articleData, isAccessibleForFree: false });
+    const actual = getMetdata({ ...articleData, isAccessibleForFree: false });
     expect(
       actual.includes(
         '<meta  property="article:content_tier" content="metered">'
@@ -81,13 +81,13 @@ describe('getMetdatda', () => {
   });
 
   it('should not render image related tags when there is no image', () => {
-    const actual = getMetdatda({ ...articleData, image: undefined });
+    const actual = getMetdata({ ...articleData, image: undefined });
 
     expect(actual.includes(getImgMetaTags(null))).toEqual(true);
   });
 
   it('should render main image related tags when there is no promo image', () => {
-    const actual = getMetdatda({ ...articleData, image: { main } });
+    const actual = getMetdata({ ...articleData, image: { main } });
 
     expect(
       actual.includes(getImgMetaTags(articleData.image.main.url.canonical))
@@ -95,7 +95,7 @@ describe('getMetdatda', () => {
   });
 
   it('should replace double quotes with &quot;', () => {
-    const actual = getMetdatda({
+    const actual = getMetdata({
       ...articleData,
       headline: '"headline"',
       description: '"article description"',

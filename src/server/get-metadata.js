@@ -21,7 +21,7 @@ export const getImgMetaTags = (imgSrc) =>
       <meta  property="og:image" content="${imgSrc}">`
     : '';
 
-const getMetdatda = ({
+const getMetdata = ({
   headline,
   description,
   subheadline,
@@ -81,4 +81,4 @@ line 35, col 6: The attribute 'name' in tag 'meta name= and content=' is set to 
 <meta name="revisit-after" content="1 days"> //MISSING
 */
 
-export default getMetdatda;
+export default getMetdata;
