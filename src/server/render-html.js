@@ -4,7 +4,7 @@ import { extractCritical } from 'emotion-server';
 
 import template from './template';
 import { isDev } from './utils/environment-detection';
-import getMetdata from './get-metadata';
+import getMetadata from './get-metadata';
 
 const renderHtml = (data) => {
   /* eslint-disable global-require */
@@ -12,7 +12,7 @@ const renderHtml = (data) => {
   const reactHTMLString = renderToStaticMarkup(<App data={data} />);
 
   const { css } = extractCritical(reactHTMLString);
-  const metadata = getMetdata(data.article);
+  const metadata = getMetadata(data.article);
   return template({
     css,
     body: reactHTMLString,
