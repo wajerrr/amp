@@ -1,27 +1,16 @@
-import template, { hotReloadingScript, getCanonicalLink } from './template';
+import template, { hotReloadingScript } from './template';
+
+const metadata = `<title>title</title><meta name="name" content="content">`;
 
 const templateParams = {
-  title: 'dummy title',
-  canonicalUrl: 'https://stickyfloors.net',
   css: 'background: pink',
   body: '<h1>body</h1>',
+  metadata,
 };
 
 describe('template', () => {
-  test('populates title tag', () => {
-    expect(
-      template(templateParams).includes(
-        `<title>${templateParams.title}</title>`
-      )
-    ).toEqual(true);
-  });
-
-  test('populates canonicalUrl', () => {
-    expect(
-      template(templateParams).includes(
-        `<link rel="canonical" href="${templateParams.canonicalUrl}">`
-      )
-    ).toEqual(true);
+  test('populates metadata', () => {
+    expect(template(templateParams).includes(metadata)).toEqual(true);
   });
 
   test('populates css style', () => {
@@ -47,14 +36,6 @@ describe('template', () => {
   test('does add hot reloading script when isDev flag is true', () => {
     expect(
       template({ ...templateParams, isDev: true }).includes(hotReloadingScript)
-    ).toEqual(true);
-  });
-
-  test('does contain canonical link when canonicalUrl prop is provided ', () => {
-    expect(
-      template({ ...templateParams }).includes(
-        getCanonicalLink(templateParams.canonicalUrl)
-      )
     ).toEqual(true);
   });
 });
