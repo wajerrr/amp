@@ -15,7 +15,17 @@ exports[`StoryCollection should match snapshot 1`] = `
         alt="Business and finance"
         height={720}
         layout="responsive"
+        sizes="(min-width: 640px) calc(640px -  2 * 0.5em), calc(100vw - 2 * 0.5em)"
         src="https://www.economist.com/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg"
+        srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 200w,
+https://www.economist.com/sites/default/files/imagecache/300-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 300w,
+https://www.economist.com/sites/default/files/imagecache/400-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 400w,
+https://www.economist.com/sites/default/files/imagecache/640-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 640w,
+https://www.economist.com/sites/default/files/imagecache/800-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 800w,
+https://www.economist.com/sites/default/files/imagecache/1000-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 1000w,
+https://www.economist.com/sites/default/files/imagecache/1200-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 1200w,
+https://www.economist.com/sites/default/files/imagecache/1280-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 1280w,
+https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 1600w"
         width={1280}
       />
       <div
@@ -79,7 +89,17 @@ exports[`StoryCollection should match snapshot 1`] = `
           alt="Culture"
           height={720}
           layout="responsive"
+          sizes="(min-width: 640px) calc(640px / 2 - 2 * 0.5em), calc(50vw - 2 * 0.5em)"
           src="https://www.economist.com/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg"
+          srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 200w,
+https://www.economist.com/sites/default/files/imagecache/300-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 300w,
+https://www.economist.com/sites/default/files/imagecache/400-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 400w,
+https://www.economist.com/sites/default/files/imagecache/640-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 640w,
+https://www.economist.com/sites/default/files/imagecache/800-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 800w,
+https://www.economist.com/sites/default/files/imagecache/1000-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 1000w,
+https://www.economist.com/sites/default/files/imagecache/1200-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 1200w,
+https://www.economist.com/sites/default/files/imagecache/1280-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 1280w,
+https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 1600w"
           width={1280}
         />
       </div>
@@ -139,7 +159,17 @@ exports[`StoryCollection should match snapshot 1`] = `
           alt="The Economist explains"
           height={720}
           layout="responsive"
+          sizes="(min-width: 640px) calc(640px / 2 - 2 * 0.5em), calc(50vw - 2 * 0.5em)"
           src="https://www.economist.com/sites/default/files/20180526_BLP512.jpg"
+          srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/20180526_BLP512.jpg 200w,
+https://www.economist.com/sites/default/files/imagecache/300-width/sites/default/files/20180526_BLP512.jpg 300w,
+https://www.economist.com/sites/default/files/imagecache/400-width/sites/default/files/20180526_BLP512.jpg 400w,
+https://www.economist.com/sites/default/files/imagecache/640-width/sites/default/files/20180526_BLP512.jpg 640w,
+https://www.economist.com/sites/default/files/imagecache/800-width/sites/default/files/20180526_BLP512.jpg 800w,
+https://www.economist.com/sites/default/files/imagecache/1000-width/sites/default/files/20180526_BLP512.jpg 1000w,
+https://www.economist.com/sites/default/files/imagecache/1200-width/sites/default/files/20180526_BLP512.jpg 1200w,
+https://www.economist.com/sites/default/files/imagecache/1280-width/sites/default/files/20180526_BLP512.jpg 1280w,
+https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/20180526_BLP512.jpg 1600w"
           width={1280}
         />
       </div>
