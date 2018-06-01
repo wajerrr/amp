@@ -14,18 +14,9 @@ const getImageSrc = (image) => {
   }
   return null;
 };
-// ;
-// "{
-//  "@context":"http://schema.org",
-// "@type":["NewsArticle","AnalysisNewsArticle"],
-// "url":"https://www.economist.com/open-future/2018/05/31/the-question-of-a-universal-basic-income",
-// "publisher":{"@type":"NewsMediaOrganization","name":"The Economist"},
-// "headline":"The question of a universal basic income",
-// "mainEntityOfPage":"https://www.economist.com/open-future/2018/05/31/the-question-of-a-universal-basic-income",
-// "citation":["https://www.economist.com/blogs/openfuture/2018/05/open-future-4","https://www.economist.com/blogs/openfuture/2018/05/open-future-5","https://www.economist.com/openfuture"]}"
 
 export const getMicroData = (type, url, headline) =>
-  `<script type="application/ld+json" data-react-helmet="true">
+  `<script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": ${type},
