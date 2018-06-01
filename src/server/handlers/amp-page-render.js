@@ -33,6 +33,7 @@ export const handler = async (request, h) => {
   } catch (error) {
     /* eslint-disable-next-line no-console */
     console.error(`Error: ${error.toString()}`);
+
     return h
       .response(
         renderHtmlError(error, `https://${request.headers.host}${request.path}`)

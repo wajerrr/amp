@@ -47,6 +47,8 @@ const start = async () => {
         await server.start();
         /* eslint-disable-next-line import/no-extraneous-dependencies, global-require */
         io = require('socket.io')(server.listener);
+        /* eslint-disable-next-line no-console */
+        console.info('DONE');
       });
     });
 

@@ -1,6 +1,7 @@
 import economistConfig from '../config/economist';
 
-const handler = (request, h) => h.redirect(`https://${economistConfig.domain}`);
+export const handler = (request, h) =>
+  h.redirect(`https://${economistConfig.domain}`);
 
 const route = {
   method: 'GET',

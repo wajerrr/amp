@@ -52,7 +52,7 @@ export const gigabitInBytes = 1000 * 1000;
 
 const getMemoryUsage = () => process.memoryUsage().rss / gigabitInBytes;
 
-const handler = (request, h) =>
+export const handler = (request, h) =>
   h
     .response(
       Object.assign(stats, {
