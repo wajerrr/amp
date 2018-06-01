@@ -1,6 +1,8 @@
 import getMetadata, {
   getCanonicalLinkTag,
   getImgMetaTags,
+  getMicroData,
+  sanitizeText,
 } from './get-metadata';
 
 const main = {
@@ -22,6 +24,7 @@ const articleData = {
   datePublished: '2018-04-10T13:25:15Z',
   isAccessibleForFree: true,
   image: { main, promo },
+  type: ['article', 'blogpost'],
 };
 const expected = `<title>headline - subheadline</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -52,7 +55,12 @@ const expected = `<title>headline - subheadline</title>
       <meta  name="description" content="description">
       <meta  name="twitter:card" content="summary_large_image"> 
       <meta  name="twitter:image" content="urlpromo">
-      <meta  property="og:image" content="urlpromo">`;
+      <meta  property="og:image" content="urlpromo">
+      ${getMicroData(
+        articleData.type,
+        articleData.url.canonical,
+        sanitizeText(articleData.headline)
+      )}`;
 
 describe('getMetdatda', () => {
   it('should render correct metadata', () => {
@@ -97,16 +105,16 @@ describe('getMetdatda', () => {
   it('should replace double quotes with &quot;', () => {
     const actual = getMetadata({
       ...articleData,
-      headline: '"headline"',
+      headline: '"article headline"',
       description: '"article description"',
       subheadline: '"subheadline"',
     });
 
-    expect(actual.includes('"headline"')).toEqual(false);
+    expect(actual.includes('"article headline"')).toEqual(false);
     expect(actual.includes('"article description"')).toEqual(false);
     expect(actual.includes('"subheadline"')).toEqual(false);
 
-    expect(actual.match(/&quot;headline&quot;/gi).length).toEqual(2);
+    expect(actual.match(/&quot;article headline&quot;/gi).length).toEqual(3);
     expect(actual.match(/&quot;article description&quot;/gi).length).toEqual(3);
     expect(actual.match(/&quot;subheadline&quot;/gi).length).toEqual(1);
   });
