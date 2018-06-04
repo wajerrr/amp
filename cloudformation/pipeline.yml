@@ -8,9 +8,9 @@ Parameters:
     Default: master
 
   RepositoryOauth:
-    Type: String
+    Type: 'AWS::SSM::Parameter::Value<String>'
     Description: oauth token
-    NoEcho: True
+    Default: '/infra/github/oauth'
 
   Repository:
     Type: String
