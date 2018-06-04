@@ -81,11 +81,17 @@ const StoryCollectionItem = ({
         </ItemHeadline>
       </StyledTextContainer>
     </StyledLinkWrapper>
-    <StyledSectionLink href={sectionUrl}>{sectionHeadline}</StyledSectionLink>
+    {sectionHeadline && sectionUrl ? (
+      <StyledSectionLink href={sectionUrl}>{sectionHeadline}</StyledSectionLink>
+    ) : null}
   </li>
 );
 
-StoryCollectionItem.defaultProps = { className: '' };
+StoryCollectionItem.defaultProps = {
+  className: '',
+  sectionUrl: null,
+  sectionHeadline: null,
+};
 
 StoryCollectionItem.propTypes = {
   className: PropTypes.string,
@@ -99,8 +105,8 @@ StoryCollectionItem.propTypes = {
     }),
   }).isRequired,
   subheadline: PropTypes.string.isRequired,
-  sectionUrl: PropTypes.string.isRequired,
-  sectionHeadline: PropTypes.string.isRequired,
+  sectionUrl: PropTypes.string,
+  sectionHeadline: PropTypes.string,
 };
 
 export default StoryCollectionItem;
