@@ -19,11 +19,11 @@ export const getMicroData = (type, url, headline) =>
   `<script type="application/ld+json">
   {
     "@context": "http://schema.org",
-    "@type": ${type},
+    "@type": [${type.map((item) => `"${item}"`)}],
     "url": "${url}",
     "publisher": {"@type":"NewsMediaOrganization","name":"The Economist"},
     "headline": "${headline}",
-    "mainEntityOfPage": "${url}",
+    "mainEntityOfPage": "${url}"
   }
   </script>`;
 
