@@ -17,7 +17,7 @@
     "test:amp:generate-data": "node src/scripts/amp-validation/index-generate.js",
     "lint": "eslint .",
     "start": "node src/server/index.js",
-    "start:dev": "cross-env NODE_ENV=development node src/server/index.js",
+    "start:dev": "cross-env NODE_ENV=development ENV=development node src/server/index.js",
     "prettier": "prettier --config .prettierrc.json --write \"src/**/*.{js,jsx}\""
   },
   "repository": {
