@@ -10,6 +10,7 @@ import ArticleAboutEconomistLink from './article-about-economist-link';
 import spacings from '../../styles/spacings';
 import fontFamily from '../../styles/font-family';
 import typography from '../../styles/typography';
+import StyledInlineAd from '../styled-advert/styled-advert';
 
 const StyledArticleContainer = styled('article')`
   font-size: ${typography.baseSize};
@@ -34,6 +35,16 @@ const StyledBottomPanel = styled('div')`
   margin-bottom: ${spacings.xl};
 `;
 
+const generateText = (text, ad) => {
+  const paragraphs = buildArticleText(text);
+  paragraphs.splice(
+    2,
+    0,
+    <StyledInlineAd siteCode={ad.siteCode} zoneCode={ad.zoneCode} />
+  );
+  return paragraphs;
+};
+
 const Article = ({
   data: {
     url,
@@ -46,6 +57,7 @@ const Article = ({
     text,
     print,
     publication,
+    ad,
   },
 }) => (
   <StyledArticleContainer>
@@ -66,7 +78,7 @@ const Article = ({
       publication={publication && publication[0]}
       commentsUri={url.comment}
     />
-    <StyledTextContainer>{buildArticleText(text)}</StyledTextContainer>
+    <StyledTextContainer>{generateText(text, ad)}</StyledTextContainer>
     <StyledBottomPanel>
       <StyledArticlePublicationDetails
         datePublished={datePublished}
@@ -77,6 +89,7 @@ const Article = ({
       />
     </StyledBottomPanel>
     <ArticleAboutEconomistLink />
+    <StyledInlineAd siteCode={ad.siteCode} zoneCode={ad.zoneCode} />
   </StyledArticleContainer>
 );
 

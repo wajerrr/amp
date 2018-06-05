@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InlineAd should match snapshot 1`] = `
+<div
+  className=""
+>
+  <amp-ad
+    className=""
+    data-slot="/5605/dev.1234/ABCD"
+    height="250"
+    type="doubleclick"
+    width="300"
+  />
+</div>
+`;
