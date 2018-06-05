@@ -14,9 +14,9 @@ const start = async () => {
     process.exit(1);
   }
 
-  if (process.env.NODE_ENV === undefined) {
+  if (process.env.NODE_ENV === undefined || process.env.ENV === undefined) {
     /* eslint-disable-next-line no-console */
-    console.error('Please set NODE_ENV before take off!');
+    console.error('Please set NODE_ENV  and ENV before take off!');
     process.exit(1);
   }
 
