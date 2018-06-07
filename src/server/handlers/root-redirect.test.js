@@ -1,26 +1,20 @@
 import economistConfig from '../config/economist';
-import server from '../server';
+import { handler } from './root-redirect';
 
-describe('root-redirect handler', async () => {
-  beforeAll(async (done) => {
-    await server.start();
-    done();
+describe('root-redirect handler', () => {
+  const h = {
+    redirect: jest.fn().mockImplementation(() => h),
+  };
+
+  afterEach(() => {
+    h.redirect.mockClear();
   });
 
-  afterAll(async (done) => {
-    await server.stop();
-    done();
-  });
-
-  it('should redirect from /', async (done) => {
-    const response = await server.inject({
-      method: 'GET',
-      url: '/',
-    });
-    expect(response.statusCode).toEqual(302);
-    expect(response.headers.location).toEqual(
+  it('should redirect from /', () => {
+    handler(null, h);
+    expect(h.redirect).toHaveBeenCalledTimes(1);
+    expect(h.redirect).toHaveBeenCalledWith(
       `https://${economistConfig.domain}`
     );
-    done();
   });
 });
