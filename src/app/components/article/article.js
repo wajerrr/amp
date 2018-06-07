@@ -37,11 +37,13 @@ const StyledBottomPanel = styled('div')`
 
 const generateText = (text, ad) => {
   const paragraphs = buildArticleText(text);
-  paragraphs.splice(
-    2,
-    0,
-    <StyledInlineAd siteCode={ad.siteCode} zoneCode={ad.zoneCode} />
-  );
+  if (ad) {
+    paragraphs.splice(
+      2,
+      0,
+      <StyledInlineAd key={`${ad.siteCode}${ad.zoneCode}`} ad={ad} />
+    );
+  }
   return paragraphs;
 };
 
@@ -89,7 +91,7 @@ const Article = ({
       />
     </StyledBottomPanel>
     <ArticleAboutEconomistLink />
-    <StyledInlineAd siteCode={ad.siteCode} zoneCode={ad.zoneCode} />
+    <StyledInlineAd ad={ad} />
   </StyledArticleContainer>
 );
 

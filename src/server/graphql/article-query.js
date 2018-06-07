@@ -19,6 +19,7 @@ const articleFragment = `fragment Article on Content {
   ad {
     siteCode
     zoneCode
+    environment
   }
   image {
     main {

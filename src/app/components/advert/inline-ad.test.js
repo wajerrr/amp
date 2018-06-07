@@ -5,7 +5,11 @@ import InlineAd from './inline-ad';
 describe('InlineAd', () => {
   it('should match snapshot', () => {
     const tree = renderer
-      .create(<InlineAd siteCode="1234" zoneCode="ABCD" />)
+      .create(
+        <InlineAd
+          ad={{ siteCode: '1234', zoneCode: 'ABCD', environment: 'dev' }}
+        />
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

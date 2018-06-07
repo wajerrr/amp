@@ -5,7 +5,6 @@ exports[`InlineAd should match snapshot 1`] = `
   className="css-idu2pl-StyledInlineAd exmsx7n0"
 >
   <amp-ad
-    className="css-idu2pl-StyledInlineAd exmsx7n0"
     data-slot="/5605/dev.1234/ABCD"
     height="250"
     type="doubleclick"

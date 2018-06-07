@@ -5,7 +5,11 @@ import StyledInlineAd from './styled-advert';
 describe('InlineAd', () => {
   it('should match snapshot', () => {
     const tree = renderer
-      .create(<StyledInlineAd siteCode="1234" zoneCode="ABCD" />)
+      .create(
+        <StyledInlineAd
+          ad={{ siteCode: '1234', zoneCode: 'ABCD', environment: 'dev' }}
+        />
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
