@@ -1,5 +1,5 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 
 import baseConfig from '../../../server/config/economist';
 import pageSizes from '../../styles/page-sizes';

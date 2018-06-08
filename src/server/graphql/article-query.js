@@ -4,6 +4,7 @@ const articleFragment = `fragment Article on Content {
   id
   tegID
   type
+  tegType
   url {
     canonical
     comment
@@ -38,7 +39,7 @@ const articleFragment = `fragment Article on Content {
   }
 }`;
 
-const getArticeQuery = (ref) => gql`
+const getArticleQuery = (ref) => gql`
 {
   data: canonical(ref: "${ref}") 
   {
@@ -56,4 +57,4 @@ const getArticeQuery = (ref) => gql`
 ${articleFragment}
 `;
 
-export default getArticeQuery;
+export default getArticleQuery;
