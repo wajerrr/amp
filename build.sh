@@ -53,7 +53,8 @@ buildEbApplicationZip(){
 
 buildImage() {
   sed "s/BUILD_TAG/${BUILD_TAG}/g; s/ECR/${DOCKER_HUB_ACCOUNT}/g; s/SERVICE_NAME/${SERVICE_NAME}/g;" < Dockerrun.aws.json.template > Dockerrun.aws.json
-  git log -1 --oneline > last_commit.txt || true
+  [[ ! -z $CODEBUILD_SOURCE_VERSION ]] && echo $CODEBUILD_SOURCE_VERSION > last_commit.txt
+  echo $BUILD_TAG > build_number.txt
   docker build --pull=true --tag ${DOCKER_HUB_ACCOUNT}/${SERVICE_NAME}:${BUILD_TAG} .
 }
 

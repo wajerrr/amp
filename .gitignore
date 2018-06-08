@@ -1,4 +1,6 @@
 node_modules
 Dockerrun.aws.json
+.cidfile
+last_commit.txt
 target
 *.zip
