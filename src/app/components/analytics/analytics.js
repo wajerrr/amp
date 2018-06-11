@@ -53,7 +53,7 @@ const getPropTitle = ({ contentType, headline }) => {
   }
   return propTitle;
 };
-function articlePublishDate(date) {
+const articlePublishDate = (date) => {
   // Returns the date the article was published in this format yyyy|mm|dd
   const doubleDigitLimit = 10;
   return date instanceof Date
@@ -67,7 +67,7 @@ function articlePublishDate(date) {
           : date.getDate(),
       ].join('|')
     : '';
-}
+};
 /* eslint-disable no-template-curly-in-string */
 /**
  * Returns config for amp-analytics.
