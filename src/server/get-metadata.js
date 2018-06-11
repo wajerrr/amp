@@ -23,28 +23,31 @@ export const getStructuredData = ({
   dateModified,
   imgSrc,
   author = ['The Economist'],
-}) =>
-  `<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": [${type.map((item) => `"${item}"`).join(',')}],
-    "url": "${url}",
-    "publisher": {
-      "@type":"NewsMediaOrganization",
-      "name":"The Economist",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.economist.com/assets/the-economist-logo.png"
-        }
+}) => {
+  const data = {
+    '@context': 'http://schema.org',
+    '@type': type,
+    url,
+    publisher: {
+      '@type': 'NewsMediaOrganization',
+      name: 'The Economist',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.economist.com/assets/the-economist-logo.png',
+      },
     },
-    "headline": "${headline}",
-    "mainEntityOfPage": "${url}",
-    "datePublished": "${datePublished}",
-    "dateModified": "${dateModified}",
-    "image": "${imgSrc}",
-    "author": [${author.map((i) => `"${i}"`).join(',')}]
-   }
+    headline,
+    mainEntityOfPage: url,
+    datePublished,
+    dateModified,
+    image: imgSrc,
+    author,
+  };
+
+  return `<script type="application/ld+json">
+   ${JSON.stringify(data)}
   </script>`;
+};
 
 export const getImgMetaTags = (imgSrc) =>
   imgSrc
