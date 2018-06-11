@@ -12,6 +12,8 @@ const articleFragment = `fragment Article on Content {
   subheadline
   description
   datePublished
+  dateModified
+  author {id}
   byline
   text(format: "json")
   regionsAllowed
