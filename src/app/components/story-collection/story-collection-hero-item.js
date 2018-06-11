@@ -84,11 +84,17 @@ const StoryCollectionHeroItem = ({
         <StyledDescription>{description}</StyledDescription>
       </StyledHeroItemTextContainer>
     </StyledLinkWrapper>
-    <StyledSectionLink href={sectionUrl}>{sectionHeadline}</StyledSectionLink>
+    {sectionHeadline && sectionUrl ? (
+      <StyledSectionLink href={sectionUrl}>{sectionHeadline}</StyledSectionLink>
+    ) : null}
   </li>
 );
 
-StoryCollectionHeroItem.defaultProps = { className: '' };
+StoryCollectionHeroItem.defaultProps = {
+  className: '',
+  sectionUrl: null,
+  sectionHeadline: null,
+};
 
 StoryCollectionHeroItem.propTypes = {
   className: PropTypes.string,
@@ -103,8 +109,8 @@ StoryCollectionHeroItem.propTypes = {
     }),
   }).isRequired,
   subheadline: PropTypes.string.isRequired,
-  sectionUrl: PropTypes.string.isRequired,
-  sectionHeadline: PropTypes.string.isRequired,
+  sectionUrl: PropTypes.string,
+  sectionHeadline: PropTypes.string,
 };
 
 export default StoryCollectionHeroItem;
