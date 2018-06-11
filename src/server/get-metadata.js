@@ -108,8 +108,8 @@ const getMetadata = ({
       ${getImgMetaTags(imgSrc)}
       ${getStructuredData({
         type,
-        canonicalUrl,
-        sanitizedHeadline,
+        url: canonicalUrl,
+        headline: sanitizedHeadline,
         datePublished,
         dateModified,
         imgSrc,

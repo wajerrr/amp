@@ -57,14 +57,14 @@ const expected = `<title>headline - subheadline</title>
       <meta  name="twitter:card" content="summary_large_image"> 
       <meta  name="twitter:image" content="urlpromo">
       <meta  property="og:image" content="urlpromo">
-      ${getStructuredData(
-        articleData.type,
-        articleData.url.canonical,
-        sanitizeText(articleData.headline),
-        articleData.datePublished,
-        articleData.dateModified,
-        promo.url.canonical
-      )}`;
+      ${getStructuredData({
+        type: articleData.type,
+        url: articleData.url.canonical,
+        headline: sanitizeText(articleData.headline),
+        datePublished: articleData.datePublished,
+        dateModified: articleData.dateModified,
+        imgSrc: promo.url.canonical,
+      })}`;
 
 describe('getMetdatda', () => {
   it('should render correct metadata', () => {
