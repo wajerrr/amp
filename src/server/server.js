@@ -12,9 +12,9 @@ const serverConfig = {
 
 const server = Hapi.server(serverConfig);
 
-server.route(analyticsConfig);
 server.route(rootRedirect);
 server.route(ampPageRenderer);
 server.route(healthcheck);
+server.route(analyticsConfig);
 
 export default server;

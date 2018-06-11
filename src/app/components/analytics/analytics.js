@@ -2,45 +2,51 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import slug from '../../../server/utils/slug';
 
+const TYPE_BLOG = 'blog_post';
+const TYPE_ARTICLE = 'article';
 const getSection = ({ print, publication }) => {
   let section = print && print.section && print.section.headline;
   if (!section) {
     section = publication[0] && publication[0].headline;
   }
-  return section;
+  return section || '';
 };
 const getContentType = (tegType) =>
-  ({ mtblog: 'blog_post', article: 'article' }[tegType]);
-const getPageName = ({ type, section, headline }) => {
+  ({ mtblog: TYPE_BLOG, article: TYPE_ARTICLE }[tegType]);
+const getPageName = ({ contentType, section, headline }) => {
   let pageName;
-  switch (type) {
-    case 'blog_post': {
-      pageName = [type, slug(section), slug(headline)].join('|');
+  switch (contentType) {
+    case TYPE_BLOG: {
+      pageName = [contentType, slug(section), slug(headline)].join('|');
       break;
     }
-    case 'article': {
-      pageName = [slug(section), type, slug(section), slug(headline)].join('|');
+    case TYPE_ARTICLE: {
+      pageName = [
+        slug(section),
+        contentType,
+        slug(section),
+        slug(headline),
+      ].join('|');
       break;
     }
     default: {
       pageName = slug(headline);
-      break;
     }
   }
   return pageName;
 };
-const getPropSection = ({ type, section }) => {
+const getPropSection = ({ contentType, section }) => {
   let propSection;
-  if (type === 'blog_post') {
+  if (contentType === TYPE_BLOG) {
     propSection = `blogs_${slug(section)}`;
   } else {
     propSection = slug(section);
   }
   return propSection;
 };
-const getPropTitle = ({ type, headline }) => {
+const getPropTitle = ({ contentType, headline }) => {
   let propTitle;
-  if (type === 'blog_post') {
+  if (contentType === TYPE_BLOG) {
     propTitle = `blog|${slug(headline)}`;
   } else {
     propTitle = slug(headline);
@@ -63,18 +69,23 @@ function articlePublishDate(date) {
     : '';
 }
 /* eslint-disable no-template-curly-in-string */
+/**
+ * Returns config for amp-analytics.
+ * Result of this function will be merged with response from /analytics.config.json
+ */
 const getAnalyticsData = ({
   headline,
-  publication,
+  publication = [],
   print,
   tegType,
   datePublished,
 }) => {
   const section = getSection({ print, publication });
-  const type = getContentType(tegType);
-  const pageName = getPageName({ type, section, headline });
-  const propSection = getPropSection({ type, section });
-  const propTitle = getPropTitle({ type, headline });
+  const contentType = getContentType(tegType);
+  const pageName = getPageName({ contentType, section, headline });
+  const propSection = getPropSection({ contentType, section });
+  const propTitle = getPropTitle({ contentType, headline });
+  const propPublishDate = articlePublishDate(new Date(datePublished));
 
   return {
     vars: {
@@ -86,14 +97,14 @@ const getAnalyticsData = ({
       prop1: propSection,
       eVar1: propSection,
 
-      prop4: type,
-      eVar4: type,
+      prop4: contentType,
+      eVar4: contentType,
 
       prop5: propTitle,
       eVar5: propTitle,
 
-      prop31: articlePublishDate(new Date(datePublished)),
-      eVar31: articlePublishDate(new Date(datePublished)),
+      prop31: propPublishDate,
+      eVar31: propPublishDate,
 
       prop32: '${ampdocUrl}',
       eVar32: '${ampdocUrl}',
@@ -108,7 +119,7 @@ const getAnalyticsData = ({
 /* eslint-disable react/no-danger */
 const Analytics = ({
   data: {
-    article: { headline, publication = [], print, tegType, datePublished } = {},
+    article: { headline, publication, print, tegType, datePublished } = {},
   },
 }) => (
   <amp-analytics

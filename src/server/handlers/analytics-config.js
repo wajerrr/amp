@@ -1,5 +1,9 @@
 import { isStage } from '../utils/environment-detection';
-import { hourOfTheDay, getCurrentDay, fullDate } from '../utils/analytics-date';
+import {
+  hourOfTheDay,
+  getCurrentDay,
+  fullDate,
+} from '../utils/analytics-dates';
 import {
   getUserId,
   getSubscription,
@@ -9,14 +13,36 @@ import {
 } from '../utils/user';
 
 const handler = (request, h) => {
-  // extends https://github.com/ampproject/amphtml/blob/ca6bf4aa6b3ae15022e8b016aa3840b938a0e6c0/extensions/amp-analytics/0.1/vendors.js#L1526
-
   const { state } = request;
-  const userLoggedInStatus = isUserLoggedIn(state)
+  const propUserLoggedInStatus = isUserLoggedIn(state)
     ? 'logged_in'
     : 'not_logged_in';
+  const propSubscription = getSubscription(state);
+  const propUserId = getUserId(state);
+  const propMultiLicense = isMultiUserLicense(state) ? 'MUL-IP' : '';
+  const propHourOfTheDay = hourOfTheDay();
+  const propGetCurrentDay = getCurrentDay();
+  const propFullDate = fullDate();
 
+  /* eslint-disable no-template-curly-in-string */
+  // extends https://github.com/ampproject/amphtml/blob/ca6bf4aa6b3ae15022e8b016aa3840b938a0e6c0/extensions/amp-analytics/0.1/vendors.js#L1526
   const config = {
+    requests: {
+      requestPath: '/b/ss/${reportSuites}/1/H.25.4/s${random}',
+      basePrefix:
+        'vid=${adobe_id}' +
+        '&ndh=0' +
+        '&ce=${documentCharset}' +
+        '&pageName=${pageName}' +
+        '&g=${ampdocUrl}' +
+        '&r=${documentReferrer}' +
+        '&bh=${availableScreenHeight}' +
+        '&bw=${availableScreenWidth}' +
+        '&c=${screenColorDepth}' +
+        '&j=amp' +
+        '&s=${screenWidth}x${screenHeight}',
+      pageview: 'https://${host}${requestPath}?${basePrefix}',
+    },
     vars: {
       host: 'sstats.economist.com',
       reportSuites: isStage ? 'economistcomprod' : 'economistcomdev',
@@ -30,34 +56,33 @@ const handler = (request, h) => {
           eventId: 'pageview',
         },
         extraUrlParams: {
-          vid: trimAdobeId(state.s_vi),
           fid: state.s_fid,
 
-          prop11: userLoggedInStatus,
-          eVar11: userLoggedInStatus,
+          prop8: propHourOfTheDay,
+          eVar8: propHourOfTheDay,
 
-          prop13: getSubscription(state),
-          eVar13: getSubscription(state),
+          prop9: propGetCurrentDay,
+          eVar9: propGetCurrentDay,
 
-          prop40: getUserId(state),
-          eVar40: getUserId(state),
+          prop10: propFullDate,
+          eVar10: propFullDate,
 
-          prop46: isMultiUserLicense(state) ? 'MUL-IP' : '',
-          eVar46: isMultiUserLicense(state) ? 'MUL-IP' : '',
+          prop11: propUserLoggedInStatus,
+          eVar11: propUserLoggedInStatus,
 
-          prop8: hourOfTheDay(),
-          eVar8: hourOfTheDay(),
+          prop13: propSubscription,
+          eVar13: propSubscription,
 
-          prop9: getCurrentDay(),
-          eVar9: getCurrentDay(),
+          prop40: propUserId,
+          eVar40: propUserId,
 
-          prop10: fullDate(),
-          eVar10: fullDate(),
+          prop46: propMultiLicense,
+          eVar46: propMultiLicense,
         },
       },
     },
   };
-  return h.response(JSON.stringify(config));
+  return h.response(config);
 };
 
 const route = {
