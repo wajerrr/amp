@@ -25,8 +25,8 @@ const buildArticleText = (childrenData = [], path = '') => {
             return (
               <Image
                 key={key}
-                width={parseInt(attribs.width, 0)}
-                height={parseInt(attribs.height, 0)}
+                width={parseInt(attribs.width, 10)}
+                height={parseInt(attribs.height, 10)}
                 src={attribs.src}
                 layout="responsive"
               />
