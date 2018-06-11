@@ -2,8 +2,9 @@ import React from 'react';
 import StyledLink from '../styled-link/styled-link';
 import StyledBlockquote from '../styled-block-quote/styled-block-quote';
 import Image from '../image/image';
+import StyledInlineAd from '../styled-advert/styled-advert';
 
-const buildArticleText = (childrenData = [], path = '') => {
+const buildArticleText = (childrenData = [], path = '', ad = {}) => {
   const getHTMLTag = (name, children, key) => {
     const HTMLTag = name;
     return <HTMLTag key={key}>{buildArticleText(children, key)}</HTMLTag>;
@@ -41,6 +42,8 @@ const buildArticleText = (childrenData = [], path = '') => {
             );
           case 'iframe':
             return '';
+          case 'inlineAd':
+            return <StyledInlineAd ad={ad} key={key} />;
           default:
             return getHTMLTag(name, children, key);
         }
@@ -50,7 +53,6 @@ const buildArticleText = (childrenData = [], path = '') => {
         return '';
     }
   };
-
   return childrenData.map((itemData, i) =>
     getComponent(itemData, `${path}-${i}`)
   );

@@ -7,6 +7,7 @@ exports[`InlineAd should match snapshot 1`] = `
   <amp-ad
     data-slot="/5605/dev.1234/ABCD"
     height="250"
+    json="{'targeting': { 'amp': ['y']}}"
     type="doubleclick"
     width="300"
   />
