@@ -25,10 +25,10 @@ https://www.economist.com/sites/default/files/imagecache/1280-width/sites/defaul
 https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/20180512_BLP509.jpg 1600w"
       width={1280}
     />
-    <div
+    <aside
       className="css-1aepw6l-StyledHeroItemTextContainer e1omscfa2"
     >
-      <h3
+      <p
         className="css-m4ovun-StyledHeader e10thz6k2"
       >
         <span
@@ -41,13 +41,13 @@ https://www.economist.com/sites/default/files/imagecache/1600-width/sites/defaul
         >
           Who has the right to judge Americans?
         </span>
-      </h3>
+      </p>
       <p
         className="css-1jkfpje-StyledDescription e1omscfa0"
       >
         A minor fraud case provokes a Supreme Court challenge to the expanding power of administrative agencies in government
       </p>
-    </div>
+    </aside>
   </a>
   <a
     className="e1omscfa1 css-1gtc8lk-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
@@ -99,10 +99,10 @@ https://www.economist.com/sites/default/files/imagecache/1280-width/sites/defaul
 https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/20180512_BLP509.jpg 1600w"
       width={1280}
     />
-    <div
+    <aside
       className="css-1aepw6l-StyledHeroItemTextContainer e1omscfa2"
     >
-      <h3
+      <p
         className="css-m4ovun-StyledHeader e10thz6k2"
       >
         <span
@@ -115,13 +115,13 @@ https://www.economist.com/sites/default/files/imagecache/1600-width/sites/defaul
         >
           Who has the right to judge Americans?
         </span>
-      </h3>
+      </p>
       <p
         className="css-1jkfpje-StyledDescription e1omscfa0"
       >
         A minor fraud case provokes a Supreme Court challenge to the expanding power of administrative agencies in government
       </p>
-    </div>
+    </aside>
   </a>
   <a
     className="e1omscfa1 css-1gtc8lk-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"

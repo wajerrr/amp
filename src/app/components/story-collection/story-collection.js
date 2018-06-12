@@ -11,6 +11,11 @@ const StyledStoryCollectionContainer = styled('ul')`
   list-style-type: none;
 `;
 
+const StyledOffScreenTitle = styled('h2')`
+  position: absolute;
+  left: -999em;
+`;
+
 const StyledStoryCollectionItem = styled(StoryCollectionItem)`
   margin-top: ${spacings.s};
 `;
@@ -32,35 +37,38 @@ const getSectionInfo = (part) => {
 };
 
 const StoryCollection = ({ data }) => (
-  <StyledStoryCollectionContainer>
-    {data.hasPart.parts.map(
-      (el, index) =>
-        index === 0 ? (
-          <StoryCollectionHeroItem
-            headline={el.headline}
-            url={el.url.canonical}
-            image={el.image.main}
-            subheadline={el.subheadline}
-            sectionUrl={getSectionInfo(el).url}
-            sectionHeadline={getSectionInfo(el).headline}
-            description={el.description}
-            key={el.id}
-            data={el}
-          />
-        ) : (
-          <StyledStoryCollectionItem
-            headline={el.headline}
-            url={el.url.canonical}
-            image={el.image.main}
-            subheadline={el.subheadline}
-            sectionUrl={getSectionInfo(el).url}
-            sectionHeadline={getSectionInfo(el).headline}
-            key={el.id}
-            data={el}
-          />
-        )
-    )}
-  </StyledStoryCollectionContainer>
+  <section>
+    <StyledOffScreenTitle>Editors’ Picks</StyledOffScreenTitle>
+    <StyledStoryCollectionContainer>
+      {data.hasPart.parts.map(
+        (el, index) =>
+          index === 0 ? (
+            <StoryCollectionHeroItem
+              headline={el.headline}
+              url={el.url.canonical}
+              image={el.image.main}
+              subheadline={el.subheadline}
+              sectionUrl={getSectionInfo(el).url}
+              sectionHeadline={getSectionInfo(el).headline}
+              description={el.description}
+              key={el.id}
+              data={el}
+            />
+          ) : (
+            <StyledStoryCollectionItem
+              headline={el.headline}
+              url={el.url.canonical}
+              image={el.image.main}
+              subheadline={el.subheadline}
+              sectionUrl={getSectionInfo(el).url}
+              sectionHeadline={getSectionInfo(el).headline}
+              key={el.id}
+              data={el}
+            />
+          )
+      )}
+    </StyledStoryCollectionContainer>
+  </section>
 );
 
 StoryCollection.propTypes = {

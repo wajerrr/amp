@@ -1,23 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StoryCollection should match snapshot 1`] = `
-<ul
-  className="css-1i00qd8-StyledStoryCollectionContainer e1ok0tn80"
->
-  <li
-    className=""
+<section>
+  <h2
+    className="css-mvbntf-StyledOffScreenTitle e1ok0tn81"
   >
-    <a
-      className="css-xy0ws6-StyledLinkWrapper e1omscfa3"
-      href="https://www.economist.com/business/2018/05/23/gazprom-is-enjoying-a-sales-boom-in-europe"
+    Editors’ Picks
+  </h2>
+  <ul
+    className="css-1i00qd8-StyledStoryCollectionContainer e1ok0tn80"
+  >
+    <li
+      className=""
     >
-      <amp-img
-        alt="Business and finance"
-        height={720}
-        layout="responsive"
-        sizes="(min-width: 640px) calc(640px -  2 * 0.5em), calc(100vw - 2 * 0.5em)"
-        src="https://www.economist.com/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg"
-        srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 200w,
+      <a
+        className="css-xy0ws6-StyledLinkWrapper e1omscfa3"
+        href="https://www.economist.com/business/2018/05/23/gazprom-is-enjoying-a-sales-boom-in-europe"
+      >
+        <amp-img
+          alt="Business and finance"
+          height={720}
+          layout="responsive"
+          sizes="(min-width: 640px) calc(640px -  2 * 0.5em), calc(100vw - 2 * 0.5em)"
+          src="https://www.economist.com/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg"
+          srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 200w,
 https://www.economist.com/sites/default/files/imagecache/300-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 300w,
 https://www.economist.com/sites/default/files/imagecache/400-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 400w,
 https://www.economist.com/sites/default/files/imagecache/640-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 640w,
@@ -26,72 +32,72 @@ https://www.economist.com/sites/default/files/imagecache/1000-width/sites/defaul
 https://www.economist.com/sites/default/files/imagecache/1200-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 1200w,
 https://www.economist.com/sites/default/files/imagecache/1280-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 1280w,
 https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 1600w"
-        width={1280}
-      />
-      <div
-        className="css-1aepw6l-StyledHeroItemTextContainer e1omscfa2"
-      >
-        <h3
-          className="css-m4ovun-StyledHeader e10thz6k2"
+          width={1280}
+        />
+        <aside
+          className="css-1aepw6l-StyledHeroItemTextContainer e1omscfa2"
         >
-          <span
-            className="css-jzz7eb-StyledSubHeadline-headlineStyles e10thz6k1"
+          <p
+            className="css-m4ovun-StyledHeader e10thz6k2"
           >
-            Out of the frying pan
-          </span>
-          <span
-            className="css-1xpn6sh-StyledHeadline-subHeadlineStyles e10thz6k0"
+            <span
+              className="css-jzz7eb-StyledSubHeadline-headlineStyles e10thz6k1"
+            >
+              Out of the frying pan
+            </span>
+            <span
+              className="css-1xpn6sh-StyledHeadline-subHeadlineStyles e10thz6k0"
+            >
+              Gazprom is enjoying a sales boom in Europe
+            </span>
+          </p>
+          <p
+            className="css-1jkfpje-StyledDescription e1omscfa0"
           >
-            Gazprom is enjoying a sales boom in Europe
-          </span>
-        </h3>
-        <p
-          className="css-1jkfpje-StyledDescription e1omscfa0"
-        >
-          But the Russian gas company is coming into America’s line of fire
-        </p>
-      </div>
-    </a>
-    <a
-      className="e1omscfa1 css-1gtc8lk-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
-      href="https://www.economist.com/sections/business-finance"
-    >
-      Business and finance
-      <span
-        className={undefined}
+            But the Russian gas company is coming into America’s line of fire
+          </p>
+        </aside>
+      </a>
+      <a
+        className="e1omscfa1 css-1gtc8lk-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
+        href="https://www.economist.com/sections/business-finance"
       >
-        <svg
-          version="1.1"
-          viewBox="0 0 48 48"
-          x="0px"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-          y="0px"
+        Business and finance
+        <span
+          className={undefined}
         >
-          <polygon
-            points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
-          />
-        </svg>
-      </span>
-    </a>
-  </li>
-  <li
-    className="css-1gdlqmn-StyledStoryCollectionItem e1ok0tn81"
-  >
-    <a
-      className="css-rfvsuz-StyledLinkWrapper ercjopt1"
-      href="https://www.economist.com/books-and-arts/2018/05/23/philip-roth-was-one-of-americas-greatest-novelists"
+          <svg
+            version="1.1"
+            viewBox="0 0 48 48"
+            x="0px"
+            xmlSpace="preserve"
+            xmlns="http://www.w3.org/2000/svg"
+            y="0px"
+          >
+            <polygon
+              points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+            />
+          </svg>
+        </span>
+      </a>
+    </li>
+    <li
+      className="css-1gdlqmn-StyledStoryCollectionItem e1ok0tn82"
     >
-      <div
-        className="css-xpxzo4-StyledImgContainer ercjopt2"
+      <a
+        className="css-rfvsuz-StyledLinkWrapper ercjopt1"
+        href="https://www.economist.com/books-and-arts/2018/05/23/philip-roth-was-one-of-americas-greatest-novelists"
       >
-        <amp-img
-          alt="Culture"
-          height={720}
-          layout="responsive"
-          sizes="(min-width: 640px) calc(640px / 2 - 2 * 0.5em), calc(50vw - 2 * 0.5em)"
-          src="https://www.economist.com/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg"
-          srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 200w,
+        <div
+          className="css-xpxzo4-StyledImgContainer ercjopt2"
+        >
+          <amp-img
+            alt="Culture"
+            height={720}
+            layout="responsive"
+            sizes="(min-width: 640px) calc(640px / 2 - 2 * 0.5em), calc(50vw - 2 * 0.5em)"
+            src="https://www.economist.com/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg"
+            srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 200w,
 https://www.economist.com/sites/default/files/imagecache/300-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 300w,
 https://www.economist.com/sites/default/files/imagecache/400-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 400w,
 https://www.economist.com/sites/default/files/imagecache/640-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 640w,
@@ -100,68 +106,68 @@ https://www.economist.com/sites/default/files/imagecache/1000-width/sites/defaul
 https://www.economist.com/sites/default/files/imagecache/1200-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 1200w,
 https://www.economist.com/sites/default/files/imagecache/1280-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 1280w,
 https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/images/2018/05/articles/main/20180526_bkp004.jpg 1600w"
-          width={1280}
-        />
-      </div>
-      <div
-        className="css-1bn1ahj-StyledTextContainer ercjopt0"
-      >
-        <h3
-          className="css-m4ovun-StyledHeader e10thz6k2"
-        >
-          <span
-            className="css-zdexlw-StyledSubHeadline-subHeadlineStyles e10thz6k1"
-          >
-            Theatre of one
-          </span>
-          <span
-            className="css-1wbs5nn-StyledHeadline-headlineStyles e10thz6k0"
-          >
-            Philip Roth was one of America’s greatest novelists
-          </span>
-        </h3>
-      </div>
-    </a>
-    <a
-      className="ercjopt3 css-13kn2e2-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
-      href="https://www.economist.com/sections/culture"
-    >
-      Culture
-      <span
-        className={undefined}
-      >
-        <svg
-          version="1.1"
-          viewBox="0 0 48 48"
-          x="0px"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-          y="0px"
-        >
-          <polygon
-            points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+            width={1280}
           />
-        </svg>
-      </span>
-    </a>
-  </li>
-  <li
-    className="css-1gdlqmn-StyledStoryCollectionItem e1ok0tn81"
-  >
-    <a
-      className="css-rfvsuz-StyledLinkWrapper ercjopt1"
-      href="https://www.economist.com/the-economist-explains/2018/05/24/how-california-could-split-up"
-    >
-      <div
-        className="css-xpxzo4-StyledImgContainer ercjopt2"
+        </div>
+        <div
+          className="css-1p0z4f3-StyledTextContainer ercjopt0"
+        >
+          <p
+            className="css-m4ovun-StyledHeader e10thz6k2"
+          >
+            <span
+              className="css-zdexlw-StyledSubHeadline-subHeadlineStyles e10thz6k1"
+            >
+              Theatre of one
+            </span>
+            <span
+              className="css-1wbs5nn-StyledHeadline-headlineStyles e10thz6k0"
+            >
+              Philip Roth was one of America’s greatest novelists
+            </span>
+          </p>
+        </div>
+      </a>
+      <a
+        className="ercjopt3 css-13kn2e2-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
+        href="https://www.economist.com/sections/culture"
       >
-        <amp-img
-          alt="The Economist explains"
-          height={720}
-          layout="responsive"
-          sizes="(min-width: 640px) calc(640px / 2 - 2 * 0.5em), calc(50vw - 2 * 0.5em)"
-          src="https://www.economist.com/sites/default/files/20180526_BLP512.jpg"
-          srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/20180526_BLP512.jpg 200w,
+        Culture
+        <span
+          className={undefined}
+        >
+          <svg
+            version="1.1"
+            viewBox="0 0 48 48"
+            x="0px"
+            xmlSpace="preserve"
+            xmlns="http://www.w3.org/2000/svg"
+            y="0px"
+          >
+            <polygon
+              points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+            />
+          </svg>
+        </span>
+      </a>
+    </li>
+    <li
+      className="css-1gdlqmn-StyledStoryCollectionItem e1ok0tn82"
+    >
+      <a
+        className="css-rfvsuz-StyledLinkWrapper ercjopt1"
+        href="https://www.economist.com/the-economist-explains/2018/05/24/how-california-could-split-up"
+      >
+        <div
+          className="css-xpxzo4-StyledImgContainer ercjopt2"
+        >
+          <amp-img
+            alt="The Economist explains"
+            height={720}
+            layout="responsive"
+            sizes="(min-width: 640px) calc(640px / 2 - 2 * 0.5em), calc(50vw - 2 * 0.5em)"
+            src="https://www.economist.com/sites/default/files/20180526_BLP512.jpg"
+            srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/20180526_BLP512.jpg 200w,
 https://www.economist.com/sites/default/files/imagecache/300-width/sites/default/files/20180526_BLP512.jpg 300w,
 https://www.economist.com/sites/default/files/imagecache/400-width/sites/default/files/20180526_BLP512.jpg 400w,
 https://www.economist.com/sites/default/files/imagecache/640-width/sites/default/files/20180526_BLP512.jpg 640w,
@@ -170,50 +176,51 @@ https://www.economist.com/sites/default/files/imagecache/1000-width/sites/defaul
 https://www.economist.com/sites/default/files/imagecache/1200-width/sites/default/files/20180526_BLP512.jpg 1200w,
 https://www.economist.com/sites/default/files/imagecache/1280-width/sites/default/files/20180526_BLP512.jpg 1280w,
 https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/20180526_BLP512.jpg 1600w"
-          width={1280}
-        />
-      </div>
-      <div
-        className="css-1bn1ahj-StyledTextContainer ercjopt0"
-      >
-        <h3
-          className="css-m4ovun-StyledHeader e10thz6k2"
-        >
-          <span
-            className="css-zdexlw-StyledSubHeadline-subHeadlineStyles e10thz6k1"
-          >
-            The Economist explains
-          </span>
-          <span
-            className="css-1wbs5nn-StyledHeadline-headlineStyles e10thz6k0"
-          >
-            How California could split up
-          </span>
-        </h3>
-      </div>
-    </a>
-    <a
-      className="ercjopt3 css-13kn2e2-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
-      href="https://www.economist.com/sections/economist-explains"
-    >
-      The Economist explains
-      <span
-        className={undefined}
-      >
-        <svg
-          version="1.1"
-          viewBox="0 0 48 48"
-          x="0px"
-          xmlSpace="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-          y="0px"
-        >
-          <polygon
-            points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+            width={1280}
           />
-        </svg>
-      </span>
-    </a>
-  </li>
-</ul>
+        </div>
+        <div
+          className="css-1p0z4f3-StyledTextContainer ercjopt0"
+        >
+          <p
+            className="css-m4ovun-StyledHeader e10thz6k2"
+          >
+            <span
+              className="css-zdexlw-StyledSubHeadline-subHeadlineStyles e10thz6k1"
+            >
+              The Economist explains
+            </span>
+            <span
+              className="css-1wbs5nn-StyledHeadline-headlineStyles e10thz6k0"
+            >
+              How California could split up
+            </span>
+          </p>
+        </div>
+      </a>
+      <a
+        className="ercjopt3 css-13kn2e2-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
+        href="https://www.economist.com/sections/economist-explains"
+      >
+        The Economist explains
+        <span
+          className={undefined}
+        >
+          <svg
+            version="1.1"
+            viewBox="0 0 48 48"
+            x="0px"
+            xmlSpace="preserve"
+            xmlns="http://www.w3.org/2000/svg"
+            y="0px"
+          >
+            <polygon
+              points="17.6,14.8 20.4,12 32.4,24 20.4,36 17.6,33.2 26.7,24 	"
+            />
+          </svg>
+        </span>
+      </a>
+    </li>
+  </ul>
+</section>
 `;
