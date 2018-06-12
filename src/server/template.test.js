@@ -1,4 +1,4 @@
-import template, { hotReloadingScript } from './template';
+import template, { hotReloadingScript, ampIframeScriptTag } from './template';
 
 const metadata = `<title>title</title><meta name="name" content="content">`;
 
@@ -36,6 +36,20 @@ describe('template', () => {
   test('does add hot reloading script when isDev flag is true', () => {
     expect(
       template({ ...templateParams, isDev: true }).includes(hotReloadingScript)
+    ).toEqual(true);
+  });
+
+  test('does not include iframe amp script when there is no iframe tag in body', () => {
+    expect(template(templateParams).includes(ampIframeScriptTag)).toEqual(
+      false
+    );
+  });
+
+  test('does include iframe amp script when there is iframe tag in body', () => {
+    expect(
+      template({ ...templateParams, body: '<iframe/>' }).includes(
+        ampIframeScriptTag
+      )
     ).toEqual(true);
   });
 });
