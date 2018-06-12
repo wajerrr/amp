@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isProd, isStage } from '../../../server/utils/environment-detection';
+import { isStage } from '../../../server/utils/environment-detection';
 
 const InlineAd = ({ ad, className }) => {
   if (!ad) {
     return null;
   }
   const { siteCode, zoneCode } = ad;
-  const environment =
-    ad.environment || (isProd || isStage ? process.env.ENV : 'dev');
+  const environment = ad.environment || (isStage ? 'dev' : 'teg');
   return (
     <div className={className}>
       <amp-ad
