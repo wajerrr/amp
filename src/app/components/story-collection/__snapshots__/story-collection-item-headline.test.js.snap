@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItemHeadline should match snapshot with subheadline 1`] = `
-<p
+<h3
   className="css-m4ovun-StyledHeader e10thz6k2"
 >
   <span
@@ -9,11 +9,11 @@ exports[`ItemHeadline should match snapshot with subheadline 1`] = `
   >
     headline
   </span>
-</p>
+</h3>
 `;
 
 exports[`ItemHeadline should match snapshot with subheadline and classNames 1`] = `
-<p
+<h3
   className="class css-m4ovun-StyledHeader e10thz6k2"
 >
   <span
@@ -21,11 +21,11 @@ exports[`ItemHeadline should match snapshot with subheadline and classNames 1`] 
   >
     headline
   </span>
-</p>
+</h3>
 `;
 
 exports[`ItemHeadline should match snapshot without subheadline 1`] = `
-<p
+<h3
   className="css-m4ovun-StyledHeader e10thz6k2"
 >
   <span
@@ -33,5 +33,5 @@ exports[`ItemHeadline should match snapshot without subheadline 1`] = `
   >
     headline
   </span>
-</p>
+</h3>
 `;

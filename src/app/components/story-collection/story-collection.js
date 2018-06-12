@@ -37,7 +37,7 @@ const getSectionInfo = (part) => {
 };
 
 const StoryCollection = ({ data }) => (
-  <section>
+  <aside>
     <StyledOffScreenTitle>Editors’ Picks</StyledOffScreenTitle>
     <StyledStoryCollectionContainer>
       {data.hasPart.parts.map(
@@ -68,7 +68,7 @@ const StoryCollection = ({ data }) => (
           )
       )}
     </StyledStoryCollectionContainer>
-  </section>
+  </aside>
 );
 
 StoryCollection.propTypes = {

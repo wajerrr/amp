@@ -22,7 +22,7 @@ const StyledSubHeadline = styled('span')`
   font-family: ${fontFamily.sans};
 `;
 
-const StyledHeader = styled('p')`
+const StyledHeader = styled('h3')`
   margin: ${spacings.none};
   padding: ${spacings.none};
   font-size: ${typography.sizeStep[0]};

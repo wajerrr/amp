@@ -27,7 +27,7 @@ const StyledSectionLink = styled(SectionLink)`
   padding: ${spacings.none} ${spacings.m} ${spacings.m};
 `;
 
-const StyledHeroItemTextContainer = styled('aside')`
+const StyledHeroItemTextContainer = styled('div')`
   padding: ${spacings.s} ${spacings.s} ${spacings.xl};
 `;
 

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StoryCollection should match snapshot 1`] = `
-<section>
+<aside>
   <h2
     className="css-mvbntf-StyledOffScreenTitle e1ok0tn81"
   >
@@ -34,10 +34,10 @@ https://www.economist.com/sites/default/files/imagecache/1280-width/sites/defaul
 https://www.economist.com/sites/default/files/imagecache/1600-width/sites/default/files/images/2018/05/articles/main/20180526_wbp502.jpg 1600w"
           width={1280}
         />
-        <aside
+        <div
           className="css-1aepw6l-StyledHeroItemTextContainer e1omscfa2"
         >
-          <p
+          <h3
             className="css-m4ovun-StyledHeader e10thz6k2"
           >
             <span
@@ -50,13 +50,13 @@ https://www.economist.com/sites/default/files/imagecache/1600-width/sites/defaul
             >
               Gazprom is enjoying a sales boom in Europe
             </span>
-          </p>
+          </h3>
           <p
             className="css-1jkfpje-StyledDescription e1omscfa0"
           >
             But the Russian gas company is coming into America’s line of fire
           </p>
-        </aside>
+        </div>
       </a>
       <a
         className="e1omscfa1 css-1gtc8lk-StyledLink-StyledSectionLink-StyledSectionLink e1pwg3wv0"
@@ -112,7 +112,7 @@ https://www.economist.com/sites/default/files/imagecache/1600-width/sites/defaul
         <div
           className="css-1p0z4f3-StyledTextContainer ercjopt0"
         >
-          <p
+          <h3
             className="css-m4ovun-StyledHeader e10thz6k2"
           >
             <span
@@ -125,7 +125,7 @@ https://www.economist.com/sites/default/files/imagecache/1600-width/sites/defaul
             >
               Philip Roth was one of America’s greatest novelists
             </span>
-          </p>
+          </h3>
         </div>
       </a>
       <a
@@ -182,7 +182,7 @@ https://www.economist.com/sites/default/files/imagecache/1600-width/sites/defaul
         <div
           className="css-1p0z4f3-StyledTextContainer ercjopt0"
         >
-          <p
+          <h3
             className="css-m4ovun-StyledHeader e10thz6k2"
           >
             <span
@@ -195,7 +195,7 @@ https://www.economist.com/sites/default/files/imagecache/1600-width/sites/defaul
             >
               How California could split up
             </span>
-          </p>
+          </h3>
         </div>
       </a>
       <a
@@ -222,5 +222,5 @@ https://www.economist.com/sites/default/files/imagecache/1600-width/sites/defaul
       </a>
     </li>
   </ul>
-</section>
+</aside>
 `;
