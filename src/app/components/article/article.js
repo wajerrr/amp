@@ -10,7 +10,7 @@ import ArticleAboutEconomistLink from './article-about-economist-link';
 import spacings from '../../styles/spacings';
 import fontFamily from '../../styles/font-family';
 import typography from '../../styles/typography';
-import processArticleText from '../../utils/text-processer';
+import { generateAds } from '../../utils/adverts';
 
 const StyledArticleContainer = styled('article')`
   font-size: ${typography.baseSize};
@@ -30,16 +30,9 @@ const StyledTextContainer = styled('div')`
   font-size: ${typography.sizeStep['0']};
   line-height: 1.6;
 `;
-
 const StyledBottomPanel = styled('div')`
   margin-bottom: ${spacings.xl};
 `;
-
-function generateArticleContent(text, path, ad) {
-  const processedText = processArticleText(text);
-  const paragraphs = buildArticleText(processedText, path, ad);
-  return paragraphs;
-}
 
 const Article = ({
   data: {
@@ -75,7 +68,7 @@ const Article = ({
       commentsUri={url.comment}
     />
     <StyledTextContainer>
-      {generateArticleContent(text, null, ad)}
+      {buildArticleText(generateAds(text, ad))}
     </StyledTextContainer>
     <StyledBottomPanel>
       <StyledArticlePublicationDetails

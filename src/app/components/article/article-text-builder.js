@@ -4,7 +4,7 @@ import StyledBlockquote from '../styled-block-quote/styled-block-quote';
 import Image from '../image/image';
 import StyledInlineAd from '../styled-advert/styled-advert';
 
-const buildArticleText = (childrenData = [], path = '', ad = {}) => {
+const buildArticleText = (childrenData = [], path = '') => {
   const getHTMLTag = (name, children, key) => {
     const HTMLTag = name;
     return <HTMLTag key={key}>{buildArticleText(children, key)}</HTMLTag>;
@@ -42,19 +42,19 @@ const buildArticleText = (childrenData = [], path = '', ad = {}) => {
             );
           case 'iframe':
             return '';
-          case 'inlineAd':
-            return <StyledInlineAd ad={ad} key={key} />;
           default:
             return getHTMLTag(name, children, key);
         }
+      case 'inlineAd':
+        return <StyledInlineAd ad={attribs.ad} key={key} />;
       case 'text':
         return data;
       default:
         return '';
     }
   };
-  return childrenData.map((itemData, i) =>
-    getComponent(itemData, `${path}-${i}`)
+  return childrenData.map(
+    (itemData, i) => itemData && getComponent(itemData, `${path}-${i}`)
   );
 };
 

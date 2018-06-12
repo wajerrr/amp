@@ -16,23 +16,26 @@ function isInlineAd(contentItem) {
 export default isInlineAd;
 
 const containsInlineAd = (text) =>
-  text.includes((item) => isInlineAd(item.attribs));
+  text.some((item) => item.type === 'inlineAd');
 
-export function generateAds(articleText) {
-  // If the length of the article is below 4 paragraphs then no adverts are added.
-  if (isShortArticle(articleText.length) || !articleText) {
-    return articleText;
+export function generateAds(articleText = [], ad) {
+  const advert = {
+    type: 'inlineAd',
+    attribs: { ad },
+  };
+  // Convert graphgql object to consumable object for buildArticleText
+  const text = articleText.map(
+    (textItem) => (isInlineAd(textItem) ? advert : textItem)
+  );
+  if (isShortArticle(text.length)) {
+    return text;
   }
-  const articleContent = Array.from(articleText);
-  const inlineAdsPresent = containsInlineAd(articleContent);
-  // If no inlineAds are found already in the article content from the MT then an advert is added half way through the article.
-  if (!inlineAdsPresent) {
-    articleContent.splice(Math.floor(articleContent.length / 2), 0, {
-      type: 'tag',
-      name: 'inlineAd',
-    });
-  }
-  // An advert is always added at the end of an article, unless it is a short article.
-  articleContent.push({ type: 'tag', name: 'inlineAd' });
+  const adIndex = Math.floor(text.length / 2);
+  const articleContent = [
+    ...text.slice(0, adIndex),
+    containsInlineAd(text) ? null : advert,
+    ...text.slice(adIndex),
+    advert,
+  ];
   return articleContent;
 }
