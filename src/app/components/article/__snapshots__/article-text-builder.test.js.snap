@@ -4,7 +4,21 @@ exports[`buildComponents should match snapshot for br 1`] = `<br />`;
 
 exports[`buildComponents should match snapshot for iframe 1`] = `
 <figure>
-  
+  <amp-iframe
+    frameborder="0"
+    height={630}
+    layout="fixed-height"
+    sandbox="allow-scripts allow-same-origin"
+    src="https://infographics.economist.com/2017/ukelmap-2017/"
+  >
+     
+    <amp-img
+      height={630}
+      layout="fixed-height"
+      placeholder={true}
+      src="https://www.economist.com/assets/the-economist-logo.svg"
+    />
+  </amp-iframe>
 </figure>
 `;
 

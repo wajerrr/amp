@@ -1,3 +1,5 @@
+const hasIframe = (body) => body.includes('<iframe');
+
 export const hotReloadingScript = `<script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io();
@@ -12,7 +14,8 @@ export const hotReloadingScript = `<script src="/socket.io/socket.io.js"></scrip
 </script>`;
 const iconBase64 =
   ' iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEXjEgv////4KLUSAAAAAWJLR0QB/wIt3gAAAAd0SU1FB+IFEAgALURtxQsAAAAMSURBVAjXY2AgDQAAADAAAceqhY4AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDUtMTZUMDg6MDA6NDUtMDc6MDDueH9GAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA1LTE2VDA4OjAwOjQ1LTA3OjAwnyXH+gAAAABJRU5ErkJggg==';
-
+export const ampIframeScriptTag =
+  '<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>';
 const template = ({ body, css, metadata, isDev = false }) => `
 <!doctype html>
 <html lang="en" amp>
@@ -21,6 +24,7 @@ const template = ({ body, css, metadata, isDev = false }) => `
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,${iconBase64}" /> 
   ${metadata}
   <script async src="https://cdn.ampproject.org/v0.js"></script>
+  ${hasIframe(body) ? ampIframeScriptTag : ''}
   <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
   ${isDev ? hotReloadingScript : ''}
   <style amp-custom>${css}</style>
