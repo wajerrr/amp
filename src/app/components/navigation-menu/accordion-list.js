@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+
 import color from '../../styles/color';
 import { LargeSubscribeButton } from '../styled-subscribe-button/styled-subscribe-button';
 import StyledLink from '../styled-link/styled-link';
@@ -24,6 +26,13 @@ const getListItemComponent = (item, styles) => {
 const AccordionListItem = ({ item, styles }) =>
   item.hasPart ? (
     <amp-accordion id="accordion">
+      <Helmet>
+        <script
+          async={undefined}
+          custom-element="amp-accordion"
+          src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
+        />
+      </Helmet>
       <section className={styles.StyledSection}>
         <h4 className={styles.StyledHead}>
           <span>{item.headline}</span>

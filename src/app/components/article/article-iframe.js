@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 
 import PlaceholderImage from '../placheolder-imge/placeholder-image';
 
@@ -11,6 +12,15 @@ const ArticleIframe = ({ src, height }) => (
     frameborder="0"
     src={src}
   >
+    <Helmet>
+      {
+        <script
+          async={undefined}
+          custom-element="amp-iframe"
+          src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"
+        />
+      }
+    </Helmet>
     <PlaceholderImage containerHeight={height} />
   </amp-iframe>
 );

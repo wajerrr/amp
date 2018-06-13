@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+
 import { injectGlobal } from 'emotion';
 import styled from 'react-emotion';
 import color from '../../styles/color';
@@ -25,6 +27,13 @@ const StyledCloseButton = styled(StyledIconButton)`
 
 const NavigationMenu = ({ data: { navigation }, containerId }) => (
   <amp-sidebar id="sidebar" layout="nodisplay" side="right">
+    <Helmet>
+      <script
+        async={undefined}
+        custom-element="amp-sidebar"
+        src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+      />
+    </Helmet>
     <StyledCloseButton
       onProps={`tap:${containerId}.close`}
       icon="close"

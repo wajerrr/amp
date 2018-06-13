@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import styled from 'react-emotion';
 import { css } from 'emotion';
 import IconTwitter from '@economist/component-icon/lib/inline-icons/twitter';
@@ -41,6 +42,13 @@ const CommentsLink = styled('a')`
 
 const StyledShareBar = ({ commentsUri, className }) => (
   <ShareBarContainer className={className}>
+    <Helmet>
+      <script
+        async={undefined}
+        custom-element="amp-social-share"
+        src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"
+      />
+    </Helmet>
     <amp-social-share
       type="twitter"
       width={iconSizes.normal}

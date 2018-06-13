@@ -7,20 +7,26 @@ import App from '../app/app';
 jest.mock('../app/app', () => ({
   default: jest.fn().mockImplementation(() => <p>error</p>),
 }));
+
+jest.mock('./template', () => jest.fn().mockImplementation(() => ''));
+
 const errorData = { data: 'errordata' };
 const url = 'http://www.theeco/com/to/sowhere/';
 
 describe('renderHtmlError', () => {
   beforeEach(() => {
     App.default.mockClear();
+    template.mockClear();
   });
-  it('should return correct html string for 404 error', () => {
-    const expected = template({
-      css: '',
-      metadata: errorMetadata(url),
+  it('should call template component with correct arguments', () => {
+    renderHtmlError(new HttpError('error', 404), url);
+    expect(template).toHaveBeenCalledTimes(1);
+    expect(template).toHaveBeenCalledWith({
       body: '<p>error</p>',
+      css: '',
+      isDev: false,
+      metadata: errorMetadata(url),
     });
-    expect(renderHtmlError(new HttpError('error', 404), url)).toEqual(expected);
   });
 
   it('should call App component with correct props for 404 error', () => {

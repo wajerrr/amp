@@ -1,6 +1,15 @@
-import template, { hotReloadingScript, ampIframeScriptTag } from './template';
+import { Helmet } from 'react-helmet';
+
+import template, { hotReloadingScript } from './template';
 
 const metadata = `<title>title</title><meta name="name" content="content">`;
+
+const mockHelmetInstance = { script: { toString: jest.fn() } };
+jest.mock('react-helmet', () => ({
+  Helmet: {
+    renderStatic: jest.fn().mockImplementation(() => mockHelmetInstance),
+  },
+}));
 
 const templateParams = {
   css: 'background: pink',
@@ -9,6 +18,17 @@ const templateParams = {
 };
 
 describe('template', () => {
+  beforeEach(() => {
+    Helmet.renderStatic.mockClear();
+    mockHelmetInstance.script.toString.mockClear();
+  });
+
+  test('calls helmet methods', () => {
+    template(templateParams);
+    expect(Helmet.renderStatic).toHaveBeenCalledTimes(1);
+    expect(mockHelmetInstance.script.toString).toHaveBeenCalledTimes(1);
+  });
+
   test('populates metadata', () => {
     expect(template(templateParams).includes(metadata)).toEqual(true);
   });
@@ -36,20 +56,6 @@ describe('template', () => {
   test('does add hot reloading script when isDev flag is true', () => {
     expect(
       template({ ...templateParams, isDev: true }).includes(hotReloadingScript)
-    ).toEqual(true);
-  });
-
-  test('does not include iframe amp script when there is no iframe tag in body', () => {
-    expect(template(templateParams).includes(ampIframeScriptTag)).toEqual(
-      false
-    );
-  });
-
-  test('does include iframe amp script when there is iframe tag in body', () => {
-    expect(
-      template({ ...templateParams, body: '<<amp-iframe />' }).includes(
-        ampIframeScriptTag
-      )
     ).toEqual(true);
   });
 });
