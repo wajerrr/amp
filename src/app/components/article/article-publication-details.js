@@ -88,6 +88,17 @@ const StyledDateAuthor = styled('div')`
   letter-spacing: ${text.lineHeight.letterSpacing.sansOnStep['-3']};
 `;
 
+const ByLine = ({ byline }) => (
+  <Fragment>
+    {' | by '}
+    <span itemProp="author">{byline}</span>
+  </Fragment>
+);
+
+ByLine.propTypes = {
+  byline: PropTypes.string.isRequired,
+};
+
 const ArticlePublicationDetails = ({
   datePublished,
   byline = '',
@@ -105,12 +116,7 @@ const ArticlePublicationDetails = ({
       <StyledTime itemProp="datePublished" content={getISODate(datePublished)}>
         {formatDate(new Date(datePublished))}
       </StyledTime>
-      {byline && (
-        <Fragment>
-          {' | by '}
-          <span itemProp="author">{byline}</span>
-        </Fragment>
-      )}
+      {byline && <ByLine byline={byline} />}
     </StyledDateAuthor>
     <StyledShareBar commentsUri={commentsUri} />
   </StyledPublicationsContainer>

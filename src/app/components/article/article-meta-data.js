@@ -13,7 +13,7 @@ const ArticlePublisherMetaData = () => (
         content="https://www.economist.com/assets/the-economist-logo.png"
       />
     </div>
-    <meta itemProp="name" content="The Economis" />
+    <meta itemProp="name" content="The Economist" />
   </div>
 );
 
