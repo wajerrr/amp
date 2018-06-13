@@ -1,4 +1,4 @@
-const hasIframe = (body) => body.includes('<iframe');
+const hasIframe = (body) => body.includes('<amp-iframe');
 
 export const hotReloadingScript = `<script src="/socket.io/socket.io.js"></script>
 <script>
