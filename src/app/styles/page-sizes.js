@@ -1,5 +1,5 @@
 const sizes = {
-  maxPageSize: '640px',
+  maxPageSize: '1000px',
 };
 
 export default sizes;
