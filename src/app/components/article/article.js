@@ -7,6 +7,7 @@ import ArticleMainImage from './article-main-image';
 import StyledArticlePublicationDetails from './article-publication-details';
 import buildArticleText from './article-text-builder';
 import ArticleAboutEconomistLink from './article-about-economist-link';
+import ArticleMetaData from './article-meta-data';
 import spacings from '../../styles/spacings';
 import fontFamily from '../../styles/font-family';
 import typography from '../../styles/typography';
@@ -34,23 +35,34 @@ const StyledBottomPanel = styled('div')`
   margin-bottom: ${spacings.xl};
 `;
 
+const getType = (type) => type[0];
+
 const Article = ({
   data: {
+    type,
     url,
     subheadline,
     headline,
     description,
     image,
     datePublished,
+    dateModified,
     byline,
     text,
     print,
     publication,
   },
 }) => (
-  <StyledArticleContainer>
+  <StyledArticleContainer
+    itemScope
+    itemType={`http://schema.org/${getType(type)}`}
+  >
     <ArticleHeadline subheadline={subheadline}>{headline}</ArticleHeadline>
-    {description && <ArticleDescription>{description}</ArticleDescription>}
+    {description && (
+      <ArticleDescription itemProp="description">
+        {description}
+      </ArticleDescription>
+    )}
     {image &&
       image.main && (
         <ArticleMainImage
@@ -66,7 +78,9 @@ const Article = ({
       publication={publication && publication[0]}
       commentsUri={url.comment}
     />
-    <StyledTextContainer>{buildArticleText(text)}</StyledTextContainer>
+    <StyledTextContainer itemProp="articleBody">
+      {buildArticleText(text)}
+    </StyledTextContainer>
     <StyledBottomPanel>
       <StyledArticlePublicationDetails
         datePublished={datePublished}
@@ -77,6 +91,7 @@ const Article = ({
       />
     </StyledBottomPanel>
     <ArticleAboutEconomistLink />
+    <ArticleMetaData url={url} dateModified={dateModified} />
   </StyledArticleContainer>
 );
 

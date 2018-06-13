@@ -41,3 +41,10 @@ export default function formatDate(date) {
     `${date.getFullYear()}`,
   ].join(' ');
 }
+
+const getISODate = (dateStr) => {
+  const date = new Date(dateStr);
+  return date.toISOString();
+};
+
+export { getISODate };

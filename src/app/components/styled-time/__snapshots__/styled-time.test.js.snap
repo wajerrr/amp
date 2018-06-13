@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StyledTime should match snapshot 1`] = `
-<time>
-  May 8th 2018, 19:24
+<time
+  content="2018-04-16T07:01:00.000Z"
+  itemProp="datePublished"
+>
+  Apr 16th 2018
 </time>
 `;

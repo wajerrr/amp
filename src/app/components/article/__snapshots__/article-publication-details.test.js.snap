@@ -7,10 +7,18 @@ exports[`ArticlePublicationDetails should match snapshot with byline 1`] = `
   <div
     className="css-ug5v56-StyledDateAuthor escws074"
   >
-    <time>
+    <time
+      content="2018-05-08T18:24:40.000Z"
+      itemProp="datePublished"
+    >
       May 8th 2018
     </time>
-     | by me
+     | by 
+    <span
+      itemProp="author"
+    >
+      me
+    </span>
   </div>
   <div
     className="css-16g3ycg-ShareBarContainer-StyledSocialShare eyrn4830"
@@ -120,7 +128,10 @@ exports[`ArticlePublicationDetails should match snapshot without byline 1`] = `
   <div
     className="css-ug5v56-StyledDateAuthor escws074"
   >
-    <time>
+    <time
+      content="2018-05-08T18:24:40.000Z"
+      itemProp="datePublished"
+    >
       May 8th 2018
     </time>
     

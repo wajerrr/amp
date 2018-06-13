@@ -5,7 +5,11 @@ import StyledTime from './styled-time';
 describe('StyledTime', () => {
   it('should match snapshot', () => {
     const tree = renderer
-      .create(<StyledTime time="May 8th 2018, 19:24" />)
+      .create(
+        <StyledTime itemProp="datePublished" content="2018-04-16T07:01:00.000Z">
+          Apr 16th 2018
+        </StyledTime>
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -11,6 +11,7 @@ exports[`ArticleHeadline should match snapshot with subheadline 1`] = `
   </span>
   <span
     className="css-1k4e99h-StyledHeadline e1bqhfjn2"
+    itemProp="headline"
   >
     headlione
   </span>
@@ -24,6 +25,7 @@ exports[`ArticleHeadline should match snapshot without subheadline 1`] = `
   
   <span
     className="css-1k4e99h-StyledHeadline e1bqhfjn2"
+    itemProp="headline"
   >
     description
   </span>
