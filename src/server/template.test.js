@@ -47,7 +47,7 @@ describe('template', () => {
 
   test('does include iframe amp script when there is iframe tag in body', () => {
     expect(
-      template({ ...templateParams, body: '<iframe/>' }).includes(
+      template({ ...templateParams, body: '<<amp-iframe />' }).includes(
         ampIframeScriptTag
       )
     ).toEqual(true);
