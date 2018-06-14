@@ -7,6 +7,7 @@ import spacings from '../../styles/spacings';
 import FooterSocialMenu from './footer-social-menu';
 import FooterLinksSection from './footer-links-section';
 import FooterTextSection from './footer-text-section';
+import pageSizes from '../../styles/page-sizes';
 
 const StyledFooterContainer = styled('footer')`
   overflow: hidden;
@@ -14,6 +15,8 @@ const StyledFooterContainer = styled('footer')`
   font-family: ${fontFamily.sans};
   background-color: ${color.beijing};
   border-top: 0.4rem solid ${color.economist};
+  max-width: calc(${pageSizes.maxPageSize} - 2 * ${spacings.l});
+  margin: 0 auto;
 `;
 
 const StyledFooterSection = styled('section')`
