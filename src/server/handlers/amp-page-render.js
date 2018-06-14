@@ -44,6 +44,12 @@ export const handler = async (request, h) => {
 const route = {
   method: 'GET',
   path: '/{pathname*}',
+  config: {
+    state: {
+      parse: false,
+      failAction: 'log',
+    },
+  },
   handler,
 };
 
