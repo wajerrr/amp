@@ -1,5 +1,5 @@
 const mediumArticleThreshold = 4;
-const isShortArticle = (articleLength) =>
+export const isShortArticle = (articleLength) =>
   articleLength <= mediumArticleThreshold;
 
 function isInlineAd(contentItem) {
@@ -35,7 +35,6 @@ export function generateAds(articleText = [], ad) {
     ...text.slice(0, adIndex),
     containsInlineAd(text) ? null : advert,
     ...text.slice(adIndex),
-    advert,
   ];
   return articleContent;
 }

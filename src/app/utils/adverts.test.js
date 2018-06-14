@@ -48,35 +48,20 @@ describe('Adverts', () => {
       },
       children: [],
     };
-    const mediumArticleWithInlineAd = [
-      ...generateArticleText(2),
-      ad,
-      ...generateArticleText(3),
-    ];
     const expectedAd = { type: 'inlineAd', attribs: { ad } };
-    it('should render an advert at the end of medium articles if they have an inline ad', () => {
-      const articleContent = generateAds(mediumArticleWithInlineAd, ad);
-      expect(articleContent.length).toEqual(8);
-      const lastItemInArray = articleContent[7];
-      expect(lastItemInArray).toEqual(expectedAd);
-    });
     it('should not render any adverts for a short article', () => {
       const articleContent = generateAds(generateArticleText(4), ad);
       expect(articleContent).not.toContain(expectedAd);
     });
-    it('should render an advert in the middle and at the end of medium articles if there are no inline ads for odd number of paragraphs', () => {
+    it('should render an advert in the middle of medium articles if there are no inline ads for odd number of paragraphs', () => {
       const articleContent = generateAds(generateArticleText(5), ad);
-      expect(articleContent.length).toEqual(7);
-      const lastItemInArray = articleContent[6];
-      expect(lastItemInArray).toEqual(expectedAd);
+      expect(articleContent.length).toEqual(6);
       const middleAd = articleContent[2];
       expect(middleAd).toEqual(expectedAd);
     });
-    it('should render an advert in the middle and at the end of medium articles if there are no inline ads for even number of paragraphs', () => {
+    it('should render an advert in the middle of medium articles if there are no inline ads for even number of paragraphs', () => {
       const articleContent = generateAds(generateArticleText(6), ad);
-      expect(articleContent.length).toEqual(8);
-      const lastItemInArray = articleContent[7];
-      expect(lastItemInArray).toEqual(expectedAd);
+      expect(articleContent.length).toEqual(7);
       const middleAd = articleContent[3];
       expect(middleAd).toEqual(expectedAd);
     });

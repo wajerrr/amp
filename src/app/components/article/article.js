@@ -10,7 +10,8 @@ import ArticleAboutEconomistLink from './article-about-economist-link';
 import spacings from '../../styles/spacings';
 import fontFamily from '../../styles/font-family';
 import typography from '../../styles/typography';
-import { generateAds } from '../../utils/adverts';
+import { generateAds, isShortArticle } from '../../utils/adverts';
+import StyledInlineAd from '../styled-advert/styled-advert';
 
 const StyledArticleContainer = styled('article')`
   font-size: ${typography.baseSize};
@@ -80,9 +81,9 @@ const Article = ({
       />
     </StyledBottomPanel>
     <ArticleAboutEconomistLink />
+    {!isShortArticle(text.length) && <StyledInlineAd ad={ad} />}
   </StyledArticleContainer>
 );
-
 Article.propTypes = {
   data: PropTypes.shape({}).isRequired,
 };
