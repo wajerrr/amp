@@ -5,7 +5,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
   id="accordion"
 >
   <section
-    className="css-15p6zoj-sectionStyles"
+    className="css-1q8ze9y-sectionStyles"
   >
     <h4
       className="css-if8kv6-headStyles"
@@ -42,7 +42,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
         id="accordion"
       >
         <section
-          className="css-15p6zoj-sectionStyles"
+          className="css-1q8ze9y-sectionStyles"
         >
           <h4
             className="css-if8kv6-headStyles"
@@ -196,7 +196,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
         id="accordion"
       >
         <section
-          className="css-15p6zoj-sectionStyles"
+          className="css-1q8ze9y-sectionStyles"
         >
           <h4
             className="css-if8kv6-headStyles"
@@ -332,7 +332,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
         id="accordion"
       >
         <section
-          className="css-15p6zoj-sectionStyles"
+          className="css-1q8ze9y-sectionStyles"
         >
           <h4
             className="css-if8kv6-headStyles"
@@ -369,7 +369,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
               id="accordion"
             >
               <section
-                className="css-15p6zoj-sectionStyles"
+                className="css-1q8ze9y-sectionStyles"
               >
                 <h4
                   className="css-if8kv6-headStyles"
@@ -433,7 +433,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
               id="accordion"
             >
               <section
-                className="css-15p6zoj-sectionStyles"
+                className="css-1q8ze9y-sectionStyles"
               >
                 <h4
                   className="css-if8kv6-headStyles"
