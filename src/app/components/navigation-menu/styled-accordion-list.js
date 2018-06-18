@@ -14,9 +14,12 @@ const sectionStyles = css`
   border-bottom: 1px solid ${color.cardiff};
   &[expanded] {
     border-bottom: none;
-    & h4 > button {
+    & h4 button {
       transform: rotate(180deg);
     }
+  }
+  h4[aria-expanded='false'] button {
+    transform: none;
   }
 `;
 
