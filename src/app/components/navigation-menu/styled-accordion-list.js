@@ -30,12 +30,14 @@ const headStyles = css`
   font-weight: 500;
   padding: ${spacings.s} ${spacings.l};
   color: ${color.kiev};
+  outline-offset: -3px;
 `;
 
 const iconStyles = css`
   bottom: ${spacings.none};
   right: ${spacings.l};
   position: absolute;
+  outline-offset: -3px;
 `;
 
 const linkStyles = css`

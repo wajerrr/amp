@@ -8,14 +8,14 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
     className="css-1q8ze9y-sectionStyles"
   >
     <h4
-      className="css-if8kv6-headStyles"
+      className="css-1lnoj9d-headStyles"
     >
       <span>
         test-menu-amp
       </span>
       <button
         aria-label=""
-        className="css-14emvss-StyledButton-iconStyles e139jkne0"
+        className="css-14olk9r-StyledButton-iconStyles e139jkne0"
         on=""
         tabIndex="0"
       >
@@ -45,14 +45,14 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
           className="css-1q8ze9y-sectionStyles"
         >
           <h4
-            className="css-if8kv6-headStyles"
+            className="css-1lnoj9d-headStyles"
           >
             <span>
               Topics
             </span>
             <button
               aria-label=""
-              className="css-14emvss-StyledButton-iconStyles e139jkne0"
+              className="css-14olk9r-StyledButton-iconStyles e139jkne0"
               on=""
               tabIndex="0"
             >
@@ -199,14 +199,14 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
           className="css-1q8ze9y-sectionStyles"
         >
           <h4
-            className="css-if8kv6-headStyles"
+            className="css-1lnoj9d-headStyles"
           >
             <span>
               Blogs
             </span>
             <button
               aria-label=""
-              className="css-14emvss-StyledButton-iconStyles e139jkne0"
+              className="css-14olk9r-StyledButton-iconStyles e139jkne0"
               on=""
               tabIndex="0"
             >
@@ -335,14 +335,14 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
           className="css-1q8ze9y-sectionStyles"
         >
           <h4
-            className="css-if8kv6-headStyles"
+            className="css-1lnoj9d-headStyles"
           >
             <span>
               More
             </span>
             <button
               aria-label=""
-              className="css-14emvss-StyledButton-iconStyles e139jkne0"
+              className="css-14olk9r-StyledButton-iconStyles e139jkne0"
               on=""
               tabIndex="0"
             >
@@ -372,14 +372,14 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
                 className="css-1q8ze9y-sectionStyles"
               >
                 <h4
-                  className="css-if8kv6-headStyles"
+                  className="css-1lnoj9d-headStyles"
                 >
                   <span>
                     Apps & Digital Editions
                   </span>
                   <button
                     aria-label=""
-                    className="css-14emvss-StyledButton-iconStyles e139jkne0"
+                    className="css-14olk9r-StyledButton-iconStyles e139jkne0"
                     on=""
                     tabIndex="0"
                   >
@@ -436,14 +436,14 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
                 className="css-1q8ze9y-sectionStyles"
               >
                 <h4
-                  className="css-if8kv6-headStyles"
+                  className="css-1lnoj9d-headStyles"
                 >
                   <span>
                     From The Economist Group
                   </span>
                   <button
                     aria-label=""
-                    className="css-14emvss-StyledButton-iconStyles e139jkne0"
+                    className="css-14olk9r-StyledButton-iconStyles e139jkne0"
                     on=""
                     tabIndex="0"
                   >
