@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import color from '../../styles/color';
+import IconDown from '@economist/component-icon/lib/inline-icons/down';
 import { LargeSubscribeButton } from '../styled-subscribe-button/styled-subscribe-button';
 import StyledLink from '../styled-link/styled-link';
-import StyledIconButton from '../styled-icon-button/styled-icon-button';
 
 const getListItemComponent = (item, styles) => {
   let link = item.url && (
@@ -27,12 +26,7 @@ const AccordionListItem = ({ item, styles }) =>
       <section className={styles.StyledSection}>
         <h4 className={styles.StyledHead}>
           <span>{item.headline}</span>
-          <StyledIconButton
-            className={styles.StyledIconButton}
-            onProps=""
-            icon="chevron"
-            iconColor={color.chicago}
-          />
+          <IconDown className={styles.StyledIconButton} />
         </h4>
         <div>
           {item.hasPart.parts.map((partItem) => (

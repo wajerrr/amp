@@ -5,7 +5,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
   id="accordion"
 >
   <section
-    className="css-1q8ze9y-sectionStyles"
+    className="css-gdjuqu-sectionStyles"
   >
     <h4
       className="css-1lnoj9d-headStyles"
@@ -13,36 +13,29 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
       <span>
         test-menu-amp
       </span>
-      <button
-        aria-label=""
-        className="css-14olk9r-StyledButton-iconStyles e139jkne0"
-        on=""
-        tabIndex="0"
+      <span
+        className="css-1gvo30k-iconStyles"
       >
-        <span
-          className={undefined}
+        <svg
+          version="1.1"
+          viewBox="0 0 48 48"
+          x="0px"
+          xmlSpace="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          y="0px"
         >
-          <svg
-            version="1.1"
-            viewBox="0 0 48 48"
-            x="0px"
-            xmlSpace="preserve"
-            xmlns="http://www.w3.org/2000/svg"
-            y="0px"
-          >
-            <polygon
-              points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-            />
-          </svg>
-        </span>
-      </button>
+          <polygon
+            points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
+          />
+        </svg>
+      </span>
     </h4>
     <div>
       <amp-accordion
         id="accordion"
       >
         <section
-          className="css-1q8ze9y-sectionStyles"
+          className="css-gdjuqu-sectionStyles"
         >
           <h4
             className="css-1lnoj9d-headStyles"
@@ -50,29 +43,22 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
             <span>
               Topics
             </span>
-            <button
-              aria-label=""
-              className="css-14olk9r-StyledButton-iconStyles e139jkne0"
-              on=""
-              tabIndex="0"
+            <span
+              className="css-1gvo30k-iconStyles"
             >
-              <span
-                className={undefined}
+              <svg
+                version="1.1"
+                viewBox="0 0 48 48"
+                x="0px"
+                xmlSpace="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0px"
               >
-                <svg
-                  version="1.1"
-                  viewBox="0 0 48 48"
-                  x="0px"
-                  xmlSpace="preserve"
-                  xmlns="http://www.w3.org/2000/svg"
-                  y="0px"
-                >
-                  <polygon
-                    points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-                  />
-                </svg>
-              </span>
-            </button>
+                <polygon
+                  points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
+                />
+              </svg>
+            </span>
           </h4>
           <div>
             <a
@@ -196,7 +182,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
         id="accordion"
       >
         <section
-          className="css-1q8ze9y-sectionStyles"
+          className="css-gdjuqu-sectionStyles"
         >
           <h4
             className="css-1lnoj9d-headStyles"
@@ -204,29 +190,22 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
             <span>
               Blogs
             </span>
-            <button
-              aria-label=""
-              className="css-14olk9r-StyledButton-iconStyles e139jkne0"
-              on=""
-              tabIndex="0"
+            <span
+              className="css-1gvo30k-iconStyles"
             >
-              <span
-                className={undefined}
+              <svg
+                version="1.1"
+                viewBox="0 0 48 48"
+                x="0px"
+                xmlSpace="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0px"
               >
-                <svg
-                  version="1.1"
-                  viewBox="0 0 48 48"
-                  x="0px"
-                  xmlSpace="preserve"
-                  xmlns="http://www.w3.org/2000/svg"
-                  y="0px"
-                >
-                  <polygon
-                    points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-                  />
-                </svg>
-              </span>
-            </button>
+                <polygon
+                  points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
+                />
+              </svg>
+            </span>
           </h4>
           <div>
             <a
@@ -332,7 +311,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
         id="accordion"
       >
         <section
-          className="css-1q8ze9y-sectionStyles"
+          className="css-gdjuqu-sectionStyles"
         >
           <h4
             className="css-1lnoj9d-headStyles"
@@ -340,36 +319,29 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
             <span>
               More
             </span>
-            <button
-              aria-label=""
-              className="css-14olk9r-StyledButton-iconStyles e139jkne0"
-              on=""
-              tabIndex="0"
+            <span
+              className="css-1gvo30k-iconStyles"
             >
-              <span
-                className={undefined}
+              <svg
+                version="1.1"
+                viewBox="0 0 48 48"
+                x="0px"
+                xmlSpace="preserve"
+                xmlns="http://www.w3.org/2000/svg"
+                y="0px"
               >
-                <svg
-                  version="1.1"
-                  viewBox="0 0 48 48"
-                  x="0px"
-                  xmlSpace="preserve"
-                  xmlns="http://www.w3.org/2000/svg"
-                  y="0px"
-                >
-                  <polygon
-                    points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-                  />
-                </svg>
-              </span>
-            </button>
+                <polygon
+                  points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
+                />
+              </svg>
+            </span>
           </h4>
           <div>
             <amp-accordion
               id="accordion"
             >
               <section
-                className="css-1q8ze9y-sectionStyles"
+                className="css-gdjuqu-sectionStyles"
               >
                 <h4
                   className="css-1lnoj9d-headStyles"
@@ -377,29 +349,22 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
                   <span>
                     Apps & Digital Editions
                   </span>
-                  <button
-                    aria-label=""
-                    className="css-14olk9r-StyledButton-iconStyles e139jkne0"
-                    on=""
-                    tabIndex="0"
+                  <span
+                    className="css-1gvo30k-iconStyles"
                   >
-                    <span
-                      className={undefined}
+                    <svg
+                      version="1.1"
+                      viewBox="0 0 48 48"
+                      x="0px"
+                      xmlSpace="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                      y="0px"
                     >
-                      <svg
-                        version="1.1"
-                        viewBox="0 0 48 48"
-                        x="0px"
-                        xmlSpace="preserve"
-                        xmlns="http://www.w3.org/2000/svg"
-                        y="0px"
-                      >
-                        <polygon
-                          points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-                        />
-                      </svg>
-                    </span>
-                  </button>
+                      <polygon
+                        points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
+                      />
+                    </svg>
+                  </span>
                 </h4>
                 <div>
                   <a
@@ -433,7 +398,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
               id="accordion"
             >
               <section
-                className="css-1q8ze9y-sectionStyles"
+                className="css-gdjuqu-sectionStyles"
               >
                 <h4
                   className="css-1lnoj9d-headStyles"
@@ -441,29 +406,22 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
                   <span>
                     From The Economist Group
                   </span>
-                  <button
-                    aria-label=""
-                    className="css-14olk9r-StyledButton-iconStyles e139jkne0"
-                    on=""
-                    tabIndex="0"
+                  <span
+                    className="css-1gvo30k-iconStyles"
                   >
-                    <span
-                      className={undefined}
+                    <svg
+                      version="1.1"
+                      viewBox="0 0 48 48"
+                      x="0px"
+                      xmlSpace="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                      y="0px"
                     >
-                      <svg
-                        version="1.1"
-                        viewBox="0 0 48 48"
-                        x="0px"
-                        xmlSpace="preserve"
-                        xmlns="http://www.w3.org/2000/svg"
-                        y="0px"
-                      >
-                        <polygon
-                          points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-                        />
-                      </svg>
-                    </span>
-                  </button>
+                      <polygon
+                        points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
+                      />
+                    </svg>
+                  </span>
                 </h4>
                 <div>
                   <a
