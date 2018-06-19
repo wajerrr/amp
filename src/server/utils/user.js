@@ -1,4 +1,5 @@
 const COOKIE_USER_ID = 'ec_uid';
+const COOKIE_UID = 'uid';
 const COOKIE_ECON_USER = 'Econ.user.user';
 const COOKIE_COMMUNITY = 'ec_community';
 const COOKIE_OMNITURE_USER_SUB = 'ec_omniture_user_sub';
@@ -10,7 +11,7 @@ const getUserId = (state = {}) => {
     const userCookie = state[COOKIE_ECON_USER];
     if (userCookie) {
       try {
-        userId = JSON.parse(decodeURIComponent(userCookie)).uid;
+        userId = JSON.parse(decodeURIComponent(userCookie))[COOKIE_UID];
       } catch (e) {
         // can't parse cookie
       }
@@ -21,9 +22,27 @@ const getUserId = (state = {}) => {
 
 const isMultiUserLicense = (state = {}) => state[COOKIE_COMMUNITY] > 0;
 
+const USER_GROUP_ANONYMOUS = 'anonymous';
+const USER_GROUP_REGISTERED = 'registered';
+const USER_GROUP_SUBSCRIBER = 'subscriber';
+const getUserGroup = (userType = '') => {
+  let userGroup = '';
+  switch (userType) {
+    case 'subscriber':
+      userGroup = USER_GROUP_SUBSCRIBER;
+      break;
+    case 'registered':
+      userGroup = USER_GROUP_REGISTERED;
+      break;
+    default:
+      userGroup = USER_GROUP_ANONYMOUS;
+  }
+  return userGroup;
+};
+
 const getSubscription = (state = {}) => {
   const subscriptionCookie =
-    state.ec_omniture_user_sub &&
+    state[COOKIE_OMNITURE_USER_SUB] &&
     decodeURIComponent(state[COOKIE_OMNITURE_USER_SUB]);
   if (isMultiUserLicense(state)) {
     return 'bulk-IP';
@@ -60,4 +79,8 @@ export {
   isUserLoggedIn,
   trimAdobeId,
   isMultiUserLicense,
+  getUserGroup,
+  USER_GROUP_ANONYMOUS,
+  USER_GROUP_REGISTERED,
+  USER_GROUP_SUBSCRIBER,
 };

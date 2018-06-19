@@ -114,24 +114,4 @@ describe('ampPageRenderer handler', () => {
     expect(h.code).toHaveBeenCalledWith(500);
     done();
   });
-
-  it('should redirect to staging server when isProd is true and article is not in the list', async (done) => {
-    envVars.isProd = true;
-    await handler(request, h);
-    expect(h.redirect).toHaveBeenCalledTimes(1);
-    expect(h.redirect).toHaveBeenCalledWith(
-      `https://${economistConfig.domain}/${url}`
-    );
-    done();
-  });
-
-  it('should redirect to staging server when isStage is true and article is not in the list', async (done) => {
-    envVars.isStage = true;
-    await handler(request, h);
-    expect(h.redirect).toHaveBeenCalledTimes(1);
-    expect(h.redirect).toHaveBeenCalledWith(
-      `https://${economistConfig.domain}/${url}`
-    );
-    done();
-  });
 });

@@ -18,6 +18,7 @@ const renderHtml = (data) => {
     body: reactHTMLString,
     metadata,
     isDev,
+    articleId: data.article && data.article.id,
   });
 };
 

@@ -1,7 +1,5 @@
 import getData from '../graphql/get-data';
 import renderHtml from '../render-html';
-import { isProd, isStage } from '../utils/environment-detection';
-import availableArticles from '../config/available-articles';
 import economistConfig from '../config/economist';
 import renderHtmlError from '../render-html-error';
 
@@ -26,9 +24,6 @@ export const handler = async (request, h) => {
   try {
     const ref = `${getDomain(request.headers.host)}/${request.params.pathname}`;
     const res = await getData(ref);
-    if ((isProd || isStage) && !availableArticles.includes(request.path)) {
-      return h.redirect(`https://${economistConfig.domain}${request.path}`);
-    }
     return h.response(renderHtml(res.data));
   } catch (error) {
     /* eslint-disable-next-line no-console */

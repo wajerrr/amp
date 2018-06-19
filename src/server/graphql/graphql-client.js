@@ -7,7 +7,7 @@ import { ApolloLink } from 'apollo-link';
 
 const client = new ApolloClient({
   link: ApolloLink.from([
-    onError(({ graphQLErrors, networkError }) => {
+    onError(({ graphQLErrors = [], networkError }) => {
       graphQLErrors.map(({ message, locations, path }) =>
         /* eslint-disable-next-line no-console */
         console.error(
