@@ -276,31 +276,31 @@ exports[`NavigationMenu should match snapshot 1`] = `
     </section>
   </amp-accordion>
   <a
-    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+    className="css-ho1kfa-StyledLink-headerLinkStyles e2cf1b50"
     href="https://www.economist.com/printedition"
   >
     Current edition
   </a>
   <a
-    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+    className="css-ho1kfa-StyledLink-headerLinkStyles e2cf1b50"
     href="https://www.economist.com/audio-edition"
   >
     Audio edition
   </a>
   <a
-    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+    className="css-ho1kfa-StyledLink-headerLinkStyles e2cf1b50"
     href="http://films.economist.com/"
   >
     Economist Films
   </a>
   <a
-    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+    className="css-ho1kfa-StyledLink-headerLinkStyles e2cf1b50"
     href="http://radio.economist.com/"
   >
     Economist Radio
   </a>
   <a
-    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+    className="css-ho1kfa-StyledLink-headerLinkStyles e2cf1b50"
     href="https://www.economist.com/digital"
   >
     The Economist apps
@@ -486,7 +486,7 @@ exports[`NavigationMenu should match snapshot 1`] = `
           </section>
         </amp-accordion>
         <a
-          className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+          className="css-ho1kfa-StyledLink-headerLinkStyles e2cf1b50"
           href="https://www.economist.com/about-the-economist"
         >
           About The Economist

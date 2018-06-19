@@ -7,21 +7,10 @@ describe('StyledAccordionListItem', () => {
   navigationData.navigation.url = {
     canonical: 'tester',
   };
+  const testListItem = navigationData.navigation.hasPart.parts[0];
   it('should match snapshot', () => {
     const tree = renderer
-      .create(<StyledAccordionListItem item={navigationData.navigation} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  it('should match snapshot with subscribeButton', () => {
-    const tree = renderer
-      .create(<StyledAccordionListItem item={{ headline: 'Subscribe' }} />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  it('should match snapshot with normal link', () => {
-    const tree = renderer
-      .create(<StyledAccordionListItem item={{ headline: 'Link' }} />)
+      .create(<StyledAccordionListItem item={testListItem} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
