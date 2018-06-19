@@ -7,7 +7,7 @@ const getUrl = (path) => {
     url = path;
   }
   if (isStage || isProd) {
-    url = `https://${config}${path}`;
+    url = `https://${config.ampDomain}${path}`;
   }
   return url;
 };
