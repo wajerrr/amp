@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'react-emotion';
 import { color, fontFamily, text, spacings } from '../../styles/';
+import getUrl from '../../../server/utils/get-url';
 
 const StyledPopupOverlay = styled('div')`
   -webkit-font-smoothing: antialiased;
@@ -59,7 +60,7 @@ const UserConsent = () => (
         __html: JSON.stringify({
           consents: {
             userConsent: {
-              checkConsentHref: '/check_consent.json',
+              checkConsentHref: getUrl('/check_consent.json'),
               promptUI: 'consentDialog',
             },
           },
