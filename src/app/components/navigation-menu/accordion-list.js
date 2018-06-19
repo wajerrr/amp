@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import IconDown from '@economist/component-icon/lib/inline-icons/down';
-import color from '../../styles/color';
 import { LargeSubscribeButton } from '../styled-subscribe-button/styled-subscribe-button';
 import StyledLink from '../styled-link/styled-link';
-import StyledIconButton from '../styled-icon-button/styled-icon-button';
 
 function hasChildren(item) {
   return item.hasPart && item.hasPart.parts && item.hasPart.parts.length > 0;
