@@ -20,7 +20,6 @@ const handler = (request) => {
   );
   return {
     promptIfUnknown: !hasCookie,
-    _debug: { headers: request.headers },
   };
 };
 
