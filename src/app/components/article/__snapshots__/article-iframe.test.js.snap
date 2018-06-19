@@ -9,7 +9,7 @@ exports[`ArticleIframe should match snapshot 1`] = `
   src="https://infographics.economist.com/2017/ukelmap-2017/"
 >
   <div
-    className="css-pa0y0j-StyledPlaceholderImage eso98520"
+    className="css-pa0y0j-StyledPlaceholderImage eh37php0"
     height={86}
     width={172}
   >

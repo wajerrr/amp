@@ -12,7 +12,7 @@ exports[`buildComponents should match snapshot for iframe 1`] = `
     src="https://infographics.economist.com/2017/ukelmap-2017/"
   >
     <div
-      className="css-boochl-StyledPlaceholderImage eso98520"
+      className="css-boochl-StyledPlaceholderImage eh37php0"
       height={86}
       width={172}
     >

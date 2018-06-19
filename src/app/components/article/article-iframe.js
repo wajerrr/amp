@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import PlaceholderImage from '../placheolder-imge/placeholder-image';
+import PlaceholderImage from '../placeholder-image/placeholder-image';
 
 const ArticleIframe = ({ src, height }) => (
   <amp-iframe
