@@ -18,7 +18,10 @@ const handler = (request) => {
   const hasCookie = !!(
     request.state[EVIDON_COOKIE_NAME] || rawCookies[EVIDON_COOKIE_NAME]
   );
-  return { promptIfUnknown: !hasCookie };
+  return {
+    promptIfUnknown: !hasCookie,
+    _debug: { state: request.state, rawCookies },
+  };
 };
 
 const route = {
