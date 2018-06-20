@@ -10,21 +10,6 @@ describe('HeaderLink', () => {
       canonical: 'www.headerLink.com',
     },
   };
-  const sectionList = {
-    headline: 'Topics',
-    id: '21741809',
-    hasPart: {
-      parts: [
-        {
-          headline: 'Latest updates',
-          id: 'storyCollection_21741809_0',
-          url: {
-            canonical: 'https://www.economist.com/latest-updates',
-          },
-        },
-      ],
-    },
-  };
   it('should match snapshot for a normal headerLink', () => {
     const tree = renderer
       .create(<SectionHeaderLink link={headerLink} />)
