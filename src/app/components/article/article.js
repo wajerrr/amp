@@ -11,6 +11,8 @@ import ArticleMetaData from './article-meta-data';
 import spacings from '../../styles/spacings';
 import fontFamily from '../../styles/font-family';
 import typography from '../../styles/typography';
+import { generateAds, isShortArticle } from '../../utils/adverts';
+import StyledInlineAd from '../styled-advert/styled-advert';
 
 const StyledArticleContainer = styled('article')`
   font-size: ${typography.baseSize};
@@ -30,7 +32,6 @@ const StyledTextContainer = styled('div')`
   font-size: ${typography.sizeStep['0']};
   line-height: 1.6;
 `;
-
 const StyledBottomPanel = styled('div')`
   margin-bottom: ${spacings.xl};
 `;
@@ -51,6 +52,7 @@ const Article = ({
     text,
     print,
     publication,
+    ad,
   },
 }) => (
   <StyledArticleContainer
@@ -79,7 +81,7 @@ const Article = ({
       commentsUri={url.comment}
     />
     <StyledTextContainer itemProp="articleBody">
-      {buildArticleText(text)}
+      {buildArticleText(generateAds(text, ad))}
     </StyledTextContainer>
     <StyledBottomPanel>
       <StyledArticlePublicationDetails
@@ -92,9 +94,9 @@ const Article = ({
     </StyledBottomPanel>
     <ArticleAboutEconomistLink />
     <ArticleMetaData url={url} dateModified={dateModified} />
+    {!isShortArticle(text.length) && <StyledInlineAd ad={ad} />}
   </StyledArticleContainer>
 );
-
 Article.propTypes = {
   data: PropTypes.shape({}).isRequired,
 };

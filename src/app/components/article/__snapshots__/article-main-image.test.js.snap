@@ -23,7 +23,7 @@ exports[`ArticleMainImage should match snapshot 1`] = `
     alt=""
     height={100}
     layout="responsive"
-    sizes="(min-width: 640px) calc(640px -  2 * 0.5em), calc(100vw - 2 * 0.5em)"
+    sizes="(min-width: 1000px) calc(1000px -  2 * 0.5em), calc(100vw - 2 * 0.5em)"
     src="https://www.economist.com/sites/default/files/20180602_blp904.jpg"
     srcset="https://www.economist.com/sites/default/files/imagecache/200-width/sites/default/files/20180602_blp904.jpg 200w,
 https://www.economist.com/sites/default/files/imagecache/300-width/sites/default/files/20180602_blp904.jpg 300w,

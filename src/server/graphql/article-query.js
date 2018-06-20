@@ -13,10 +13,16 @@ const articleFragment = `fragment Article on Content {
   description
   datePublished
   dateModified
+  author {id}
   byline
   text(format: "json")
   regionsAllowed
   isAccessibleForFree
+  ad {
+    siteCode
+    zoneCode
+    environment
+  }
   image {
     main {
       id
