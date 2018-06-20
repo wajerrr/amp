@@ -7,7 +7,7 @@ const InlineAd = ({ ad, className }) => {
     return null;
   }
   const { siteCode, zoneCode } = ad;
-  const environment = ad.environment || (isStage ? 'dev' : 'teg');
+  const environment = isStage ? 'dev' : 'teg';
   return (
     <div className={className}>
       <amp-ad
