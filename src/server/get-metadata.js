@@ -15,17 +15,39 @@ const getImageSrc = (image) => {
   return null;
 };
 
-export const getMicroData = (type, url, headline) =>
-  `<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": [${type.map((item) => `"${item}"`)}],
-    "url": "${url}",
-    "publisher": {"@type":"NewsMediaOrganization","name":"The Economist"},
-    "headline": "${headline}",
-    "mainEntityOfPage": "${url}"
-  }
+export const getStructuredData = ({
+  type,
+  url,
+  headline,
+  datePublished,
+  dateModified,
+  imgSrc,
+  author = ['The Economist'],
+}) => {
+  const data = {
+    '@context': 'http://schema.org',
+    '@type': type,
+    url,
+    publisher: {
+      '@type': 'NewsMediaOrganization',
+      name: 'The Economist',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.economist.com/assets/the-economist-logo.png',
+      },
+    },
+    headline,
+    mainEntityOfPage: url,
+    datePublished,
+    dateModified,
+    image: imgSrc,
+    author,
+  };
+
+  return `<script type="application/ld+json">
+   ${JSON.stringify(data)}
   </script>`;
+};
 
 export const getImgMetaTags = (imgSrc) =>
   imgSrc
@@ -42,6 +64,8 @@ const getMetadata = ({
   isAccessibleForFree,
   image,
   type,
+  dateModified,
+  author,
 }) => {
   const sanitizedHeadline = sanitizeText(headline);
   const sanitizedDescription = sanitizeText(description);
@@ -85,7 +109,15 @@ const getMetadata = ({
       <meta  name="description" content="${sanitizedDescription}">
       <meta  name="twitter:card" content="summary_large_image"> 
       ${getImgMetaTags(imgSrc)}
-      ${getMicroData(type, canonicalUrl, sanitizedHeadline)}`;
+      ${getStructuredData({
+        type,
+        url: canonicalUrl,
+        headline: sanitizedHeadline,
+        datePublished,
+        dateModified,
+        imgSrc,
+        author: author && author.length > 0 ? author : undefined,
+      })}`;
 };
 
 /* 
