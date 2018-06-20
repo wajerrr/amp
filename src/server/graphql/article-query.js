@@ -18,6 +18,11 @@ const articleFragment = `fragment Article on Content {
   text(format: "json")
   regionsAllowed
   isAccessibleForFree
+  ad {
+    siteCode
+    zoneCode
+    environment
+  }
   image {
     main {
       id
