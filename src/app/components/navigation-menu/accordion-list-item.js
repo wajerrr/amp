@@ -15,6 +15,7 @@ const AccordionListItem = ({ item, styles }) => {
       return (
         <NestedAccordionList
           title={item.headline}
+          key={item.headline}
           list={item}
           styles={styles}
         />
@@ -23,12 +24,15 @@ const AccordionListItem = ({ item, styles }) => {
       return (
         <SingleAccordionList
           title={item.headline}
+          key={item.headline}
           list={item}
           styles={styles}
         />
       );
     default:
-      return <SectionHeaderLink link={item} styles={styles} />;
+      return (
+        <SectionHeaderLink link={item} styles={styles} key={item.headline} />
+      );
   }
 };
 

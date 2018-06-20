@@ -1,32 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SingleAccordionList from './single-accordion-list';
 import SectionHeader from './section-header';
-import SectionHeaderLink from './section-header-link';
-import { hasChildren } from './accordion-list-item';
+import AccordionListItem from './accordion-list-item';
 
 const NestedAccordionList = ({ title, list, styles }) => (
   <amp-accordion id="accordion">
     <section className={styles.StyledSection}>
       <SectionHeader title={title} styles={styles} />
-      <div>
-        {list.hasPart.parts.map(
-          (listItem) =>
-            hasChildren(listItem) ? (
-              <SingleAccordionList
-                title={listItem.headline}
-                list={listItem}
-                styles={styles}
-                key={listItem.id}
-              />
-            ) : (
-              <SectionHeaderLink
-                link={listItem}
-                styles={styles}
-                key={listItem.id}
-              />
-            )
-        )}
+      <div key={list.id}>
+        {list.hasPart.parts.map((listItem) => (
+          <AccordionListItem
+            item={listItem}
+            styles={styles}
+            key={listItem.id}
+          />
+        ))}
       </div>
     </section>
   </amp-accordion>
