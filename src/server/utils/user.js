@@ -1,7 +1,13 @@
+const COOKIE_USER_ID = 'ec_uid';
+const COOKIE_ECON_USER = 'Econ.user.user';
+const COOKIE_COMMUNITY = 'ec_community';
+const COOKIE_OMNITURE_USER_SUB = 'ec_omniture_user_sub';
+const COOKIE_PERSISTENT_LOGIN_PREFIX = 'PERSISTENT_LOGIN_';
+
 const getUserId = (state = {}) => {
-  let userId = state.ec_uid;
+  let userId = state[COOKIE_USER_ID];
   if (!userId) {
-    const userCookie = state['Econ.user.user'];
+    const userCookie = state[COOKIE_ECON_USER];
     if (userCookie) {
       try {
         userId = JSON.parse(decodeURIComponent(userCookie)).uid;
@@ -13,12 +19,12 @@ const getUserId = (state = {}) => {
   return userId || 0;
 };
 
-const isMultiUserLicense = (state = {}) => state.ec_community > 0;
+const isMultiUserLicense = (state = {}) => state[COOKIE_COMMUNITY] > 0;
 
 const getSubscription = (state = {}) => {
   const subscriptionCookie =
     state.ec_omniture_user_sub &&
-    decodeURIComponent(state.ec_omniture_user_sub);
+    decodeURIComponent(state[COOKIE_OMNITURE_USER_SUB]);
   if (isMultiUserLicense(state)) {
     return 'bulk-IP';
   } else if (typeof subscriptionCookie === 'undefined') {
@@ -33,9 +39,9 @@ const getSubscription = (state = {}) => {
 
 const isUserLoggedIn = (state = {}) => {
   const persistentLogin = Object.keys(state).some((key) =>
-    key.startsWith('PERSISTENT_LOGIN_')
+    key.startsWith(COOKIE_PERSISTENT_LOGIN_PREFIX)
   );
-  return state.ec_uid || persistentLogin;
+  return state[COOKIE_USER_ID] || persistentLogin;
 };
 
 const trimAdobeId = (adobeId) => {
