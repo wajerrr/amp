@@ -14,9 +14,12 @@ const sectionStyles = css`
   border-bottom: 1px solid ${color.cardiff};
   &[expanded] {
     border-bottom: none;
-    & h4 > button {
+    & h4 svg {
       transform: rotate(180deg);
     }
+  }
+  h4[aria-expanded='false'] svg {
+    transform: none;
   }
 `;
 
@@ -27,12 +30,18 @@ const headStyles = css`
   font-weight: 500;
   padding: ${spacings.s} ${spacings.l};
   color: ${color.kiev};
+  outline-offset: -3px;
 `;
 
 const iconStyles = css`
-  bottom: ${spacings.none};
+  bottom: -3px;
   right: ${spacings.l};
   position: absolute;
+  & svg {
+    height: 34px;
+    width: 34px;
+    fill: ${color.chicago};
+  }
 `;
 
 const linkStyles = css`
