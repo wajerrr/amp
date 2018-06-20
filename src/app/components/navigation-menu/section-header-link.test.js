@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import HeaderLink from './section-header-link';
+import SectionHeaderLink from './section-header-link';
 
 describe('HeaderLink', () => {
   const headerLink = {
@@ -26,11 +26,9 @@ describe('HeaderLink', () => {
     },
   };
   it('should match snapshot for a normal headerLink', () => {
-    const tree = renderer.create(<HeaderLink link={headerLink} />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  it('should match snapshot for a sectionList', () => {
-    const tree = renderer.create(<HeaderLink link={sectionList} />).toJSON();
+    const tree = renderer
+      .create(<SectionHeaderLink link={headerLink} />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import HeaderSection from './section-header';
+import SectionHeader from './section-header';
 
-describe('HeaderSection', () => {
+describe('SectionHeader', () => {
   it('should match snapshot for a normal headerLink', () => {
     const tree = renderer
-      .create(<HeaderSection title="headerSection" />)
+      .create(<SectionHeader title="headerSection" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

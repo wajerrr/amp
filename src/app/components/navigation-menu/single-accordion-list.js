@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import HeaderSection from './section-header';
+import SectionHeader from './section-header';
 import StyledLink from '../styled-link/styled-link';
 
-const TitleWithAccordionList = ({ title, list, styles }) => (
+const SingleAccordionList = ({ title, list, styles }) => (
   <amp-accordion id="accordion">
     <section className={styles.StyledSection}>
-      <HeaderSection title={title} styles={styles} />
+      <SectionHeader title={title} styles={styles} />
       <div>
         {list.hasPart.parts.map((listItem) => (
           <StyledLink
@@ -22,14 +22,14 @@ const TitleWithAccordionList = ({ title, list, styles }) => (
   </amp-accordion>
 );
 
-TitleWithAccordionList.propTypes = {
+SingleAccordionList.propTypes = {
   title: PropTypes.string.isRequired,
   list: PropTypes.shape({}).isRequired,
   styles: PropTypes.shape({}),
 };
 
-TitleWithAccordionList.defaultProps = {
+SingleAccordionList.defaultProps = {
   styles: {},
 };
 
-export default TitleWithAccordionList;
+export default SingleAccordionList;

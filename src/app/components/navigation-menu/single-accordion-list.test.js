@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TitleWithAccordionList from './section-list';
+import SingleAccordionList from './single-accordion-list';
 
-describe('TitleWithAccordionList', () => {
+describe('SingleAccordionList', () => {
   const sectionList = {
     headline: 'Topics',
     id: '21741809',
@@ -21,10 +21,7 @@ describe('TitleWithAccordionList', () => {
   it('should match snapshot', () => {
     const tree = renderer
       .create(
-        <TitleWithAccordionList
-          title={sectionList.headline}
-          list={sectionList}
-        />
+        <SingleAccordionList title={sectionList.headline} list={sectionList} />
       )
       .toJSON();
     expect(tree).toMatchSnapshot();

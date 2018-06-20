@@ -5,7 +5,7 @@ import color from '../../styles/color';
 import fontFamily from '../../styles/font-family';
 import typography from '../../styles/typography';
 import spacings from '../../styles/spacings';
-import AccordionListItem from './accordion-list';
+import AccordionListItem from './accordion-list-item';
 
 const sectionStyles = css`
   font-family: ${fontFamily.sans};

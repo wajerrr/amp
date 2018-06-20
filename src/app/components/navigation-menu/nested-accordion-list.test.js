@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import NestedAccordionList from './section-nested-list';
+import NestedAccordionList from './nested-accordion-list';
 
 describe('NestedAccordionList', () => {
   const nestedSectionList = {

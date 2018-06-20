@@ -1,21 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TitleWithAccordionList from './section-list';
-import HeaderLink from './section-header-link';
-import NestedAccordionList from './section-nested-list';
+import SingleAccordionList from './single-accordion-list';
+import SectionHeaderLink from './section-header-link';
+import NestedAccordionList from './nested-accordion-list';
 
 export function hasChildren(item) {
   return item.hasPart && item.hasPart.parts && item.hasPart.parts.length > 0;
 }
-function isNestedList(list) {
-  let isNested = false;
-  list.forEach((listItem) => {
-    if (listItem.hasPart) {
-      isNested = hasChildren(listItem);
-    }
-  });
-  return isNested;
-}
+const isNestedList = (list) => list.some(hasChildren);
 
 const AccordionListItem = ({ item, styles }) => {
   switch (true) {
@@ -29,14 +21,14 @@ const AccordionListItem = ({ item, styles }) => {
       );
     case hasChildren(item):
       return (
-        <TitleWithAccordionList
+        <SingleAccordionList
           title={item.headline}
           list={item}
           styles={styles}
         />
       );
     default:
-      return <HeaderLink link={item} styles={styles} />;
+      return <SectionHeaderLink link={item} styles={styles} />;
   }
 };
 
