@@ -2,6 +2,7 @@ import React from 'react';
 import StyledLink from '../styled-link/styled-link';
 import StyledBlockquote from '../styled-block-quote/styled-block-quote';
 import Image from '../image/image';
+import StyledInlineAd from '../styled-advert/styled-advert';
 
 const buildArticleText = (childrenData = [], path = '') => {
   const getHTMLTag = (name, children, key) => {
@@ -25,8 +26,8 @@ const buildArticleText = (childrenData = [], path = '') => {
             return (
               <Image
                 key={key}
-                width={attribs.width}
-                height={attribs.height}
+                width={parseInt(attribs.width, 10)}
+                height={parseInt(attribs.height, 10)}
                 src={attribs.src}
                 layout="responsive"
               />
@@ -44,15 +45,16 @@ const buildArticleText = (childrenData = [], path = '') => {
           default:
             return getHTMLTag(name, children, key);
         }
+      case 'inlineAd':
+        return <StyledInlineAd ad={attribs.ad} key={key} />;
       case 'text':
         return data;
       default:
         return '';
     }
   };
-
-  return childrenData.map((itemData, i) =>
-    getComponent(itemData, `${path}-${i}`)
+  return childrenData.map(
+    (itemData, i) => itemData && getComponent(itemData, `${path}-${i}`)
   );
 };
 

@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import fontFamily from '../../styles/font-family';
-import { text, color, spacings, pageSizes } from '../../styles';
+import { fontFamily, text, color, spacings, pageSizes } from '../../styles/';
 import footerData from '../../../../mockFooterData.json';
 import navigationData from '../../../../mockNavData.json';
 import injectFontFace from '../../styles/font-face';
@@ -11,6 +10,7 @@ import Footer from '../footer/footer';
 import StoryCollection from '../story-collection/story-collection';
 import NavigationMenu from '../navigation-menu/navigation-menu';
 import Analytics from '../analytics/analytics';
+import UserConsent from '../user-consent/user-consent';
 
 injectFontFace();
 const StyledMain = styled('main')`
@@ -52,6 +52,7 @@ const Page = ({ data, children }) => (
     </StyledMain>
     <Footer data={footerData} />
     <Analytics data={data} />
+    <UserConsent />
   </Fragment>
 );
 

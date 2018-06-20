@@ -1,7 +1,7 @@
 import getMetadata, {
   getCanonicalLinkTag,
   getImgMetaTags,
-  getMicroData,
+  getStructuredData,
   sanitizeText,
 } from './get-metadata';
 
@@ -22,6 +22,7 @@ const articleData = {
   subheadline: 'subheadline',
   url: { canonical: 'https://url' },
   datePublished: '2018-04-10T13:25:15Z',
+  dateModified: '2018-05-10T13:25:15Z',
   isAccessibleForFree: true,
   image: { main, promo },
   type: ['article', 'blogpost'],
@@ -56,11 +57,14 @@ const expected = `<title>headline - subheadline</title>
       <meta  name="twitter:card" content="summary_large_image"> 
       <meta  name="twitter:image" content="urlpromo">
       <meta  property="og:image" content="urlpromo">
-      ${getMicroData(
-        articleData.type,
-        articleData.url.canonical,
-        sanitizeText(articleData.headline)
-      )}`;
+      ${getStructuredData({
+        type: articleData.type,
+        url: articleData.url.canonical,
+        headline: sanitizeText(articleData.headline),
+        datePublished: articleData.datePublished,
+        dateModified: articleData.dateModified,
+        imgSrc: promo.url.canonical,
+      })}`;
 
 describe('getMetdatda', () => {
   it('should render correct metadata', () => {
