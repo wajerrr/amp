@@ -64,7 +64,7 @@ const StyledPublicationsContainer = styled('div')`
   border-color: ${color.cardiff};
 `;
 
-const StyledPublicationHead = styled('h3')`
+const StyledPublicationHead = styled('p')`
   margin: ${spacings.none};
   color: ${color.beijing};
   font-size: ${text.sizeStep['-2']};

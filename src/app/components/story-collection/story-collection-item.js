@@ -9,7 +9,7 @@ import ItemHeadline from './story-collection-item-headline';
 import Image, { halfWidthSizes } from '../image/image';
 
 const StyledTextContainer = styled('div')`
-  padding: ${spacings.s};
+  padding: 0 ${spacings.s};
   width: 50%;
 `;
 
