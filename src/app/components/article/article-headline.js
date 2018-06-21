@@ -33,7 +33,7 @@ const StyledHeadline = styled('span')`
 const ArticleHeadline = ({ subheadline, children }) => (
   <StyledArticleHeadline>
     {subheadline && <StyledSubHeadline>{subheadline}</StyledSubHeadline>}
-    <StyledHeadline>{children}</StyledHeadline>
+    <StyledHeadline itemProp="headline">{children}</StyledHeadline>
   </StyledArticleHeadline>
 );
 

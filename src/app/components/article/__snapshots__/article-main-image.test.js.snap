@@ -3,7 +3,22 @@
 exports[`ArticleMainImage should match snapshot 1`] = `
 <div
   className="css-okm3o5-StyledImageContainer e168sr8z0"
+  itemProp="image"
+  itemScope={true}
+  itemType="https://schema.org/ImageObject"
 >
+  <meta
+    content="https://www.economist.com/sites/default/files/20180602_blp904.jpg"
+    itemProp="url"
+  />
+  <meta
+    content={100}
+    itemProp="width"
+  />
+  <meta
+    content={100}
+    itemProp="height"
+  />
   <amp-img
     alt=""
     height={100}

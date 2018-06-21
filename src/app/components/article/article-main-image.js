@@ -24,7 +24,14 @@ const ArticleMainImage = ({ src, width, height }) => {
     : StyledImageContainerNoSize;
 
   return (
-    <ImageContainer>
+    <ImageContainer
+      itemProp="image"
+      itemScope
+      itemType="https://schema.org/ImageObject"
+    >
+      <meta itemProp="url" content={src} />
+      <meta itemProp="width" content={width} />
+      <meta itemProp="height" content={height} />
       <Image
         layout={hasSize ? 'responsive' : 'fill'}
         width={width}

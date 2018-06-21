@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import IconPrintEdition from '@economist/component-icon/lib/inline-icons/print-edition';
 import { spacings, text, color, iconSizes } from '../../styles';
-import formatDate from '../../utils/date-time';
+import formatDate, { getISODate } from '../../utils/date-time';
 import StyledTime from '../styled-time/styled-time';
 import StyledLink from '../styled-link/styled-link';
 import StyledShareBar from '../styled-share-bar/styled-share-bar';
@@ -88,6 +88,17 @@ const StyledDateAuthor = styled('div')`
   letter-spacing: ${text.lineHeight.letterSpacing.sansOnStep['-3']};
 `;
 
+const ByLine = ({ byline }) => (
+  <Fragment>
+    {' | by '}
+    <span itemProp="author">{byline}</span>
+  </Fragment>
+);
+
+ByLine.propTypes = {
+  byline: PropTypes.string.isRequired,
+};
+
 const ArticlePublicationDetails = ({
   datePublished,
   byline = '',
@@ -102,8 +113,14 @@ const ArticlePublicationDetails = ({
       </StyledPublicationHead>
     )}
     <StyledDateAuthor>
-      <StyledTime time={formatDate(new Date(datePublished))} />
-      {byline && ` | by ${byline}`}
+      <StyledTime itemProp="datePublished" content={getISODate(datePublished)}>
+        {formatDate(new Date(datePublished))}
+      </StyledTime>
+      {byline ? (
+        <ByLine byline={byline} />
+      ) : (
+        <meta itemProp="author" content="The Economist" />
+      )}
     </StyledDateAuthor>
     <StyledShareBar commentsUri={commentsUri} />
   </StyledPublicationsContainer>
