@@ -5,7 +5,7 @@ import color from '../../styles/color';
 import fontFamily from '../../styles/font-family';
 import typography from '../../styles/typography';
 import spacings from '../../styles/spacings';
-import AccordionListItem from './accordion-list';
+import AccordionListItem from './accordion-list-item';
 
 const sectionStyles = css`
   font-family: ${fontFamily.sans};
@@ -31,6 +31,20 @@ const headStyles = css`
   padding: ${spacings.s} ${spacings.l};
   color: ${color.kiev};
   outline-offset: -3px;
+`;
+
+const headerLinkStyles = css`
+  background-color: transparent;
+  font-size: ${typography.sizeStep['0']};
+  border-bottom: 1px solid ${color.cardiff};
+  font-weight: 500;
+  padding: ${spacings.s} ${spacings.l};
+  color: ${color.kiev};
+  display: block;
+  &:visited {
+    color: ${color.kiev};
+    border-bottom: 1px solid ${color.cardiff};
+  }
 `;
 
 const iconStyles = css`
@@ -66,6 +80,7 @@ const StyledAccordionListItem = ({ item }) => (
     styles={{
       StyledSection: sectionStyles,
       StyledHead: headStyles,
+      StyledHeadLink: headerLinkStyles,
       StyledIconButton: iconStyles,
       StyledLink: linkStyles,
     }}

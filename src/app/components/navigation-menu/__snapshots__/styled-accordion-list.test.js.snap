@@ -11,7 +11,7 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
       className="css-1lnoj9d-headStyles"
     >
       <span>
-        test-menu-amp
+        Topics
       </span>
       <span
         className="css-1gvo30k-iconStyles"
@@ -31,491 +31,121 @@ exports[`StyledAccordionListItem should match snapshot 1`] = `
       </span>
     </h4>
     <div>
-      <amp-accordion
-        id="accordion"
-      >
-        <section
-          className="css-gdjuqu-sectionStyles"
-        >
-          <h4
-            className="css-1lnoj9d-headStyles"
-          >
-            <span>
-              Topics
-            </span>
-            <span
-              className="css-1gvo30k-iconStyles"
-            >
-              <svg
-                version="1.1"
-                viewBox="0 0 48 48"
-                x="0px"
-                xmlSpace="preserve"
-                xmlns="http://www.w3.org/2000/svg"
-                y="0px"
-              >
-                <polygon
-                  points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-                />
-              </svg>
-            </span>
-          </h4>
-          <div>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/latest-updates"
-            >
-              Latest updates
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/leaders"
-            >
-              Leaders
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/briefings"
-            >
-              Briefing
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/united-states"
-            >
-              United States
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/americas"
-            >
-              The Americas
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/asia"
-            >
-              Asia
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/china"
-            >
-              China
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/middle-east-africa"
-            >
-              Middle East and Africa
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/europe"
-            >
-              Europe
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/britain"
-            >
-              Britain
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/international"
-            >
-              International
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/business-finance"
-            >
-              Business
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/economics"
-            >
-              Finance and economics
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/science-technology"
-            >
-              Science and technology
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/culture"
-            >
-              Books and arts
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/obituary"
-            >
-              Obituary
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/special-reports"
-            >
-              Special reports
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/sections/technology-quarterly"
-            >
-              Technology Quarterly
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="http://debates.economist.com/"
-            >
-              Debates
-            </a>
-          </div>
-        </section>
-      </amp-accordion>
-      <amp-accordion
-        id="accordion"
-      >
-        <section
-          className="css-gdjuqu-sectionStyles"
-        >
-          <h4
-            className="css-1lnoj9d-headStyles"
-          >
-            <span>
-              Blogs
-            </span>
-            <span
-              className="css-1gvo30k-iconStyles"
-            >
-              <svg
-                version="1.1"
-                viewBox="0 0 48 48"
-                x="0px"
-                xmlSpace="preserve"
-                xmlns="http://www.w3.org/2000/svg"
-                y="0px"
-              >
-                <polygon
-                  points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-                />
-              </svg>
-            </span>
-          </h4>
-          <div>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/bagehot"
-            >
-              Bagehot’s notebook
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/buttonwood"
-            >
-              Buttonwood’s notebook
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/democracyinamerica"
-            >
-              Democracy in America
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/erasmus"
-            >
-              Erasmus
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/freeexchange"
-            >
-              Free exchange
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/gametheory"
-            >
-              Game theory
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/graphicdetail"
-            >
-              Graphic detail
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/gulliver"
-            >
-              Gulliver
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/kaffeeklatsch"
-            >
-              Kaffeeklatsch
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/prospero"
-            >
-              Prospero
-            </a>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/blogs/economist-explains"
-            >
-              The Economist explains
-            </a>
-          </div>
-        </section>
-      </amp-accordion>
       <a
         className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-        href="https://www.economist.com/printedition"
+        href="https://www.economist.com/latest-updates"
       >
-        Current edition
+        Latest updates
       </a>
       <a
         className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-        href="https://www.economist.com/audio-edition"
+        href="https://www.economist.com/sections/leaders"
       >
-        Audio edition
+        Leaders
       </a>
       <a
         className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-        href="http://films.economist.com/"
+        href="https://www.economist.com/sections/briefings"
       >
-        Economist Films
+        Briefing
       </a>
       <a
         className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-        href="http://radio.economist.com/"
+        href="https://www.economist.com/sections/united-states"
       >
-        Economist Radio
+        United States
       </a>
       <a
         className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-        href="https://www.economist.com/digital"
+        href="https://www.economist.com/sections/americas"
       >
-        The Economist apps
+        The Americas
       </a>
-      <amp-accordion
-        id="accordion"
-      >
-        <section
-          className="css-gdjuqu-sectionStyles"
-        >
-          <h4
-            className="css-1lnoj9d-headStyles"
-          >
-            <span>
-              More
-            </span>
-            <span
-              className="css-1gvo30k-iconStyles"
-            >
-              <svg
-                version="1.1"
-                viewBox="0 0 48 48"
-                x="0px"
-                xmlSpace="preserve"
-                xmlns="http://www.w3.org/2000/svg"
-                y="0px"
-              >
-                <polygon
-                  points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-                />
-              </svg>
-            </span>
-          </h4>
-          <div>
-            <amp-accordion
-              id="accordion"
-            >
-              <section
-                className="css-gdjuqu-sectionStyles"
-              >
-                <h4
-                  className="css-1lnoj9d-headStyles"
-                >
-                  <span>
-                    Apps & Digital Editions
-                  </span>
-                  <span
-                    className="css-1gvo30k-iconStyles"
-                  >
-                    <svg
-                      version="1.1"
-                      viewBox="0 0 48 48"
-                      x="0px"
-                      xmlSpace="preserve"
-                      xmlns="http://www.w3.org/2000/svg"
-                      y="0px"
-                    >
-                      <polygon
-                        points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-                      />
-                    </svg>
-                  </span>
-                </h4>
-                <div>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://www.economist.com/digital"
-                  >
-                    The Economist apps
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://www.economist.com/digital"
-                  >
-                    Espresso
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://www.economist.com/digital"
-                  >
-                    Global Business Review
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://worldinfigures.com/"
-                  >
-                    World in Figures
-                  </a>
-                </div>
-              </section>
-            </amp-accordion>
-            <amp-accordion
-              id="accordion"
-            >
-              <section
-                className="css-gdjuqu-sectionStyles"
-              >
-                <h4
-                  className="css-1lnoj9d-headStyles"
-                >
-                  <span>
-                    From The Economist Group
-                  </span>
-                  <span
-                    className="css-1gvo30k-iconStyles"
-                  >
-                    <svg
-                      version="1.1"
-                      viewBox="0 0 48 48"
-                      x="0px"
-                      xmlSpace="preserve"
-                      xmlns="http://www.w3.org/2000/svg"
-                      y="0px"
-                    >
-                      <polygon
-                        points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
-                      />
-                    </svg>
-                  </span>
-                </h4>
-                <div>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://www.economist.com/events-conferences"
-                  >
-                    Events
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://gmat.economist.com/?gsrc=economist_nav"
-                  >
-                    Online GMAT prep
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://gre.economist.com/?gsrc=economist_nav"
-                  >
-                    Online GRE prep
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://execed.economist.com/"
-                  >
-                    Executive Education Navigator
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://www.economist.com/whichmba"
-                  >
-                    Which MBA
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="http://jobs.economist.com/"
-                  >
-                    Jobs Board
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://learning.ly/"
-                  >
-                    Learning.ly
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://shop.economist.com/"
-                  >
-                    The Economist Store
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://www.eiu.com/"
-                  >
-                    The Economist Intelligence Unit
-                  </a>
-                  <a
-                    className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-                    href="https://www.corporatenetwork.com/"
-                  >
-                    The Economist Corporate Network
-                  </a>
-                </div>
-              </section>
-            </amp-accordion>
-            <a
-              className="css-17seshw-StyledLink-linkStyles e2cf1b50"
-              href="https://www.economist.com/about-the-economist"
-            >
-              About The Economist
-            </a>
-          </div>
-        </section>
-      </amp-accordion>
       <a
-        className="e18299l00 css-18wxk9z-StyledLink-LargeSubscribeButton e1ob2h4l0"
-        href="https://econ.st/2bs1gXz"
-        role="button"
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/asia"
       >
-        Subscribe
+        Asia
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/china"
+      >
+        China
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/middle-east-africa"
+      >
+        Middle East and Africa
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/europe"
+      >
+        Europe
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/britain"
+      >
+        Britain
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/international"
+      >
+        International
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/business-finance"
+      >
+        Business
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/economics"
+      >
+        Finance and economics
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/science-technology"
+      >
+        Science and technology
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/culture"
+      >
+        Books and arts
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/obituary"
+      >
+        Obituary
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/special-reports"
+      >
+        Special reports
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="https://www.economist.com/sections/technology-quarterly"
+      >
+        Technology Quarterly
+      </a>
+      <a
+        className="css-17seshw-StyledLink-linkStyles e2cf1b50"
+        href="http://debates.economist.com/"
+      >
+        Debates
       </a>
     </div>
   </section>
 </amp-accordion>
-`;
-
-exports[`StyledAccordionListItem should match snapshot with normal link 1`] = `null`;
-
-exports[`StyledAccordionListItem should match snapshot with subscribeButton 1`] = `
-<a
-  className="e18299l00 css-18wxk9z-StyledLink-LargeSubscribeButton e1ob2h4l0"
-  href="https://econ.st/2bs1gXz"
-  role="button"
->
-  Subscribe
-</a>
 `;

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { injectGlobal } from 'emotion';
 import styled from 'react-emotion';
+import { LargeSubscribeButton } from '../styled-subscribe-button/styled-subscribe-button';
 import color from '../../styles/color';
 import StyledIconButton from '../styled-icon-button/styled-icon-button';
 import StyledAccordionListItem from './styled-accordion-list';
@@ -33,6 +34,7 @@ const NavigationMenu = ({ data: { navigation }, containerId }) => (
     {navigation.hasPart.parts.map((itm) => (
       <StyledAccordionListItem item={itm} key={itm.id} />
     ))}
+    <LargeSubscribeButton />
   </amp-sidebar>
 );
 

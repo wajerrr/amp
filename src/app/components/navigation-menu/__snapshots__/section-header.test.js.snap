@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionHeader should match snapshot for a normal headerLink 1`] = `
+<h4
+  className={undefined}
+>
+  <span>
+    headerSection
+  </span>
+  <span
+    className={undefined}
+  >
+    <svg
+      version="1.1"
+      viewBox="0 0 48 48"
+      x="0px"
+      xmlSpace="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      y="0px"
+    >
+      <polygon
+        points="33.2,18.6 36,21.4 24,33.4 12,21.4 14.8,18.6 24,27.7 	"
+      />
+    </svg>
+  </span>
+</h4>
+`;

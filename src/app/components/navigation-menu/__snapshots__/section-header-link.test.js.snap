@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderLink should match snapshot for a normal headerLink 1`] = `
+<a
+  className="css-1h5t0lq-StyledLink e2cf1b50"
+  href="www.headerLink.com"
+>
+  headerLink
+</a>
+`;
