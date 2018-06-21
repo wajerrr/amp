@@ -37,12 +37,7 @@ const getCORSExtension = () => ({
           ampSourceOrigin !== allowedSourceOrigin
         ) {
           return h
-            .response({
-              error: 'Unauthorized Request',
-              allowedOrigins,
-              origin,
-              ampSourceOrigin,
-            })
+            .response({ error: 'Unauthorized Request' })
             .code(401)
             .takeover();
         }
