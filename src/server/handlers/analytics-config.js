@@ -11,6 +11,7 @@ import {
   trimAdobeId,
   isMultiUserLicense,
 } from '../utils/user';
+import getCORSExtension from './cors-extension';
 
 const handler = (request, h) => {
   const { state } = request;
@@ -89,9 +90,11 @@ const route = {
   method: 'GET',
   path: '/analytics.config.json',
   config: {
+    cors: true,
+    ext: getCORSExtension(),
     state: {
       parse: true,
-      failAction: 'log',
+      failAction: 'ignore',
     },
   },
   handler,

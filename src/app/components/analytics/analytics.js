@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import slug from '../../../server/utils/slug';
+import getUrl from '../../../server/utils/get-url';
 
 const TYPE_BLOG = 'blog_post';
 const TYPE_ARTICLE = 'article';
@@ -124,7 +125,7 @@ const Analytics = ({
 }) => (
   <amp-analytics
     type="adobeanalytics"
-    config="/analytics.config.json"
+    config={getUrl('/analytics.config.json')}
     data-credentials="include"
   >
     <script

@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Analytics from './analytics';
+import * as envVars from '../../../server/utils/environment-detection';
 
 /* eslint-disable no-underscore-dangle */
 const extractConfigData = (node) =>
@@ -8,7 +9,11 @@ const extractConfigData = (node) =>
 
 /* eslint-disable no-template-curly-in-string */
 describe('Analytics', () => {
+  beforeEach(() => {
+    envVars.isDev = false;
+  });
   it('should match the snapshot', () => {
+    envVars.isDev = true;
     const analytics = renderer
       .create(
         <Analytics
