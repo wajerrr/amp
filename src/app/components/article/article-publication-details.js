@@ -116,7 +116,11 @@ const ArticlePublicationDetails = ({
       <StyledTime itemProp="datePublished" content={getISODate(datePublished)}>
         {formatDate(new Date(datePublished))}
       </StyledTime>
-      {byline && <ByLine byline={byline} />}
+      {byline ? (
+        <ByLine byline={byline} />
+      ) : (
+        <meta itemProp="author" content="The Economist" />
+      )}
     </StyledDateAuthor>
     <StyledShareBar commentsUri={commentsUri} />
   </StyledPublicationsContainer>

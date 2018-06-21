@@ -134,7 +134,10 @@ exports[`ArticlePublicationDetails should match snapshot without byline 1`] = `
     >
       May 8th 2018
     </time>
-    
+    <meta
+      content="The Economist"
+      itemProp="author"
+    />
   </div>
   <div
     className="css-16g3ycg-ShareBarContainer-StyledSocialShare eyrn4830"
