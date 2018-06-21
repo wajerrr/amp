@@ -20,6 +20,7 @@ const getGoogleSubdomain = (domain) =>
 const getCORSExtension = () => ({
   onPreHandler: {
     method: (request, h) => {
+      console.dir(request);
       const allowedOrigins = [
         `https://${ampDomain}`,
         `https://${getGoogleSubdomain(ampDomain)}.cdn.ampproject.org`,
@@ -42,6 +43,8 @@ const getCORSExtension = () => ({
               allowedOrigins,
               origin,
               ampSourceOrigin,
+              url: request.raw.req.url,
+              headers: request.headers,
             })
             .code(401)
             .takeover();
