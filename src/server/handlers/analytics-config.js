@@ -1,4 +1,4 @@
-import { isStage } from '../utils/environment-detection';
+import { isDev } from '../utils/environment-detection';
 import {
   hourOfTheDay,
   getCurrentDay,
@@ -46,7 +46,7 @@ const handler = (request, h) => {
     },
     vars: {
       host: 'sstats.economist.com',
-      reportSuites: isStage ? 'economistcomprod' : 'economistcomdev',
+      reportSuites: isDev ? 'economistcomdev' : 'economistcomprod',
     },
     triggers: {
       trackPageview: {
