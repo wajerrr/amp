@@ -37,12 +37,12 @@ const EditorsPickFragment = `fragment EditorsPick on Content {
 }`;
 
 const editorsPickQuery = gql`
+{
+   data: canonical(ref: "${editorsPickRef}")
   {
-     data: canonical(ref: "${editorsPickRef}") 
-    {
-      ... EditorsPick
-    }
+    ...EditorsPick
   }
-  ${EditorsPickFragment}
-  `;
+}
+${EditorsPickFragment}
+`;
 export default editorsPickQuery;

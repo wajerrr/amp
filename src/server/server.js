@@ -3,6 +3,7 @@ import config from './config/base-config';
 import healthcheck from './handlers/healthcheck';
 import rootRedirect from './handlers/root-redirect';
 import ampPageRenderer from './handlers/amp-page-render';
+import analyticsConfig from './handlers/analytics-config';
 import checkConsent from './handlers/check-consent';
 
 const serverConfig = {
@@ -15,6 +16,7 @@ const server = Hapi.server(serverConfig);
 server.route(rootRedirect);
 server.route(ampPageRenderer);
 server.route(healthcheck);
+server.route(analyticsConfig);
 server.route(checkConsent);
 
 export default server;
