@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaywallList should match the snapshot 1`] = `
+<section
+  className={undefined}
+>
+  <ul
+    className={undefined}
+  >
+    <li
+      className={undefined}
+    >
+      <b>
+        Title 1
+      </b>
+       - 
+      Item 1
+    </li>
+    <li
+      className={undefined}
+    >
+      <b>
+        Title 2
+      </b>
+       - 
+      Item 2
+    </li>
+  </ul>
+</section>
+`;

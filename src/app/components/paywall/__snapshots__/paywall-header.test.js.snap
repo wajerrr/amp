@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaywallHeader should match the snapshot 1`] = `
+<header
+  className={undefined}
+>
+  <h2
+    className={undefined}
+  >
+    Title
+  </h2>
+  <p
+    className={undefined}
+  >
+    Test header
+  </p>
+</header>
+`;

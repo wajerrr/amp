@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaywallSubscribeButton should match the snapshot 1`] = `
+<div
+  className={undefined}
+>
+  <a
+    className="e18299l00 css-18wxk9z-StyledLink-LargeSubscribeButton e1ob2h4l0"
+    href="https://econ.st/2bs1gXz"
+    role="button"
+  >
+    Subscribe
+  </a>
+</div>
+`;
