@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Analytics should match the snapshot 1`] = `
+<amp-analytics
+  config="/analytics.config.json"
+  data-credentials="include"
+  type="adobeanalytics"
+>
+  <script
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "{\\"vars\\":{\\"pageName\\":\\"blog_post|publication_headline|content_headline\\"},\\"extraUrlParams\\":{\\"subsection\\":\\"publication_headline\\",\\"prop1\\":\\"blogs_publication_headline\\",\\"eVar1\\":\\"blogs_publication_headline\\",\\"prop4\\":\\"blog_post\\",\\"eVar4\\":\\"blog_post\\",\\"prop5\\":\\"blog|content_headline\\",\\"eVar5\\":\\"blog|content_headline\\",\\"prop31\\":\\"2018|04|16\\",\\"eVar31\\":\\"2018|04|16\\",\\"prop32\\":\\"\${ampdocUrl}\\",\\"eVar32\\":\\"\${ampdocUrl}\\"},\\"extraUrlParamsReplaceMap\\":{\\"prop\\":\\"c\\",\\"eVar\\":\\"v\\"}}",
+      }
+    }
+    type="application/json"
+  />
+</amp-analytics>
+`;

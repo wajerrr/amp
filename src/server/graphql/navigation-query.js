@@ -26,11 +26,12 @@ const navigationFragment = `fragment Navigation on Content {
 }`;
 
 const navigationQuery = gql`
+{
+  data: canonical(ref: "${prodNavigation}")
   {
-  data: canonical(ref: "${prodNavigation}") {
     ...Navigation
-    }
   }
+}
   ${navigationFragment}
 `;
 

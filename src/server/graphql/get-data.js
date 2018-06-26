@@ -1,5 +1,5 @@
-import getArticeQuery from './article-query';
-import navigationQuery from './naviagtion-query';
+import getArticleQuery from './article-query';
+import navigationQuery from './navigation-query';
 import editorsPickQuery from './editors-pick-query';
 import client from './graphql-client';
 import HttpError from '../utils/http-error';
@@ -55,7 +55,7 @@ export const throwIfDataErrors = (data) => {
 
 const getData = async (ref) => {
   const data = await processDataFromQueries({
-    article: getContent(getArticeQuery(ref)),
+    article: getContent(getArticleQuery(ref)),
     navigation: getContent(navigationQuery),
     editorsPick: getContent(editorsPickQuery),
   });
