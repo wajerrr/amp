@@ -9,26 +9,30 @@ import PaywallSection from './paywall-section';
 import PaywallSubscribeButton from './paywall-subscribe-button';
 
 const nodePicker = (item, styles) => {
+  let Component = PaywallSection;
   switch (item.type) {
-    case 'section':
-      return <PaywallSection key={item.id} styles={styles} data={item} />;
     case 'header':
-      return <PaywallHeader key={item.id} styles={styles} data={item} />;
+      Component = PaywallHeader;
+      break;
     case 'text':
-      return <PaywallText key={item.id} styles={styles} data={item} />;
+      Component = PaywallText;
+      break;
     case 'subscribeButton':
-      return (
-        <PaywallSubscribeButton key={item.id} styles={styles} data={item} />
-      );
+      Component = PaywallSubscribeButton;
+      break;
     case 'image':
-      return <PaywallImage key={item.id} styles={styles} data={item} />;
+      Component = PaywallImage;
+      break;
     case 'list':
-      return <PaywallList key={item.id} styles={styles} data={item} />;
+      Component = PaywallList;
+      break;
     case 'footer':
-      return <PaywallFooter key={item.id} styles={styles} data={item} />;
+      Component = PaywallFooter;
+      break;
     default:
-      return '';
+      break;
   }
+  return <Component key={item.id} styles={styles} data={item} />;
 };
 
 const Paywall = ({ data, styles }) => (
