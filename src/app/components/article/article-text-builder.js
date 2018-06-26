@@ -2,11 +2,8 @@ import React from 'react';
 import StyledLink from '../styled-link/styled-link';
 import StyledBlockquote from '../styled-block-quote/styled-block-quote';
 import Image from '../image/image';
-<<<<<<< HEAD
 import StyledInlineAd from '../styled-advert/styled-advert';
-=======
 import ArticleIframe from './article-iframe';
->>>>>>> iframe support added
 
 const buildArticleText = (childrenData = [], path = '') => {
   const getHTMLTag = (name, children, key) => {
