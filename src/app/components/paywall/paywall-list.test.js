@@ -7,21 +7,16 @@ describe('PaywallList', () => {
     const paywallList = renderer
       .create(
         <PaywallList
-          data={{
-            type: 'list',
-            content: {
-              list: [
-                {
-                  title: 'Title 1',
-                  text: 'Item 1',
-                },
-                {
-                  title: 'Title 2',
-                  text: 'Item 2',
-                },
-              ],
+          list={[
+            {
+              title: 'Title 1',
+              text: 'Item 1',
             },
-          }}
+            {
+              title: 'Title 2',
+              text: 'Item 2',
+            },
+          ]}
         />
       )
       .toJSON();

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PaywallText = ({ data, styles }) => (
-  <p className={styles.StyledText}>{data.content.text}</p>
+const PaywallText = ({ children, styles }) => (
+  <p className={styles.StyledText}>{children}</p>
 );
 export default PaywallText;
 
 PaywallText.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
   styles: PropTypes.shape({}),
 };
 

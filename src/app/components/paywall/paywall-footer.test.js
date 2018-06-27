@@ -6,15 +6,9 @@ describe('PaywallFooter', () => {
   it('should match the snapshot', () => {
     const paywallFooter = renderer
       .create(
-        <PaywallFooter
-          data={{
-            id: 'regwall-footer',
-            type: 'footer',
-            content: {
-              text: ['Test footer'],
-            },
-          }}
-        />
+        <PaywallFooter>
+          <p>Test footer</p>
+        </PaywallFooter>
       )
       .toJSON();
     expect(paywallFooter).toMatchSnapshot();

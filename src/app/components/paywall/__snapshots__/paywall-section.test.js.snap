@@ -4,6 +4,8 @@ exports[`PaywallSection should match the snapshot 1`] = `
 <footer
   className={undefined}
 >
-  Test section
+  <p>
+    Test section
+  </p>
 </footer>
 `;

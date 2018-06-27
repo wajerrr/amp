@@ -6,16 +6,9 @@ describe('PaywallHeader', () => {
   it('should match the snapshot', () => {
     const paywallHeader = renderer
       .create(
-        <PaywallHeader
-          data={{
-            id: 'regwall-header',
-            type: 'header',
-            content: {
-              title: 'Title',
-              text: ['Test header'],
-            },
-          }}
-        />
+        <PaywallHeader>
+          <h2>Test header</h2>
+        </PaywallHeader>
       )
       .toJSON();
     expect(paywallHeader).toMatchSnapshot();

@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { css } from 'emotion';
-import Paywall from '../paywall/paywall';
+import { Paywall, Regwall } from '../paywall/paywall';
 import color from '../../styles/color';
 import fontFamily from '../../styles/font-family';
 import spacings from '../../styles/spacings';
@@ -17,7 +16,7 @@ const wrapperStyles = css`
   margin-bottom: ${spacings.l};
 `;
 const sectionStyles = css`
-  height: 60px;
+  height: 50px;
   box-sizing: border-box;
   font-size: ${text.sizeStep['-1']};
   line-height: 1;
@@ -37,7 +36,7 @@ const sectionStyles = css`
   }
 `;
 const sectionContentStyles = css`
-  line-height: 3.4;
+  line-height: 2;
 `;
 const headerStyles = css`
   margin: 0 auto;
@@ -115,29 +114,23 @@ const footerStyles = css`
   }
 `;
 
-const StyledPaywall = ({ data }) => (
-  <Paywall
-    data={data}
-    styles={{
-      StyledSection: sectionStyles,
-      StyledSectionContent: sectionContentStyles,
-      StyledWrapper: wrapperStyles,
-      StyledHeader: headerStyles,
-      StyledHeaderTitle: headerTitleStyles,
-      StyledHeaderText: headerTextStyles,
-      StyledListWrapper: listWrapperStyles,
-      StyledList: listStyles,
-      StyledListItem: listItemStyles,
-      StyledText: textStyles,
-      StyledSubscribeButtonWrapper: subscribeButtonWrapperStyles,
-      StyledImageWrapper: imageWrapperStyles,
-      StyledFooter: footerStyles,
-    }}
-  />
-);
-
-export default StyledPaywall;
-
-StyledPaywall.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+const styles = {
+  StyledSection: sectionStyles,
+  StyledSectionContent: sectionContentStyles,
+  StyledWrapper: wrapperStyles,
+  StyledHeader: headerStyles,
+  StyledHeaderTitle: headerTitleStyles,
+  StyledHeaderText: headerTextStyles,
+  StyledListWrapper: listWrapperStyles,
+  StyledList: listStyles,
+  StyledListItem: listItemStyles,
+  StyledText: textStyles,
+  StyledSubscribeButtonWrapper: subscribeButtonWrapperStyles,
+  StyledImageWrapper: imageWrapperStyles,
+  StyledFooter: footerStyles,
 };
+
+const StyledPaywall = () => <Paywall styles={styles} />;
+const StyledRegwall = () => <Regwall styles={styles} />;
+
+export { StyledPaywall, StyledRegwall };

@@ -9,7 +9,7 @@ exports[`PaywallImage should match the snapshot 1`] = `
     height={900}
     layout="responsive"
     sizes={undefined}
-    src="https://i.piano.io/managedservices/theeconomist/regwall-product.png"
+    src="www.testimage.com"
     srcset={undefined}
     width={1600}
   />

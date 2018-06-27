@@ -4,6 +4,8 @@ exports[`PaywallFooter should match the snapshot 1`] = `
 <footer
   className={undefined}
 >
-  Test footer
+  <p>
+    Test footer
+  </p>
 </footer>
 `;

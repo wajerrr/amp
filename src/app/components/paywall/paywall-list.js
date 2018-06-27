@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PaywallList = ({ data, styles }) => (
+const PaywallList = ({ list, styles }) => (
   <section className={styles.StyledListWrapper}>
     <ul className={styles.StyledList}>
-      {data.content.list.map((listItem) => (
+      {list.map((listItem) => (
         <li className={styles.StyledListItem} key={listItem.title}>
           <b>{listItem.title}</b> - {listItem.text}
         </li>
@@ -15,7 +15,7 @@ const PaywallList = ({ data, styles }) => (
 export default PaywallList;
 
 PaywallList.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  list: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   styles: PropTypes.shape({}),
 };
 

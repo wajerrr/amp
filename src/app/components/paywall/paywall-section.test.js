@@ -6,15 +6,9 @@ describe('PaywallSection', () => {
   it('should match the snapshot', () => {
     const paywallSection = renderer
       .create(
-        <PaywallSection
-          data={{
-            id: 'regwall-section',
-            type: 'section',
-            content: {
-              text: ['Test section'],
-            },
-          }}
-        />
+        <PaywallSection>
+          <p>Test section</p>
+        </PaywallSection>
       )
       .toJSON();
     expect(paywallSection).toMatchSnapshot();

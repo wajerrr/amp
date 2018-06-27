@@ -1,16 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Paywall from './paywall';
-import regwallData from '../../data/regwall-data';
-import paywallData from '../../data/paywall-data';
+import { Paywall, Regwall } from './paywall';
 
 describe('Paywall', () => {
-  it('should match the snapshot for regwall data', () => {
-    const paywall = renderer.create(<Paywall data={regwallData} />).toJSON();
+  it('should match the snapshot for regwall', () => {
+    const paywall = renderer.create(<Regwall />).toJSON();
     expect(paywall).toMatchSnapshot();
   });
-  it('should match the snapshot for paywall data', () => {
-    const paywall = renderer.create(<Paywall data={paywallData} />).toJSON();
+  it('should match the snapshot for paywall', () => {
+    const paywall = renderer.create(<Paywall />).toJSON();
     expect(paywall).toMatchSnapshot();
   });
 });

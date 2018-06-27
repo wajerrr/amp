@@ -2,15 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image from '../image/image';
 
-const PaywallImage = ({ data, styles }) => (
+const PaywallImage = ({ image, styles }) => (
   <section className={styles.StyledImageWrapper}>
-    <Image src={data.content.src} layout="responsive" alt={data.content.alt} />
+    <Image src={image.src} layout="responsive" alt={image.alt} />
   </section>
 );
 export default PaywallImage;
 
 PaywallImage.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  image: PropTypes.shape({
+    src: PropTypes.string,
+    alt: PropTypes.string,
+  }).isRequired,
   styles: PropTypes.shape({}),
 };
 

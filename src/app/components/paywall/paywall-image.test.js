@@ -7,14 +7,9 @@ describe('PaywallImage', () => {
     const paywallImage = renderer
       .create(
         <PaywallImage
-          data={{
-            id: 'regwall-footer',
-            type: 'image',
-            content: {
-              src:
-                'https://i.piano.io/managedservices/theeconomist/regwall-product.png',
-              alt: 'paywall-image',
-            },
+          image={{
+            src: 'www.testimage.com',
+            alt: 'paywall-image',
           }}
         />
       )
