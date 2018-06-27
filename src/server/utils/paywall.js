@@ -4,6 +4,7 @@ import {
   USER_GROUP_REGISTERED,
   USER_GROUP_SUBSCRIBER,
 } from './user';
+import getUrl from './get-url';
 
 const COOKIE_AMP_VISITS = 'ec_amp_visits';
 const WEEK_IN_MS = 7 * 24 * 60 * 60 * 1000;
@@ -21,19 +22,21 @@ const getUrlParams = (params) =>
     )
   );
 const getPaywallConfig = (articleId) => ({
-  authorization: `/authorization?${getUrlParams({ articleId })}`,
-  pingback: `/pingback?${getUrlParams({
-    articleId,
-    access: 'AUTHDATA(access)',
-    userGroup: 'AUTHDATA(userGroup)',
-  })}`,
+  authorization: getUrl(`/authorization?${getUrlParams({ articleId })}`),
+  pingback: getUrl(
+    `/pingback?${getUrlParams({
+      articleId,
+      access: 'AUTHDATA(access)',
+      userGroup: 'AUTHDATA(userGroup)',
+    })}`
+  ),
   authorizationFallbackResponse: {
     error: true,
     access: 0,
   },
 });
 
-const getVisitsThisWeek = (visits = {}) => {
+const getUserVisitsThisWeek = (visits = {}) => {
   const dateWeekAgo = new Date(Date.now() - WEEK_IN_MS).getTime();
   return Object.values(visits).filter((date) => date > dateWeekAgo).length;
 };
@@ -66,7 +69,7 @@ const addVisit = (visits = {}, articleId) => {
 export {
   COOKIE_AMP_VISITS,
   getPaywallConfig,
-  getVisitsThisWeek,
+  getUserVisitsThisWeek,
   wasVisitedThisWeek,
   getArticleLimit,
   addVisit,

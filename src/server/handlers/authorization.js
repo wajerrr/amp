@@ -5,7 +5,7 @@ import { getUserGroup } from '../utils/user';
 import {
   COOKIE_AMP_VISITS,
   wasVisitedThisWeek,
-  getVisitsThisWeek,
+  getUserVisitsThisWeek,
   getArticleLimit,
 } from '../utils/paywall';
 
@@ -20,7 +20,7 @@ export const handler = (request) => {
   if (
     isAvailableForFree(articlePath) ||
     wasVisitedThisWeek(articleId, visits) ||
-    getVisitsThisWeek(visits) < getArticleLimit(userGroup)
+    getUserVisitsThisWeek(visits) < getArticleLimit(userGroup)
   ) {
     access = 1;
   }

@@ -1,10 +1,11 @@
 import {
   getPaywallConfig,
-  getVisitsThisWeek,
+  getUserVisitsThisWeek,
   wasVisitedThisWeek,
   getArticleLimit,
   addVisit,
 } from './paywall';
+import * as envVars from './environment-detection';
 
 const origDate = global.Date;
 global.Date = () => ({
@@ -19,6 +20,7 @@ describe('paywall utils', () => {
 
   describe('getPaywallConfig', () => {
     it('should return paywall config', () => {
+      envVars.isDev = true;
       const result = getPaywallConfig('article1');
       expect(result).toEqual({
         authorization:
@@ -29,13 +31,13 @@ describe('paywall utils', () => {
       });
     });
   });
-  describe('getVisitsThisWeek', () => {
+  describe('getUserVisitsThisWeek', () => {
     it('should return this week visits', () => {
-      const result = getVisitsThisWeek({ article1: 95 });
+      const result = getUserVisitsThisWeek({ article1: 95 });
       expect(result).toEqual(1);
     });
     it('should not return older than week visits', () => {
-      const result = getVisitsThisWeek({ article1: 40 });
+      const result = getUserVisitsThisWeek({ article1: 40 });
       expect(result).toEqual(0);
     });
   });
