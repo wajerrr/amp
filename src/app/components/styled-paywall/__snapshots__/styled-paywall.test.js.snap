@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paywall and Regwall should match the snapshot for paywall data 1`] = `
+exports[`Paywall and Regwall should match the snapshot for the Paywall 1`] = `
 <section
   className="css-793fq4-wrapperStyles"
 >
@@ -103,7 +103,7 @@ exports[`Paywall and Regwall should match the snapshot for paywall data 1`] = `
 </section>
 `;
 
-exports[`Paywall and Regwall should match the snapshot for regwall data 1`] = `
+exports[`Paywall and Regwall should match the snapshot for the Regwall 1`] = `
 <section
   className="css-793fq4-wrapperStyles"
 >

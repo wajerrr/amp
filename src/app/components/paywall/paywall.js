@@ -58,7 +58,19 @@ export { Paywall, Regwall };
 
 const paywallPropTypes = {
   styles: PropTypes.shape({
+    section: PropTypes.string,
+    sectionContent: PropTypes.string,
     wrapper: PropTypes.string,
+    header: PropTypes.string,
+    headerTitle: PropTypes.string,
+    headerText: PropTypes.string,
+    listWrapper: PropTypes.string,
+    list: PropTypes.string,
+    listItem: PropTypes.string,
+    text: PropTypes.string,
+    subscribeButtonWrapper: PropTypes.string,
+    imageWrapper: PropTypes.string,
+    footer: PropTypes.string,
   }),
 };
 const defaultPropTypes = {
