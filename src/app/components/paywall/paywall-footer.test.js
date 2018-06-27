@@ -5,11 +5,7 @@ import PaywallFooter from './paywall-footer';
 describe('PaywallFooter', () => {
   it('should match the snapshot', () => {
     const paywallFooter = renderer
-      .create(
-        <PaywallFooter>
-          <p>Test footer</p>
-        </PaywallFooter>
-      )
+      .create(<PaywallFooter linkHref="www.testLink.com" />)
       .toJSON();
     expect(paywallFooter).toMatchSnapshot();
   });

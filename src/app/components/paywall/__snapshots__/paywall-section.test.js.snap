@@ -5,7 +5,14 @@ exports[`PaywallSection should match the snapshot 1`] = `
   className={undefined}
 >
   <p>
-    Test section
+    Student and gift subscriptions also available.
+     
+    <a
+      className="css-1h5t0lq-StyledLink e2cf1b50"
+      href=""
+    >
+      Subscribe now
+    </a>
   </p>
 </footer>
 `;

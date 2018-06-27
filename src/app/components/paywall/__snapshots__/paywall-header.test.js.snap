@@ -1,11 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PaywallHeader should match the snapshot 1`] = `
+exports[`PaywallHeader and RegwallHeader should match the snapshot for the PaywallHeader 1`] = `
 <header
   className={undefined}
 >
   <h2>
-    Test header
+    You’ve reached your article limit
   </h2>
+  <p>
+    Subscribe now to get full access to 
+    <i>
+      The Economist
+    </i>
+     via print, online and our apps.
+  </p>
+</header>
+`;
+
+exports[`PaywallHeader and RegwallHeader should match the snapshot for the RegwallHeader 1`] = `
+<header
+  className={undefined}
+>
+  <h2>
+    You’ve reached your article limit
+  </h2>
+  <p>
+    Sign up to keep reading or subscribe now to get full access to
+     
+    <i>
+      The Economist
+    </i>
+     via print, online and our apps.
+  </p>
 </header>
 `;

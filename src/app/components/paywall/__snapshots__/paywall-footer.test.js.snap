@@ -5,7 +5,14 @@ exports[`PaywallFooter should match the snapshot 1`] = `
   className={undefined}
 >
   <p>
-    Test footer
+    Student and gift subscriptions also available.
+     
+    <a
+      className="css-1h5t0lq-StyledLink e2cf1b50"
+      href="www.testLink.com"
+    >
+      Subscribe now
+    </a>
   </p>
 </footer>
 `;

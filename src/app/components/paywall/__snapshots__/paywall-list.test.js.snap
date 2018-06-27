@@ -11,19 +11,37 @@ exports[`PaywallList should match the snapshot 1`] = `
       className={undefined}
     >
       <b>
-        Title 1
+        Print or digital edition
       </b>
        - 
-      Item 1
+      delivered to you each week
     </li>
     <li
       className={undefined}
     >
       <b>
-        Title 2
+        Economist.com
       </b>
        - 
-      Item 2
+      including blog content updated throughout the week and our online archive
+    </li>
+    <li
+      className={undefined}
+    >
+      <b>
+        Audio edition
+      </b>
+       - 
+      each week’s issue read by professional broadcasters
+    </li>
+    <li
+      className={undefined}
+    >
+      <b>
+        The Economist Espresso
+      </b>
+       - 
+      your morning briefing direct to your smartphone or inbox
     </li>
   </ul>
 </section>
