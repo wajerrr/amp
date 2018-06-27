@@ -12,7 +12,7 @@ import {
 } from './paywall-subscribe-button';
 
 const Paywall = ({ styles }) => (
-  <section className={styles.StyledWrapper}>
+  <section className={styles.wrapper}>
     <PaywallHeader styles={styles} />
     <PaywallSubscribeButton
       href="https://subscription.economist.com/DE/EngCore/Ecom/SubWall"
@@ -28,7 +28,7 @@ const Paywall = ({ styles }) => (
 );
 
 const Regwall = ({ styles }) => (
-  <section className={styles.StyledWrapper}>
+  <section className={styles.wrapper}>
     <PaywallSection styles={styles} />
     <RegwallHeader styles={styles} />
     <PaywallSubscribeButton
@@ -56,16 +56,15 @@ const Regwall = ({ styles }) => (
 
 export { Paywall, Regwall };
 
-Paywall.propTypes = {
-  styles: PropTypes.shape({}),
+const paywallPropTypes = {
+  styles: PropTypes.shape({
+    wrapper: PropTypes.string,
+  }),
 };
-Regwall.propTypes = {
-  styles: PropTypes.shape({}),
-};
-
-Paywall.defaultProps = {
+const defaultPropTypes = {
   styles: {},
 };
-Regwall.defaultProps = {
-  styles: {},
-};
+Paywall.propTypes = paywallPropTypes;
+Paywall.defaultProps = defaultPropTypes;
+Regwall.propTypes = paywallPropTypes;
+Regwall.defaultProps = defaultPropTypes;

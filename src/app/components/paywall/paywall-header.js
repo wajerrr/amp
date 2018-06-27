@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PaywallHeader = ({ styles }) => (
-  <header className={styles.StyledHeader}>
+  <header className={styles.header}>
     <h2>You’ve reached your article limit</h2>
     <p>
       Subscribe now to get full access to <i>The Economist</i> via print, online
@@ -12,7 +12,7 @@ const PaywallHeader = ({ styles }) => (
 );
 
 const RegwallHeader = ({ styles }) => (
-  <header className={styles.StyledHeader}>
+  <header className={styles.header}>
     <h2>You’ve reached your article limit</h2>
     <p>
       Sign up to keep reading or subscribe now to get full access to{' '}
@@ -23,16 +23,15 @@ const RegwallHeader = ({ styles }) => (
 
 export { PaywallHeader, RegwallHeader };
 
-PaywallHeader.propTypes = {
-  styles: PropTypes.shape({}),
+const paywallHeaderPropTypes = {
+  styles: PropTypes.shape({
+    header: PropTypes.string,
+  }),
 };
-PaywallHeader.defaultProps = {
+const defaultPropTypes = {
   styles: {},
 };
-
-RegwallHeader.propTypes = {
-  styles: PropTypes.shape({}),
-};
-RegwallHeader.defaultProps = {
-  styles: {},
-};
+PaywallHeader.propTypes = paywallHeaderPropTypes;
+PaywallHeader.defaultProps = defaultPropTypes;
+RegwallHeader.propTypes = paywallHeaderPropTypes;
+RegwallHeader.defaultProps = defaultPropTypes;

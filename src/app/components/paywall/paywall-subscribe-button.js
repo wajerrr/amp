@@ -6,13 +6,13 @@ import {
 } from '../styled-subscribe-button/styled-subscribe-button';
 
 const PaywallSubscribeButton = ({ href, children, styles }) => (
-  <div className={styles.StyledSubscribeButtonWrapper}>
+  <div className={styles.subscribeButtonWrapper}>
     <LargeSubscribeButton href={href}>{children}</LargeSubscribeButton>
   </div>
 );
 
 const PaywallSubscribeButtonInvertedStyles = ({ href, children, styles }) => (
-  <div className={styles.StyledSubscribeButtonWrapper}>
+  <div className={styles.subscribeButtonWrapper}>
     <LargeSubscribeButtonInvertedStyles href={href}>
       {children}
     </LargeSubscribeButtonInvertedStyles>
@@ -20,22 +20,18 @@ const PaywallSubscribeButtonInvertedStyles = ({ href, children, styles }) => (
 );
 export { PaywallSubscribeButton, PaywallSubscribeButtonInvertedStyles };
 
-PaywallSubscribeButton.propTypes = {
+const subscribeButtonPropTypes = {
   href: PropTypes.string.isRequired,
   children: PropTypes.string,
-  styles: PropTypes.shape({}),
+  styles: PropTypes.shape({
+    subscribeButtonWrapper: PropTypes.string,
+  }),
 };
-PaywallSubscribeButton.defaultProps = {
+const defaultPropTypes = {
   children: '',
   styles: {},
 };
-
-PaywallSubscribeButtonInvertedStyles.propTypes = {
-  href: PropTypes.string.isRequired,
-  children: PropTypes.string,
-  styles: PropTypes.shape({}),
-};
-PaywallSubscribeButtonInvertedStyles.defaultProps = {
-  children: '',
-  styles: {},
-};
+PaywallSubscribeButton.propTypes = subscribeButtonPropTypes;
+PaywallSubscribeButton.defaultProps = defaultPropTypes;
+PaywallSubscribeButtonInvertedStyles.propTypes = subscribeButtonPropTypes;
+PaywallSubscribeButtonInvertedStyles.defaultProps = defaultPropTypes;

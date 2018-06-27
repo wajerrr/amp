@@ -22,10 +22,10 @@ const benefitsList = [
 ];
 
 const PaywallList = ({ styles }) => (
-  <section className={styles.StyledListWrapper}>
-    <ul className={styles.StyledList}>
+  <section className={styles.listWrapper}>
+    <ul className={styles.list}>
       {benefitsList.map((listItem) => (
-        <li className={styles.StyledListItem} key={listItem.title}>
+        <li className={styles.listItem} key={listItem.title}>
           <b>{listItem.title}</b> - {listItem.text}
         </li>
       ))}
@@ -35,9 +35,12 @@ const PaywallList = ({ styles }) => (
 export default PaywallList;
 
 PaywallList.propTypes = {
-  styles: PropTypes.shape({}),
+  styles: PropTypes.shape({
+    listWrapper: PropTypes.string,
+    list: PropTypes.string,
+    listItem: PropTypes.string,
+  }),
 };
-
 PaywallList.defaultProps = {
   styles: {},
 };

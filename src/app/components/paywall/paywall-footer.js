@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import StyledLink from '../styled-link/styled-link';
 
 const PaywallFooter = ({ linkHref, styles }) => (
-  <footer className={styles.StyledFooter}>
+  <footer className={styles.footer}>
     <p>
       Student and gift subscriptions also available.{' '}
       <StyledLink href={linkHref}>Subscribe now</StyledLink>
@@ -14,9 +14,10 @@ export default PaywallFooter;
 
 PaywallFooter.propTypes = {
   linkHref: PropTypes.string,
-  styles: PropTypes.shape({}),
+  styles: PropTypes.shape({
+    footer: PropTypes.string,
+  }),
 };
-
 PaywallFooter.defaultProps = {
   linkHref: '',
   styles: {},

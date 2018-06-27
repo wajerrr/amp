@@ -115,19 +115,19 @@ const footerStyles = css`
 `;
 
 const styles = {
-  StyledSection: sectionStyles,
-  StyledSectionContent: sectionContentStyles,
-  StyledWrapper: wrapperStyles,
-  StyledHeader: headerStyles,
-  StyledHeaderTitle: headerTitleStyles,
-  StyledHeaderText: headerTextStyles,
-  StyledListWrapper: listWrapperStyles,
-  StyledList: listStyles,
-  StyledListItem: listItemStyles,
-  StyledText: textStyles,
-  StyledSubscribeButtonWrapper: subscribeButtonWrapperStyles,
-  StyledImageWrapper: imageWrapperStyles,
-  StyledFooter: footerStyles,
+  section: sectionStyles,
+  sectionContent: sectionContentStyles,
+  wrapper: wrapperStyles,
+  header: headerStyles,
+  headerTitle: headerTitleStyles,
+  headerText: headerTextStyles,
+  listWrapper: listWrapperStyles,
+  list: listStyles,
+  listItem: listItemStyles,
+  text: textStyles,
+  subscribeButtonWrapper: subscribeButtonWrapperStyles,
+  imageWrapper: imageWrapperStyles,
+  footer: footerStyles,
 };
 
 const StyledPaywall = () => <Paywall styles={styles} />;
