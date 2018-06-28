@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaywallSubscribeButton and PaywallSubscribeButtonInvertedStyles should match the snapshot for a PaywallSubscribeButton 1`] = `
+<div
+  className={undefined}
+>
+  <a
+    className="e18299l00 css-18wxk9z-StyledLink-LargeSubscribeButton e1ob2h4l0"
+    href="https://econ.st/2bs1gXz"
+    role="button"
+  >
+    Subscribe
+  </a>
+</div>
+`;
+
+exports[`PaywallSubscribeButton and PaywallSubscribeButtonInvertedStyles should match the snapshot for a PaywallSubscribeButtonInvertedStyles 1`] = `
+<div
+  className={undefined}
+>
+  <a
+    className="e18299l01 css-1aftcze-StyledLink-LargeSubscribeButton-LargeSubscribeButtonInvertedStyles e1ob2h4l0"
+    href="https://econ.st/2bs1gXz"
+    role="button"
+  >
+    Test children
+  </a>
+</div>
+`;

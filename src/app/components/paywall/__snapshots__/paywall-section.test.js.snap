@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaywallSection should match the snapshot 1`] = `
+<footer
+  className={undefined}
+>
+  <p>
+    Student and gift subscriptions also available.
+     
+    <a
+      className="css-1h5t0lq-StyledLink e2cf1b50"
+      href=""
+    >
+      Subscribe now
+    </a>
+  </p>
+</footer>
+`;

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaywallList should match the snapshot 1`] = `
+<section
+  className={undefined}
+>
+  <ul
+    className={undefined}
+  >
+    <li
+      className={undefined}
+    >
+      <b>
+        Print or digital edition
+      </b>
+       - 
+      delivered to you each week
+    </li>
+    <li
+      className={undefined}
+    >
+      <b>
+        Economist.com
+      </b>
+       - 
+      including blog content updated throughout the week and our online archive
+    </li>
+    <li
+      className={undefined}
+    >
+      <b>
+        Audio edition
+      </b>
+       - 
+      each week’s issue read by professional broadcasters
+    </li>
+    <li
+      className={undefined}
+    >
+      <b>
+        The Economist Espresso
+      </b>
+       - 
+      your morning briefing direct to your smartphone or inbox
+    </li>
+  </ul>
+</section>
+`;

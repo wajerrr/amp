@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaywallImage should match the snapshot 1`] = `
+<section
+  className={undefined}
+>
+  <amp-img
+    alt="paywall-image"
+    height={900}
+    layout="responsive"
+    sizes={undefined}
+    src="https://i.piano.io/managedservices/theeconomist/regwall-product.png"
+    srcset={undefined}
+    width={1600}
+  />
+</section>
+`;
