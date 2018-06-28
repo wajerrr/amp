@@ -1,4 +1,4 @@
-export default [
+const availableArticles = [
   '/open-future/2018/04/16/a-letter-to-readers-from-the-editor',
   '/open-future/2018/04/16/beyond-the-tyranny-of-tolerance',
   '/open-future/2018/04/16/our-essay-competitions-for-young-people',
@@ -22,3 +22,8 @@ export default [
   '/open-future/2018/05/22/what-governments-can-do-for-the-losers-from-free-trade',
   '/open-future/2018/05/23/the-rohingya-crisis-bears-all-the-hallmarks-of-a-genocide',
 ];
+const isAvailableForFree = (articlePath) =>
+  availableArticles.includes(articlePath);
+
+export default availableArticles;
+export { isAvailableForFree };

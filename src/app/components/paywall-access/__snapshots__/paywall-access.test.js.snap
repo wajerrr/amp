@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaywallAccess should match snapshot 1`] = `
+Array [
+  <div
+    amp-access="access"
+  >
+    paid content
+  </div>,
+  <div
+    amp-access="NOT access AND userGroup = 'anonymous'"
+    amp-access-hide="true"
+  >
+    Please subscribe to read more
+    <br />
+    <button>
+      Subscribe
+    </button>
+  </div>,
+  <div
+    amp-access="NOT access AND userGroup != 'anonymous'"
+    amp-access-hide="true"
+  >
+    Please pay to read more
+    <br />
+    <button>
+      Pay
+    </button>
+  </div>,
+]
+`;

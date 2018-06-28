@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
+import { spacings, fontFamily, text as typography } from '../../styles';
 import ArticleHeadline from './article-headline';
 import ArticleDescription from './article-description';
 import ArticleMainImage from './article-main-image';
@@ -8,9 +9,6 @@ import StyledArticlePublicationDetails from './article-publication-details';
 import buildArticleText from './article-text-builder';
 import ArticleAboutEconomistLink from './article-about-economist-link';
 import ArticleMetaData from './article-meta-data';
-import spacings from '../../styles/spacings';
-import fontFamily from '../../styles/font-family';
-import typography from '../../styles/typography';
 import { generateAds, isShortArticle } from '../../utils/adverts';
 import StyledInlineAd from '../styled-advert/styled-advert';
 

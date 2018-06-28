@@ -51,6 +51,12 @@ const getCORSExtension = () => ({
       if (request.response.statusCode === 200) {
         setHeader(request, 'Access-Control-Allow-Credentials', 'true');
       }
+      setHeader(
+        request,
+        'AMP-Access-Control-Allow-Source-Origin',
+        /* eslint-disable-next-line no-underscore-dangle */
+        request.query.__amp_source_origin
+      );
 
       return h.continue;
     },
