@@ -1,20 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-
-const PaywallComponent = () => (
-  <Fragment>
-    Please pay to read more
-    <br />
-    <button>Pay</button>
-  </Fragment>
-);
-const RegwallComponent = () => (
-  <Fragment>
-    Please subscribe to read more
-    <br />
-    <button>Subscribe</button>
-  </Fragment>
-);
+import { Paywall, Regwall } from '../paywall/paywall';
 
 const PaywallAccess = ({ children }) => (
   <Fragment>
@@ -23,13 +9,13 @@ const PaywallAccess = ({ children }) => (
       amp-access="NOT access AND userGroup = 'anonymous'"
       amp-access-hide="true"
     >
-      <RegwallComponent />
+      <Regwall />
     </div>
     <div
       amp-access="NOT access AND userGroup != 'anonymous'"
       amp-access-hide="true"
     >
-      <PaywallComponent />
+      <Paywall />
     </div>
   </Fragment>
 );
