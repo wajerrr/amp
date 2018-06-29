@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Paywall, Regwall } from '../paywall/paywall';
+import { StyledPaywall, StyledRegwall } from '../styled-paywall/styled-paywall';
 
 const PaywallAccess = ({ children }) => (
   <Fragment>
@@ -9,13 +9,13 @@ const PaywallAccess = ({ children }) => (
       amp-access="NOT access AND userGroup = 'anonymous'"
       amp-access-hide="true"
     >
-      <Regwall />
+      <StyledRegwall />
     </div>
     <div
       amp-access="NOT access AND userGroup != 'anonymous'"
       amp-access-hide="true"
     >
-      <Paywall />
+      <StyledPaywall />
     </div>
   </Fragment>
 );

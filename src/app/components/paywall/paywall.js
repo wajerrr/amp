@@ -38,10 +38,7 @@ const Regwall = ({ styles }) => (
     <PaywallText styles={styles}>
       <i>The Economist</i> delivers incisive analysis on the issues that matter.
     </PaywallText>
-    <PaywallSubscribeButtonInvertedStyles
-      href="https://stage.economist.com/free-email-newsletter-signup"
-      styles={styles}
-    >
+    <PaywallSubscribeButtonInvertedStyles styles={styles}>
       Sign up: 3 articles per week
     </PaywallSubscribeButtonInvertedStyles>
     <PaywallImage styles={styles} />
@@ -58,6 +55,8 @@ export { Paywall, Regwall };
 
 const paywallPropTypes = {
   styles: PropTypes.shape({
+    paywallTextButton: PropTypes.string,
+    paywallButton: PropTypes.string,
     section: PropTypes.string,
     sectionContent: PropTypes.string,
     wrapper: PropTypes.string,

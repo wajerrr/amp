@@ -4,6 +4,7 @@ import {
   USER_GROUP_REGISTERED,
   USER_GROUP_SUBSCRIBER,
 } from './user';
+import auth0Config from '../auth0/config';
 import getUrl from './get-url';
 
 const COOKIE_AMP_VISITS = 'ec_amp_visits';
@@ -30,6 +31,12 @@ const getPaywallConfig = (articleId) => ({
       userGroup: 'AUTHDATA(userGroup)',
     })}`
   ),
+  login: `${auth0Config.hostedPagesUrl}/login?${querystring.stringify({
+    client: auth0Config.CLIENT_ID,
+    protocol: 'oauth2',
+    response_type: 'code',
+    redirect_uri: getUrl('/callback?return=RETURN_URL', true),
+  })}`,
   authorizationFallbackResponse: {
     error: true,
     access: 0,

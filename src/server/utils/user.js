@@ -28,10 +28,16 @@ const USER_GROUP_SUBSCRIBER = 'subscriber';
 const getUserGroup = (userType = '') => {
   let userGroup = '';
   switch (userType) {
-    case 'subscriber':
+    case 'staff':
+    case 'bulk-subscriber':
+    case 'digital-subscriber':
+    case 'print-subscriber':
       userGroup = USER_GROUP_SUBSCRIBER;
       break;
     case 'registered':
+    case 'user_register':
+    case 'user_register_paywall':
+    case 'user_register_homepage_overlay':
       userGroup = USER_GROUP_REGISTERED;
       break;
     default:
@@ -39,6 +45,40 @@ const getUserGroup = (userType = '') => {
   }
   return userGroup;
 };
+
+export function getUserType(accessLevelCode = -1, state = {}) {
+  const isMUL = isMultiUserLicense(state);
+  let userType = null;
+  // SUBSCRIPTION_LEVEL_BULK_SUBSCRIBER = 4;
+  if (isMUL || accessLevelCode === 4) {
+    return 'bulk-subscriber';
+  }
+  // Following the standard used in the Economist API.
+  switch (accessLevelCode) {
+    case 3:
+      // SUBSCRIPTION_LEVEL_PRINT_SUBSCRIBER = 3;
+      userType = 'print-subscriber';
+      break;
+    case 2:
+      // SUBSCRIPTION_LEVEL_DIGITAL_SUBSCRIBER = 2;
+      userType = 'digital-subscriber';
+      break;
+    case 1:
+      // SUBSCRIPTION_LEVEL_REGISTERED = 1;
+      userType = 'registered';
+      break;
+    case 0:
+      // SUBSCRIPTION_LEVEL_SYSTEM_ROLE = 0;
+      // Staff users.
+      userType = 'staff';
+      break;
+    case -1:
+    default:
+      // SUBSCRIPTION_LEVEL_UNKNOWN = -1;
+      userType = 'anonymous';
+  }
+  return userType;
+}
 
 const getSubscription = (state = {}) => {
   const subscriptionCookie =

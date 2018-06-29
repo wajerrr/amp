@@ -15,7 +15,7 @@ describe('PaywallSubscribeButton and PaywallSubscribeButtonInvertedStyles', () =
   it('should match the snapshot for a PaywallSubscribeButtonInvertedStyles', () => {
     const paywallText = renderer
       .create(
-        <PaywallSubscribeButtonInvertedStyles href="www.testsubscribebutton.com">
+        <PaywallSubscribeButtonInvertedStyles>
           Test children
         </PaywallSubscribeButtonInvertedStyles>
       )

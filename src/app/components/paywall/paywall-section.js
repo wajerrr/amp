@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StyledLink from '../styled-link/styled-link';
+import PaywalllTextButton from './paywall-text-button';
 
 const PaywallSection = ({ styles }) => (
   <section className={styles.section}>
     <p className={styles.sectionContent}>
       Already signed up or a subscriber?{' '}
-      <StyledLink href="https://authenticate.economist.com/login">
+      <PaywalllTextButton styles={styles} on="tap:amp-access.login">
         Log in
-      </StyledLink>
+      </PaywalllTextButton>
     </p>
   </section>
 );
@@ -18,6 +18,7 @@ PaywallSection.propTypes = {
   styles: PropTypes.shape({
     section: PropTypes.string,
     sectionContent: PropTypes.string,
+    paywallTextButton: PropTypes.string,
   }),
 };
 PaywallSection.defaultProps = {

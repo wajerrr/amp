@@ -12,26 +12,28 @@ Array [
     amp-access-hide="true"
   >
     <section
-      className={undefined}
+      className="css-793fq4-wrapperStyles"
     >
       <section
-        className={undefined}
+        className="css-8n2js-sectionStyles"
       >
         <p
-          className={undefined}
+          className="css-hggkb-sectionContentStyles"
         >
           Already signed up or a subscriber?
            
-          <a
-            className="css-1h5t0lq-StyledLink e2cf1b50"
-            href="https://authenticate.economist.com/login"
+          <span
+            className="css-ie30r3-paywallLoginTextButton"
+            on="tap:amp-access.login"
+            role="button"
+            tabIndex="0"
           >
             Log in
-          </a>
+          </span>
         </p>
       </section>
       <header
-        className={undefined}
+        className="css-1rpvrys-headerStyles"
       >
         <h2>
           You’ve reached your article limit
@@ -46,7 +48,7 @@ Array [
         </p>
       </header>
       <div
-        className={undefined}
+        className="css-mt52t7-subscribeButtonWrapperStyles"
       >
         <a
           className="e18299l00 css-18wxk9z-StyledLink-LargeSubscribeButton e1ob2h4l0"
@@ -57,7 +59,7 @@ Array [
         </a>
       </div>
       <p
-        className={undefined}
+        className="css-mvffl9-textStyles"
       >
         <i>
           The Economist
@@ -65,18 +67,16 @@ Array [
          delivers incisive analysis on the issues that matter.
       </p>
       <div
-        className={undefined}
+        className="css-mt52t7-subscribeButtonWrapperStyles"
       >
-        <a
-          className="e18299l01 css-1aftcze-StyledLink-LargeSubscribeButton-LargeSubscribeButtonInvertedStyles e1ob2h4l0"
-          href="https://econ.st/2bs1gXz"
-          role="button"
+        <button
+          on="tap:amp-access.login"
         >
           Sign up: 3 articles per week
-        </a>
+        </button>
       </div>
       <section
-        className={undefined}
+        className="css-1a0behp-imageWrapperStyles"
       >
         <amp-img
           alt="paywall-image"
@@ -89,18 +89,18 @@ Array [
         />
       </section>
       <p
-        className={undefined}
+        className="css-mvffl9-textStyles"
       >
         Subscribe now to enjoy:
       </p>
       <section
-        className={undefined}
+        className="css-ewotou-listWrapperStyles"
       >
         <ul
-          className={undefined}
+          className="css-1csi2et-listStyles"
         >
           <li
-            className={undefined}
+            className="css-igp5vx-listItemStyles"
           >
             <b>
               Print or digital edition
@@ -109,7 +109,7 @@ Array [
             delivered to you each week
           </li>
           <li
-            className={undefined}
+            className="css-igp5vx-listItemStyles"
           >
             <b>
               Economist.com
@@ -118,7 +118,7 @@ Array [
             including blog content updated throughout the week and our online archive
           </li>
           <li
-            className={undefined}
+            className="css-igp5vx-listItemStyles"
           >
             <b>
               Audio edition
@@ -127,7 +127,7 @@ Array [
             each week’s issue read by professional broadcasters
           </li>
           <li
-            className={undefined}
+            className="css-igp5vx-listItemStyles"
           >
             <b>
               The Economist Espresso
@@ -138,7 +138,7 @@ Array [
         </ul>
       </section>
       <footer
-        className={undefined}
+        className="css-12czfv6-footerStyles"
       >
         <p>
           Student and gift subscriptions also available.
@@ -158,10 +158,10 @@ Array [
     amp-access-hide="true"
   >
     <section
-      className={undefined}
+      className="css-793fq4-wrapperStyles"
     >
       <header
-        className={undefined}
+        className="css-1rpvrys-headerStyles"
       >
         <h2>
           You’ve reached your article limit
@@ -175,7 +175,7 @@ Array [
         </p>
       </header>
       <div
-        className={undefined}
+        className="css-mt52t7-subscribeButtonWrapperStyles"
       >
         <a
           className="e18299l00 css-18wxk9z-StyledLink-LargeSubscribeButton e1ob2h4l0"
@@ -186,13 +186,13 @@ Array [
         </a>
       </div>
       <section
-        className={undefined}
+        className="css-ewotou-listWrapperStyles"
       >
         <ul
-          className={undefined}
+          className="css-1csi2et-listStyles"
         >
           <li
-            className={undefined}
+            className="css-igp5vx-listItemStyles"
           >
             <b>
               Print or digital edition
@@ -201,7 +201,7 @@ Array [
             delivered to you each week
           </li>
           <li
-            className={undefined}
+            className="css-igp5vx-listItemStyles"
           >
             <b>
               Economist.com
@@ -210,7 +210,7 @@ Array [
             including blog content updated throughout the week and our online archive
           </li>
           <li
-            className={undefined}
+            className="css-igp5vx-listItemStyles"
           >
             <b>
               Audio edition
@@ -219,7 +219,7 @@ Array [
             each week’s issue read by professional broadcasters
           </li>
           <li
-            className={undefined}
+            className="css-igp5vx-listItemStyles"
           >
             <b>
               The Economist Espresso
@@ -230,7 +230,7 @@ Array [
         </ul>
       </section>
       <section
-        className={undefined}
+        className="css-1a0behp-imageWrapperStyles"
       >
         <amp-img
           alt="paywall-image"
@@ -243,7 +243,7 @@ Array [
         />
       </section>
       <footer
-        className={undefined}
+        className="css-12czfv6-footerStyles"
       >
         <p>
           Student and gift subscriptions also available.

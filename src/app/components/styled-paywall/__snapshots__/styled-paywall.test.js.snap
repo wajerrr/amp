@@ -115,12 +115,14 @@ exports[`Paywall and Regwall should match the snapshot for the Regwall 1`] = `
     >
       Already signed up or a subscriber?
        
-      <a
-        className="css-1h5t0lq-StyledLink e2cf1b50"
-        href="https://authenticate.economist.com/login"
+      <span
+        className="css-ie30r3-paywallLoginTextButton"
+        on="tap:amp-access.login"
+        role="button"
+        tabIndex="0"
       >
         Log in
-      </a>
+      </span>
     </p>
   </section>
   <header
@@ -160,13 +162,11 @@ exports[`Paywall and Regwall should match the snapshot for the Regwall 1`] = `
   <div
     className="css-mt52t7-subscribeButtonWrapperStyles"
   >
-    <a
-      className="e18299l01 css-1aftcze-StyledLink-LargeSubscribeButton-LargeSubscribeButtonInvertedStyles e1ob2h4l0"
-      href="https://econ.st/2bs1gXz"
-      role="button"
+    <button
+      on="tap:amp-access.login"
     >
       Sign up: 3 articles per week
-    </a>
+    </button>
   </div>
   <section
     className="css-1a0behp-imageWrapperStyles"

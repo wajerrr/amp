@@ -1,21 +1,39 @@
 import url from 'url';
 import getCORSExtension from './cors-extension';
 import { isAvailableForFree } from '../config/available-articles';
-import { getUserGroup } from '../utils/user';
+import { getUserGroup, getUserType } from '../utils/user';
 import {
   COOKIE_AMP_VISITS,
   wasVisitedThisWeek,
   getUserVisitsThisWeek,
   getArticleLimit,
 } from '../utils/paywall';
+import config from '../auth0/config';
+import getUserData from '../auth0/get-userdata';
 
-const COOKIE_USER_TYPE = 'ec_user_type';
-
-export const handler = (request) => {
+export const handler = async (request, h) => {
   const { articleId } = request.query;
   const articlePath = url.parse(request.query.url).pathname;
   const visits = request.state[COOKIE_AMP_VISITS] || {};
-  const userGroup = getUserGroup(request.state[COOKIE_USER_TYPE]);
+  const accessToken = request.state[config.ACCESS_TOKEN_COOKIE_NAME];
+  let userData = { 'http://economist.com/accessLevelCode': -1 };
+
+  if (accessToken) {
+    try {
+      userData = await getUserData(accessToken);
+    } catch (error) {
+      if (error.status === 401 || error.status === 403) {
+        h.unstate(config.ACCESS_TOKEN_COOKIE_NAME);
+      }
+    }
+  }
+
+  const userType = getUserType(
+    userData['http://economist.com/accessLevelCode']
+  );
+
+  const userGroup = getUserGroup(userType);
+
   let access = 0;
   if (
     isAvailableForFree(articlePath) ||

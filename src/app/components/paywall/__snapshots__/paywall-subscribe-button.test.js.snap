@@ -18,12 +18,10 @@ exports[`PaywallSubscribeButton and PaywallSubscribeButtonInvertedStyles should 
 <div
   className={undefined}
 >
-  <a
-    className="e18299l01 css-1aftcze-StyledLink-LargeSubscribeButton-LargeSubscribeButtonInvertedStyles e1ob2h4l0"
-    href="https://econ.st/2bs1gXz"
-    role="button"
+  <button
+    on="tap:amp-access.login"
   >
     Test children
-  </a>
+  </button>
 </div>
 `;

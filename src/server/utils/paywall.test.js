@@ -27,6 +27,8 @@ describe('paywall utils', () => {
           '/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM&articleId=article1',
         pingback:
           '/pingback?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM&articleId=article1&access=AUTHDATA(access)&userGroup=AUTHDATA(userGroup)',
+        login:
+          'https://authenticate-dev.stage.economist.com/login?client=MtTdj0V9fbWAu46V8e0BTSaId1ZWxAE8&protocol=oauth2&response_type=code&redirect_uri=https%3A%2F%2Flocalhost%3A8001%2Fcallback%3Freturn%3DRETURN_URL',
         authorizationFallbackResponse: { error: true, access: 0 },
       });
     });
